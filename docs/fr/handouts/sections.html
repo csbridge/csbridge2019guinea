@@ -280,8 +280,9 @@
 
 	      
 	      <ul class="nav navbar-nav navbar-right">
+	      	<li><a onclick="changeToFrench()" style="cursor: pointer;"><img class="languageIcon" src="../../img/guinean_flag.png"></img></a></li>
 	      	<li><a onclick="changeToEnglish()" style="cursor: pointer;"><img class="languageIcon" src="../../img/english_flag.png"></img></a></li>
-	      	<li><a onclick="changeToTurkish()" style="cursor: pointer;"><img class="languageIcon" src="../../img/turkish_flag.png"></img></a></li>
+	      	
 	        
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
@@ -291,15 +292,21 @@
 
 <script>
 
-	function changeToTurkish() {
+	// function changeToTurkish() {
+	// 	var url = window.location.href;
+	// 	url = url.replace("/en/", "/tr/");
+	// 	window.location.href = url;
+	// }
+
+	function changeToFrench() {
 		var url = window.location.href;
-		url = url.replace("/en/", "/tr/");
+		url = url.replace("/en/", "/fr/");
 		window.location.href = url;
 	}
 
 	function changeToEnglish() {
 		var url = window.location.href;
-		url = url.replace("/tr/", "/en/");
+		url = url.replace("/fr/", "/en/");
 		window.location.href = url;
 	}
 
