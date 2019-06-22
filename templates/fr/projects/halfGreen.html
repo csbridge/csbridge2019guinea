@@ -22,7 +22,7 @@
 			</p>
 			<p>
 				Handouts:
-				<a href ="{{pathToRoot}}en/handouts/graphics.html">Graphics Reference</a>
+				<a href ="{{pathToRoot}}fr/handouts/graphics.html">Graphics Reference</a>
 			</p>
 
 		</div>
@@ -35,7 +35,7 @@
 				</p>
 				<p>
 					<center>
-						<img style="width:500px" src="{{pathToRoot}}img/projects/halfGreen/halfGreen.png">	
+						<img style="width:500px" src="{{pathToRoot}}img/projects/halfGreen/halfGreen.png">
 					</center>
 				</p>
 				<p>
@@ -57,7 +57,7 @@
 	public static final int APPLICATION_WIDTH = 500;
 	public static final int APPLICATION_HEIGHT = 500;
 	private static final int SIZE = 20;
-	
+
 	public void run() {
 		for(int i = 0; i &lt; 1000; i++) {
 			int x = rd.nextInt(getWidth()-SIZE);
@@ -77,19 +77,19 @@
 		}
 		return Color.blue;
 	}
-	
+
 	private boolean isGreen(int x, int y) {
 		return x > y;
 	}
 }</pre>
-    
+
 <script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
    editor.setTheme('ace/theme/eclipse');
    editor.getSession().setMode("ace/mode/java");
    editor.setReadOnly(true);
-   editor.renderer.setShowGutter(false); 
+   editor.renderer.setShowGutter(false);
     /*editor.setTheme("ace/theme/eclipse");
     editor.getSession().setMode("ace/mode/java");*/
 </script>
@@ -98,7 +98,7 @@
 
 		</div>
 
-		
+
 		%include templates/parts/footer.html
 
 	</div>

@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,14 +15,14 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Countdown
+				Compte à rebours
 			</h1>
 			<p>
-                Written by Lisa Yan
+                Écrit par Lisa Yan
 			</p>
 			<p>
-				Handouts:
-				<a href ="{{pathToRoot}}en/handouts/graphics.html">Graphics Reference</a>
+				Référence:
+				<a href ="{{pathToRoot}}fr/handouts/graphics.html">Référence graphique</a>
 			</p>
 
 		</div>
@@ -31,86 +31,80 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-                    This is a bonus program! It's meant to be a bit challenging, but completing this program will definitely help you write your final project.
+                    Ceci est un programme de bonus! C'est un peu difficile, mais terminer ce programme vous aidera certainement à écrire votre projet final.
                 </p>
                 <p>
-                    Write a GraphicsProgram that displays a timer counting down from ten, once a second, and displays a message once the timer hits zero.
+                    Ecrivez un programme graphique qui affiche un compte à rebours à partir de dix, une fois par seconde, et affiche un message une fois que le compte à rebours a atteint zéro.
                 </p>
-            <h2> Setup the timer</h2>
+            <h2> Configurer la minuterie</h2>
             <p>
-            To implement this timer, we will need both a logical representation and a visual representation of our countdown value, which are given by two class variables:
+            Pour implémenter cette minuterie, nous aurons besoin d’une représentation logique et d’une représentation visuelle de notre valeur de compte à rebours, qui sont données par deux variables de classe:
             </p>
 			<div class="well"><code>
-                private GLabel countdownLabel; // display of timer value<br>
-                private int countdown; // actual timer value
+                private GLabel countdownLabel; // affichage de la valeur de la minuterie<br>
+                private int countdown; // valeur réelle de la minuterie
 			</code></div>
             <p>
-            Choose a large font for your timer, and start by displaying the starting time (TOTAL_TIME) on the screen. You can convert integers to strings by adding the following method to your code:
+							Choisissez une police de grande taille pour votre minuterie et commencez par afficher l'heure de début (TOTAL_TIME) à l'écran. Vous pouvez convertir des entiers en chaînes en ajoutant la méthode suivante à votre code:
             </p>
 <pre>public String formatIntToString(int x) {
     return "" + x;
 }</pre>
-            
-            Your starting canvas should look something like this (I used the font Consolas with size 200):
+
+            Votre toile de départ devrait ressembler à ceci (j’ai utilisé la police Consolas de taille 200):
 					<center>
-						<img style="width:500px" src="{{pathToRoot}}img/projects/countdown/countdown10.png">	
+						<img style="width:500px" src="{{pathToRoot}}img/projects/countdown/countdown10.png">
 					</center>
 
-            <h2>Implement the countdown</h2>
+            <h2>Implémenter le compte à rebours</h2>
             <p>
-            Write your animation loop which updates both the logical and visual countdown representations every second.<br>
-            Do not add new GLabels! Just keep changing the text of the old one using GLabel's method <code>setLabel()</code>.
+            Ecrivez votre boucle d'animation qui met à jour les représentations logiques et visuelles du compte à rebours chaque seconde.<br>
+            N'ajoutez pas de nouvelles GLabels! Continuez simplement à changer le texte de l'ancien en utilisant la méthode de GLabel <code>setLabel()</code>.
             </p>
 			<div class="well"><code>
-            // Sets countdownLabel's text to be "hello world"<br>
+            // Définit le texte de countdownLabel sur "hello world"<br>
             countdownLabel.setLabel("hello world");
 			</code></div>
 
-            <p>Remember that delay is counted in milliseconds, and we want the timer to operate by the second.</p>
+            <p>Rappelez-vous que le délai est compté en millisecondes et nous voulons que la minuterie fonctionne à la seconde près.</p>
 
 
-            <h2>Formatting your timer</h2>
+            <h2>Formater votre minuterie</h2>
             <h3>Zero-padding</h3>
-            <p>Since this is a timer, we want to <i>zero-pad</i> our numbers, which means adding a zero to the front of a number so that it stays the same width. How would you update the visual representation of your countdown timer to display the following?</p>
-            <p>Hint: Make your changes to <code>formatIntToString()</code>.</p>
+            <p>Comme il s’agit d’un chronomètre, nous voulons <i> numéroter à zéro </ i> nos nombres, ce qui signifie ajouter un zéro à l’avant d’un nombre afin qu’il reste à la même largeur. Comment mettriez-vous à jour la représentation visuelle de votre compte à rebours pour afficher les éléments suivants?</p>
+            <p>Astuce: Apportez vos modifications à <code>formatIntToString()</code>.</p>
 			<center>
-				<img style="width:500px" src="{{pathToRoot}}img/projects/countdown/countdown03.png">	
+				<img style="width:500px" src="{{pathToRoot}}img/projects/countdown/countdown03.png">
 			</center>
-            <h3>Fixed-width fonts</h3>
-            <p>Depending on your choice of font, your timer might still not align, even after zero-padding. This is something that a lot of graphics-oriented programmers struggle with! Make sure you are picking a fixed-width font, where each character/digit is the same width. Common examples are Consolas, Monaco, and Courier.
+            <h3>Polices à largeur fixe</h3>
+            <p>Selon votre choix de police, il se peut que votre minuterie ne soit pas encore alignée, même après la mise à zéro. C'est un problème avec lequel beaucoup de programmeurs graphiques ont du mal! Assurez-vous de choisir une police à largeur fixe, où chaque caractère / chiffre a la même largeur. Les exemples courants sont Consolas, Monaco et Courier.
             </p>
 
-            <h2>Finishing up</h2>
+            <h2>Finir</h2>
             <p>
-            Once the timer hits zero, display a message. It can be anything!
+							Une fois que la minuterie atteint zéro, affichez un message. Ça peut être n'importe quoi!
             </p>
 			<center>
-				<img style="width:500px" src="{{pathToRoot}}img/projects/countdown/timesUp.png">	
+				<img style="width:500px" src="{{pathToRoot}}img/projects/countdown/timesUp.png">
 			</center>
-
-
-            <h2>Bonus: Add minutes</h2>
-            <p>Now add minutes to your countdown display, so that the timer reads 1:00, 0:59, 0:58, and so on.</p>
+            <h2>Bonus: Ajouter des minutes</h2>
+            <p>Ajoutez maintenant des minutes à votre compte à rebours pour que le minuteur affiche 1:00, 0:59, 0:58, etc.</p>
             <p>
-            General guidelines:
+							Conditions générales d'Utilisation:
             </p>
             <ul>
-                <li>Try to keep a <i>single variable</i> that records your remaining time in seconds. Avoid tracking minutes and seconds separately.</li>
-                <li>Separate your single variable into minutes and seconds when you display the counter. Consider defining methods to make your logic very clear.</li>
-                <li>To debug quickly, speed up your timer by reducing the pause time.</li>
-                <li>Remember the "mod" function! Example: <code>5 % 2 = 1</code></li>
+                <li>Essayez de garder un <i>variable unique</i> qui enregistre votre temps restant en secondes. Évitez de suivre les minutes et les secondes séparément.</li>
+                <li>Séparez votre variable unique en minutes et en secondes lorsque vous affichez le compteur. Pensez à définir des méthodes pour rendre votre logique très claire.</li>
+                <li>Pour déboguer rapidement, accélérez votre chronomètre en réduisant le temps de pause.</li>
+                <li>Rappelez-vous la fonction "mod"! Exemple: <code>5 % 2 = 1</code></li>
             </ul>
-            <p>Bonus bonus: How would you add milliseconds? The display convention is: 1:03.234.</p>
-
-
-
-
+            <p>Bonus bonus: Comment ajouteriez-vous des millisecondes? La convention d'affichage est la suivante: 1: 03.234.</p>
 			</div>
 
 		</div>
 
-		
-		%include templates/parts/footer.html
+
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

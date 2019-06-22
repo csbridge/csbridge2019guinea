@@ -22,8 +22,8 @@
 			</p>
 
 			<p>
-			Handouts: 
-				<a href ="{{pathToRoot}}en/handouts/karel.html">KarelReference</a>
+			Handouts:
+				<a href ="{{pathToRoot}}fr/handouts/karel.html">KarelReference</a>
 			</p>
 
 		</div>
@@ -37,10 +37,10 @@
 
 				<p>
 					<center>
-						<img style="width:600px" src="{{pathToRoot}}img/projects/invert/invert.png">	
+						<img style="width:600px" src="{{pathToRoot}}img/projects/invert/invert.png">
 					</center>
 				</p>
-				
+
 			</div>
 
 		</div>
@@ -52,12 +52,12 @@
 <pre id="editor" style="height:1010px">/**
  * Program: Invert
  * ---------------
- * Invert all the beepers so that, where there was a beeper previously 
- * there is no beeper... and where there was no beeper previously, there is a 
+ * Invert all the beepers so that, where there was a beeper previously
+ * there is no beeper... and where there was no beeper previously, there is a
  * beeper.
  */
 public class InvertBeepers extends SuperKarel {
-	
+
 	public void run() {
 		invertRow();
 		returnToWest();
@@ -73,7 +73,7 @@ public class InvertBeepers extends SuperKarel {
 	/**
 	 * Method: Invert Row
 	 * ------------------
-	 * Invert a single row. At the start, Karel should be facing east from 
+	 * Invert a single row. At the start, Karel should be facing east from
 	 * the west side of the row. After Karel should be facing east from the
 	 * east side of the same row, and all beepers in the row will be inverted.
 	 */
@@ -113,18 +113,18 @@ public class InvertBeepers extends SuperKarel {
 		turnAround();
 	}
 }</pre>
-    
+
 <script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
    editor.setTheme('ace/theme/eclipse');
    editor.getSession().setMode("ace/mode/java");
    editor.setReadOnly(true);
-   editor.renderer.setShowGutter(false); 
+   editor.renderer.setShowGutter(false);
     /*editor.setTheme("ace/theme/eclipse");
     editor.getSession().setMode("ace/mode/java");*/
 </script>
-		
+
 		%include templates/parts/footer.html
 
 	</div>

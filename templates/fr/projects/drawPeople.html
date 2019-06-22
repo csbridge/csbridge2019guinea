@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,14 +15,14 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Draw People
+				Dessiner des gens
 			</h1>
 			<p>
-				Written by Chris, Bryce and Julia
+				Écrit par Chris, Bryce and Julia
 			</p>
 			<p>
-				Handouts:
-				<a href ="{{pathToRoot}}en/handouts/graphics.html">Graphics Reference</a>
+				Référence:
+				<a href ="{{pathToRoot}}fr/handouts/graphics.html">Référence graphique</a>
 			</p>
 
 		</div>
@@ -31,14 +31,14 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					This demo shows a simple method that draws people with the bottom of their feet at the provided (x, y) position.
+					Cette démo montre une méthode simple qui attire les personnes qui ont le bas des pieds à la position fournie (x, y).
 					<div class="well"><code>private void drawPerson(int x, int y)</code></div>
 				</p>
 
 				<center>
-						<img style="width:500px" src="{{pathToRoot}}img/projects/drawPeople/demo2.png">	
+						<img style="width:500px" src="{{pathToRoot}}img/projects/drawPeople/demo2.png">
 					</center>
-				
+
 
 			</div>
 
@@ -64,26 +64,26 @@
 		body.setColor(Color.BLACK);
 		body.setFilled(true);
 		add(body, x - body.getWidth()/2, y - body.getHeight());
-		
+
 		GRect arms = new GRect(40, 40);
 		arms.setColor(Color.BLACK);
 		arms.setFilled(true);
 		add(arms, x - arms.getWidth()/2, y - 60);
-		
+
 		GOval head = new GOval(40, 40);
 		head.setColor(Color.BLUE);
 		head.setFilled(true);
 		add(head, x - 20, y - 100);
 	}
 }</pre>
-    
+
 <script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
    editor.setTheme('ace/theme/eclipse');
    editor.getSession().setMode("ace/mode/java");
    editor.setReadOnly(true);
-   editor.renderer.setShowGutter(false); 
+   editor.renderer.setShowGutter(false);
     /*editor.setTheme("ace/theme/eclipse");
     editor.getSession().setMode("ace/mode/java");*/
 </script>
@@ -92,8 +92,8 @@
 
 		</div>
 
-		
-		%include templates/parts/footer.html
+
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

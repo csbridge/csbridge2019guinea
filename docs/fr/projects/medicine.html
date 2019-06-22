@@ -325,10 +325,10 @@
 				Problem written by Chris Piech
 			</p>
 			<p>
-				Worked Examples: 
-				<a href="../../en/projects/emc2.html">E=MC2</a>,
-				<a href="../../en/projects/fibb.html">Fibbonacci</a>,
-				<a href="../../en/projects/carbonDating.html">Carbon Dating</a>
+				Worked Examples:
+				<a href="../../fr/projects/emc2.html">E=MC2</a>,
+				<a href="../../fr/projects/fibb.html">Fibbonacci</a>,
+				<a href="../../fr/projects/carbonDating.html">Carbon Dating</a>
 			</p>
 
 		</div>
@@ -342,8 +342,8 @@
 
 					<p>
 					In 2009 a Ghanaian fellow named Bright Simmons came up with a straightforward technology solution he called mPedigree. He partnered with companies that make medicine. On each legitimate package of medicine they stamped a unique scratch code. Now when you buy medicine at a pharmacy in Kenya you check the scratch code and text message mPedigree. If the code is in their system, and has never been used before, mPedigree sends a text message back saying: "valid."
-				
-					There has been a 58% decrease in child deaths from Malaria alone [3]. Sometimes simple programming solutions can have a large, positive impact on the world. 
+
+					There has been a 58% decrease in child deaths from Malaria alone [3]. Sometimes simple programming solutions can have a large, positive impact on the world.
 
 				</p>
 			</div>
@@ -351,19 +351,19 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h2>Your Job</h2>
-				<p>Write a program that generates 10 digit numbers for 1,000 packages of medicine. Each number you generate should be (1) unique and (2) unpredictable. 
+				<p>Write a program that generates 10 digit numbers for 1,000 packages of medicine. Each number you generate should be (1) unique and (2) unpredictable.
 				</p>
 
 				<p>
 					Here is a screen shot from an example execution:
 					<center>
-						<img style="width:500px" src="../../img/projects/medicine/medicineRun.png">	
+						<img style="width:500px" src="../../img/projects/medicine/medicineRun.png">
 						<p style="text-align:center"><!--<i>Unique, unpredictable numbers for medicines.</i>--></p>
 					</center>
 				</p>
 
 				<p>Those numbers will be put on medicine packages. Counterfiters won't stand a chance!</p>
-				
+
 			</div>
 		</div>
 		<div class="row">
@@ -395,12 +395,12 @@
  * -------------
  * This program shows how to translate between percent of natural carbon-14 found
  * in a sample. First, it prints out a carbon-14 (c14) lookup table, then it has users
- * enter a percent of c14 and returns the expected age. 
+ * enter a percent of c14 and returns the expected age.
  */
 public class CarbonDating extends ConsoleProgram {
-	
+
 	private static final int HALF_LIFE = 5700;
-	
+
 	public void run() {
 		// 1. Show the c-14 lookup table
 		double percent = 100.0;
@@ -414,7 +414,7 @@ public class CarbonDating extends ConsoleProgram {
 			percent /= 2;
 		}
 		println("");
-		
+
 		// 2. Look up the age of a sample
 		while(true) {
 			double percentLeft = readDouble("What percent of natural carbon-14 does your sample have? ");
@@ -426,7 +426,7 @@ public class CarbonDating extends ConsoleProgram {
 	}
 }
 </pre>
-    
+
 <script src="../../plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
@@ -434,13 +434,13 @@ public class CarbonDating extends ConsoleProgram {
    editor.getSession().setMode("ace/mode/java");
    editor.setReadOnly(true);
    editor.setShowPrintMargin(false);
-   editor.renderer.setShowGutter(false); 
+   editor.renderer.setShowGutter(false);
     /*editor.setTheme("ace/theme/eclipse");
     editor.getSession().setMode("ace/mode/java");*/
 </script>
 	</div>
 	</div>-->
-		
+
 <hr>
 
 <div class="footer">

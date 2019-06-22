@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,12 +15,12 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Average Method
+				Méthode moyenne
 			</h1>
 			<p>
-				Written by Chris Piech and Mehran Sahami
+				Écrit par Chris Piech and Mehran Sahami
 			</p>
-			
+
 
 		</div>
 		<hr/>
@@ -28,11 +28,11 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					This demo shows a simple method that takes in two inputs and returns the average:
+					Cette démo montre une méthode simple qui prend deux entrées et renvoie la moyenne:
 					<div class="well"><code>private double average(double a, double b)</code></div>
 				</p>
-				
-				
+
+
 
 			</div>
 
@@ -55,14 +55,14 @@
 		return (a + b) / 2;
 	}
 }</pre>
-    
+
 <script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
    editor.setTheme('ace/theme/eclipse');
    editor.getSession().setMode("ace/mode/java");
    editor.setReadOnly(true);
-   editor.renderer.setShowGutter(false); 
+   editor.renderer.setShowGutter(false);
     /*editor.setTheme("ace/theme/eclipse");
     editor.getSession().setMode("ace/mode/java");*/
 </script>
@@ -71,8 +71,8 @@
 
 		</div>
 
-		
-		%include templates/parts/footer.html
+
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

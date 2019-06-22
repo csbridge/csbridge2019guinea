@@ -1,6 +1,6 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 	<script src="{{pathToRoot}}plugins/acmjs/pixi.js"></script>
     <script src="{{pathToRoot}}plugins/acmjs/pixidust.js"></script>
@@ -9,7 +9,7 @@
 <body onload="run();">
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -17,16 +17,16 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Breakout!
+				Éclater!
 			</h1>
 			<p>
-				Written by Eric Roberts
+				Écrit par Eric Roberts
 			</p>
 			<p>
-				Handouts: 
-				<a href ="{{pathToRoot}}en/handouts/events.html">Events Reference</a><br>
-				Worked Example: 
-				<a href="{{pathToRoot}}en/projects/stampTool.html">StampTool</a>
+				Référence:
+				<a href ="{{pathToRoot}}fr/handouts/events.html">Référence d'événements</a><br>
+				Exemple travaillé:
+				<a href="{{pathToRoot}}fr/projects/stampTool.html">Outil de tampon</a>
 			</p>
 
 		</div>
@@ -35,216 +35,217 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Your job in this assignment is to write the classic arcade game of Breakout, which was invented by Steve Wozniak before he founded Apple with Steve Jobs (moment of silence).  It is a large assignment, but entirely manageable as long as you break the problem up into pieces.  
+					Votre travail dans cette mission consiste à écrire le jeu d’arcade classique de Breakout, qui a été inventé par Steve Wozniak avant de fonder Apple avec Steve Jobs (moment de silence). Il s’agit d’une tâche importante, mais tout à fait gérable tant que le problème ne sera pas fragmenté.
 				</p>
 			</div>
 		</div>
-		<h2>The Breakout Game</h2>
+		<h2>Le jeu d'évasion</h2>
 		<div class="row">
 
 			<div class="col-md-12">
 				<p>
-					In Breakout, the initial configuration of the world appears as shown on the right. The colored rectangles in the top part of the screen are <b>bricks</b>, and the slightly larger rectangle at the bottom is the <b>paddle</b>. The paddle is in a fixed position in the vertical dimension, but moves back and forth across the screen along with the mouse until it reaches the edge of its space. 
+					Dans Breakout, la configuration initiale du monde apparaît comme indiqué à droite. Les rectangles colorés dans la partie supérieure de l'écran sont <b>des briques</b>, et le rectangle légèrement plus grand en bas est le <b>pagayer</b>. La palette est dans une position fixe dans la dimension verticale, mais se déplace d'avant en arrière sur l'écran avec la souris jusqu'à atteindre le bord de son espace.
 				</p>
 
 				<p>
-					<center><img style="padding:10px;max-width:100%" src="/img/projects/breakout/breakoutGameH.png"></img></center>
+					<center><img style="padding:10px;max-width:100%" src="{{pathToRoot}}img/projects/breakout/breakoutGameH.png"></img></center>
 				</p>
 
 				<p>
-					A complete game consists of three turns. On each turn, a ball is launched from the center of the window toward the bottom of the screen at a random angle. That ball bounces off the paddle and the walls of the world, in accordance with the physical principle generally expressed as "the angle of incidence equals the angle of reflection" (which turns out to be very easy to implement as discussed later in this handout). Thus, after two bounces--one off the paddle and one off the right wall--the ball might have the trajectory shown in the second diagram. (Note that the dotted line is there to show the ball's path and won't appear on the screen.)
+					Un jeu complet consiste en trois tours. À chaque tour, une balle est lancée du centre de la fenêtre vers le bas de l'écran selon un angle aléatoire. Cette balle rebondit sur la raquette et les murs du monde, conformément au principe physique généralement exprimé par "l'angle d'incidence est égal à l'angle de réflexion" (ce qui s'avère très facile à mettre en œuvre, comme nous le verrons plus loin dans ce document) . Ainsi, après deux rebonds - un de la palette et un de la droite
+					mur - la balle pourrait avoir la trajectoire montrée dans le deuxième diagramme. (Notez que la ligne en pointillé est là pour montrer le chemin de la balle et n'apparaîtra pas à l'écran.)
 				</p>
 				<p>
-					As you can see from the second diagram, the ball is about to collide with one of the bricks on the bottom row.  When that happens, the ball bounces just as it does on any other collision, but the brick disappears.  The third diagram shows what the game looks like after that collision and after the player has moved the paddle to put it in line with the oncoming ball.
+					Comme vous pouvez le voir sur le deuxième diagramme, la balle est sur le point de se heurter à l’une des briques de la rangée inférieure. Lorsque cela se produit, la balle rebondit comme pour toute autre collision, mais la brique disparaît. Le troisième diagramme montre à quoi le jeu ressemble après la collision et après que le joueur a déplacé la raquette pour l'aligner sur la balle qui approche.
 				</p>
 				<p>
-					The play on a turn continues in this way until one of two conditions occurs: 
+					Le jeu sur un tour continue ainsi jusqu'à ce que l'une des deux conditions soit remplie:
 					<ol>
-						<li>The ball hits the lower wall, which means that the player must have missed it with the paddle.  In this case, the turn ends and the next ball is served if the player has any turns left.  If not, the game ends in a loss for the player.</li>
-						<li>The last brick is eliminated.  In this case, the player wins, and the game ends immediately.</li>
+						<li>La balle frappe le mur inférieur, ce qui signifie que le joueur doit l'avoir manquée avec la raquette. Dans ce cas, le tour se termine et la balle suivante est servie si le joueur a encore des tours. Sinon, le jeu se termine par une perte pour le joueur.</li>
+						<li>La dernière brique est éliminée. Dans ce cas, le joueur gagne et le jeu se termine immédiatement.</li>
 					</ol>
 				</p>
 				<p>
-					Success in this assignment will depend on breaking up the problem into manageable pieces and getting each one working before you move on to the next.  The next few sections describe a reasonable staged approach to the problem.
+					Le succès de cette mission dépendra de la division du problème en plusieurs éléments gérables et de la résolution de chaque problème avant de passer au suivant. Les sections suivantes décrivent une approche progressive du problème.
 				</p>
 			</div>
 		</div>
 
-		<h2>1. Create bricks</h2>
+		<h2>1. Créer des briques</h2>
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Before you start playing the game, you have to set up the various pieces.  Thus, it probably makes sense to implement the run method as two method calls: one that sets up the game and one that plays it.  An important part of the setup consists of creating the rows of bricks at the top of the game, which look like this:
+					Avant de commencer à jouer, vous devez configurer les différentes pièces. Par conséquent, il est probablement logique d'implémenter la méthode run en deux appels: un pour configurer le jeu et un pour le jouer. Une partie importante de la configuration consiste à créer les rangées de briques en haut du jeu, qui ressemblent à ceci:
 				</p>
 				<p>
-					<center><img style="padding:10px;max-width:100%" src="/img/projects/breakout/breakoutBricks.png"></img></center>
+					<center><img style="padding:10px;max-width:100%" src="{{pathToRoot}}img/projects/breakout/breakoutBricks.png"></img></center>
 				</p>
 				<p>
-					The number, dimensions, and spacing of the bricks are specified using named constants in the starter file, as is the distance from the top of the window to the first line of bricks.  The only value you need to compute is the x coordinate of the first column, which should be chosen so that the bricks are centered in the window, with the leftover space divided equally on the left and right sides.  The color of the bricks remain constant for two rows and run in the following rainbow-like sequence: RED, ORANGE, YELLOW, GREEN, CYAN.
+					Le nombre, les dimensions et l'espacement des briques sont spécifiés à l'aide de constantes nommées dans le fichier de démarrage, tout comme la distance entre le haut de la fenêtre et la première ligne de briques. La seule valeur que vous devez calculer est la coordonnée x de la première colonne, qui doit être choisie de sorte que les briques soient centrées dans la fenêtre, l'espace restant restant divisé également entre les côtés gauche et droit. La couleur des briques reste constante pour deux rangées et s’écoule dans les rangées suivantes séquence: ROUGE, ORANGE, JAUNE, VERT, CYAN.
 				</p>
 			</div>
 		</div>
 
-		<h2>2. Create the paddle</h2>
+		<h2>2. Créer la pagaie</h2>
 		<div class="row">
 			<div class="col-md-12">
-				<p>The next step is to create the paddle.   There is only one paddle, which is a filled GRect.  You even know its position relative to the bottom of the window.</p>
+				<p>L'étape suivante consiste à créer la palette. Il n'y a qu'une seule palette, qui est un GRect rempli. Vous connaissez même sa position par rapport au bas de la fenêtre.</p>
 				<p>
-					The challenge in creating the paddle is to make it track the mouse. Here, however, you only have to pay attention to the x coordinate of the mouse because the y position of the paddle is fixed.  
+					Le défi dans la création de la palette est de la faire suivre la souris. Ici, cependant, il suffit de faire attention à la coordonnée x de la souris car la position y de la palette est fixe.
 				</p>
-				<p> If you call the method (perhaps from run):
+				<p> Si vous appelez la méthode (peut-être à partir de run):
 					<div class="well"><code>addMouseListeners();</code></div>
-					<p>And implement the method:
+					<p>Et implémenter la méthode:
 					<div class="well"><code>public void mouseMoved(MouseEvent e)</code></div>
-					<p>Then any time the mouse is moved the method mouseMoved will be executed.
-					<p>You can learn more about MouseEvents <a href="{{pathToRoot}}handouts/events.html">here</a>.
+					<p>Ensuite, chaque fois que la souris est déplacée, la méthode mouseMoved sera exécutée.
+					<p>Vous pouvez en apprendre plus sur MouseEvents <a href="{{pathToRoot}}handouts/events.html">ici</a>.
 			</div>
 		</div>
 
-		<h2>3. Make the ball move</h2>
+		<h2>3. Faire bouger la balle</h2>
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					At one level, creating the ball is easy, given that it's just a filled GOval.  The interesting part lies in getting it to move and bounce appropriately.  You are now past the "setup" phase and into the "play" phase of the game.  To start, create a ball and put it in the center of the window.  As you do so, keep in mind that the coordinates of the GOval do not specify the location of the center of the ball but rather its upper left corner.
+					À un niveau, créer la balle est facile, étant donné que ce n'est qu'un GOval rempli. La partie intéressante consiste à le faire bouger et à rebondir de manière appropriée. Vous avez maintenant dépassé la phase de configuration et la phase de lecture du jeu. Pour commencer, créez une balle et placez-la au centre de la fenêtre. Ceci étant dit, gardez à l’esprit que les coordonnées du GOval ne spécifient pas l’emplacement du centre de la balle mais plutôt son coin supérieur gauche.
 				</p>
 				<p>
-					The program needs to keep track of the velocity of the ball, which consists of two separate components, which you will presumably declare as instance variables like this:
+					Le programme doit garder trace de la vitesse de la balle, qui se compose de deux composants distincts, que vous déclarerez vraisemblablement comme des variables d'instance comme celle-ci:
 				</p>
 				<p>
 					<div class="well"><code>private double vx, vy;</code></div>
 				</p>
 				<p>
-					The velocity components represent the change in position that occurs on each time step.  Initially, the ball should be heading downward, and you might try a starting velocity of +3.0 for vy (remember that y values in Java increase as you move down the screen).  The game would be boring if every ball took the same course, so you should choose the vx component randomly.  You should simply do the following:
+					Les composantes de la vitesse représentent le changement de position qui se produit à chaque pas de temps. Initialement, la balle doit être dirigée vers le bas et vous pouvez essayer une vitesse de départ de +3.0 pour vy (rappelez-vous que les valeurs y en Java augmentent lorsque vous vous déplacez vers le bas de l'écran). Le jeu serait ennuyeux si chaque balle suivait le même parcours, vous devriez donc choisir la composante vx au hasard. Vous devriez simplement faire ce qui suit:
 				</p>
 				<p>
 					<ol>
-						<li><p>Declare an instance variable rgen, which will serve as a random-number generator:	
-<div class="well"><code>private RandomGenerator rgen = RandomGenerator.getInstance();</code></div>Remember that instance variables are declared outside of any method but inside the class.
+						<li><p>Déclarez une variable d'instance rgen, qui servira de générateur de nombre aléatoire:
+							<div class="well"><code>private RandomGenerator rgen = RandomGenerator.getInstance();</code></div>Rappelez-vous que les variables d'instance sont déclarées en dehors de toute méthode mais à l'intérieur de la classe.
 
 						</li>
 						<li>
-							Initialize the vx variable as follows:
+							Initialisez la variable vx comme suit:
 
-vx = rgen.nextDouble(1.0, 3.0);
-if (rgen.nextBoolean(0.5)) vx = -vx;
+							vx = rgen.nextDouble (1.0, 3.0);
+							if (rgen.nextBoolean (0.5)) vx = -vx;
 
-	This code sets vx to be a random double in the range 1.0 to 3.0 and then makes it negative half the time.  This strategy works much better for Breakout than calling
+							Ce code définit vx comme un double aléatoire compris entre 1,0 et 3,0, puis le rend négatif la moitié du temps. Cette stratégie fonctionne beaucoup mieux pour Breakout que d'appeler
 
-nextDouble(-3.0, +3.0)
+							nextDouble (-3.0, +3.0)
 
-which might generate a ball going more or less straight down.  That would make life far too easy for the player.
+							qui pourrait générer une balle allant plus ou moins directement vers le bas. Cela rendrait la vie beaucoup trop facile pour le joueur.
 
 						</li>
 					</ol>
 				</p>
 				<p>
-					Once you've done that, your next challenge is to get the ball to bounce around the world, ignoring entirely the paddle and the bricks.  To do so, you need to check to see if the coordinates of the ball have gone beyond the boundary, taking into account that the ball has a nonzero size.  Thus, to see if the ball has bounced off the right wall, you need to see whether the coordinate of the right edge of the ball has become greater than the width of the window; the other three directions are treated similarly.  For now, have the ball bounce off the bottom wall so that you can watch it make its path around the world.
+					Une fois que vous avez fait cela, votre prochain défi consiste à faire rebondir le ballon dans le monde entier, en ignorant totalement la pagaie et les briques. Pour ce faire, vous devez vérifier si les coordonnées de la balle ont dépassé la limite, en tenant compte du fait que la balle a une taille non nulle. Ainsi, pour voir si la balle a rebondi sur le mur de droite, vous devez voir si les coordonnées du bord droit de la balle sont devenues plus grandes que la largeur de la fenêtre. les trois autres directions sont traitées de la même manière. Pour le moment, faites rebondir la balle sur le mur du bas pour pouvoir la regarder faire son chemin autour du monde.
 				</p>
 				<p>
-					Computing what happens after a bounce is extremely simple.  If a ball bounces off the top or bottom wall, all you need to do is reverse the sign of vy.  Symmetrically, bounces off the side walls simply reverse the sign of vx.
+					Calculer ce qui se passe après un rebond est extrêmement simple. Si une balle rebondit sur le mur supérieur ou inférieur, tout ce que vous avez à faire est d’inverser le signe du vy. Symétriquement, les rebonds des murs latéraux inversent simplement le signe de vx.
 				</p>
 			</div>
 		</div>
-		
-		<h2>4. Check for Collisions</h2>
+
+		<h2>4. Vérifier les collisions</h2>
 		<div class="row">
 			<div class="col-md-12">
-				<p>Now comes the interesting part.  In order to make Breakout into a real game, you have to be able to tell whether the ball is colliding with another object in the window.  As scientists often do, it helps to begin by making a simplifying assumption and then relaxing that assumption later.  Suppose the ball were a single point rather than a circle.  In that case, how could you tell whether it had collided with another object?</p>
+				<p>Maintenant vient la partie intéressante. Afin de faire de Breakout un véritable jeu, vous devez être capable de dire si la balle entre en collision avec un autre objet dans la fenêtre. Comme le font souvent les scientifiques, il est utile de commencer par formuler une hypothèse simplificatrice, puis de l'assouplir ultérieurement. Supposons que la balle soit un seul point plutôt qu'un cercle. Dans ce cas, comment pouvez-vous savoir s'il est entré en collision avec un autre objet?</p>
 
 				<p>
-					There is a method:
+					Il y a une méthode:
 
 					<div class="well"><code>public GObject getElementAt(double x, double y)</code></div>
 
-					that takes a position in the window and returns the graphical object at that location, if any.  If there are no graphical objects that cover that position, getElementAt returns the special constant null.  If there is more than one, getElementAt always chooses the one closest to the top of the stack, which is the one that appears to be in front on the display.
+					qui prend une position dans la fenêtre et retourne l'objet graphique à cet endroit, le cas échéant. Si aucun objet graphique ne couvre cette position, getElementAt renvoie la constante spéciale null. S'il en existe plus d'un, getElementAt choisit toujours celui qui se trouve le plus en haut de la pile, celui qui semble être en face de l'écran.
 				</p>
 
 				<p>
-					The easiest thing to do, which is in fact typical of real computer games, is to check a few carefully chosen points on the outside of the ball and see whether any of those points has collided with anything.  As soon as you find something at one of those points, you can declare that the ball has collided with that object.
+					La chose la plus facile à faire, qui est en fait typique des jeux informatiques réels, est de vérifier quelques points soigneusement choisis à l'extérieur du ballon et de voir si l'un de ces points a heurté quelque chose. Dès que vous trouvez quelque chose sur l'un de ces points, vous pouvez déclarer que le ballon est entré en collision avec cet objet.
 				</p>
 
-					In your implementation, check the four corner points on the square in which the ball is inscribed.  Remember that a GOval is defined in terms of its bounding rectangle, so that if the upper left corner of the ball is at the point (x, y), the other corners will be at the locations shown in this diagram:
+					Dans votre implémentation, vérifiez les quatre points d’angle de la case dans laquelle est inscrite la balle. Rappelez-vous qu'un GOval est défini en fonction de son rectangle de délimitation, de sorte que si le coin supérieur gauche de la balle se trouve au point (x, y), les autres coins se trouveront aux emplacements indiqués dans ce diagramme:
 
 				</p>
 
 				<p>
-					<center><img src="/img/projects/breakout/breakoutCollision.png"></img></center>
+					<center><img src="{{pathToRoot}}img/projects/breakout/breakoutCollision.png"></img></center>
 				</p>
 				<p>
-					These points have the advantage of being outside the ball but nonetheless close enough to make it appear that collisions have occurred.  Thus, for each of these four points, you need to:
+					Ces points ont l’avantage d’être en dehors du ballon, mais néanmoins suffisamment proches pour faire croire que des collisions se sont produites. Ainsi, pour chacun de ces quatre points, vous devez:
 				</p>
 				<p>
 					<ol>
-						<li>Call getElementAt on that location to see whether anything is there.</li>
-						<li>If the value you get back is not null, then you need look no farther and can take that value as the GObject with which the collision occurred.</li>
-						<li>If getElementAt returns null for a particular corner, go on and try the next corner.</li>
-						<li>If you get through all four corners without finding a collision, then no collision exists.</li>
+						<li>Appelez getElementAt à cet endroit pour voir si quelque chose s'y trouve.</li>
+						<li>Si la valeur que vous récupérez n'est pas nulle, vous n'avez pas besoin de chercher plus loin et pouvez prendre cette valeur comme objet GO avec lequel la collision s'est produite.</li>
+						<li>Si getElementAt renvoie null pour un coin particulier, continuez et essayez le prochain coin.</li>
+						<li>Si vous franchissez les quatre virages sans vous heurter à une collision, il n'y en a pas.</li>
 					</ol>
 				</p>
-				<p> 
-					It would be very useful to write this section of code as a separate method
+				<p>
+					Il serait très utile d’écrire cette section de code séparément.
 						<div class="well"><code>public GObject getCollidingObject()</code></div>
-					That returns the object involved in the collision, if any, and <b>null</b> otherwise. You could then use it in a declaration like:
+						Cela renvoie l'objet impliqué dans la collision, le cas échéant, et <b>null</b> autrement. Vous pouvez ensuite l'utiliser dans une déclaration du type:
 					<div class="well"><code>GObject collider = getCollidingObject();</code></div>
 				</p>
 				<p>
-					From here, the only remaining thing you need to do is decide what to do when a collision occurs.  There are only two possibilities.  First, the object you get back might be the paddle, which you can test by checking</p>
+					A partir de là, il ne vous reste plus qu'à décider quoi faire en cas de collision. Il n'y a que deux possibilités. Tout d’abord, l’objet que vous récupérez peut être la palette, que vous pouvez tester en vérifiant</p>
 					<div class="well"><code>if (collider == paddle)</code></div>
 				</p>
 				<p>
-					If it is the paddle, you need to bounce the ball so that it starts traveling up.  If it isn't the paddle, the only other thing it might be is a brick, since those are the only other objects in the world.  Once again, you need to cause a bounce in the vertical direction, but you also need to take the brick away.  To do so, all you need to do is remove it from the screen by calling the remove method.
+					Si c'est la pagaie, vous devez faire rebondir la balle pour qu'elle commence à monter. Si ce n'est pas la raquette, la seule autre chose qui pourrait l'être est une brique, car ce sont les seuls autres objets au monde. Encore une fois, vous devez provoquer un rebond dans la direction verticale, mais vous devez également enlever la brique. Pour ce faire, il vous suffit de le supprimer de l'écran en appelant la méthode remove.
 				</p>
 
 			</div>
 		</div>
 
-		<h2 style="color:blue">Extra Touches</h2>
+		<h2 style="color:blue">touches supplémentaires</h2>
 		<div class="row">
 			<div class="col-md-12">
-				<p>If you've gotten to here, you've done all the hard parts.  There are, however, a few more details you could take into account if you have time.</p>
+				<p>Si vous en êtes là, vous avez fait toutes les tâches difficiles. Il y a cependant quelques détails supplémentaires que vous pourriez prendre en compte si vous en avez le temps.</p>
 				<ol>
-					<li>Take care of the case when the ball hits the bottom wall.  In the prototype you've been building, the ball just bounces off this wall like all the others, but that makes the game pretty hard to lose.  Modify your loop structure so that it tests for hitting the bottom wall as one of its terminating conditions.</li>
-					<li>Check for the other terminating condition, which is hitting the last brick. How do you know when you've done so?  Although there are other ways to do it, one of the easiest is to have your program keep track of the number of bricks remaining.  Every time you hit one, subtract one from that counter.  When the count reaches zero, you must be done.  It would be nice to give the player a little feedback that at least indicates whether the game was won or lost.</li>
-					<li>Test your program to see that it works.  If you think everything is working, here is something to try: Just before the ball is going to pass the paddle level, move the paddle quickly so that the paddle collides with the ball rather than vice-versa.  Does everything still work, or does your ball seem to get "glued" to the paddle? This error occurs because the ball collides with the paddle, changes direction, and then collides with the paddle again before escaping. How can you fix this bug?</li>
+					<li>Prenez soin de l'affaire lorsque la balle frappe le mur du bas. Dans le prototype que vous avez construit, la balle rebondit sur ce mur comme tous les autres, mais le jeu est difficile à perdre. Modifiez la structure de votre boucle afin qu’elle vérifie si le mur du fond est une de ses conditions de terminaison.</li>
+					<li>Recherchez l'autre condition finale, qui frappe la dernière brique. Comment savez-vous quand vous l'avez fait? Bien qu’il existe d’autres moyens de le faire, l’un des plus faciles est de laisser votre programme garder une trace du nombre de briques restantes. Chaque fois que vous en frappez un, soustrayez-en un de ce compteur. Lorsque le compte atteint zéro, vous devez avoir terminé. Il serait bon de donner au joueur un petit retour d’information indiquant au moins si le jeu a été gagné ou perdu.</li>
+					<li>Testez votre programme pour voir qu'il fonctionne. Si vous pensez que tout fonctionne, voici quelque chose à essayer: juste avant que la balle passe le niveau de la raquette, déplacez-la rapidement pour que la raquette entre en collision avec la balle plutôt que l'inverse. Est-ce que tout fonctionne toujours ou si votre balle semble "collée" à la pagaie? Cette erreur se produit parce que la balle entre en collision avec la palette, change de direction, puis entre à nouveau avec la palette avant de s’échapper. Comment pouvez-vous résoudre ce problème?</li>
 				</ol>
 
-				</div>
+			</div>
 		</div>
 
-		<h2 style="color:blue">Demo</h2>
+		<h2 style="color:blue">Démo</h2>
 		<div class="row">
 			<div class="col-md-12">
 				<p></p>
-				<div id="breakoutDemo" style="width: 425px; border: solid;"> 
+				<div id="breakoutDemo" style="width: 425px; border: solid;">
 				<script src="{{pathToRoot}}js/projects/breakout/breakout.js"></script>
 				</div>
 				</div>
 		</div>
 
 
-		<h2 style="color:blue">Extensions</h2>
+		<h2 style="color:blue">Les extensions</h2>
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					If you have the basic play working well, then this would be a great opportunity to go above and beyond. Here are a few ideas of for possible extensions (of course, we encourage you to use your imagination to come up with other ideas as well):
+					Si le jeu de base fonctionne bien, ce serait une excellente occasion d'aller au-delà des attentes. Voici quelques idées d’extensions possibles (bien entendu, nous vous encourageons à faire preuve d’imagination pour proposer d’autres idées):
 				</p>
 				<ul>
 					<li style="margin-bottom:10px">
-						<i>Add sounds.</i>  
-						<p>The version that is running as an applet on the CS 106A assignment page plays a short bounce sound every time the ball collides with a brick or the paddle.  This extension turns out to be very easy.  The starter project contains an audio clip file called bounce.au that contains that sound.  You can load the sound by writing
+						<i>Ajouter des sons.</i>
+						<p>La version qui s'exécute en tant qu'applet sur la page d'affectation du CS 106A émet un bref son de rebond chaque fois que la balle entre en collision avec une brique ou une palette. Cette extension s'avère très facile. Le projet de démarrage contient un fichier de clip audio appelé bounce.au qui contient ce son. Vous pouvez charger le son en écrivant
 						<div class="well"><code>AudioClip bounceClip = MediaTools.loadAudioClip("res/bounce.au");</code></div>
-						<p>and later play it by calling
+						<p>et plus tard jouer en appelant
 						<div class="well"><code>bounceClip.play();</code></div>
-						The Java libraries do make some things easy.
+						Les bibliothèques Java facilitent certaines choses.
 					</p>
 					</li>
 					<li style="margin-bottom:10px" >
-						<i>Improve the user control over bounces.</i>
-						The program gets rather boring if the only thing the player has to do is hit the ball.  It is far more interesting, if the player can control the ball by hitting it at different parts of the paddle.  The way the old arcade game worked was that the ball would bounce in both the x and y directions if you hit it on the edge of the paddle from which the ball was coming.  The web version implements this feature.
+						<i>Améliorer le contrôle de l'utilisateur sur les rebonds.</i>
+						Le programme devient plutôt ennuyeux si la seule chose que le joueur doit faire est de frapper la balle. C'est beaucoup plus intéressant si le joueur peut contrôler le ballon en le frappant à différentes parties de la raquette. La façon dont fonctionnait l'ancien jeu d'arcade était que la balle rebondirait dans les directions x et y si vous la frappiez au bord de la palette d'où venait la balle. La version Web implémente cette fonctionnalité.
 					</li>
 					<li style="margin-bottom:10px">
-						<i>Use your imagination</i>
-						What else have you always wanted a game like this to do?
+						<i>Utilise ton imagination</i>
+						Qu'est-ce que vous avez toujours voulu faire avec un jeu de ce genre?
 					</li>
 				</ul>
 
@@ -253,8 +254,8 @@ which might generate a ball going more or less straight down.  That would make l
 
 		<br/>
 
-		
-		%include templates/parts/footer.html
+
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

@@ -22,7 +22,7 @@
 			</p>
 			<p>
 				Handouts:
-				<a href ="{{pathToRoot}}en/handouts/arrayLists.html">ArrayLists</a>
+				<a href ="{{pathToRoot}}fr/handouts/arrayLists.html">ArrayLists</a>
 			</p>
 
 		</div>
@@ -30,7 +30,7 @@
 
 		<div class="row">
 			<div class="col-md-12">
-				
+
 				<p>Humans are always looking for new sounds, and recently a growing number of artists have been using programs to create experiences that instruments are unable to produce. Here are two examples of songs that were created with computer generated sounds:</p>
 				<p>
 					<center>
@@ -59,7 +59,7 @@
 				</p>
 				<div class="well"><code>ArrayList&lt;Double&gt; <i>samples</i> = Audio.getNoteSamples(<i>frequency</i>, <i>length</i>)</code></div>
 				<div class="well"><code>Audio.play(<i>arrayListOfDoubles</i>)</code></div>
-				
+
 				<p><b>getNoteSamples</b> is a method that takes in two numbers, a frequency and a length in samples (there are 44,100 samples per second in CD quality sound). The frequency defines the note being played. For example a C note has frequency 130.81 Hz and a G note has frequency 196.00 Hz. You should use the contants defined. This method returns an ArrayList of Doubles, which represents the samples of the wave that makes the sound. </p>
 
 				<p>Let's take the wave below as an example. It has a frequency of 130.81 Hz which is a C note. The method will sample the wave, and return the doubles collected from the sample, in the range (-1, 1):</p>
@@ -74,7 +74,7 @@
 				<p><b>play</b> is a method that takes in a list of samples (which must be of type ArrayList&lt;Double&gt;) and plays it to the user.</p>
 
         <p><b>getNotes</b> is a method that takes in the name of a song, and returns an ArrayList&lt;String&gt; with all the notes in the song. The letters in the ArrayList can be lower or upper case notes (a-g and p for pause). Here is an example ArrayList: {a, a, G, f, p, B}.</p>
-				
+
 
 			</div>
 		</div>
@@ -112,8 +112,8 @@
         		<p>To compare strings, don't use the == operator. Instead you should use:</p>
 				<div class="well"><code><i>s1</i>.equals(<i>s2</i>)</code></div>
 				<p>That's all! Welcome to the world of ArrayLists and computer music. If you finish early try an extension.</p>
-        
-        
+
+
 
 			</div>
 		</div>
@@ -125,11 +125,11 @@
 			<div class="col-md-12">
 				<h2>Extension 1: Write your Own Music</h2>
 				<p>
-					Try and compose a melody from different notes. 
-					Add higher level phrases to the songs. Use loops and methods to make complex sounds. 
+					Try and compose a melody from different notes.
+					Add higher level phrases to the songs. Use loops and methods to make complex sounds.
        			 </p>
-				
-				
+
+
 			</div>
 		</div>
 
@@ -141,9 +141,9 @@
 				</p>
 
 				<p>You can make richer sounds, that are closer to the ones used by Tycho and Pretty Lights (in the examples at the beggining).</p>
-				
-				
-				
+
+
+
 			</div>
 		</div>
 
@@ -163,7 +163,7 @@
 				<p></p>
 
 
-				
+
 			</div>
 		</div>
 
@@ -187,9 +187,9 @@
 				</p>
 
 				<p><b>play</b> is a method that takes in a list of samples (which must be of type ArrayList&lt;Double&gt;) and plays it to the users.</p>
-				
+
 				<p>To get started try and generate a single C note of length <i>NOTE_LENGTH</i> and play it back to the user.</p>
-				
+
 			</div>
 		</div>
 
@@ -197,7 +197,7 @@
 			<div class="col-md-12">
 				<h2>User Composition</h2>
 				<p>
-					Write code that continually collects notes from the user (until they type "play") and puts them together into a single song. If the user enters one of the notes in the pentatonic scale (C, D, G, E or A) add the samples for that note to the song. If the user enters "pause", add <i>NOTE_LENGTH</i> number of samples with value 0. 
+					Write code that continually collects notes from the user (until they type "play") and puts them together into a single song. If the user enters one of the notes in the pentatonic scale (C, D, G, E or A) add the samples for that note to the song. If the user enters "pause", add <i>NOTE_LENGTH</i> number of samples with value 0.
 				</p>
 
 				<p>To compare strings, don't use the == operator. Instead you should use:</p>
@@ -228,8 +228,8 @@
 
 				<p>Add "c-chord" to the list of commands the user can enter. C chords are made up of the notes C, E and G played at the same time.</p>
 
-				
-				
+
+
 			</div>
 		</div>
 
@@ -243,9 +243,9 @@
 				<p>You can make richer sounds, that are closer to the ones used by Tycho and Pretty Lights (in the examples at the beggining).</p>
 
 				<p>Please share any songs you create with us.</p>
-				
-				
-				
+
+
+
 			</div>
 		</div>
 
@@ -265,11 +265,11 @@
 				</p>
 
 
-				
+
 			</div>
 		</div>-->
 
-		
+
 		%include templates/parts/footer.html
 
 	</div>

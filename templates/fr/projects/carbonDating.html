@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,15 +15,15 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Carbon Dating
+				Datation au carbone
 			</h1>
 			<p>
-				Problem written by Chris Piech
+				Problème écrit par Chris Piech
 			</p>
 			<p>
-				Worked Examples: 
-				<a href="{{pathToRoot}}en/projects/emc2.html">E=MC2</a>,
-				<a href="{{pathToRoot}}en/projects/fibb.html">Fibbonacci</a>
+				Exemples travaillés:
+				<a href="{{pathToRoot}}fr/projects/emc2.html">E=MC2</a>,
+				<a href="{{pathToRoot}}fr/projects/fibb.html">Fibbonacci</a>
 			</p>
 
 		</div>
@@ -32,73 +32,73 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					You probably have seen or read news stories about fascinating ancient artifacts. At an archaeological dig a piece of wooden tool is unearthed and the archaeologist finds it to be 5,000 years old.  A child mummy is found high in the Andes and the archaeologist says the child lived more than 2,000 years ago. Ever wondered how they know?
+					Vous avez probablement déjà vu ou lu des articles sur d'anciens artefacts fascinants. Lors d’une fouille archéologique, un morceau d’outil en bois est mis au jour et l’archéologue découvre qu’il a 5 000 ans. Une momie d'enfant est trouvée haut dans les Andes et l'archéologue dit que l'enfant a vécu il y a plus de 2 000 ans. Vous êtes-vous déjà demandé comment ils savent?
 				</p>
-				<p>Carbon dating is a way of determining the age of certain archaeological artifacts of biological origin. Your job is to write a program that figures out how old a sample is.
+				<p>La datation au carbone est un moyen de déterminer l'âge de certains artefacts archéologiques d'origine biologique. Votre travail consiste à écrire un programme qui détermine l'âge d'un échantillon.
 				</p>
 
 				<p>
 					<center>
-						<img style="width:500px" src="{{pathToRoot}}img/projects/carbonDating/real.jpg">	
-						<p style="text-align:center"><i>This is a real velociraptor fossil. It's very old.</i></p>
+						<img style="width:500px" src="{{pathToRoot}}img/projects/carbonDating/real.jpg">
+						<p style="text-align:center"><i>C'est un véritable fossile de vélociraptor. C'est très vieux.</i></p>
 					</center>
 				</p>
 
-				<p>When an orgnanism is alive, its matter will have a constant amount of a special type of carbon called carbon-14 (c14). It turns out all living things have the same fraction: wood, mammoths, your body right now... small cats... all have the same amount.</p>
-				
+				<p>Lorsqu'un orgnanisme est vivant, sa matière aura une quantité constante d'un type spécial de carbone appelé carbone 14 (c14). Il s'avère que tous les êtres vivants ont la même fraction: le bois, les mammouths, votre corps pour le moment ... les petits chats ... ont tous la même quantité.</p>
 
-				<p>An important property of c14 is that it dissapears at a constant rate: every 5,700 years the amount of c14 is halfed (its half life is 5,700 years). For example, if one starts with 100% of the natural occurence of c14:
-				<p> &nbsp;&nbsp;&nbsp;&nbsp;In 5,700 years we expect there will only be 50% left. 
-				<br/> &nbsp;&nbsp;&nbsp;&nbsp;In 11,400 years we would expect there will only have 25% left. 
-				<br/> &nbsp;&nbsp;&nbsp;&nbsp;And so on...</p>
 
-				<p>When an organism is alive, it keeps replentishing its supply of c14 to the natural level. But when it dies (moment of silence), the amount of c14 starts to decrease. By testing how much c14 is left, scientists know how how long a dead thing has been dead for. Good times.</p>
-				
+				<p>Une propriété importante de c14 est qu’elle disparaît à un taux constant: tous les 5 700 ans, la quantité de c14 est réduite de moitié (sa demi-vie est de 5 700 ans). Par exemple, si on commence avec 100% de l'occurrence naturelle de c14:
+				<p> &nbsp;&nbsp;&nbsp;&nbsp;Dans 5 700 ans, nous ne prévoyons plus que 50%.
+				<br/> &nbsp;&nbsp;&nbsp;&nbsp;Dans 11 400 ans, on s’attendrait à ce qu’il ne reste que 25%.
+				<br/> &nbsp;&nbsp;&nbsp;&nbsp;Etc...</p>
+
+				<p>Lorsqu'un organisme est en vie, il continue de réapprovisionner son apport en C14 au niveau naturel. Mais quand il meurt (moment de silence), la quantité de c14 commence à diminuer. En testant combien il reste de C14, les scientifiques savent depuis combien de temps une chose morte est morte. Bon temps.</p>
+
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Lookup Table</h2>
-				<p>To get started, lets make a lookup table that maps the percent of c14 remaining to the number of years the sample has been dead for. Print out the percent c14 remaining, and the number of years passed for the first 20 half lives. Your table should look like the following:</p>
+				<h2>Table de consultation</h2>
+				<p>Pour commencer, créons un tableau de correspondance qui mappe le pourcentage de c14 restant au nombre d'années pendant lesquelles l'échantillon est mort. Imprimez le pourcentage c14 restant et le nombre d'années écoulées pour les 20 premières demi-vies. Votre table devrait ressembler à ceci:</p>
 				<p>
 					<center>
-						<img style="width:300px" src="{{pathToRoot}}img/projects/carbonDating/lookupTable.png">	
+						<img style="width:300px" src="{{pathToRoot}}img/projects/carbonDating/lookupTable.png">
 					</center>
 				</p>
-				<p>Think about the variable type that you use to keep track of the amount of carbon left. What happens if you use an integer for percent?</p>
+				<p>Pensez au type de variable que vous utilisez pour garder une trace de la quantité de carbone restante. Qu'advient-il si vous utilisez un entier pour cent?</p>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
 				<h2>Extension</h2>
-				<p>If you finish early, and have extra time, try this extension.</p>
-				<p>For scientists it will be much more useful for them to input the percent of natural c14 that they measured, and have the program tell them the age. Repeatedly ask the user to enter a percent of natural c14 remaining and then output the age of their sample.  </p>
+				<p>Si vous avez terminé plus tôt et que vous avez plus de temps, essayez cette extension.</p>
+				<p>Pour les scientifiques, il leur sera beaucoup plus utile de saisir le pourcentage de carbone naturel qu’ils ont mesuré et de leur indiquer le programme en fonction de leur âge. Demandez à plusieurs reprises à l'utilisateur de saisir un pourcentage de c14 naturel restant, puis indiquez l'âge de leur échantillon.  </p>
 				<p>
 					<center>
-						<img style="width:490px" src="{{pathToRoot}}img/projects/carbonDating/enter.png">	
+						<img style="width:490px" src="{{pathToRoot}}img/projects/carbonDating/enter.png">
 					</center>
 				</p>
-				<p>The formula for the age in years of a sample, given the percent of natural c14 remaining is:</p>
+				<p>La formule pour l'âge en années d'un échantillon, étant donné le pourcentage de c14 naturel restant, est la suivante:</p>
 				<p>
 					<br/>
 					<center>
-						<img style="width:300px" src="{{pathToRoot}}img/projects/carbonDating/formula.png">	
+						<img style="width:300px" src="{{pathToRoot}}img/projects/carbonDating/formula.png">
 					</center>
 					<br/>
 				</p>
 
-				<p>To take the natural log of a number (the ln function) use the method:
+				<p>Pour prendre le log naturel d'un nombre (la fonction ln), utilisez la méthode suivante:
 					<div class="well"><code>Math.log(<i>value</i>)</code></div>
-				</p>	
+				</p>
 
-				<p>Overall, your program should look like the following</p>
+				<p>Dans l’ensemble, votre programme devrait ressembler à ce qui suit</p>
 				<p>
 					<center>
-						<img style="width:700px" src="{{pathToRoot}}img/projects/carbonDating/program.png">	
+						<img style="width:700px" src="{{pathToRoot}}img/projects/carbonDating/program.png">
 					</center>
 				</p>
-				<p>All the best, and ask questions if you don't understand something (or want to know more about the archaeology)</p>
+				<p>Bonne chance et posez des questions si vous ne comprenez pas quelque chose (ou si vous voulez en savoir plus sur l'archéologie)</p>
 			</div>
 		</div>
 		<!--<div class="row">
@@ -111,12 +111,12 @@
  * -------------
  * This program shows how to translate between percent of natural carbon-14 found
  * in a sample. First, it prints out a carbon-14 (c14) lookup table, then it has users
- * enter a percent of c14 and returns the expected age. 
+ * enter a percent of c14 and returns the expected age.
  */
 public class CarbonDating extends ConsoleProgram {
-	
+
 	private static final int HALF_LIFE = 5700;
-	
+
 	public void run() {
 		// 1. Show the c-14 lookup table
 		double percent = 100.0;
@@ -130,7 +130,7 @@ public class CarbonDating extends ConsoleProgram {
 			percent /= 2;
 		}
 		println("");
-		
+
 		// 2. Look up the age of a sample
 		while(true) {
 			double percentLeft = readDouble("What percent of natural carbon-14 does your sample have? ");
@@ -142,7 +142,7 @@ public class CarbonDating extends ConsoleProgram {
 	}
 }
 </pre>
-    
+
 <script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
@@ -150,14 +150,14 @@ public class CarbonDating extends ConsoleProgram {
    editor.getSession().setMode("ace/mode/java");
    editor.setReadOnly(true);
    editor.setShowPrintMargin(false);
-   editor.renderer.setShowGutter(false); 
+   editor.renderer.setShowGutter(false);
     /*editor.setTheme("ace/theme/eclipse");
     editor.getSession().setMode("ace/mode/java");*/
 </script>
 	</div>
 	</div>-->
-		
-		%include templates/parts/footer.html
+
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

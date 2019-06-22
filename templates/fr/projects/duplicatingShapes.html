@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,17 +15,17 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Duplicating Shapes
+				Des formes de duplication
 			</h1>
 			<p>
-                Written by Tyler Conklin
+                Écrit par Tyler Conklin
 								</br>
 			</p>
 			<p>
-				Handouts:
-                <a href ="{{pathToRoot}}en/handouts/random.html">Random Generator Reference</a><br/>
-                <a href ="{{pathToRoot}}en/handouts/graphics.html">Graphics Reference</a><br/>
-                <a href ="{{pathToRoot}}en/handouts/events.html">Events Reference</a><br/>
+				Référence:
+                <a href ="{{pathToRoot}}fr/handouts/random.html">Référence de générateur aléatoire</a><br/>
+                <a href ="{{pathToRoot}}fr/handouts/graphics.html">Référence graphique</a><br/>
+                <a href ="{{pathToRoot}}fr/handouts/events.html">Référence d'événements</a><br/>
 			</p>
 
 		</div>
@@ -34,32 +34,28 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-						This is a bonus program! It's meant to be challenging.
+					Ceci est un programme de bonus! C'est censé être stimulant.
 				</p>
 				<p>
-					Write a graphics program to duplicate an oval ten times if the user clicks on the oval. Your program should start by populating the canvas with ten randomly generated ovals, much like the ten random circles example. Note that this means the X, Y, width, height, and color of the GOval should all be random. After this initial step, the canvas may look something like this:
+					Ecrivez un programme graphique pour dupliquer un ovale dix fois si l'utilisateur clique dessus. Votre programme doit commencer par remplir le canevas avec dix ovales générés aléatoirement, un peu comme l'exemple des dix cercles aléatoires. Notez que cela signifie que les valeurs X, Y, largeur, hauteur et couleur du GOval doivent toutes être aléatoires. Après cette étape initiale, la toile peut ressembler à ceci:
 					<center>
-						<img style="width:300px;border:2px solid grey" src="{{pathToRoot}}img/projects/duplicatingShapes/duplicatingShapesStart.png">	
+						<img style="width:300px;border:2px solid grey" src="{{pathToRoot}}img/projects/duplicatingShapes/duplicatingShapesStart.png">
 					</center>
-					If the user then clicks on an oval. This oval should be duplicated ten times. The characteristics of the oval should be the same as the original oval, but the X,Y position should change. So the new ovals should have the same color, height, and width of the oval that was clicked on, but a new random X,Y position. After one click on the red oval, the canvas may now look like this:
+					Si l'utilisateur clique ensuite sur un ovale. Cet ovale devrait être dupliqué dix fois. Les caractéristiques de l'ovale doivent être identiques à celles de l'ovale d'origine, mais la position X, Y doit changer. Ainsi, les nouveaux ovales doivent avoir la même couleur, la même hauteur et la même largeur que l'ovale sur lequel l'utilisateur a cliqué, mais une nouvelle position X, Y aléatoire. Après un clic sur l'ovale rouge, la toile peut maintenant ressembler à ceci:
  					<center>
-						<img style="width:300px;border:2px solid grey" src="{{pathToRoot}}img/projects/duplicatingShapes/duplicatingShapesEnd.png">	
+						<img style="width:300px;border:2px solid grey" src="{{pathToRoot}}img/projects/duplicatingShapes/duplicatingShapesEnd.png">
 					</center>
-					Note that we do not care if the entire oval is on screen, but at least part of the oval should be on screen (the X,Y of the oval must be within the width and height of the canvas).
+					Notez que nous ne nous soucions pas de savoir si la totalité de l'ovale est à l'écran, mais au moins une partie de l'ovale doit l'être à l'écran (le X, le Y de l'ovale doit être compris entre la largeur et la hauteur de la toile).
         </p>
 				<p>
-					Hint: The method below will be useful.
+					Astuce: La méthode ci-dessous sera utile.
 					<center>
-						<img style="width:600px;border:2px solid grey" src="{{pathToRoot}}img/projects/duplicatingShapes/getElementAt.png">	
+						<img style="width:600px;border:2px solid grey" src="{{pathToRoot}}img/projects/duplicatingShapes/getElementAt.png">
 					</center>
 				</p>
-
 			</div>
-
 		</div>
-
-		
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>
