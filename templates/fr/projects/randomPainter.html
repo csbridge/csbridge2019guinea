@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,16 +15,16 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Random Painter
+				Peintre au hasard
 			</h1>
 			<p>
-				Writen by Chris Piech
+				Écrit par Chris Piech
 			</p>
 
 			<p>
-				Handouts:
+				Documents à distribuer:
 				<a href ="{{pathToRoot}}fr/handouts/karel.html">KarelReference</a>
-				<br/>Worked Examples:
+				<br/>Exemples travaillés:
 				<a href="{{pathToRoot}}fr/projects/invert.html">Invert</a>,
 				<a href="{{pathToRoot}}fr/projects/unKarel.html">UN Karel</a>
 			</p>
@@ -35,42 +35,42 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Karel is starting to find her world too black and white. Help her fill it with color.
+					Karel commence à trouver son monde trop noir et blanc. Aidez-la à le remplir de couleur.
 					<p>
 					<center>
 						<img style="width:100%"  src="{{pathToRoot}}img/projects/randomPainter/long.png">
 					</center>
 					</p>
 				</p>
-				<h2>Paint and Random</h2>
+				<h2>Peinture et aléatoire</h2>
 				<p>
-					Karel has a few commands up her sleeve. She can paint the corner on which she is standing using the instruction
+					Karel a quelques commandes dans sa manche. Elle peut peindre le coin sur lequel elle se tient en suivant les instructions
 <div class="well"><code>paintCorner(color);</code></div>
-The value enclosed in the parentheses, which is called an argument in the terminology
-of programming languages, may be any of the following:
+La valeur entre parenthèses, appelée un argument dans la terminologie
+des langages de programmation, peut être l’un des suivants:
                  <span style="color:red;">RED</span>&nbsp;&nbsp;
                  <span style="color:orange;">ORANGE</span>&nbsp;&nbsp;
                  <span style="color:green;">GREEN</span>&nbsp;&nbsp;
                  <span style="color:cyan;">CYAN</span>&nbsp;&nbsp;
                  <span style="color:blue;">BLUE</span>&nbsp;&nbsp;
                  <span style="color:magenta;">MAGENTA</span>
-                 and more...
+                 et plus...
 				</p>
 				<p>
-					Karel also defines a new condition random, which is true half the time, but in an unpredictable way. Like flipping a coin, sometimes it returns true and sometimes it returns false. For example the code
+					Karel définit également une nouvelle condition aléatoire, ce qui est vrai la moitié du temps, mais de manière imprévisible. Comme si on jetait une pièce de monnaie, parfois cela retourne vrai et parfois, faux Par exemple le code
 					<div class="well"><code>if(random()) {<br/>
 						&nbsp;&nbsp;&nbsp;&nbsp;putBeeper();<br/>
 					}</code></div>
-					Will place a beeper, or will not, with equal probability.
+					Placera un bipeur ou ne le fera pas, avec une probabilité égale.
 
 				</p>
-				<h2>Painter</h2>
+				<h2>Peintre</h2>
 				<p>
-					Use these new abilities to have karel randomly paint each corner of a world one of two colors. You can chose any two colors you would like, we chose green and blue.
+					Utilisez ces nouvelles capacités pour que Karel peigne au hasard chaque coin d’un monde d’une ou deux couleurs. Vous pouvez choisir deux couleurs que vous voulez, nous avons choisi le vert et le bleu.
 				</p>
 				<p>
 
-					 Below are three executions of the same program that randomly paints any sized world green and blue executed on a 10x10 world. Note that because of the random condition, the pattern of green and blue is different on each run!
+					 Vous trouverez ci-dessous trois exécutions du même programme qui peint au hasard un monde de toutes les tailles, vert et bleu, exécuté sur un monde 10x10. Notez qu'en raison de la condition aléatoire, le motif de vert et de bleu est différent à chaque exécution!
 				</p>
 				<p>
 					<center>
@@ -78,14 +78,14 @@ of programming languages, may be any of the following:
 					</center>
 				</p>
 				<p>
-					As always, remember to decompose your solution! Your program should work on a world of any size.
+					Comme toujours, n'oubliez pas de décomposer votre solution! Votre programme devrait fonctionner sur un monde de toute taille.
 				</p>
 			</div>
 
 		</div>
 
 
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

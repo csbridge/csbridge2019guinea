@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,14 +15,14 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Invert (with solution)
+				Inverser (avec solution)
 			</h1>
 			<p>
-				Problem written by Eric Roberts
+				Problème écrit par Eric Roberts
 			</p>
 
 			<p>
-			Handouts:
+			Documents à distribuer:
 				<a href ="{{pathToRoot}}fr/handouts/karel.html">KarelReference</a>
 			</p>
 
@@ -32,7 +32,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					For a world of any size, with any configuration of beepers (no square will have more than one), invert all the beepers so that, where there was a beeper previously there is no beeper... and where there was no beeper previously, there is a beeper. Consider the following example.
+					Pour un monde de n'importe quelle taille, avec n'importe quelle configuration de bips (aucun carré n'aura plus d'un), inversez tous les bips de sorte que, là où il y avait un bip auparavant, il n'y en avait pas ... et où il n'y en avait pas auparavant, il y a un bipeur. Prenons l'exemple suivant.
 				</p>
 
 				<p>
@@ -50,12 +50,12 @@
 
 
 <pre id="editor" style="height:1010px">/**
- * Program: Invert
+ *  Programme: Inverser
  * ---------------
- * Invert all the beepers so that, where there was a beeper previously
- * there is no beeper... and where there was no beeper previously, there is a
+ * Inverser tous les beepers de sorte que là où il y avait un bip auparavant
+ * il n'y a pas de beeper ... et là où il n'y en avait pas auparavant, il y a un
  * beeper.
- */
+ * /
 public class InvertBeepers extends SuperKarel {
 
 	public void run() {
@@ -71,11 +71,11 @@ public class InvertBeepers extends SuperKarel {
 	}
 
 	/**
-	 * Method: Invert Row
+	 * Méthode: Inverser la ligne
 	 * ------------------
-	 * Invert a single row. At the start, Karel should be facing east from
-	 * the west side of the row. After Karel should be facing east from the
-	 * east side of the same row, and all beepers in the row will be inverted.
+	 * Inverser une seule ligne. Au début, Karel devrait faire face à l'est de
+	 * le côté ouest de la rangée. Après Karel devrait être face à l'est de la
+	 * Le côté est de la même rangée et tous les avertisseurs de la rangée seront inversés.
 	 */
 	private void invertRow() {
 		while(frontIsClear()) {
@@ -86,11 +86,11 @@ public class InvertBeepers extends SuperKarel {
 	}
 
 	/**
-	 * Method: Invert Beeper
+	 * Méthode: inverser le bip
 	 * --------------------
-	 * Inverts the beeper configuration on a square. If there was previously
-	 * a beeper, it is picked up. If there was previously no beeper, a beeper
-	 * is placed.
+	 * Inverse la configuration du bipeur sur un carré. S'il y avait auparavant
+	 * un bip, il est ramassé. S'il n'y avait pas de bip auparavant, un bipeur
+	 * est placé.
 	 */
 	private void invertBeeper() {
 		if(beepersPresent()) {
@@ -101,9 +101,9 @@ public class InvertBeepers extends SuperKarel {
 	}
 
 	/**
-	 * Method: Return To West
+	 * Méthode: Retour vers l'ouest
 	 * ----------------------
-	 * Turn around and go back to the wall that you came from!
+	 * Retourne-toi et retourne au mur d'où tu viens!
 	 */
 	private void returnToWest() {
 		turnAround();
@@ -125,7 +125,7 @@ public class InvertBeepers extends SuperKarel {
     editor.getSession().setMode("ace/mode/java");*/
 </script>
 
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

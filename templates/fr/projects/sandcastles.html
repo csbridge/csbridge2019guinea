@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,15 +15,15 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Sandcastles
+				Châteaux de sable
 			</h1>
 
 			<p>
-				Handouts:
+				Documents à distribuer:
 				<a href ="{{pathToRoot}}fr/handouts/console.html">Console</a>,
 				<a href ="{{pathToRoot}}fr/handouts/random.html">Random Generator</a>
 		`<br/>
-				Worked Examples:
+				Exemples travaillés:
 				<a href="{{pathToRoot}}fr/projects/emc2.html">E=MC2</a>,
 				<a href="{{pathToRoot}}fr/projects/fibb.html">Fibbonacci</a>,
 				<a href="{{pathToRoot}}fr/projects/carbonDating.html">Carbon Dating</a>
@@ -35,11 +35,11 @@
 		<div class="row">
 			<div class="col-md-12">
 
-				<p>Write the following three programs to get warmed up to Java variabels.</p>
+				<p>Ecrivez les trois programmes suivants pour vous familiariser avec les variables Java.</p>
 
-				<h2>1. Hello world</h2>
+				<h2>1. Bonjour le monde</h2>
 				<p>
-					Write a console program that displays hello world (or any message you like):
+					Ecrivez un programme console qui affiche hello world (ou n’importe quel message de votre choix):
 				</p>
 				<p>
 					<center>
@@ -49,8 +49,8 @@
 
 				<hr/>
 
-				<h2>2. Moon Weight</h2>
-				<p>The user (an earthling) enters his or her weight on earth. Your program will print the user`s weight on the moon, which is 16.5% of his or her weight on earth.</p>
+				<h2>2. Poids de la lune</h2>
+				<p>L'utilisateur (un terrien) entre son poids sur la terre. Votre programme imprimera le poids de l'utilisateur sur la lune, ce qui correspond à 16,5% de son poids sur la Terre.</p>
 
 				<p>
 					<center>
@@ -59,9 +59,9 @@
 				</p>
 
 
-				<h2>3. Random Numbers</h2>
+				<h2>3. Nombres Aléatoires</h2>
 				<p>
-					Write a program that prints 1,000 random numbers between 0 and 100.
+					Ecrivez un programme qui imprime 1 000 nombres aléatoires compris entre 0 et 100.
 				</p>
 				<p>
 					<center>
@@ -69,27 +69,27 @@
 					</center>
 				</p>
 
-				<p>The file RandomNumbers.java has code that generates a single random number.
+				<p>Le fichier RandomNumbers.java a un code qui génère un seul nombre aléatoire.
 					<pre id="editor" style="height:200px">public class RandomNumbers extends ConsoleProgram {
 
-   // A random number generator
+   // Un générateur de nombres aléatoires
    private RandomGenerator rgen = new RandomGenerator();
 
    public void run() {
-      // change this code to print 1000 random numbers
-      // in the range 0 to 100.
+      // changer ce code pour imprimer 1000 nombres aléatoires
+      // dans la plage de 0 à 100.
       int example = rgen.nextInt(0, 10);
       println(example);
    }
 }</pre>
 				</p>
 
-				<p>In order to generate random numbers create a RandomGenerator instance variable (a variable declared outside all methods) like so:
+				<p>Afin de générer des nombres aléatoires, créez une variable d'instance RandomGenerator (une variable déclarée en dehors de toutes les méthodes) comme ceci:
 					<div class="well"><code>private RandomGenerator rgen = new RandomGenerator();</code></div>
 				</p>
-				<p>You can then use the variable to generate random numbers.
+				<p>Vous pouvez ensuite utiliser la variable pour générer des nombres aléatoires.
 					<div class="well"><code>
-						rgen.nextInt(<i>min</i>, <i>max</i>)  //generates a random int in the range (min, max) inclusive
+						rgen.nextInt(<i>min</i>, <i>max</i>)  //génère un int aléatoire dans la plage (min, max) inclus
 					</code></div>
 				</p>
 			</div>
@@ -107,7 +107,7 @@
 </script>
 
 
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

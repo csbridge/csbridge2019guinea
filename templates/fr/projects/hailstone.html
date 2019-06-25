@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,13 +15,13 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Hailstone
+				Grêle
 			</h1>
 			<p>
-				Based on a handout by Eric Roberts
+				Basé sur un document d'Eric Roberts
 			</p>
 			<p>
-				Worked Examples:
+				Exemples travaillés:
 				<a href="{{pathToRoot}}fr/projects/emc2.html">E=MC2</a>,
 				<a href="{{pathToRoot}}fr/projects/fibb.html">Fibbonacci</a>
 			</p>
@@ -32,17 +32,17 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Our world contains many interesting mathematical puzzles, many of which can be expressed in the form of computer programs.  One such wonderful problem that is well within the scope of what we have learned is the hailstone problem.</p>
-				<p>The problem can be expressed as follows:</p>
+					Notre monde contient de nombreuses énigmes mathématiques intéressantes, dont beaucoup peuvent être exprimées sous forme de programmes informatiques. Le problème de la grêle est l’un des problèmes les plus intéressants.</p>
+				<p>Le problème peut être exprimé comme suit:</p>
 
 <p>
-<div class="well">Pick some positive integer and call it n.
-<br/>If n is even, divide it by two.
-<br/>If n is odd, multiply it by three and add one.
-<br/>Continue this process until n is equal to one.</div>
+<div class="well">Choisissez un entier positif et appelez-le n.
+<br/>Si n est pair, divisez-le par deux.
+<br/>Si n est impair, multipliez-le par trois et ajoutez-en un.
+<br/>Continuez ce processus jusqu'à ce que n soit égal à un.</div>
 </p>
 
-	<p>The following example, starting with the number 15, illustrates this process:</p>
+	<p>L'exemple suivant, commençant par le numéro 15, illustre ce processus:</p>
 
 <p style="padding-left:1em">
 	15	is odd, so I make 3n+1:	46
@@ -64,9 +64,9 @@
 	<br>2	is even, so I take half:	1
 </p>
 
-	As you can see from this example, the numbers go up and down, but eventually, at least for all numbers that have ever been tried, comes down to end in 1.  In some respects, this process is reminiscent of the formation of hailstones, which get carried upward by the winds over and over again before they finally descend to the ground.  Because of this analogy, this sequence of numbers is usually called the Hailstone sequence, although it goes by many other names as well.</p>
+	Comme vous pouvez le constater à partir de cet exemple, les chiffres montent et descendent, mais finalement, du moins pour tous ceux qui ont déjà été essayés, se termine en 1. À certains égards, ce processus évoque la formation de grêle, qui sont portés par les vents encore et encore avant qu'ils ne descendent finalement au sol. En raison de cette analogie, cette séquence de nombres est généralement appelée séquence de Hailstone, bien qu'elle porte également de nombreux autres noms.</p>
 
-	<p>Write a ConsoleProgram that reads in a number from the user and then displays the Hailstone sequence for that number, followed by a line showing the number of steps taken to reach 1.  For example, your program should be able to produce a sample run that looks like this:
+	<p>Ecrivez un programme ConsoleProgram qui lit un numéro de l’utilisateur puis affiche la séquence de Hailstone pour ce numéro, suivi d’une ligne indiquant le nombre de pas effectués pour atteindre 1. Par exemple, votre programme devrait pouvoir produire un exemple d’exécution qui ressemble comme ça:
 
 				<p>
 					<center>
@@ -74,29 +74,29 @@
 					</center>
 				</p>
 				<p>
-					The fascinating thing about this problem is that no one has yet been able to prove that it always stops.  The number of steps in the process can certainly get very large.  How many steps, for example, does your program take when n is 27?
+					La chose fascinante à propos de ce problème est que personne n’a encore été en mesure de prouver qu’il s’arrête toujours. Le nombre d'étapes dans le processus peut certainement devenir très grand. Combien de pas, par exemple, votre programme prend-il lorsque n est 27?
 				</p>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Checking Even or Odd</h2>
+				<h2>Vérification paire ou impaire</h2>
 				<p>
-					In order to solve the hailstone problem, we are going to need as way to determine if an integer is even or odd. In addition to the regular operators that you know and love (like +, -, *, and /) programming languages provide a remainder operator: %.
+					Afin de résoudre le problème de la grêle, nous allons avoir besoin de déterminer si un entier est pair ou impair. En plus des opérateurs habituels que vous connaissez et aimez (comme les langages de programmation +, -, * et /), vous disposez d'un opérateur restant: %.
 					<div class="well"><code>a % b</code></div>
-					Returns the value remaining when you divide <i>a</i> by <i>b</i>. For example <code>10 % 3</code> is 1 because when you divide 10 by 3 you get 3 with 1 left over.
+					Renvoie la valeur restante lorsque vous divisez<i>a</i> par <i>b</i>. Par exemple <code>10 % 3</code> est 1 parce que lorsque vous divisez 10 par 3, vous obtenez 3 avec 1 reste.
 				</p>
-				<p>When you divide any number by 2, the remainder is 0 if the number is even and 1 if the number is odd. Thus:
+				<p>Lorsque vous divisez un nombre par 2, le reste est 0 si le nombre est pair et 1 si le nombre est impair. Ainsi:
 					<div class="well"><code>n % 2 == 0</code></div>
-					Is a test of whether n is even</p>
+					Est un test pour savoir si n est pair</p>
 			</div>
 
 		</div>
 
 
 
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

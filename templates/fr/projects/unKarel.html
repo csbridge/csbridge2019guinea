@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,13 +15,13 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				UN Karel (with solution)
+				Les Nations Unies Karel (avec solution)
 			</h1>
 			<p>
-				Problem written by Eric Roberts
+				Problème écrit par Eric Roberts
 			</p>
 			<p>
-				Handouts:
+				Documents à distribuer:
 				<a href ="{{pathToRoot}}fr/handouts/karel.html">KarelReference</a>
 			</p>
 
@@ -31,7 +31,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Karel has been hired by the UN to come and help build houses. The day needs saving and Karel is clearly the best robot for the job. Your goal is to have Karel walk along the bottom row and build a house like the following:
+					Karel a été embauché par l'ONU pour venir aider à construire des maisons. La journée doit être gagnée et Karel est clairement le meilleur robot pour ce travail. Votre objectif est de faire marcher Karel dans la rangée du bas et de construire une maison comme suit:
 				</p>
 
 				<p>
@@ -41,7 +41,7 @@
 				</p>
 
 				<p>
-					Every time Karel finds a beeper. The bellow images show what Karel should do for two example worlds. You can assume that no houses will overlap and that all houses will fit inside the world. You can't assume the size of the world or the number of houses!
+					Karel trouve chaque fois un bipeur. Les images ci-dessous montrent ce que Karel devrait faire pour deux mondes donnés en exemple. Vous pouvez supposer qu'aucune maison ne se chevauchera et que toutes les maisons iront bien dans le monde. Vous ne pouvez pas supposer la taille du monde ou le nombre de maisons!
 				</p>
 
 				<p>
@@ -65,9 +65,9 @@
 
 
 <pre id="editor" style="height:1100px">/**
- * Program: UN Karel
+ * Programme: Nations Unies Karel
  * -----------------
- * This program makes Karel builds houses, as work for the UN.
+ * Ce programme permet à Karel de construire des maisons, en tant que travail pour les Nations Unies.
  */
 public class UNKarel extends SuperKarel {
 
@@ -81,12 +81,12 @@ public class UNKarel extends SuperKarel {
 	}
 
 	/**
-	 * Method: Build House
+	 * Méthode: Construire une maison
 	 * -------------------
-	 * Constructs a single house centered around Karel's current position.
-	 * You can assume that there is a beeper present at the start state.
-	 * At the end of the method, Karel will be facing east on the bottom-
-	 * right corner of the house.
+	 * Construit une seule maison centrée sur la position actuelle de Karel.
+	 * Vous pouvez supposer qu’un bip sonore est présent à l’état de démarrage.
+	 * À la fin de la méthode, Karel sera face à l’est du fond.
+	 * coin droit de la maison.
 	 */
 	private void buildHouse() {
 		pickBeeper();
@@ -108,9 +108,9 @@ public class UNKarel extends SuperKarel {
 	}
 
 	/**
-	 * Method: Move To Wall
+	 * Méthode: déplacer au mur
 	 * --------------------
-	 * Move forward until Karel hits a wall.
+	 * Avancez jusqu'à ce que Karel frappe un mur.
 	 */
 	private void moveToWall() {
 		while(frontIsClear()) {
@@ -119,9 +119,9 @@ public class UNKarel extends SuperKarel {
 	}
 
 	/**
-	 * Method: Place Three
+	 * Méthode: Place Three
 	 * -------------------
-	 * Place's three beepers in a row and moves three times!
+	 * Place trois bips sonores et bouge trois fois!
 	 */
 	private void placeThree() {
 		for(int i = 0; i &lt; 3; i++) {
@@ -143,7 +143,7 @@ public class UNKarel extends SuperKarel {
     editor.getSession().setMode("ace/mode/java");*/
 </script>
 
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

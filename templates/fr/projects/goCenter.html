@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,10 +15,10 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Go to Center
+				Aller au centre
 			</h1>
 			<p>
-				Problem written by Chris and Julia.
+				Problème écrit par Chris et Julia.
 			</p>
 
 		</div>
@@ -29,7 +29,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-				This program animates a square that moves until it is in the center of the screen. It starts on the left side.
+				Ce programme anime un carré qui se déplace jusqu’au centre de l’écran. Cela commence du côté gauche.
 			</p>
 			<p>
 				<center>
@@ -49,20 +49,20 @@
     private static final int DELAY = 100;
 	
 	public void run() {
-		// Draw a square on the left of the screen.
+		// Dessinez un carré à gauche de l'écran.
 		GRect rect = new GRect(SIZE, SIZE);
 		double x = 0;
 		double y = (getHeight() - rect.getHeight()) / 2;
 		rect.setFilled(true);
 		add(rect, x, y);
 		
-		// Move until the center
-		// rect.getX() returns the x coordinate of the rectangle
+		// Déplacer jusqu'au centre
+		// rect.getX() renvoie la coordonnée x du rectangle
 		double maxX = (getWidth() - rect.getWidth()) /2;
 		while(rect.getX() < maxX) {
-		    // move one pixel to the right
+		    // déplacer un pixel à droite
 			rect.move(1, 0);
-			// animation pause.
+			// pause d'animation
 			pause(DELAY);
 		}
 	}
@@ -82,7 +82,7 @@
 	</div>
 	</div>
 		
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,13 +15,13 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Counterfeit Medicine
+				Médicament contrefait
 			</h1>
 			<p>
-				Problem written by Chris Piech
+				Problème écrit par Chris Piech
 			</p>
 			<p>
-				Worked Examples:
+				Exemples travaillés:
 				<a href="{{pathToRoot}}fr/projects/emc2.html">E=MC2</a>,
 				<a href="{{pathToRoot}}fr/projects/fibb.html">Fibbonacci</a>,
 				<a href="{{pathToRoot}}fr/projects/carbonDating.html">Carbon Dating</a>
@@ -34,43 +34,43 @@
 			<div class="col-md-12">
 				<h2 style="margin-top:0px;">The Story</h2>
 				<p>
-					This problem starts with a sad story. When I was growing up in Kenya it was estimated that over 38% of medicines sold at pharmacies were fake [1]. That was a big problem! Depending on which organization you ask, deaths from counterfeit medicine ranged from 100,000 per year (WHO) to 700,000 (IPN) [2]. <blockquote>Deaths from counterfeit drugs are equivalent to, "four fully laden jumbo jets crashing everyday" [2]</blockquote> <!--Wow. Why would anyone do such a terrible thing? Because counterfeit medicine is a $200 billion-per-year business.--></p>
+					Ce problème commence par une histoire triste. Quand je grandissais au Kenya, on estimait que plus de 38% des médicaments vendus en pharmacie étaient des faux [1]. C'était un gros problème! Selon l'organisme que vous demandez, le nombre de décès dus à la contrefaçon de médicaments allait de 100 000 par an (OMS) à 700 000 (IPN) [2]. <blockquote>La contrefaçon de médicaments équivaut à "quatre avions gros porteurs qui s'écrase tous les jours" [2].</blockquote> <!--Wow. Why would anyone do such a terrible thing? Because counterfeit medicine is a $200 billion-per-year business.--></p>
 
 					<p>
-					In 2009 a Ghanaian fellow named Bright Simmons came up with a straightforward technology solution he called mPedigree. He partnered with companies that make medicine. On each legitimate package of medicine they stamped a unique scratch code. Now when you buy medicine at a pharmacy in Kenya you check the scratch code and text message mPedigree. If the code is in their system, and has never been used before, mPedigree sends a text message back saying: "valid."
+					En 2009, Bright Simmons, un Ghanéen, a proposé une solution technologique simple, baptisée mPedigree. Il s'est associé avec des entreprises qui fabriquent des médicaments. Sur chaque emballage de médicament légitime, ils ont apposé un code de grattage unique. Maintenant, lorsque vous achetez des médicaments dans une pharmacie au Kenya, vous vérifiez le code et le code à gratter mPedigree. Si le code est dans leur système et qu'il n'a jamais été utilisé auparavant, mPedigree envoie un message textuel indiquant: "valide".
 
-					There has been a 58% decrease in child deaths from Malaria alone [3]. Sometimes simple programming solutions can have a large, positive impact on the world.
+					Le paludisme seul a entraîné une diminution de 58% du nombre de décès d’enfants [3]. Parfois, des solutions de programmation simples peuvent avoir un impact positif important sur le monde.
 
 				</p>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Your Job</h2>
-				<p>Write a program that generates 10 digit numbers for 1,000 packages of medicine. Each number you generate should be (1) unique and (2) unpredictable.
+				<h2>Votre travail</h2>
+				<p>Ecrivez un programme qui génère des nombres à 10 chiffres pour 1 000 paquets de médicaments. Chaque numéro que vous générez devrait être (1) unique et (2) imprévisible.
 				</p>
 
 				<p>
-					Here is a screen shot from an example execution:
+					Voici une capture d'écran d'un exemple d'exécution:
 					<center>
 						<img style="width:500px" src="{{pathToRoot}}img/projects/medicine/medicineRun.png">
 						<p style="text-align:center"><!--<i>Unique, unpredictable numbers for medicines.</i>--></p>
 					</center>
 				</p>
 
-				<p>Those numbers will be put on medicine packages. Counterfiters won't stand a chance!</p>
+				<p>Ces chiffres seront mis sur les paquets de médicaments. Les contre-joueurs n'ont aucune chance!</p>
 
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Random Numbers</h2>
-				<p>To generate random numbers create a RandomGenerator instance variable (a variable declared outside all methods) like so:
+				<h2>Nombres aléatoires</h2>
+				<p>Pour générer des nombres aléatoires, créez une variable d'instance RandomGenerator (une variable déclarée en dehors de toutes les méthodes), comme suit:
 					<div class="well"><code>private RandomGenerator rgen = new RandomGenerator();</code></div>
 				</p>
-				<p>You can then use the variable to generate random numbers.
+				<p>Vous pouvez ensuite utiliser la variable pour générer des nombres aléatoires.
 					<div class="well"><code>
-						rgen.nextInt(<i>min</i>, <i>max</i>)  //generates a random int in the range (min, max) inclusive
+						rgen.nextInt(<i>min</i>, <i>max</i>)  //génère un int aléatoire dans la plage (min, max) inclus
 					</code></div>
 				</p>
 			</div>
@@ -78,7 +78,7 @@
 
 		<div class="row">
 			<div class="col-md-12">
-				<p>That's all! Ask questions if you don't understand something (or want to know more about counterfeit medicine)</p>
+				<p>C'est tout! Posez des questions si vous ne comprenez pas quelque chose (ou si vous voulez en savoir plus sur les médicaments contrefaits)</p>
 			</div>
 		</div>
 		<!--<div class="row">
@@ -137,7 +137,7 @@ public class CarbonDating extends ConsoleProgram {
 	</div>
 	</div>-->
 
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

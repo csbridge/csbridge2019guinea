@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,10 +15,10 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Find Pi
+				Trouver Pi
 			</h1>
 			<p>
-				Problem written by Eric Roberts.
+				Problème écrit par Eric Roberts.
 			</p>
 
 		</div>
@@ -27,19 +27,19 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Pi (&pi;) is a mathematical thing of true beauty. It comes up in many equations, most notably in the equation for the area of a circle, the p.d.f. of a normal distribution and finally, and oh so wonderously, in <a href="http://en.wikipedia.org/wiki/Euler's_identity">Euler's Identity</a>.
+					Pi (&pi;) est une chose mathématique de la vraie beauté. Il apparaît dans de nombreuses équations, notamment dans l'équation de l'aire d'un cercle, p.d.f. d'une distribution normale et enfin, et oh si merveilleusement, dans <a href="http://en.wikipedia.org/wiki/Euler's_identity">Identité d'Euler</a>.
 				</p>
 
-				<p>But how do we know that the value of &pi; is 3.14159265359...? There are several ways to calculate pi. In this problem we show how to do it using darts.</p>
+				<p>Mais comment savons-nous que la valeur de &pi; est 3.14159265359...? Il y a plusieurs façons de calculer pi. Dans ce problème, nous montrons comment le faire en utilisant des fléchettes.</p>
 
 				<p>
 					<center>
 						<img style="width:500px" src="{{pathToRoot}}img/projects/findPi/lifeOfPi.jpg">	
-						<p style="text-align:center"><i>This boy's name is also Pi. This problem is unrelated (other than name) to him.</i></p>
+						<p style="text-align:center"><i>Le nom de ce garçon est aussi Pi. Ce problème ne lui est pas lié (autre que le nom).</i></p>
 					</center>
 				</p>
 
-				<p>Imagine throwing darts at the yellow circle bellow to the left. If you randomly throw a series of darts at the dartboard, some will land inside the yellow circle and some in the gray area outside it. If you count both the number of darts that fall inside the circle and the number that fall anywhere inside the square, the ratio of those numbers should be proportional to the relative area of the two figures.
+				<p>Imaginez que vous lanciez des fléchettes sur le cercle jaune à gauche. Si vous lancez au hasard une série de fléchettes sur le jeu de fléchettes, certaines vont atterrir à l'intérieur du cercle jaune et d'autres dans la zone grise à l'extérieur. Si vous comptez à la fois le nombre de fléchettes qui se trouvent à l'intérieur du cercle et le nombre qui se trouve n'importe où dans le carré, le rapport de ces chiffres devrait être proportionnel à l'aire relative des deux figures.
  
 </p>
 
@@ -51,7 +51,7 @@
 				</p>
 				
 
-				<p>Because the area of the circle is &pi; and that of the square is 4, the fraction that falls inside the circle should approach &pi; / 4.
+				<p>Parce que la zone du cercle est &pi; et celle du carré est 4, la fraction qui tombe à l'intérieur du cercle doit s'approcher &pi; / 4.
 </p>
 				
 			</div>
@@ -63,10 +63,10 @@
 
 
 <pre id="editor" style="height:580px">/**
- * Find Pi
+ * Trouver Pi
  * -------------
- * Find the value of pi by throwing random darts at a unit circle inscribed in
- * a square. The fraction that land in the circle should equal pi / 4.
+ * Trouvez la valeur de pi en lançant des fléchettes aléatoires sur un cercle unitaire inscrit dans
+ * un carré. La fraction qui atterrit dans le cercle doit être égale à pi / 4.
  */
 public class FindPi extends ConsoleProgram {
 	
@@ -76,16 +76,16 @@ public class FindPi extends ConsoleProgram {
 		int numInCircle = 0;
 		int numDarts = 50000000;
 		for(int i = 0; i &lt; numDarts; i++) {
-			// get a random x, y in a 2x2
+			// obtenir un x, y au hasard dans un 2x2
 			double x = rd.nextDouble(-1, 1);
 			double y = rd.nextDouble(-1, 1);
-			// test if the dart landed in the circle
+			// tester si la fléchette a atterri dans le cercle
 			double dist = Math.sqrt(x * x + y * y);
 			if(dist &lt;= 1) {
 				numInCircle++;
 			}
 		}
-		// if we don't cast to double, this will always be 0.
+		// si nous ne lançons pas en double, ce sera toujours 0.
 		double fraction = (double)numInCircle / numDarts;
 		double pi = fraction * 4;
 		print(pi);
@@ -107,7 +107,7 @@ public class FindPi extends ConsoleProgram {
 	</div>
 	</div>
 		
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

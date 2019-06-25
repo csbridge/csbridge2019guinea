@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,10 +15,10 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Draw Robot Face
+				Dessiner un visage de robot
 			</h1>
 			<p>
-				Problem written by Eric Roberts. Updated by Chris Piech.
+				Problème écrit par Eric Roberts. Mis à jour par Chris Piech.
 			</p>
 
 		</div>
@@ -27,7 +27,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Write a program that draws this picture. You should use the constants provided, but feel free to change them (or recolor any part of the face)</p>
+					Ecrivez un programme qui dessine cette image. Vous devez utiliser les constantes fournies, mais n'hésitez pas à les changer (ou à recolorer une partie du visage)</p>
 
 				<p>
 					<center>
@@ -35,33 +35,33 @@
 					</center>
 				</p>
 
-				<p>A few constants are provided. Use them so that you don't have "magic" numbers in your program.</p>
+				<p>Quelques constantes sont fournies. Utilisez-les pour ne pas avoir de nombres "magiques" dans votre programme.</p>
 
 				<p>
 					<div class="well">
 						<code style = "font-size:12px">
-							/*The width of the robot face:*/
+							/*La largeur de la face du robot: * /
 							<br/>private static final int FACE_WIDTH = 300;
 							<br/>
-							<br/>/*The height of the robot face:*/
+							<br/>/*La hauteur de la face du robot:*/
 							<br/>private static final int FACE_HEIGHT = 350;
 							<br/>
-							<br/>/*The diameter of each robot eye:*/
+							<br/>/* Le diamètre de chaque œil de robot:*/
 							<br/>private static final int EYE_DIAMETER = 70;
 							<br/>
-							<br/>/*The distance from the top of the head to the top of the eyes:*/
+							<br/>/* La distance du sommet de la tête au sommet des yeux: */
 							<br/>private static final int EYE_Y_OFFSET = 40;
 							<br/>
-							<br/>/*The width of the mouth:*/
+							<br/>/* La largeur de la bouche: */
 							<br/>private static final int MOUTH_WIDTH = 150;
 							<br/>
-							<br/>/*The height of the mouth:*/
+							<br/>/*La largeur de la bouche::*/
 							<br/>private static final int MOUTH_HEIGHT = 30;
 							<br/>
-							<br/>/*The distance from the top of the head to the top of the mouth:*/
+							<br/>/*La distance du haut de la tête au haut de la bouche:*/
 							<br/>private static final int MOUTH_Y_OFFSET = 200;
 							<br/>
-							<br/>/*The distance from the top of the screen to the base of the label:*/
+							<br/>/*La distance entre le haut de l'écran et la base de l'étiquette:*/
 							<br/>private static final int LABEL_Y = 50;
 						</code>
 					</div>
@@ -75,10 +75,10 @@
 
 
 <pre id="editor" style="height:1220px">/**
- * Draw Face
+ * Dessiner un visage
  * ---------
- * Draws an awesome robot face, with label and different colored
- * eyes!!!@#$%#@!
+ * Dessine un visage de robot génial, avec étiquette et couleur différente
+ * yeux!!!@#$%#@!
  */
 public class DrawFace extends GraphicsProgram {
 
@@ -164,7 +164,7 @@ public class DrawFace extends GraphicsProgram {
 	</div>
 	</div>
 		
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

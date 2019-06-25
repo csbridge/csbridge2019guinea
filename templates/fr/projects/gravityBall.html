@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,10 +15,10 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Gravity Ball
+				Boule de gravité
 			</h1>
 			<p>
-				Problem written by Chris.
+				Problème écrit par Chris.
 			</p>
 
 		</div>
@@ -29,7 +29,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-				Makes a ball that bounces as if under the influence of gravity.
+				Fait une balle qui rebondit comme sous l'influence de la gravité.
 			</p>
 			<p>
 				<center>
@@ -52,28 +52,28 @@
     private static final double DAMPING = 0.7;
 	
 	public void run() {
-		// Draw a ball on the top right corner
+		// Dessine une balle dans le coin en haut à droite
 		GOval oval = new GOval(0,0,SIZE, SIZE);
 		oval.setFilled(true);
 		add(oval);
 		
-		// Declare variables for velocity
+		// Déclarer des variables pour la vélocité
 		double vx = 3;
 		double vy = 0;
 		
 		while(true) {
-			// update vy
+			// mettre à jour vy
 			vy = vy + GRAVITY;
 			
-			// should the ball bounce?
+			// la balle doit-elle rebondir?
 			if(oval.getY() > (getHeight() - SIZE) && vy > 0) {
 				vy = vy * -DAMPING;
 			}
 			
-		    // move
+		    // bouge toi
 			oval.move(vx, vy);
 			
-			// animation pause.
+			// pause d'animation
 			pause(DELAY);
 		}
 	}
@@ -93,7 +93,7 @@
 	</div>
 	</div>
 		
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

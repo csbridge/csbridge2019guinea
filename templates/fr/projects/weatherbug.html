@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,10 +15,10 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				WeatherBug
+				Bug météo
 			</h1>
 			<p>
-				Created by Nick Troccoli and Bryce Cronkite-Ratcliff
+				Créé par Nick Troccoli et Bryce Cronkite-Ratcliff
 			</p>
 
 
@@ -28,7 +28,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				
-				<p>If you've ever used weather.com or another weather site to look up the weather, you know how useful (and cool!) it is to be able to look up the weather online for both your current location and any location around the world.  And, as it turns out, it's also a great way to learn about and practice JavaScript callbacks!  In this assignment, you're going to complete a website that, using JavaScript, fetches and displays weather for any place the user types in, or the user's current location.</p>
+				<p>Si vous avez déjà utilisé weather.com ou un autre site météo pour consulter la météo, vous savez à quel point il est utile (et cool!) De pouvoir consulter la météo en ligne pour votre position actuelle et pour tout lieu à travers le monde. Et, en fin de compte, c'est également un excellent moyen de connaître et de pratiquer les rappels JavaScript! Dans cette affectation, vous allez compléter un site Web qui, à l'aide de JavaScript, récupère et affiche la météo pour tout lieu où l'utilisateur entre ou l'emplacement actuel de l'utilisateur.</p>
 				
 				<p>
 					<center>
@@ -36,15 +36,15 @@
 
 					</center>
 				</p>
-				<p>We know you're all GRect and GLabel ninjas - therefore, we've done all of the graphics code for you!  What we want you to do is write all of the callbacks to make the website work properly.  We suggest you break this down into milestones, and get each milestone working before moving on.</p>
+				<p>Nous savons que vous êtes tous des ninjas GRect et GLabel. Nous avons donc créé tout le code graphique pour vous! Nous voulons que vous écriviez tous les rappels pour que le site Web fonctionne correctement. Nous vous suggérons de décomposer cela en étapes et de faire en sorte que chaque étape fonctionne avant de poursuivre.</p>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Milestone 1: Buttons</h2>
+				<h2>Jalon 1: les boutons</h2>
 				<p>
-					The first task you should tackle is getting your website's button callbacks working properly.  Your page should have two buttons - "Show Weather" and "Show Local Weather".</p>
+					La première tâche à accomplir consiste à faire en sorte que les rappels de boutons de votre site Web fonctionnent correctement. Votre page devrait avoir deux boutons - "Afficher la météo" et "Afficher la météo locale".</p>
 
 				<p>
 					<center>
@@ -53,19 +53,19 @@
 					</center>
 				</p>
 				
-				<p>To add buttons to the screen, use the <b>addButton()</b> method of <b>GraphicsApp</b>.  <b>addButton()</b> takes 2 parameters - the text the button should display, and the function callback that should be executed when the button is clicked.</p>
+				<p>Pour ajouter des boutons à l'écran, utilisez le <b>addButton()</b> méthode de<b>GraphicsApp</b>. <b>addButton()</b> prend 2 paramètres - le texte que le bouton doit afficher et la fonction de rappel à exécuter lorsque l'utilisateur clique sur le bouton.</p>
 
-				<p>Remember that when you want to pass a function as a callback, you type the name of the function <i>without parentheses</i>.</p>
+				<p>N'oubliez pas que lorsque vous souhaitez transmettre une fonction en tant que rappel, vous tapez le nom de la fonction <i>sans parenthèses</i>.</p>
 				
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Milestone 2: The "Show Weather" Button</h2>
-				<p>Now that you have your buttons set up, it's time to tackle the first of the two buttons - fetching weather for a place the user types in.  You can get the text the user typed in the text field from the value property of your text field variable.  Otherwise, there are only 2 GraphicsApp functions you'll need for this milestone: <b>fetchWeatherForQuery()</b> and <b>displayErrorMessage()</b>.  Your website should fetch the 7-day forecast for the place the user typed in.  If the fetch is successful, you should display the weather data that you get back.  Note that the success callback function should take one parameter - the weather data.</p>
+				<h2>Jalon 2: le bouton "Afficher la météo"</h2>
+				<p>Maintenant que vos boutons sont configurés, il est temps de vous attaquer au premier des deux boutons: rechercher la météo pour un lieu dans lequel l'utilisateur entre. Vous pouvez obtenir le texte que l'utilisateur a saisi dans le champ de texte à partir de la propriété value de votre champ de texte. variable. Sinon, il ne vous faudra que 2 fonctions GraphicsApp pour ce jalon: <b>fetchWeatherForQuery()</b> et <b>displayErrorMessage()</b>.  Votre site Web devrait extraire les prévisions à 7 jours pour le lieu de saisie de l'utilisateur. Si l'extraction a abouti, vous devez afficher les données météorologiques que vous avez renvoyées. Notez que la fonction de rappel de réussite doit prendre un paramètre - les données météorologiques.</p>
 
-				<p>Remember, when fetching data from the web, the request could fail for a variety of reasons.  That's why you need to pass an error callback when fetching weather data.  If the fetch does fail, you should display an error message to the user using <b>displayStatusMessage()</b>.</p>
+				<p>N'oubliez pas que lors de l'extraction de données sur le Web, la demande peut échouer pour diverses raisons. C'est pourquoi vous devez transmettre un rappel d'erreur lors de la récupération des données météorologiques. Si la récupération échoue, vous devez afficher un message d'erreur à l'utilisateur à l'aide de <b>displayStatusMessage()</b>.</p>
 			</div>
 		</div>
 
@@ -73,12 +73,12 @@
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Milestone 3: The "Show Local Weather" Button</h2>
-				<p>Now let's tackle the second button - fetching weather for the user's current location.  Instead of getting the text the user entered, you should instead fetch the user's current location coordinates (latitude and longitude).  Getting the current location requires a callback, because it takes a long time to locate the user!  That callback function should take 2 parameters - the latitude and longitude.</p>
+				<h2>Jalon 3: bouton "Afficher la météo locale"</h2>
+				<p>Abordons maintenant le deuxième bouton - chercher la météo pour la position actuelle de l'utilisateur. Au lieu de récupérer le texte saisi par l'utilisateur, vous devez rechercher les coordonnées de l'emplacement actuel de l'utilisateur (latitude et longitude). Obtenir l'emplacement actuel nécessite un rappel, car la recherche de l'utilisateur prend beaucoup de temps! Cette fonction de rappel devrait prendre 2 paramètres - la latitude et la longitude.</p>
 
-				<p>Once you get the user's location, your website should again fetch the 7-day forecast for the place the user typed in, but this time using <b>fetchWeatherForCoodinates()</b>.  If the fetch is successful, you should display the weather data that you get back.  Note that the success callback function should take one parameter - the weather data.</p>
+				<p>Une fois que vous avez localisé l’emplacement de l’utilisateur, votre site Web doit à nouveau récupérer les prévisions à 7 jours de l’endroit où l’utilisateur a saisi, mais cette fois à l’aide de <b>fetchWeatherForCoodinates()</b>.  Si la récupération est réussie, vous devez afficher les données météorologiques que vous récupérez. Notez que la fonction de rappel de réussite doit prendre un paramètre - les données météorologiques.</p>
 
-				<p>Again, remember that, when fetching data from the web, the request could always fail for a variety of reasons.  That's why you need to pass a second callback when fetching weather data.  If the fetch does fail, you should display an error message to the user using <b>displayStatusMessage()</b>.
+				<p>De nouveau, rappelez-vous que, lors de l'extraction de données sur le Web, la demande peut toujours échouer pour diverses raisons. C'est pourquoi vous devez passer un deuxième rappel lorsque vous récupérez des données météorologiques. Si la récupération échoue, vous devez afficher un message d'erreur à l'utilisateur à l'aide de <b>displayStatusMessage()</b>.
 			</div>
 		</div>
 
@@ -86,8 +86,8 @@
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Extensions</h2>
-				<p>Now that you've finished the callbacks portion, try extending the WeatherBug graphics!  For example, try adding day names to the screen when the weather is displayed.  The weather data that you get back has a dayName property that is the day that weather is for.  Try displaying another label for each day that displays the name of the day.</p>
+				<h2>Les extensions</h2>
+				<p>Maintenant que vous avez terminé la partie des rappels, essayez d'étendre les graphiques Weather Bug! Par exemple, essayez d’ajouter des noms de jours à l’écran lorsque la météo est affichée. Les données météorologiques que vous récupérez ont une propriété dayName correspondant au jour de la météo. Essayez d’afficher une autre étiquette pour chaque jour qui affiche le nom du jour.</p>
 
 				<p>
 					<center>
@@ -101,7 +101,7 @@
 		
 
 		
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

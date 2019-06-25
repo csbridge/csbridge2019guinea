@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,16 +15,16 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Random Circles
+				Cercles aléatoires
 			</h1>
 			<p>
-				Based on a handout by Eric Roberts
+				Basé sur un document d'Eric Roberts
 			</p>
 			<p>
-				Handouts:
+				Documents à distribuer:
 				<a href ="{{pathToRoot}}fr/handouts/graphics.html">Graphics Reference</a>
 				<br/>
-				Worked Example:
+				Exemple travaillé:
 				<a href="{{pathToRoot}}fr/projects/8Ball.html">8Ball</a>,
 				<a href="{{pathToRoot}}fr/projects/mysterySquare.html">Mystery Square</a>
 			</p>
@@ -35,7 +35,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Write a GraphicsProgram that draws a set of ten circles with different sizes, positions, and colors.  Each circle should have a randomly chosen color, a randomly chosen radius between 70 and 200 pixels, and a randomly chosen position on the canvas, subject to the condition that the entire circle must fit inside the canvas without extending past the edge.  The following sample run shows one possible outcome:
+					Ecrivez un programme graphique qui dessine un ensemble de dix cercles de différentes tailles, positions et couleurs. Chaque cercle doit avoir une couleur choisie au hasard, un rayon au hasard compris entre 70 et 200 pixels et une position choisie au hasard sur la toile, à la condition que la totalité du cercle soit ajustée à l'intérieur de la toile sans dépasser le bord. L'exemple de test suivant montre un résultat possible:
 				</p>
 				<p>
 					<center>
@@ -43,26 +43,26 @@
 					</center>
 				</p>
 				<p>
-					On some runs of this program you might not see ten circles.  Why?
+					Sur certaines exécutions de ce programme, il est possible que vous ne voyiez pas dix cercles. Pourquoi?
 				</p>
 
-				<p>To generate random numbers create a RandomGenerator instance variable (a variable declared outside all methods) like so:
+				<p>Pour générer des nombres aléatoires, créez une variable d'instance RandomGenerator (une variable déclarée en dehors de toutes les méthodes), comme suit:
 					<div class="well"><code>private RandomGenerator rgen = new RandomGenerator();</code></div>
 				</p>
-				<p>You can then use the variable to generate random numbers.
+				<p>Vous pouvez ensuite utiliser la variable pour générer des nombres aléatoires.
 					<div class="well"><code>
 						rgen.nextInt(<i>min</i>, <i>max</i>)  //generates a random int in the range (min, max)
-						<br>rgen.nextColor() //generates a random Color
+						<br>rgen.nextColor() //génère une couleur aléatoire
 					</code></div>
 				</p>
 
-				<p>If you finish early, consider making random doughnuts.</p>
+				<p>Si vous finissez plus tôt, envisagez de faire des beignets au hasard.</p>
 			</div>
 
 		</div>
 
 
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

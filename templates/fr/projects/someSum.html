@@ -1,13 +1,13 @@
 <head>
 
-  %include templates/parts/head.html
+  %include templates/parts/headFr.html
 
 
 </head>
 <body>
 
   <!-- Navigation Bar -->
-  %include templates/parts/navBar.html
+  %include templates/parts/navBarFr.html
 
   <!-- Main Content -->
   <div class="container">
@@ -15,10 +15,10 @@
     <!-- Header -->
     <div id="pageHeader">
       <h1>
-        That's Some Sum!
+        C'est une somme!
       </h1>
       <p>
-        Problem written by Bryce C-R, Julia Lee, Chris Piech, and TY Huang
+        Problème écrit par Bryce C-R, Julia Lee, Chris Piech et TY Huang
       </p>
 
     </div>
@@ -26,29 +26,29 @@
 
     <div class="row">
       <div class="col-md-12">
-        <p> Write a program that reads in 10 integers from the user and then outputs the sum of the entered values.</p>
+        <p> Ecrivez un programme qui lit 10 nombres entiers de l’utilisateur puis affiche la somme des valeurs entrées.</p>
         <p>
           <center>
             <img style="width:600px" src="{{pathToRoot}}img/projects/someSum/demo.png">  
           </center>
         </p>
 				<p>
-					Often in console programs it is necessary to print out values to the user in a string. The example above is:
+					Souvent, dans les programmes de console, il est nécessaire d’imprimer les valeurs à l’utilisateur sous forme de chaîne. L'exemple ci-dessus est:
 					</br>
 					</br>
-					"The sum is: 55"
+					"La somme est de: 55"
 					</br>
 					</br>
-					If you run your program with the above input, 55 will be the value stored in the variable that tracks the sum. If that variable is named 'exampleSum', then in order to from the output you would write:
+					Si vous exécutez votre programme avec l'entrée ci-dessus, 55 sera la valeur stockée dans la variable qui suit la somme. Si cette variable s'appelle 'exempleSum', alors pour écrire dans la sortie, vous écrirez:
 					</br>
 					</br>
-					println("The sum is: " + exampleSum);
+					println("La somme est de: " + exempleSum);
 					</br>
 					</br>
-					A more general form is:
+					Une forme plus générale est:
 					</br>
 					</br>
-					"String message" + variableName + "more string message"
+					"Message de chaîne" + nomDeVariable + "plus de message de chaîne"
 					</br>
 					</br>
 				</p>
@@ -86,7 +86,7 @@ public class SomeSum extends ConsoleProgram {
     editor.getSession().setMode("ace/mode/java");*/
 </script>
     
-    %include templates/parts/footer.html
+    %include templates/parts/footerFr.html
 
   </div>
 </body>

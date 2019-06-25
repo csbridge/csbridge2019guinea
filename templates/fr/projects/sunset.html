@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,17 +15,17 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Short Film
+				Court métrage
 			</h1>
 			<p>
-				Written by Chris Piech and Keith Schwartz
+				Écrit par Chris Piech et Keith Schwartz
 			</p>
 			<p>
-				Example:
+				Exemple:
 				<a href ="{{pathToRoot}}fr/projects/halfGreen.html">Half Green</a>,
 				<a href ="{{pathToRoot}}fr/projects/target.html">Target</a>
 				<br/>
-			Handouts:
+			Documents à distribuer:
 				<a href ="{{pathToRoot}}fr/handouts/graphics.html">Graphics Reference</a>
 			</p>
 
@@ -36,23 +36,23 @@
 			<div class="col-md-12">
 
 				<p>
-					Did you know that animated movies like Toy Story, Up, and Frozen are made using computer programs? In this assignment you are going to use a program to create a short film.
+					Saviez-vous que les films d'animation comme Toy Story, Up et Frozen sont réalisés à l'aide de programmes informatiques? Dans cette mission, vous allez utiliser un programme pour créer un court métrage.
 					</p>
 
-			<h2>Display Message Method</h2>
+			<h2>Méthode d'affichage du message</h2>
 			<p>
-				Every movie has a beginning and an end. Sometimes it will start "Once Upon a Time...", sometimes it will start with a title, sometimes it will start with something sillier. At the end of the movie it sometimes says "The end."
+				Chaque film a un début et une fin. Parfois, il commence par "Once Upon a Time ...", parfois, il commence par un titre, parfois, par quelque chose de plus idiot. À la fin du film, il est parfois indiqué "La fin".
 
-				<p>Add a method to your program that will draw a message on the screen (on a black background) and leave the message for two seconds.</p>
+				<p>Ajoutez une méthode à votre programme pour dessiner un message à l’écran (sur un fond noir) et laissez le message pendant deux secondes.</p>
 
 				<div class="well"><code><b>private</b> void displayMessage(String message)</code></div>
 
-				After two seconds you should remove the GRect that is the background and the GLabel that is the text. To do so you can use the remove method (it does the opposite of the add method. It takes a GObject that was on the canvas and removes it).
+				Après deux secondes, vous devez supprimer le GRect qui est l'arrière-plan et le GLabel qui est le texte. Pour ce faire, vous pouvez utiliser la méthode remove (elle fait le contraire de la méthode add. Il faut un objet GObject qui se trouvait sur la toile et le supprime).
 
 				<div class="well"><code>remove(<i>yourObject</i>);</code></div>
 
 
-				The start message should look like the screen on the left. The end message should look like the screen on the right:
+				Le message de démarrage doit ressembler à l'écran de gauche. Le message de fin devrait ressembler à l’écran de droite:
 				<div>
 						<div class="col-md-6 col-xs-6">
                             <img style="width:100%" src="{{pathToRoot}}img/projects/sunset/onceUpon.png"></img>
@@ -62,14 +62,14 @@
 					</div>
 				</div>
 
-				The font that we used was:
+				La police que nous avons utilisée était:
 				<div class="well"><i>label</i>.setFont("Papyrus-40");</code></div>
 
 
 
 
 
-				Of course you can reuse this method as much as you want to tell your story!
+				Bien sûr, vous pouvez réutiliser cette méthode autant que vous voulez raconter votre histoire!
 			</p>
 
 
@@ -78,10 +78,10 @@
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Setting Sun</h2>
+				<h2>Soleil couchant</h2>
 				<p>
-						Your movie must have one scene to start: A setting sun. draw the sky, the earth and a sun. Then,
-						slowly animate the sun descending. The sky should take up the top half of the canvas, and the earth should take up the second half. Considering the following images from the start of the program, and the program after a few seconds.
+						Votre film doit avoir une scène pour commencer: Un soleil couchant. dessine le ciel, la terre et un soleil. Ensuite,
+						animer lentement le soleil qui descend. Le ciel devrait occuper la moitié supérieure de la toile et la terre, la deuxième moitié. Considérant les images suivantes depuis le début du programme, et le programme après quelques secondes.
 					</p>
 
 <center>
@@ -108,13 +108,13 @@
 
 		<div class="row">
 			<div class="col-md-12">
-			<h2>Get Color Method</h3>
-			<p>Write a method that takes in the time, and returns the color of the sun.</p>
+			<h2>Obtenir la méthode de la couleur</h3>
+			<p>Ecrivez une méthode qui prend le temps et renvoie la couleur du soleil.</p>
 
 			<div class="well"><code><b>private</b> Color getColor(<b>int</b> frame)</code></div>
 
 			<p>
-				Have the method return Color.YELLOW, Color.ORANGE or Color.RED based on how many iterations have passed.
+				Demandez à la méthode de renvoyer Color.YELLOW, Color.ORANGE ou Color.RED en fonction du nombre d'itérations passées.
 			</p>
 		</div>
 	</div>
@@ -122,16 +122,16 @@
 
 		<div class="row">
 			<div class="col-md-12">
-			<h2>Make it Better</h3>
+			<h2>Fais le mieux</h3>
 
-			<p>Do anything you want to make your story more captivating than just a setting sun. Can you tell a tale of love or action? Don't forget to use methods to make your life easier.</p>
+			<p>Faites ce que vous voulez pour rendre votre histoire plus captivante qu'un simple soleil couchant. Pouvez-vous raconter une histoire d'amour ou d'action? N'oubliez pas d'utiliser des méthodes pour vous rendre la vie plus facile.</p>
 <p>
 			<center style="padding:10px;">
                 <img style="width:500px" src="{{pathToRoot}}img/projects/sunset/poster.jpg"></img>
 			</center>
 			</p>
 
-			<p>You can also add more objects to make your scene more captivating. Add a rainbow (or a double rainbow)? Do you have an idea about what sunsets have always been missing? How about a lit up Bosphorus bridge?</p>
+			<p>Vous pouvez également ajouter d'autres objets pour rendre votre scène plus captivante. Ajouter un arc-en-ciel (ou un double arc-en-ciel)? Avez-vous une idée de ce que les couchers de soleil ont toujours manqué? Que diriez-vous d'un pont illuminé sur le Bosphore?</p>
 
 <div class="col-md-6 col-xs-6">
     <img style="width:100%" src="{{pathToRoot}}img/projects/sunset/sunsetTrees.png"></img>
@@ -147,7 +147,7 @@
 		</div>
 
 
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,10 +15,10 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Mystery Square
+				Place du mystère
 			</h1>
 			<p>
-				Problem written by a mystery CS106A professor.
+				Problème écrit par un professeur de mystère CS106A.
 			</p>
 
 		</div>
@@ -28,7 +28,7 @@
 
 		<div class="row">
 			<div class="col-md-12">
-				Draw a square (100 pixels by 100 pixels) in the center of the screen and change its color every second.
+				Tracez un carré (100 pixels sur 100 pixels) au centre de l'écran et modifiez sa couleur toutes les secondes.
 			</div>
 		</div>
 		<div class="row">
@@ -37,9 +37,9 @@
 
 
 <pre id="editor" style="height:450px">/**
- * Draws a Mystery Square that changes color
+ * Dessine un carré mystère qui change de couleur
  * -----------------------------------------
- * Really does what it says.
+ * Fait vraiment ce qu'il dit.
  */
 public class MysterySquare extends GraphicsProgram {
 
@@ -49,14 +49,14 @@ public class MysterySquare extends GraphicsProgram {
 	private static RandomGenerator rg = new RandomGenerator();
 	
 	public void run() {
-		// Draw a square in the center of the screen.
+		// Dessinez un carré au centre de l'écran.
 		GRect rect = new GRect(SIZE, SIZE);
 		double x = (getWidth() - rect.getWidth()) / 2;
 		double y = (getHeight() - rect.getHeight()) / 2;
 		rect.setFilled(true);
 		add(rect, x, y);
 		
-		// Change its color every second.
+		// Changez de couleur toutes les secondes.
 		while(true) {
 			rect.setColor(rg.nextColor()); 
 			pause(DELAY);
@@ -78,7 +78,7 @@ public class MysterySquare extends GraphicsProgram {
 	</div>
 	</div>
 		
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,13 +15,13 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Place 100 (with solution)
+				Placez 100 (avec la solution)
 			</h1>
 			<p>
-				Problem written by Chris
+				Problème écrit par Chris
 			</p>
 			<p>
-				Handouts:
+				Documents à distribuer:
 				<a href ="{{pathToRoot}}fr/handouts/karel.html">KarelReference</a>
 			</p>
 
@@ -31,7 +31,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Your goal is to have Karel create a pile of 100 beepers on square infront of where she starts. Please!!! Do not type out putBeeper 100 times in a row! (hint: use a for loop.)
+					Votre objectif est que Karel crée une pile de 100 bips sonores sur la case devant laquelle elle commence. S'il vous plaît!!! Ne tapez pas putBeeper 100 fois de suite! (indice: utilisez une boucle for.)
 				</p>
 
 				<p>
@@ -49,15 +49,15 @@
 
 
 <pre id="editor" style="height:280px">/**
- * Program: Place100
+ * Programme: Place100
  * -------------
- * This program makes karel place a pile of 100 beepers. Good times.
+ * Ce programme permet à Karel de placer une pile de 100 signaux sonores. Bon temps.
  */
 public class Place100 extends SuperKarel {
 
 	public void run() {
 		move();
-		// This for-loop will repeat the code inside 100 times.
+		// Cette boucle for répétera le code 100 fois.
 		for(int i = 0; i &lt; 100; i++) {
 			putBeeper();
 		}
@@ -76,7 +76,7 @@ public class Place100 extends SuperKarel {
     editor.getSession().setMode("ace/mode/java");*/
 </script>
 
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

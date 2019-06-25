@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,10 +15,10 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Fibbonacci (with solution)
+				Fibbonacci (avec solution)
 			</h1>
 			<p>
-				Problem written by Eric Robets
+				Problème écrit par Eric Robets
 			</p>
 
 		</div>
@@ -27,7 +27,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					In the 13th century, the Italian mathematician Leonardo Fibonacci, as a way to explain the geometric growth of a population of rabbits, devised a mathematical sequence that now bears his name.  The first two terms in this sequence, Fib(0) and Fib(1), are 0 and 1, and every subsequent term is the sum of the preceding two.  Thus, the first several terms in the Fibonacci sequence look like this:
+					Au XIIIe siècle, le mathématicien italien Leonardo Fibonacci, pour expliquer la croissance géométrique d'une population de lapins, conçut une séquence mathématique qui porte désormais son nom. Les deux premiers termes de cette séquence, Fib (0) et Fib (1), valent 0 et 1, et chaque terme suivant est la somme des deux précédents. Ainsi, les premiers termes de la séquence de Fibonacci ressemblent à ceci:
 				</p>
 				<p style="padding-left:2em">
 									Fib(0)	=	0
@@ -39,7 +39,7 @@
 
 				</p>
 				<p>
-					Write a program that displays the terms in the Fibonacci sequence, starting with Fib(0) and continuing as long as the terms are less than 10,000.  Thus, your program should produce the following sample run:
+					Ecrivez un programme qui affiche les termes dans la séquence de Fibonacci, en commençant par Fib (0) et en continuant tant que les termes sont inférieurs à 10 000. Ainsi, votre programme devrait produire l’exemple suivant:
 				</p>
 				<p>
 					<center>
@@ -47,11 +47,11 @@
 					</center>
 				</p>
 				<p>
-					This program should continue as long as the value of the term is less than the maximum value. To do this, you should use a while loop, presumably with a header line that looks like this:
+					Ce programme doit être poursuivi tant que la valeur du terme est inférieure à la valeur maximale. Pour ce faire, vous devez utiliser une boucle while, probablement avec une ligne d’en-tête qui ressemble à ceci:
 
 <div class="well"><code>while (term < MAX_TERM_VALUE)</code></div>
 
-Note that the maximum term value is specified using a named constant.
+Notez que la valeur maximale du terme est spécifiée à l'aide d'une constante nommée.
 
 				</p>
 				
@@ -66,9 +66,9 @@ Note that the maximum term value is specified using a named constant.
 <pre id="editor" style="height:480px">/*
  * File: Fibonacci.java
  * --------------------
- * This program lists the terms in the Fibonacci sequence up to
- * a constant MAX_TERM_VALUE, which is the largest Fibonacci term
- * the program will display.
+ * Ce programme répertorie les termes de la séquence de Fibonacci jusqu’à
+ * une constante MAX_TERM_VALUE, qui est le plus grand terme de Fibonacci
+ * le programme s'affichera.
  */
 
 import acm.program.*;
@@ -76,11 +76,11 @@ import acm.program.*;
 public class Fibonacci extends ConsoleProgram {
 
 
-   /* Defines the largest term to be displayed */
+   /* Définit le terme le plus long à afficher */
 	private static final int MAX_TERM_VALUE = 10000;
 
 	public void run() {
-		println("This program lists the Fibonacci sequence.");
+		println("Ce programme répertorie la séquence de Fibonacci.");
 		int t1 = 0;
 		int t2 = 1;
 		while (t1 <= MAX_TERM_VALUE) {
@@ -105,7 +105,7 @@ public class Fibonacci extends ConsoleProgram {
     editor.getSession().setMode("ace/mode/java");*/
 </script>
 		
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

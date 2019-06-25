@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,10 +15,10 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				String Art
+				Art de la chaîne
 			</h1>
 			<p>
-				Based on a demonstration by Eric Roberts.
+				Basé sur une démonstration d'Eric Roberts.
 			</p>
 
 		</div>
@@ -27,7 +27,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					By repeatedly drawing lines, we can make a curved looking shape. Consider the example below where we imagine dots evenly space along the bottom and the left of a canvas. If we connect the topmost dot on the left edge to the left most dot on the right edge, we would be a line like the picture of the far left. If we then connect the next 10 dots we get a picture in the middle and if we connect all dots we get the picture on the right.
+					En dessinant à plusieurs reprises des lignes, nous pouvons créer une forme incurvée. Prenons l'exemple ci-dessous où nous imaginons des points uniformément espacés le long du fond et de la gauche d'une toile. Si nous connectons le point le plus haut sur le bord gauche au point le plus à gauche sur le bord droit, nous aurions une ligne semblable à l'image de l'extrême gauche. Si nous connectons ensuite les 10 points suivants, nous obtenons une image au milieu et si nous connectons tous les points, nous obtenons l'image à droite.
 				</p>
 				
 				<p>
@@ -35,29 +35,29 @@
 						<img style="width:700px" src="{{pathToRoot}}img/projects/stringArt/startToEnd.png">	
 					</center>
 				</p>
-				<p>Write a program that creates the "curve" in the above right image using straight lines.</p>
+				<p>Ecrivez un programme qui crée la "courbe" dans l'image droite ci-dessus en utilisant des lignes droites.</p>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Starter Code</h2>
+				<h2>Code de démarrage</h2>
 
 
 <pre id="editor" style="height:270px">public class StringArt extends GraphicsProgram {
 
-	/** The size of the screen **/
+	/** La taille de l'écran **/
 	public static final int APPLICATION_WIDTH = 400;
 	public static final int APPLICATION_HEIGHT = 400;
 	
-	/** The number of pixels between end points of the line **/
+	/** Le nombre de pixels entre les extrémités de la ligne **/
 	public static final int LINE_SPACING = 20;
 	
-	/** The number of lines we will have to draw **/
+	/** Le nombre de lignes à tracer **/
 	public static final int NUM_LINES = APPLICATION_WIDTH / LINE_SPACING;
 
 	public void run() {
-		// your code here...
+		// votre code ici ...
 	}
 }</pre>
     
@@ -77,7 +77,7 @@
 
 
 		
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

@@ -1,6 +1,6 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 	<style type="text/css" media="screen">
   #console {
@@ -15,7 +15,7 @@
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -23,13 +23,13 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Ancient Game of Nimm
+				Ancien jeu de Nimm
 			</h1>
 			<p>
-				Problem written by Danielle Kain and Chris Piech.
+				Problème écrit par Danielle Kain et Chris Piech.
 			</p>
 			<p>
-				Worked Examples:
+				Exemples travaillés:
 				<a href="{{pathToRoot}}fr/projects/emc2.html">E=MC2</a>,
 				<a href="{{pathToRoot}}fr/projects/fibb.html">Fibbonacci</a>
 			</p>
@@ -40,28 +40,28 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Nimm is an ancient game of strategy that is named after the old German word for "take." It is also called Tiouk Tiouk in West Africa and Tsynshidzi in China. Players alternate taking stones until there is zero left. The game of Nimm goes as follows:
+					Nimm est un ancien jeu de stratégie nommé d'après l'ancien mot allemand «prendre». On l'appelle aussi Tiouk Tiouk en Afrique de l'Ouest et Tsynshidzi en Chine. Les joueurs alternent en prenant des pierres jusqu'à ce qu'il ne reste plus rien. Le jeu de Nimm se déroule comme suit:
 <ol>
-<li>The game starts with a pile of 20 stones between the players</li>
-<li>The two players alternate turns</li>
-<li>On a given turn, a player may take either 1 or 2 stone from the center pile</li>
-<li>The two players continue until the center pile has run out of stones.</li>
+<li>Le jeu commence avec un tas de 20 pierres entre les joueurs</li>
+<li>Les deux joueurs alternent</li>
+<li>À un tour, un joueur peut prendre 1 ou 2 pierres de la pile centrale</li>
+<li>Les deux joueurs continuent jusqu'à ce que la pile centrale soit à court de pierres.</li>
 </ol>
-The last player to take a stone loses. Here is a screen shot from an example execution:
+Le dernier joueur à prendre une pierre perd. Voici une capture d'écran d'un exemple d'exécution:
 					<center>
 						<img style="width:500px" src="{{pathToRoot}}img/projects/nimm/nimm.png">
 						<p style="text-align:center"><!--<i>Unique, unpredictable numbers for medicines.</i>--></p>
 					</center>
 				</p>
 
-				<p>Write a program to play Nimm. To make your life easier we have broken the problem down into smaller milestones. You have a lot of time for this program. Take it slowly, piece by piece.</p>
+				<p>Ecrivez un programme pour jouer à Nimm. Pour vous faciliter la vie, nous avons divisé le problème en étapes plus petites. Vous avez beaucoup de temps pour ce programme. Prenez-le lentement, morceau par morceau.</p>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Milestone 1</h2>
-				<p>Start with 20 stones. Repeat the process of removing stones and printing out how many stones are left until there are less than zero. Don't worry about whose turn it is. Don't worry about making sure only one or two stones are removed. Use the method <code>readInt(<i>msg</i>)</code> which prints msg and waits for the user to enter a number.
+				<h2>Jalon 1</h2>
+				<p>Commencez avec 20 pierres. Répétez le processus d’enlèvement des pierres et d’impression du nombre de pierres restantes jusqu’à atteindre zéro. Ne vous inquiétez pas de savoir à qui c'est le tour. Ne vous inquiétez pas pour vous assurer que seulement une ou deux pierres sont enlevées. Utilisez la méthode <code>readInt(<i>msg</i>)</code> qui imprime msg et attend que l'utilisateur entre un nombre.
 				</p>
 
 
@@ -75,8 +75,8 @@ The last player to take a stone loses. Here is a screen shot from an example exe
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Milestone 2</h2>
-				<p>Create a variable of type <code>int</code> to keep track of whose turn it is (remember there are two players). Tell the user whose turn it is. Each time someone picks up stones, change the player number.</p>
+				<h2>Jalon 2</h2>
+				<p>Créer une variable de type <code>int</code> pour savoir à qui le tour appartient (souvenez-vous qu'il y a deux joueurs). Dites à l'utilisateur à qui appartient le tour. Chaque fois que quelqu'un ramasse des pierres, changez le numéro du joueur.</p>
 
 				<center>
 						<img style="width:500px" src="{{pathToRoot}}img/projects/nimm/nimm_m2.png">
@@ -87,11 +87,11 @@ The last player to take a stone loses. Here is a screen shot from an example exe
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Milestone 3</h2>
-				<p>Make sure that each turn only one or two stones are removed. After you read a number of stones to remove from a user (their input), you can use the following pattern to check if it was valid and keep asking until it is valid.</p>
+				<h2>Jalon 3</h2>
+				<p>Assurez-vous que chaque tour, seulement une ou deux pierres sont enlevés. Une fois que vous avez lu un certain nombre de pierres à retirer de l'utilisateur (leur entrée), vous pouvez utiliser le modèle suivant pour vérifier sa validité et continuer à lui demander jusqu'à ce qu'il soit valide.</p>
 				<div class="well"><code>
 				while(<i>input is invalid</i>) {<br/>
-					&nbsp;&nbsp;&nbsp;<i>input</i> = readInt("Please enter 1 or 2: ");<br/>
+					&nbsp;&nbsp;&nbsp;<i>input</i> = readInt("Veuillez entrer 1 ou 2: ");<br/>
 				}
 				</code></div>
 				</p>
@@ -101,24 +101,24 @@ The last player to take a stone loses. Here is a screen shot from an example exe
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Milestone 4</h2>
-				<p>Announce the winner.</p>
+				<h2>Jalon 4</h2>
+				<p>Annonce le gagnant.</p>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Extensions</h2>
-				<p>Can you write an AI opponent? You can start with a dummy AI that always plays a random number. Then try to make one that plays intelligently...</p>
+				<h2>Les extensions</h2>
+				<p>Pouvez-vous écrire un adversaire de l'IA? Vous pouvez commencer avec une IA factice qui lit toujours un nombre aléatoire. Ensuite, essayez de faire celui qui joue intelligemment ...</p>
 
-				<p>Some other extension ideas:</p>
+				<p>Quelques autres idées d'extension:</p>
 				<ul>
-					<li>Make sure that if there is only one stick left, the last player may only remove one stone</li>
-					<li>Give the user the option for the winner to be the player that doesn’t take the last stone, or the player that does take the last stone.</li>
-					<li>Expand the game to let players take 1, 2, or 3, sticks per turn.</li>
-					<li>Divisible by 3 rule: if the number of sticks remaining at the end of a player’s turn is divisible by 3, they must go again.</li>
-					<li>Give the user the option to play against the computer and design a process for the computer to choose how many sticks to remove.</li>
-					<li>Come up with your own extension.</li>
+					<li>Assurez-vous que s'il ne reste qu'un seul bâton, le dernier joueur ne peut enlever qu'une pierre.</li>
+					<li>Donnez à l’utilisateur la possibilité pour le gagnant d’être le joueur qui ne prend pas la dernière pierre ou le joueur qui prend la dernière pierre.</li>
+					<li>Développez le jeu pour permettre aux joueurs de prendre 1, 2 ou 3 bâtons par tour.</li>
+					<li>Règle divisible par 3: si le nombre de bâtons restant à la fin du tour d’un joueur est divisible par 3, il doit repartir.</li>
+					<li>Donnez à l'utilisateur la possibilité de jouer contre l'ordinateur et concevez un processus lui permettant de choisir le nombre de bâtons à retirer.</li>
+					<li>Venez avec votre propre extension.</li>
 			</div>
 		</div>
 
@@ -179,7 +179,7 @@ public class CarbonDating extends ConsoleProgram {
 	</div>
 	</div>-->
 
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 

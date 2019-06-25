@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,10 +15,10 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Step Up
+				Intensifier
 			</h1>
 			<p>
-				Based on a handout by Eric Roberts
+				Basé sur un document d'Eric Roberts
 			</p>
 
 			<p>
@@ -26,7 +26,7 @@
 				KarelCommands,
 				Methods
 			<br/>-->
-			Handouts:
+			Documents à distribuer:
 				<a href ="{{pathToRoot}}fr/handouts/karel.html">Karel Reference</a>
 			</p>
 
@@ -36,7 +36,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Karel starts in the world on the left. How would you program Karel to pick up the beeper and transport it to the top of the ledge?  Karel should drop the beeper at the corner of 2nd Street and 4th Avenue and then continue one more corner to the east, ending up on 5th Avenue. At the end of your program, Karel's world should look like the picture on the right.
+					Karel commence dans le monde à gauche. Comment voudriez-vous programmer Karel pour prendre le bip et le transporter au sommet du rebord? Karel devrait laisser retentir le bipeur au coin de la 2e rue et de la 4e avenue, puis continuer encore un coin à l’est pour aboutir à la 5e avenue. À la fin de votre programme, l'univers de Karel devrait ressembler à l'image de droite.
 				</p
 				<p>
 					<center>
@@ -46,7 +46,7 @@
 
 				<br/>
 				<p>
-					If Karel only knows the commands:
+					Si Karel ne connaît que les commandes:
 					<div class="well">
 						<code>
 							move()
@@ -55,7 +55,7 @@
 							<br/>turnLeft()
 						</code>
 					</div>
-					How can you make Karel turn to the right?
+					Comment pouvez-vous faire tourner Karel à droite?
 				</p>
 			</div>
 
@@ -66,20 +66,20 @@
 				<h2>Solution</h2>
 
 				<p>
-					A solution is provided for this example, so that you can see what a full program looks like!
+					Une solution est fournie pour cet exemple afin que vous puissiez voir à quoi ressemble un programme complet!
 				</p>
 
 
 <pre id="editor" style="height:460px">/**
- * Program: Step Up
+ * Programme: Step Up
  * ----------------
- * Your first example Karel program. Have Karel pick up the beeper infront
- * of her and place it on top of the ledge.
- * This is a comment. Your computer will ignore it.
+ * Votre premier exemple de programme Karel. Demandez à Karel de prendre le bipeur devant vous
+ * d'elle et placez-le sur le rebord.
+ * Ceci est un commentaire. Votre ordinateur l'ignorera.
  */
 public class StepUp extends Karel {
 
-	// When you start your program, this code will be executed.
+	// Lorsque vous démarrez votre programme, ce code sera exécuté.
 	public void run() {
 		move();
 		pickBeeper();
@@ -91,7 +91,7 @@ public class StepUp extends Karel {
 		move();
 	}
 
-	// Defines a new command called turnRight
+	// Définit une nouvelle commande appelée turnRight
 	private void turnRight() {
         turnLeft();
         turnLeft();
@@ -113,7 +113,7 @@ public class StepUp extends Karel {
 		</div>
 
 
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>

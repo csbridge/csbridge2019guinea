@@ -1,13 +1,13 @@
 <head>
 
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -15,16 +15,16 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Optical Illusion
+				Illusion d'optique
 			</h1>
 			<p>
-				Based on an idea by Steve Cooper. Written by Chris Piech.
+				Basé sur une idée de Steve Cooper. Écrit par Chris Piech.
 			</p>
 			<p>
-				Handouts:
+				Documents à distribuer:
 				<a href ="{{pathToRoot}}fr/handouts/graphics.html">Graphics Reference</a>
 				<br/>
-				Worked Example:
+				Exemple travaillé:
 				<a href="{{pathToRoot}}fr/projects/stringArtSoln.html">String Art Solution</a>
 			</p>
 
@@ -34,7 +34,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Sometimes repeating patters can cause our eyes to see things that aren't there. Look at the picture below. Can you see little grey squares in the intersections of the white lines? Write a GraphicsProgram that create the optical illusion:
+					Parfois, répéter des gestes peut amener nos yeux à voir des choses qui ne sont pas là. Regardez l'image ci-dessous. Pouvez-vous voir des petits carrés gris dans les intersections des lignes blanches? Écrivez un programme graphique qui crée l'illusion d'optique:
 				</p>
 
 				<p>
@@ -49,9 +49,9 @@
 			<div class="col-md-12">
 				<h2>Constants</h2>
 				<p>
-					You may notice that the starter code for this project has the lines:
+					Vous remarquerez peut-être que le code de démarrage de ce projet comporte les lignes suivantes:
 					<div class="well"><code>private static final int SIZE = 100; <br/>private static final int GAP = 10;</code></div>
-					which are written outside the run method (much like th random number generator). These lines define constants: variables whose values never change and since they are defined outside a method you can read their value from any point in the program. Though you <i>could</i> write this optical illusion using the numbers 100 and 10 directly in, using constants makes your program much easier to read.
+					qui sont écrits en dehors de la méthode run (un peu comme le générateur de nombres aléatoires). Ces lignes définissent des constantes: les variables dont les valeurs ne changent jamais et puisqu'elles sont définies en dehors d'une méthode, vous pouvez lire leur valeur à partir de n'importe quel point du programme. Bien que vous<i>pourrait</i> écrivez cette illusion d'optique en utilisant les chiffres 100 et 10 directement, utiliser des constantes facilite la lecture de votre programme.
 					<!--<div class="well"><code>private drawSquare(int row, int col) {
 						<br/>&nbsp;&nbsp;&nbsp;//code for drawing a square at the position row, col
 						<br/>}</code></div>-->
@@ -62,11 +62,11 @@
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Double For Loop</h2>
+				<h2>Double pour la boucle</h2>
 				<p>
-					This problem requires using a for loop inside a for loop. Remember to use a different iterator variable for the inner loop. For example if your outer loop is of the form
+					Ce problème nécessite l'utilisation d'une boucle for dans une boucle for. N'oubliez pas d'utiliser une variable d'itérateur différente pour la boucle interne. Par exemple, si votre boucle externe est de la forme
 					<div class="well"><code>for(int i = 0; i &lt; 100; i++)</code></div>
-					The loop in the body must iterate through a variable other than i.
+					La boucle dans le corps doit parcourir une variable autre que i.
 					<!--<div class="well"><code>private drawSquare(int row, int col) {
 						<br/>&nbsp;&nbsp;&nbsp;//code for drawing a square at the position row, col
 						<br/>}</code></div>-->
@@ -90,7 +90,7 @@
 			<div class="col-md-12">
 				<h2>Extension</h2>
 				<p>
-					If you have time, try creating this optical illusion! Note that all the squares are the same size and all lines are horizontal! Think about how to decompose your solution.
+					Si vous avez le temps, essayez de créer cette illusion d'optique! Notez que tous les carrés ont la même taille et que toutes les lignes sont horizontales! Pensez à la façon de décomposer votre solution.
 				</p>
 
 				<p>
@@ -99,13 +99,13 @@
 					</center>
 				</p>
 
-				<p>If you are stuck, try drawing each row with the first black square always starting at x = 0. Then try to figure out how to create the offset pattern.</p>
+				<p>Si vous êtes bloqué, essayez de dessiner chaque ligne avec le premier carré noir commençant toujours par x = 0. Essayez ensuite de trouver comment créer le motif de décalage.</p>
 			</div>
 		</div>
 
 
 
-		%include templates/parts/footer.html
+		%include templates/parts/footerFr.html
 
 	</div>
 </body>
