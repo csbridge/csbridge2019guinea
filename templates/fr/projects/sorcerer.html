@@ -1,0 +1,126 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				La Sorcière (avec solution)
+			</h1>
+			<p>
+				Écrit par by Chris Piech. Adapter par Lisa E. 
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					L'idée derrière le sorcière est très simple. Vous posez à elle une question oui ou non, et cela vous dit la réponse.
+				</p>
+
+				<p>Sauf que la réponse choisie est sélectionnée de manière aléatoire parmi un ensemble de réponses préfabriquées.</p>
+				<p>
+					<center>
+						<img style="width:300px" src="{{pathToRoot}}img/projects/sorcerer/sorcerer.jpg">
+					</center>
+				</p>
+
+				<p>Ecrivez un programme qui invite en permanence l'utilisateur à poser une question par oui ou par non, puis choisit au hasard parmi 5 réponses prédéfinies:</p>
+				<ul>
+					<li>Sans aucun doute.</li>
+					<li>Oui.</li>
+					<li>Demander à nouveau plus tard.</li>
+					<li>Non.</li>
+					<li>Karel le pense.</li>
+				</ul>
+				<p>Voici un exemple d'exécution du programme.</p>
+
+				<p>
+					<center>
+						<img style="width:700px" src="{{pathToRoot}}img/projects/sorcerer/sorcererExample.png">
+
+					</center>
+				</p>
+
+				<p>Pour générer des nombres aléatoires, créez une variable d'instance RandomGenerator (une variable déclarée en dehors de toutes les méthodes), comme suit:
+					<div class="well"><code>private RandomGenerator rgen = new RandomGenerator();</code></div>
+				</p>
+				<p>Vous pouvez ensuite utiliser la variable pour générer des nombres aléatoires.
+					<div class="well"><code>
+						rgen.nextInt(<i>max</i>)  //génère un int aléatoire dans l'intervalle [0, max)
+					</code></div>
+				</p>
+</p>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Solution</h2>
+
+
+<pre id="editor" style="height:580px">
+
+public class Sorciere extends ConsoleProgram {
+
+	private static RandomGenerator rg = new RandomGenerator();
+
+	public void run() {
+		while(true) {
+			readLine("Poser une question oui ou non: ");
+
+			int choix = rg.nextInt(5);
+			// println(choix);
+			if(choix == 0) {
+				println("Sans aucun doute");
+			}
+			if(choix == 1) {
+				println("Oui");
+			}
+			if(choix == 2) {
+				println("Demandez plus tard.");
+			}
+			if(choix == 3) {
+				println("No");
+			}
+			if(choix == 4) {
+				println("Karel le pense.");
+			}
+			println("");
+		}
+	}
+}
+
+</pre>
+
+<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.setShowPrintMargin(false);
+   editor.renderer.setShowGutter(false);
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+	</div>
+	</div>
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

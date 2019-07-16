@@ -71,9 +71,9 @@
 
 
 <pre id="editor" style="height:460px">/**
- * Programme: Step Up
+ * Programme: Intensifier
  * ----------------
- * Votre premier exemple de programme Karel. Demandez à Karel de prendre le bipeur devant vous
+ * Votre premier exemple de programme Karel. Demandez à Karel de prendre le bip devant vous
  * d'elle et placez-le sur le rebord.
  * Ceci est un commentaire. Votre ordinateur l'ignorera.
  */
@@ -85,14 +85,14 @@ public class StepUp extends Karel {
 		pickBeeper();
 		turnLeft();
 		move();
-		turnRight();
+		turnezADroite();
 		move();
 		putBeeper();
 		move();
 	}
 
-	// Définit une nouvelle commande appelée turnRight
-	private void turnRight() {
+	// Définit une nouvelle commande appelée turnezADroite
+	private void turnezADroite() {
         turnLeft();
         turnLeft();
         turnLeft();

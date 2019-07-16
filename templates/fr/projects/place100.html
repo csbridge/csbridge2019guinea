@@ -15,10 +15,10 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Placez 100 (avec la solution)
+				Lavez 100 Pièce des Habilles (Place 100)
 			</h1>
 			<p>
-				Problème écrit par Chris
+				Problème écrit par Chris. Adapter par Lisa E. 
 			</p>
 			<p>
 				Documents à distribuer:
@@ -31,13 +31,16 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Votre objectif est que Karel crée une pile de 100 bips sonores sur la case devant laquelle elle commence. S'il vous plaît!!! Ne tapez pas putBeeper 100 fois de suite! (indice: utilisez une boucle for.)
+					Votre objectif est de commisioner Karel à laver 100 pièce des habilles (signifier par les bips). S'il vous plaît!!! Ne tapez pas putBeeper() 100 fois de suite! (indice: utilisez une for loop.)
 				</p>
 
 				<p>
-					<center>
-						<img style="width:700px" src="{{pathToRoot}}img/projects/place100/place100.png">
-					</center>
+					<left>
+						<img style="width:200px" src="{{pathToRoot}}img/projects/place100/WashingClothes.png">
+					</left>
+					<right>
+						<img style="width:500px" src="{{pathToRoot}}img/projects/place100/place100.png">
+					</right>
 				</p>
 
 			</div>
@@ -49,15 +52,16 @@
 
 
 <pre id="editor" style="height:280px">/**
- * Programme: Place100
+ * Programme: Lavez 100 Pièce des Habilles (Place100)
  * -------------
- * Ce programme permet à Karel de placer une pile de 100 signaux sonores. Bon temps.
+ * Ce programme permet à Karel de lavez une pile de 100 pièce des habilles.
  */
+
 public class Place100 extends SuperKarel {
 
 	public void run() {
 		move();
-		// Cette boucle for répétera le code 100 fois.
+		// Cette for loop répétera le code 100 fois.
 		for(int i = 0; i &lt; 100; i++) {
 			putBeeper();
 		}

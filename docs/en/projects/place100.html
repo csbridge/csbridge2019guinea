@@ -1,6 +1,6 @@
 <head>
 
-<title>Intro to CS</title>
+<title>Intro to Computer Science</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -81,17 +81,20 @@
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
-	            <li><a href="../../en/projects/collectNewspaper.html">Collect Newspaper</a></li>
-	          	<li><a href="../../en/projects/efes.html">Build Efes</a></li>
-	          	<li><a href="../../en/projects/mountain.html">Mountain Karel</a></li>
+	            <li><a href="../../en/projects/WaterFromWell.html">Draw Water from the Well</a></li>
+	          	<li><a href="../../en/projects/efes.html">Build the Grand Mosque in Conakry</a></li>
+	          	<li><a href="../../en/projects/mountain.html">Mountain and Mango Tree Karel</a></li>
+	          	<li><a href="../../en/projects/flag.html">The Guinean Flag</a></li>
 	          	<li><a href="../../en/projects/randomPainter.html">Random Painter</a></li>
+
 	          	
 	          	<li class="divider"></li>
 	          	<li><a href="../../en/projects/sandcastles.html">Sandcastles</a></li>
 	          	<li><a href="../../en/projects/favoriteNumber.html">Favorite Number</a></li>
-	          	<li><a href="../../en/projects/medicine.html">Medicine</a></li>
+	          	<li><a href="../../en/projects/medicine.html">Counterfeit Medicine</a></li>
 	          	<li><a href="../../en/projects/someSum.html">Some Sum</a></li>
-	          	<li><a href="../../en/projects/gameOfStones.html">Nimm</a></li>
+	          	<li><a href="../../en/projects/AllerAuMarché.html">Going to the Market</a></li>
+	          	<li><a href="../../en/projects/sorcerer.html">The Sorcerer</a></li>
 	          	
 
 	          	<li class="divider"></li>
@@ -151,10 +154,10 @@
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
 	          	<li><a href="../../en/projects/stepUp.html">Step Up</a></li>
-	          	<li><a href="../../en/projects/place100.html">Place 100</a></li>
-	          	<li><a href="../../en/projects/beeperLine.html">Beeper Line</a></li>
-	          	<li><a href="../../en/projects/invert.html">Invert</a></li>
-	          	<li><a href="../../en/projects/unKarel.html">UN Karel</a></li>
+	          	<li><a href="../../en/projects/place100.html">Wash 100 Pieces of Clothing (Place 100)</a></li>
+	          	<li><a href="../../en/projects/beeperLine.html">Plant Corn (Beeper Line)</a></li>
+	          	<li><a href="../../en/projects/invert.html"> Reforestation (Invert)</a></li>
+	          	<li><a href="../../en/projects/unKarel.html">Building Houses (UN Karel)</a></li>
 	          	<li class="divider"></li>
 	            <li><a href="../../en/projects/emc2.html">E=MC2</a></li>
 	            <li><a href="../../en/projects/fibb.html">Fibonacci</a></li>
@@ -322,7 +325,7 @@
 				Place 100 (with solution)
 			</h1>
 			<p>
-				Problem written by Chris
+				Problem written by Chris. Adapted by Lisa E. 
 			</p>
 			<p>
 				Handouts: 
@@ -335,13 +338,16 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Your goal is to have Karel create a pile of 100 beepers on square infront of where she starts. Please!!! Do not type out putBeeper 100 times in a row! (hint: use a for loop.) 
+					Your goal is to have Karel wash 100 pieces of clothing (signified by beepers). Please!!! Do not type out putBeeper 100 times in a row! (hint: use a for loop.) 
 				</p>
 
 				<p>
-					<center>
-						<img style="width:700px" src="../../img/projects/place100/place100.png">	
-					</center>
+					<left>
+						<img style="width:200px" src="../../img/projects/place100/WashingClothes.png">
+					</left>
+					<right>
+						<img style="width:500px" src="../../img/projects/place100/place100.png">
+					</right>
 				</p>
 				
 			</div>
@@ -353,10 +359,11 @@
 
 
 <pre id="editor" style="height:280px">/**
- * Program: Place100
+ * Program: Wash 100 pieces of Clothing (Place100)
  * -------------
- * This program makes karel place a pile of 100 beepers. Good times.
+ * This program makes Karel wash a pile of 100 pieces of clothing. 
  */
+
 public class Place100 extends SuperKarel {
 	
 	public void run() {

@@ -1,0 +1,71 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Puiser de l'eau
+			</h1>
+			<p>
+				Basé sur un référence de Eric Roberts
+			</p>
+			<p>
+				<!--Topics:
+				KarelCommands,
+				Methods
+				<br/>-->
+				Référence:
+				<a href ="{{pathToRoot}}fr/handouts/karel.html">Karel Référence</a>
+				<br/>
+				Exemple travaillé:
+				<a href="{{pathToRoot}}fr/projects/stepUp.html">StepUp</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Votre première tâche consiste à résoudre un problème d’histoire simple dans le monde de Karel. Supposons que Karel se soit installée dans sa maison, qui correspond au carré situé au centre du diagramme suivant:
+				</p>
+				<left>
+					<img class="psetImg" src="{{pathToRoot}}img/projects/newspaper/newspaper.png">
+				</left>
+				<right>
+					<img class="psetImg" src="{{pathToRoot}}img/projects/newspaper/WaterWell.png">
+				</right>
+				<p>
+					Karel commence dans le coin de sa maison comme indiqué sur le diagramme. Le problème que Karel doit résoudre est de puiser de l'eau, représenté (comme tous les objets du monde de Karel) par un bip, de l'extérieur de la porte, puis de revenir à sa position initiale.
+				</p>
+				<p>
+					Vous pouvez supposer que chaque partie du monde a exactement la même apparence que dans le diagramme. La maison a exactement cette taille, la porte est toujours dans la position indiquée et le bip est juste devant la porte. Ainsi, tout ce que vous avez à faire est d’écrire la séquence de commandes nécessaire pour que Karel
+					<ol>
+						<li>Passer au puits,</li>
+						<li>Puissez l'eau et</li>
+						<li>Retour à son point de départ.</li>
+					</ol>
+				</p>
+				<p>
+					Bien que le programme ne soit composé que de quelques lignes, il vaut toujours la peine d’avoir au moins un peu de pratique en décomposition. Dans votre solution, incluez une méthode privée pour chacune des étapes présentées.
+				</p>
+			</div>
+
+		</div>
+
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>
