@@ -348,38 +348,39 @@
 				<h2>Solution</h2>
 
 
-<pre id="editor" style="height:580px">public class GravityBall extends GraphicsProgram {
+<pre id="editor" style="height:580px">public class BallDeGravite extends GraphicsProgram {
 
-    private static final int SIZE = 20;
-    private static final int DELAY = 20;
-    
-    private static final double GRAVITY = 0.5;
-    private static final double DAMPING = 0.7;
-	
+
+	private static final int TAILLE = 20;
+	private static final int RETARD = 20;
+
+	private static final double GRAVITY = 0.5;
+	private static final double AMORTISSEMENT = 0.7;
+
 	public void run() {
 		// Dessine une balle dans le coin en haut à droite
-		GOval oval = new GOval(0,0,SIZE, SIZE);
+		GOval oval = new GOval(0,0,TAILLE, TAILLE);
 		oval.setFilled(true);
 		add(oval);
-		
-		// Déclarer des variables pour la vélocité
+
+		// Déclarer des variables pour la vitesse
 		double vx = 3;
 		double vy = 0;
-		
+
 		while(true) {
 			// mettre à jour vy
 			vy = vy + GRAVITY;
-			
+
 			// la balle doit-elle rebondir?
-			if(oval.getY() > (getHeight() - SIZE) && vy > 0) {
-				vy = vy * -DAMPING;
+			if(oval.getY() > (getHeight() - TAILLE) && vy > 0) {
+				vy = vy * -AMORTISSEMENT;
 			}
-			
-		    // bouge toi
+
+			// bouge toi
 			oval.move(vx, vy);
-			
+
 			// pause d'animation
-			pause(DELAY);
+			pause(RETARD);
 		}
 	}
 }</pre>
