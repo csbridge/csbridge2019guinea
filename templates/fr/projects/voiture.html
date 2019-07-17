@@ -1,0 +1,92 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				La Voiture Est en Pane
+			</h1>
+			<p>
+				Problème écrit par Chris Piech et adapter par Lisa E. 
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Vous voulez aller à Conakry, mais la gare voiture dit qu'il n'y a pas de voiture pour la semaine prochaine! Heureusement, avec vos compétences de programmation magiques, vous pouvez construire votre propre voiture.
+				<p>
+					Ecrivez un programme qui dessine cette image. Vous devez utiliser les constantes fournies, mais n'hésitez pas à les changer (ou à recolorer une partie du visage)</p>
+				<p>
+					<center>
+						<img style="width:500px" src="{{pathToRoot}}img/projects/voiture/voiture.png">	
+					</center>
+				</p>
+
+				<p>Quelques constantes sont fournies. Utilisez-les pour ne pas avoir de nombres "magiques" dans votre programme.</p>
+
+				<p> <br/>- Pneus rouges à (20, 70) et (80, 70), 	taille 20x20
+	 				<br/>- Pare-brise cyan à (80, 40), taille 	30x20
+ 					<br/>- Corps bleu à (10, 30), taille 100x50 
+					<br/>- Fond jaune
+					
+				<h2>Solution</h2>
+
+
+<pre id="editor" style="height:1220px">public class Voiture extends GraphicsProgram {
+
+	// Lorsque 2 formes occupent les mêmes pixels, la dernière dessinée "gagne"
+
+	public void run() {
+		setBackground(Color.YELLOW);
+		GRect corps = new GRect(10, 30, 100, 50); //carcus
+		corps.setFilled(true);
+		corps.setFillColor(Color.BLUE);
+		add(corps);
+		GOval pneu1 = new GOval(20, 70, 20, 20); //pneu1
+		pneu1.setFilled(true);
+		pneu1.setFillColor(Color.RED);
+		add(pneu1);
+		GOval pneu2 = new GOval(80, 70, 20, 20); //pneu2
+		pneu2.setFilled(true);
+		pneu2.setFillColor(Color.RED);
+		add(pneu2);
+		GRect parebrise = new GRect(80, 40, 30, 20); //pare-brise
+		parebrise.setFilled(true);
+		parebrise.setFillColor(Color.CYAN);
+		add(parebrise);
+	}
+}
+</pre>
+    
+<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.setShowPrintMargin(false);
+   editor.renderer.setShowGutter(false); 
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+	</div>
+	</div>
+		
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

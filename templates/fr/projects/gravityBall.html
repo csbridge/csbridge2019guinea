@@ -49,7 +49,7 @@
 	private static final int TAILLE = 20;
 	private static final int RETARD = 20;
 
-	private static final double GRAVITY = 0.5;
+	private static final double GRAVITE = 0.5;
 	private static final double AMORTISSEMENT = 0.7;
 
 	public void run() {
@@ -64,7 +64,7 @@
 
 		while(true) {
 			// mettre à jour vy
-			vy = vy + GRAVITY;
+			vy = vy + GRAVITE;
 
 			// la balle doit-elle rebondir?
 			if(oval.getY() > (getHeight() - TAILLE) && vy > 0) {
