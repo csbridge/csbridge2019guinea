@@ -41,25 +41,25 @@
  * -----------------------------------------
  * Fait vraiment ce qu'il dit.
  */
-public class MysterySquare extends GraphicsProgram {
+public class CarreMystere extends GraphicsProgram {
 
-    private static final int SIZE = 100;
-    private static final int DELAY = 1000;
+    private static final int TAILLE = 400;
+    private static final int RETARD = 1000;
 
 	private static RandomGenerator rg = new RandomGenerator();
 	
 	public void run() {
-		// Dessinez un carré au centre de l'écran.
-		GRect rect = new GRect(SIZE, SIZE);
+		// Draw a square in the center of the screen.
+		GRect rect = new GRect(TAILLE, TAILLE);
 		double x = (getWidth() - rect.getWidth()) / 2;
 		double y = (getHeight() - rect.getHeight()) / 2;
 		rect.setFilled(true);
 		add(rect, x, y);
 		
-		// Changez de couleur toutes les secondes.
+		// Change its color every second.
 		while(true) {
 			rect.setColor(rg.nextColor()); 
-			pause(DELAY);
+			pause(RETARD);
 		}
 	}
 }</pre>

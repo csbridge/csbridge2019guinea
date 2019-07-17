@@ -164,6 +164,7 @@
 	           <li><a href="../../fr/projects/favoriteNumber.html">Numéro préféré</a></li>
 	           <li><a href="../../fr/projects/findPi.html">Trouver Pi</a></li>
 	           <li><a href="../../fr/projects/sorcerer.html">Sorcière</a></li>
+	          
 	           <li class="divider"></li>
 
 
@@ -181,6 +182,9 @@
 	          	<li><a href="../../fr/projects/drawPeople.html">Dessiner des gens</a></li>
 
 	          	<li><a href="../../fr/projects/halfGreen.html">Moitié vert</a></li>
+
+	          	<li class="divider"></li>
+	            <li><a href="../../fr/projects/holes.html">Trou</a></li>
 
 							<!--
 	          	<li class="divider"></li>
@@ -200,12 +204,13 @@
 	        </li>
 
 	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Les diapositives <b class="caret"></b></a>
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentations <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
-	          	<li><a href="../../slides/Welcome.pdf">Karel</a></li>
-	          	<li><a href="../../slides/ControlFlow.pdf">Flux de contrôle</a></li>
-	          	<li><a href="../../slides/Variables.pdf">Variables</a></li>
-	          	<li><a href="../../slides/Graphics.pdf">Graphique</a></li>
+	          	<li><a href="../../slides/LisaFrenchSlides/Bienvenue.pdf">Karel</a></li>
+	          	<li><a href="../../slides/LisaFrenchSlides/FluxDeControle.pdf">Flux de contrôle</a></li>
+	          	<li><a href="../../slides/LisaFrenchSlides/Variables.pdf">Variables 1</a></li>
+	          	<li><a href="../../slides/LisaFrenchSlides/Variables_two.pdf">Variables 2</a></li>
+	          	<li><a href="../../slides/LisaFrenchSlides/Graphique.pdf">Graphique</a></li>
 	          	<li><a href="../../slides/Animation.pdf">Animation</a></li>
 	          	<li><a href="../../slides/Methods.pdf">Les méthodes</a></li>
 	          	<li><a href="../../slides/Review.pdf">La revue</a></li>
@@ -350,28 +355,31 @@
 
 <pre id="editor" style="height:400px">public class GoCenter extends GraphicsProgram {
 
-    private static final int SIZE = 20;
-    private static final int DELAY = 100;
-	
+    private static final int TAILLE = 20;
+	private static final int RETARD = 10;
+
 	public void run() {
+		
 		// Dessinez un carré à gauche de l'écran.
-		GRect rect = new GRect(SIZE, SIZE);
+		GRect rect = new GRect(TAILLE, TAILLE);
 		double x = 0;
 		double y = (getHeight() - rect.getHeight()) / 2;
 		rect.setFilled(true);
 		add(rect, x, y);
-		
+
 		// Déplacer jusqu'au centre
 		// rect.getX() renvoie la coordonnée x du rectangle
 		double maxX = (getWidth() - rect.getWidth()) /2;
 		while(rect.getX() < maxX) {
-		    // déplacer un pixel à droite
+			// déplacer un pixel à droite
 			rect.move(1, 0);
 			// pause d'animation
-			pause(DELAY);
+			pause(RETARD);
 		}
 	}
-}</pre>
+}
+
+</pre>
     
 <script src="../../plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
