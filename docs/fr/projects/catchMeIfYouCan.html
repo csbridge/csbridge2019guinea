@@ -100,7 +100,7 @@
 	          	<li class="divider"></li>
 	          	<li><a href="../../fr/projects/voiture.html">La Voiture en Pane</a></li>
 	          	<li><a href="../../fr/projects/awesome.html">La programmation est géniale</a></li>
-	          	<li><a href="../../fr/projects/stringArt.html">Art de la chaîne</a></li>
+	          	<li><a href="../../fr/projects/stringArt.html">Moustiquaires</a></li>
 	          	<li><a href="../../fr/projects/randomCircles.html">Cercles aléatoires</a></li>
 	          	<li><a href="../../fr/projects/hailstone.html">Grêle</a></li>
 
@@ -114,8 +114,8 @@
 	          	<li class="divider"></li>
 
 	          	<li><a href="../../fr/projects/makingTracks.html">Faire des pistes</a></li>
-	            <li><a href="../../fr/projects/stampTool.html">Outil de tampon</a></li>
-	          	<li><a href="../../fr/projects/catchMeIfYouCan.html">Attrape-moi si tu peux</a></li>
+	            <li><a href="../../fr/projects/stampTool.html">Outil de Cachet</a></li>
+	          	<li><a href="../../fr/projects/catchMeIfYouCan.html">Attraper la Chevre dans le Jardin</a></li>
 	          	<li><a href="../../fr/projects/breakout.html">Éclater</a></li>
 
 							<!--
@@ -325,10 +325,10 @@
     <!-- Header -->
     <div id="pageHeader">
       <h1>
-        Attrape-moi si tu peux
+        Attraper le Chèvre!
       </h1>
       <p>
-        Problème de Julia Lee, Kerem Goksel, and Chris Piech
+        Problème de Julia Lee, Kerem Goksel, and Chris Piech. Adapter par Lisa E. 
       </p>
       <p>
         Référence:
@@ -344,25 +344,97 @@
     <div class="row">
       <div class="col-md-12">
         <p>
+          Une chevre est rentrée dans ton jardin. Tu veux l'attrapper avant qu'il mange toutes les legumes, mais c'est difficile. Alors, attrape-le si tu peux!
+        <p>
+        <p>
           <ol>
-            <li>Ajoutez un carré bleu "sournois" à la toile.</li>
-            <li>Ajoutez 20 carrés noirs à la toile.</li>
-            <li>Ajoutez un écouteur d'événements de souris qui déplace le carré "sournois" vers une position aléatoire chaque fois que la souris le touche.</li>
+            <li>Ajoutez un carré noire qui signifie le chevre.</li>
+            <li>Ajoutez 20 carrés verts qui signifie des legumes.</li>
+            <li>Ajoutez un écouteur d'événements de souris qui déplace le chevre vers une position aléatoire chaque fois que la souris le touche.</li>
           </ol>
         </p>
         <p>
           <center>
-            <img style="width:500px" src="../../img/projects/catchMeIfYouCan/demo1.png">
+            <img style="width:500px" src="../../img/projects/catchMeIfYouCan/chevre1.png">
           </center>
         </p>
         <p>
 
           <center>
-            Lorsque la souris touche le carré "sournois", elle se déplace
-            <img style="width:500px" src="../../img/projects/catchMeIfYouCan/demo2.png">
+            Lorsque la souris touche le carré noir qui signifie le chevre, elle se déplace.
+            <img style="width:500px" src="../../img/projects/catchMeIfYouCan/chevre2.png">
           </center>
         </p>
+
+<h2>Solution</h2>
+
+
+<pre id="editor" style="height:580px">
+  private static final double TAILLE_CHEVRE = 60;
+  private static final double TAILLE_LEGUMES = 50;
+  private static final double NUM_LEGUMES = 20;
+
+  private GRect chevre = new GRect(TAILLE_LEGUMES, TAILLE_LEGUMES);
+  
+  private RandomGenerator rgen = new RandomGenerator(); 
+  
+  public void run() {
+    ajouterChevre();
+    ajouterLegumes(); 
+    addMouseListeners(); // ajouter auditeurs de souris
+  }
+
+  
+  private void ajouterChevre() {
+    // ajouter le chevre
+    double x = rgen.nextDouble(0, getWidth()-TAILLE_CHEVRE);
+    double y = rgen.nextDouble(0, getHeight() - TAILLE_CHEVRE);
+    chevre.setLocation(x, y);
+    chevre.setFilled(true);
+    chevre.setColor(Color.BLACK); //noir
+    add(chevre);
+  }
+  
+  private void ajouterLegumes() {
+  // ajouter des legumes 
+    for (int i = 0; i < NUM_LEGUMES; i ++) {
+      double x = rgen.nextDouble(0, getWidth()- TAILLE_LEGUMES);
+      double y = rgen.nextDouble(0, getHeight() - TAILLE_LEGUMES);  
+      GRect legume = new GRect(x, y, TAILLE_LEGUMES, TAILLE_LEGUMES);
+      legume.setFilled(true);
+      legume.setColor(Color.GREEN); //vert
+      add(legume);
+    }
+  }
+  
+  public void mouseMoved(MouseEvent event) {
+    //si le souris touche le chevre, il bouge
+    int mouseX = event.getX();
+    int mouseY = event.getY();
+    if (chevre.contains(mouseX, mouseY)) {
+      ajouterChevre(); 
+    }
+  }
+</pre>
+
+<script src="../../plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.setShowPrintMargin(false);
+   editor.renderer.setShowGutter(false);
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+  </div>
+  </div>
+
+
       </div>
+
+
     </div>
 
     <br/>
