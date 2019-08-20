@@ -325,7 +325,7 @@
     <!-- Header -->
     <div id="pageHeader">
       <h1>
-        Attraper le Chèvre!
+        Attraper la Chèvre!
       </h1>
       <p>
         Problème de Julia Lee, Kerem Goksel, and Chris Piech. Adapter par Lisa E. 
@@ -348,9 +348,9 @@
         <p>
         <p>
           <ol>
-            <li>Ajoutez un carré noire qui signifie le chevre.</li>
+            <li>Ajoutez un carré noire qui signifie la chevre.</li>
             <li>Ajoutez 20 carrés verts qui signifie des legumes.</li>
-            <li>Ajoutez un écouteur d'événements de souris qui déplace le chevre vers une position aléatoire chaque fois que la souris le touche.</li>
+            <li>Ajoutez un écouteur d'événements de souris qui déplace la chevre vers une position aléatoire chaque fois que la souris le touche.</li>
           </ol>
         </p>
         <p>
@@ -361,7 +361,7 @@
         <p>
 
           <center>
-            Lorsque la souris touche le carré noir qui signifie le chevre, elle se déplace.
+            Lorsque la souris touche le carré noir qui signifie la chevre, elle se déplace.
             <img style="width:500px" src="../../img/projects/catchMeIfYouCan/chevre2.png">
           </center>
         </p>
@@ -386,7 +386,7 @@
 
   
   private void ajouterChevre() {
-    // ajouter le chevre
+    // ajouter la chevre
     double x = rgen.nextDouble(0, getWidth()-TAILLE_CHEVRE);
     double y = rgen.nextDouble(0, getHeight() - TAILLE_CHEVRE);
     chevre.setLocation(x, y);
@@ -407,14 +407,15 @@
     }
   }
   
-  public void mouseMoved(MouseEvent event) {
-    //si le souris touche le chevre, il bouge
-    int mouseX = event.getX();
-    int mouseY = event.getY();
-    if (chevre.contains(mouseX, mouseY)) {
+  public void mouseMoved(MouseEvent evenement) {
+    //si le souris touche la chevre, il bouge
+    int sourisX = evenement.getX();
+    int sourisY = evenement.getY();
+    if (chevre.contains(sourisX, sourisY)) {
       ajouterChevre(); 
     }
   }
+  
 </pre>
 
 <script src="../../plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
