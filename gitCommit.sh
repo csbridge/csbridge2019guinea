@@ -8,3 +8,4 @@ git push
 # git pull 
 # make changes
 # ./gitCommit.sh      [pushes]
+# message is m
