@@ -1,0 +1,85 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+                Boîte frontière
+			</h1>
+			<p>
+                Ecrivez par Lisa Yan
+			</p>
+			<p>
+				Référence:
+				<a href ="{{pathToRoot}}fr/handouts/graphics.html">Référence graphique</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+                    Ceci est un programme de bonus! C'est un peu difficile, mais terminer ce programme vous aidera certainement à écrire votre projet final.
+                </p>
+                <p>
+                    Ecrivez un programme graphique qui déplace une boîte dans le sens inverse des aiguilles d'une montre autour du bord du canevas.
+					<center>
+						<img style="width:300px;border:2px solid grey" src="{{pathToRoot}}img/projects/borderBox/borderBox.gif">
+					</center>
+                </p>
+            <h2>FrontièreKarel</h2>
+            <p>
+            Avant de commencer avec la version Java, écrivons la version de Karel. Implémentez la version Karel dans BorderKarel.java. Rappelez-vous que Karel commence toujours en bas à gauche; déplacez-le dans le sens contraire des aiguilles d'une montre autour du bord de la carte. Faites-le bouger pour toujours!
+            </p>
+					<center>
+						<img style="width:300px" src="{{pathToRoot}}img/projects/borderBox/borderKarel.png">
+					</center>
+
+            <h2>BoîteFrontière</h2>
+            <p>Maintenant, ouvrez BorderBox.java. Copiez votre code de déplacement de frontière à partir de BorderKarel. <b>N'oubliez pas de renommer move() to moveBox()</b>, comme vous aurez besoin de définir moveBox().</p>
+            <p>Au lieu de Karel, nous avons maintenant une boîte (un GRect), représentée par les deux variables suivantes:</p>
+			<div class="well"><code>
+                private GRect box;<br>
+                private int boxDirection = EAST; // direction de départ
+			</code></div>
+            <h2>Configuration de la boîte</h2>
+            <p>Fabriquer la boîte en implémentant la méthode makeBox(). Comme Karel, commencez-le en bas à gauche de la toile.</p>
+			<center>
+				<img style="width:300px" src="{{pathToRoot}}img/projects/borderBox/boxSetup.png">
+			</center>
+
+            <h2>Se déplacer vers l'est</h2>
+            <p>Pour le moment, bougeons un peu notre boîte! Ensemble frontIsClear() pour toujours retourner vrai pour le moment (il retourne toujours toujours faux) afin que nous puissions simplement tester notre boîte se déplaçant dans une direction.</p>
+            <p>Mettre en place moveBox() semblable à la fonctionnalité Karel; c'est-à-dire, déplacez un pas dans la direction à laquelle la boîte fait face. Notre belle boîte commence face à l'est, alors mettez en œuvre moveBox faire un pas à droite. Assurez-vous qu'il se déplace SQUARE_LENGTH + SQUARE_GAP!
+            </p>
+            <p>Maintenant mettre en œuvre frontIsClear() de sorte que notre boîte s'arrête lorsqu'elle atteint le mur le plus à droite.
+            </p>
+					<center>
+						<img style="width:300px" src="{{pathToRoot}}img/projects/borderBox/boxMove.png">
+					</center>
+            <h2>Se déplacer le long de la frontière</h2>
+            <p>Tu y es presque! Pour nous déplacer le long de la frontière, nous devons mettre en œuvre turnLeft(), et étendre également notre frontIsClear() et moveBox() pour gérer différentes directions.</p>
+            <p>Commencez par mettre en œuvre turnLeft(). Astuce: vous ne devriez changer que le boxDirection; vous ne devriez rien voir arriver visuellement à la boîte, car c'est un carré et elle présente une symétrie de rotation.</p>
+            <p>Enfin, implémenter moveBox() et frontIsClear(), en fonction de la direction de la boîte. Encore une fois, pensez à déplacer la boîte SQUARE_LENGTH + SQUARE_GAP!
+            </p>
+			</div>
+
+		</div>
+
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

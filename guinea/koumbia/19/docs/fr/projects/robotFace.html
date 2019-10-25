@@ -1,0 +1,498 @@
+<head>
+
+<title>Introduction à l'Informatique</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+
+<!-- Fonts -->
+<!--<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,600,700,900,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900,600italic,700italic,900italic' rel='stylesheet' type='text/css'>-->
+
+<!-- Styles -->
+
+<link href="../../plugins/bootstrap-3.1/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../style.css">
+
+<!-- Java Script -->
+<script src="../../plugins/jquery.min.js"></script>
+<script src="../../plugins/bootstrap-3.1/js/bootstrap.min.js"></script>
+
+<script src="../../karel/ace/ace.js" type="text/javascript"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
+  </script>-->
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+<nav class="navbar-inverse navbar-default" role="navigation">
+  <div class="container-fluid">
+  	<div class="container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="/">CS Bridge</a>
+
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <!--<li ><a href="#">Link</a></li>-->
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Référence <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<!--<li><a href="../../fr/handouts/sections.html">Sections</a></li>-->
+	          	<li><a href="../../fr/handouts/karel.html">Karel Référence</a></li>
+							<!--<li><a href="../../fr/handouts/submission.html">How to Submit Your Work</a></li>-->
+
+	          	<li><a href="../../fr/handouts/console.html">Console Référence</a></li>
+	          	<li><a href="../../fr/handouts/random.html">Générateur aléatoire Référence</a></li>
+	          	<li><a href="../../fr/handouts/graphics.html">Graphique Référence</a></li>
+	          	<li><a href="../../fr/handouts/events.html">Événements (Events) Référence</a></li>
+	            <li><a href="../../fr/handouts/arrayLists.html">Array Lists</a></li>
+	          	<!--
+	          	<li><a href="../../handouts/events.html">Events Reference</a></li>
+                <li><a href="../../projects/jsJSSyntax.html">JavaScript Syntax Reference</a></li>
+                <li><a href="../../handouts/htmlReference.html">HTML Reference</a></li>
+                <li><a href="../../handouts/uploadWebsite.html">Uploading a Website Reference</a></li>
+
+	          	<li><a href="../../handouts/whatsNext.html">Whats Next</a></li>
+
+
+	            <li><a href="../../handouts/operations.html">Operations</a></li>
+	            <li><a href="../../handouts/graphics.html">Graphics</a></li>
+	            <li><a href="../../handouts/passingData.html">Passing Data</a></li>-->
+
+	          </ul>
+	        </li>
+
+
+          <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projets <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="../../fr/projects/WaterFromWell.html">Puiser de l'Eau</a></li>
+	          	<li><a href="../../fr/projects/mosquée.html">Construire La Grande Mosquée de Conakry</a></li>
+	          	<li><a href="../../fr/projects/mountain.html">Karel de Montagne et de Manguïer</a></li>
+	          	<li><a href="../../fr/projects/flag.html">Le Drapeau Guinean</a></li>
+	          	<li><a href="../../fr/projects/randomPainter.html">Peintre au hasard</a></li>
+
+
+	          	<li class="divider"></li>
+	          	<li><a href="../../fr/projects/sandcastles.html">Châteaux de sable</a></li>
+	          	<li><a href="../../fr/projects/favoriteNumber.html">Numéro préféré</a></li>
+	          	<li><a href="../../fr/projects/medicine.html">Médicament Counterfeit</a></li>
+	          	<li><a href="../../fr/projects/someSum.html">Une somme</a></li>
+	          	<li><a href="../../fr/projects/AllerAuMarché.html">Aller Au Marché</a></li>
+	          	<li><a href="../../fr/projects/sorcerer.html">La Sorcière</a></li>
+
+
+
+	          	<li class="divider"></li>
+	          	<li><a href="../../fr/projects/voiture.html">La Voiture en Pane</a></li>
+	          	<li><a href="../../fr/projects/awesome.html">La programmation est géniale</a></li>
+	          	<li><a href="../../fr/projects/stringArt.html">Moustiquaires</a></li>
+	          	<li><a href="../../fr/projects/randomCircles.html">Cercles aléatoires</a></li>
+	          	<li><a href="../../fr/projects/hailstone.html">Grêle</a></li>
+
+	            <li class="divider"></li>
+	            <li><a href="../../fr/projects/bouncingBall.html">Balle rebondissante</a></li>
+	          	<li><a href="../../fr/projects/madMethods.html">Méthodes folles</a></li>
+	          	<li><a href="../../fr/projects/target.html">Cible</a></li>
+	          	<li><a href="../../fr/projects/illusion.html">Illusion d'optique</a></li>
+	          	<li><a href="../../fr/projects/sunset.html">Cour de film</a></li>
+
+	          	<li class="divider"></li>
+
+	          	<li><a href="../../fr/projects/makingTracks.html">Faire des pistes</a></li>
+	            <li><a href="../../fr/projects/stampTool.html">Outil de Cachet</a></li>
+	          	<li><a href="../../fr/projects/catchMeIfYouCan.html">Attraper la Chevre dans le Jardin</a></li>
+	          	<li><a href="../../fr/projects/breakout.html">Éclater</a></li>
+
+							<!--
+	          	<li class="divider"></li>
+
+	          	<li><a href="../../fr/projects/sortedNumbers.html">Numéros triés</a></li>
+	          	<li><a href="../../fr/projects/snow.html">Neige</a></li>
+	          	<li><a href="../../fr/projects/mouseGame.html">La ligne</a></li>
+	          	<li><a href="../../fr/projects/music.html">La musique</a></li>
+							-->
+	          	<!--
+	            <li><a href="../../projects/drawPeople.html">Trois est une foule</a></li>
+
+	            <li><a href="../../projects/madLibs.html">Mad Libs</a></li>
+	            <li><a href="../../projects/secret.html">Secrète</a></li>
+
+
+
+                <li class="divider"></li>
+
+	            <li><a href="../../projects/breakout.html">Éclater</a></li>
+
+
+	            <li><a href="../../projects/music.html">Vagues de son</a></li>
+
+
+	            <li><a href="../../projects/project.html">Projet final</a></li>-->
+
+
+
+
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Des exemples <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../fr/projects/stepUp.html">Intensifier</a></li>
+	          	<li><a href="../../fr/projects/place100.html">Lavez 100 pièce des habilles (Place 100)</a></li>
+	          	<li><a href="../../fr/projects/beeperLine.html">Agriculture de maïs (Ligne bip)</a></li>
+	          	<li><a href="../../fr/projects/invert.html">Reboisement (Inverser)</a></li>
+	          	<li><a href="../../fr/projects/unKarel.html">Construire les Maisons</a></li>
+	          	<li class="divider"></li>
+	            <li><a href="../../fr/projects/emc2.html">E=MC2</a></li>
+	            <li><a href="../../fr/projects/fibb.html">Fibonacci</a></li>
+	           <li><a href="../../fr/projects/favoriteNumber.html">Numéro préféré</a></li>
+	           <li><a href="../../fr/projects/findPi.html">Trouver Pi</a></li>
+	           <li><a href="../../fr/projects/sorcerer.html">Sorcière</a></li>
+	          
+	           <li class="divider"></li>
+
+
+	            <li><a href="../../fr/projects/robotFace.html">Visage de Robot</a></li>
+
+
+	          	<li class="divider"></li>
+	            <li><a href="../../fr/projects/mysterySquare.html">Place du mystère</a></li>
+
+	            <li><a href="../../fr/projects/goCenter.html">Aller au centre</a></li>
+
+	            <li><a href="../../fr/projects/gravityBall.html">Boule de gravité</a></li>
+
+	          	<li><a href="../../fr/projects/averageMethod.html">Méthode moyenne</a></li>
+	          	<li><a href="../../fr/projects/drawPeople.html">Dessiner des gens</a></li>
+
+	          	<li><a href="../../fr/projects/halfGreen.html">Moitié vert</a></li>
+
+	          	<li class="divider"></li>
+	            <li><a href="../../fr/projects/holes.html">Trou</a></li>
+
+							<!--
+	          	<li class="divider"></li>
+							<li><a href="../../fr/projects/rocketShip.html">Fusées</a></li>
+
+	          	<li><a href="../../fr/projects/debrisSweeper.html">Balayeuse de débris</a></li>
+	          	<li><a href="../../fr/projects/suchADrag.html">Une telle traînée</a></li>
+
+
+	             <li><a href="../../projects/stampTool.html">Outil de tampon</a></li>
+	            <li><a href="../../projects/snow.html">Neige</a></li>
+
+              <li class="divider"></li>
+	            <li><a href="../../projects/breakoutOnline.html">Breakout en ligne</a></li>
+							-->
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentations <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../slides/LisaFrenchSlides/Bienvenue.pdf">Karel</a></li>
+	          	<li><a href="../../slides/LisaFrenchSlides/FluxDeControle.pdf">Flux de contrôle</a></li>
+	          	<li><a href="../../slides/LisaFrenchSlides/Variables.pdf">Variables 1</a></li>
+	          	<li><a href="../../slides/LisaFrenchSlides/Variables_two.pdf">Variables 2</a></li>
+	          	<li><a href="../../slides/LisaFrenchSlides/Graphique.pdf">Graphique</a></li>
+	          	<li><a href="../../slides/Animation.pdf">Animation</a></li>
+	          	<li><a href="../../slides/Methods.pdf">Les méthodes</a></li>
+	          	<li><a href="../../slides/Review.pdf">La revue</a></li>
+	          	<li><a href="../../slides/Events.pdf">Événements</a></li>
+	          	<li><a href="../../slides/Internet.pdf">l'Internet</a></li>
+	          	<li><a href="../../slides/Arrays.pdf">Tableaux</a></li>
+	          	<li><a href="../../slides/ArrayLists.pdf">Listes de tableaux</a></li>
+	          	<li><a href="../../slides/Strings.pdf">Les cordes</a></li>
+							<!--
+	          	<li><a href="../../slides/AI.pdf">Intelligence Artificielle</a></li>
+	          	<li><a href="../../slides/loopVariableReview.pdf">Revue Boucle/Variable</a></li>
+	          	<li><a href="../../slides/Interactors.pdf">Interacteurs</a></li>
+	          	<li><a href="../../slides/AI.pdf">IA</a></li>
+	          	<li><a href="../../slides/Classes.zip">Des classes</a></li>
+	          	<li><a href="../../slides/TheEnd.pdf">La fin</a></li>
+
+							-->
+	          </ul>
+	        </li>
+
+	        <!-- <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Défis Supplémentaires <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../fr/projects/isOdd.html">Est Impair</a></li>
+
+	          </ul>
+	        </li>-->
+
+
+	        <!--<li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">l'Internet <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="https://www.dropbox.com/s/1jtjo9hde8in0xn/1-How%20the%20internet%20works.pptx">Comment Internet fonctionne</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1t7pwltugsy4pxg/2-day-in-the-life-of-packet.pptx">Jour dans la vie d'un paquet</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1n0lzrl32urfsnr/3-How%20packets%20routed.pptx">Comment les paquets sont acheminés sur Internet</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="http://yuba.stanford.edu/~huangty/dacka/lab1.html">Lab 1</a></li>
+	          	<li><a href="http://yuba.stanford.edu/~huangty/dacka/lab2.html">Lab 2</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="../../internet/echo.zip">Code client d'écho</a></li>
+	          	<li><a href="../../internet/2person-breakout.zip">Code de groupe de 2 personnes</a></li>
+
+
+	          </ul>
+	        </li>-->
+
+	        <!--<li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Section<b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../projects/stepUp.html">Journal Karel</a></li>
+	          	<li><a href="../../projects/place100.html">Drogues contrefaites</a></li>
+	          	<li><a href="../../projects/beeperLine.html">Cible</a></li>
+	          </ul>
+	        </li>-->
+
+	        <!-- <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Prime <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+                <li><a href="../../fr/bonus-index.html">Aperçu des bonus</a></li>
+	          </ul>
+	        </li> -->
+
+	        <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formes<b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+                <li><a href="../../fr/handouts/submission.html">Soumettez votre travail</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSffsKTNU3mu-21-ZjZFJ3d-fPdvw6uQcvhAjbpXhux43_3gpg/viewform?usp=sf_link">Se connecter au laboratoire</a></li>
+	          </ul>
+	        </li>
+
+
+
+	      </ul>
+
+
+	      <ul class="nav navbar-nav navbar-right">
+	      	<li><a onclick="changeToFrench()" style="cursor: pointer;"><img class="languageIcon" src="../../img/guinean_flag.png"></img></a></li>
+	      	<li><a onclick="changeToEnglish()" style="cursor: pointer;"><img class="languageIcon" src="../../img/english_flag.png"></img></a></li>
+
+
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	</div>
+  </div><!-- /.container-fluid -->
+</nav>
+
+<script>
+
+	// function changeToTurkish() {
+	// 	var url = window.location.href;
+	// 	url = url.replace("/fr/", "/tr/");
+	// 	window.location.href = url;
+	// }
+
+	function changeToFrench() {
+		var url = window.location.href;
+		url = url.replace("/en/", "/fr/");
+		window.location.href = url;
+	}
+
+	function changeToEnglish() {
+		var url = window.location.href;
+		url = url.replace("/fr/", "/en/");
+		window.location.href = url;
+	}
+
+</script>
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Dessiner un visage de robot
+			</h1>
+			<p>
+				Problème écrit par Eric Roberts. Mis à jour par Chris Piech.
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Ecrivez un programme qui dessine cette image. Vous devez utiliser les constantes fournies, mais n'hésitez pas à les changer (ou à recolorer une partie du visage)</p>
+
+				<p>
+					<center>
+						<img style="width:500px" src="../../img/projects/robotFace/KarelGrandpere.png">	
+					</center>
+				</p>
+
+				<p>Quelques constantes sont fournies. Utilisez-les pour ne pas avoir de nombres "magiques" dans votre programme.</p>
+
+				<p>
+					<div class="well">
+						<code style = "font-size:12px">
+							/*La largeur de la face du robot: * /
+							<br/>private static final int LARGEUR_VISAGE = 300;
+							<br/>
+							<br/>/*La hauteur de la face du robot:*/
+							<br/>private static final int HAUTEUR_VISAGE = 350;
+							<br/>
+							<br/>/* Le diamètre de chaque œil de robot:*/
+							<br/>private static final int DIAMETRE_YEUX = 70;
+							<br/>
+							<br/>/* La distance du sommet de la tête au sommet des yeux: */
+							<br/>private static final int YEUX_Y_OFFSET = 40;
+							<br/>
+							<br/>/* La largeur de la bouche: */
+							<br/>private static final int LARGEUR_BOUCHE = 150;
+							<br/>
+							<br/>/*La largeur de la bouche::*/
+							<br/>private static final int HAUTEUR_BOUCHE = 30;
+							<br/>
+							<br/>/*La distance du haut de la tête au haut de la bouche:*/
+							<br/>private static final int BOUCHE_Y_OFFSET = 200;
+							<br/>
+							<br/>/*La distance entre le haut de l'écran et la base de l'étiquette:*/
+							<br/>private static final int LABEL_Y = 50;
+						</code>
+					</div>
+				</p>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Solution</h2>
+
+
+<pre id="editor" style="height:1220px">public class Visage extends GraphicsProgram {
+	
+			private static final int LARGEUR_VISAGE = 300;
+			private static final int HAUTEUR_VISAGE = 350;
+			private static final int DIAMETRE_YEUX = 70;
+			private static final int YEUX_Y_OFFSET = 40;
+			private static final int LARGEUR_BOUCHE = 150;
+			private static final int HAUTEUR_BOUCHE = 30;
+			private static final int BOUCHE_Y_OFFSET = 200;
+			private static final int LABEL_Y = 50;
+
+			public void run() {
+				dessinerTete();
+				dessinerlOeilGauche();
+				dessinerlOeilDroit();
+				dessinerLaBouche();
+				dessinerLabel();
+			}
+
+			private void dessinerTete() {
+				double x = (getWidth() - LARGEUR_VISAGE) / 2;
+				double y = (getHeight() - HAUTEUR_VISAGE) / 2;
+				GRect head = new GRect(x, y, LARGEUR_VISAGE, HAUTEUR_VISAGE);
+				head.setFilled(true);
+				head.setFillColor(Color.ORANGE);
+				add(head);
+			}
+			
+			private void dessinerlOeilGauche(){
+				double eyeSpacing = (LARGEUR_VISAGE - 2 * DIAMETRE_YEUX ) / 3;
+				double headX = (getWidth() - LARGEUR_VISAGE) / 2;
+				double headY = (getHeight() - HAUTEUR_VISAGE) / 2;
+				double x =  headX + eyeSpacing;
+				double y = headY + YEUX_Y_OFFSET;
+				GOval eye = new GOval(x, y, DIAMETRE_YEUX, DIAMETRE_YEUX );
+				eye.setFilled(true);
+				eye.setFillColor(Color.RED);
+				add(eye);
+			}
+			
+			private void dessinerlOeilDroit() {
+				double eyeSpacing = (LARGEUR_VISAGE - 2 * DIAMETRE_YEUX) / 3;
+				double headX = (getWidth() - LARGEUR_VISAGE) / 2;
+				double headY = (getHeight() - HAUTEUR_VISAGE) / 2;
+				double x =  headX + eyeSpacing * 2 + DIAMETRE_YEUX ;
+				double y = headY + YEUX_Y_OFFSET;
+				GOval eye = new GOval(x, y, DIAMETRE_YEUX, DIAMETRE_YEUX );
+				eye.setFilled(true);
+				eye.setFillColor(Color.GREEN);
+				add(eye);
+			}
+			
+			private void dessinerLaBouche() {
+				double headX = (getWidth() - LARGEUR_VISAGE) / 2;
+				double headY = (getHeight() - HAUTEUR_VISAGE) / 2;
+				double x = headX + (LARGEUR_VISAGE - LARGEUR_BOUCHE) / 2;
+				double y = headY + BOUCHE_Y_OFFSET;
+				GRect mouth = new GRect(x, y, LARGEUR_BOUCHE, HAUTEUR_BOUCHE);
+				mouth.setFilled(true);
+				add(mouth);
+			}
+			
+			private void dessinerLabel() {
+				GLabel label = new GLabel("Grandpere de Karel");
+				label.setFont("Courier-50");
+				double x = (getWidth() - label.getWidth()) / 2;
+				add(label, x, LABEL_Y);
+			}
+		}</pre>
+    
+<script src="../../plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.setShowPrintMargin(false);
+   editor.renderer.setShowGutter(false); 
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+	</div>
+	</div>
+		
+<hr>
+
+<div class="footer">
+	<p class="pull-left">
+		&#169; Stanford 2019 &#124; Créé par
+		<a href="http://stanford.edu/~cpiech">Chris</a> avec l'aide de toute l'équipe.
+		Basé sur la merveilleuse classe CS106A développée par de nombreux enseignants talentueux. Un merci spécial à <a href="http://cs.stanford.edu/people/eroberts/">Eric Roberts</a> et <a href="http://robotics.stanford.edu/~sahami/bio.html">Mehran Sahami</a>.
+	</p>
+	<!--<p class="pull-right">
+		<a href="../../fall12">Fall 2012</a>
+	</p>-->
+</div>
+<!--<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-35433298-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+</script>-->
+
+	</div>
+</body>

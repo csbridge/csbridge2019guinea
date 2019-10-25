@@ -1,0 +1,92 @@
+<head>
+
+  %include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  %include templates/parts/navBarFr.html
+
+  <!-- Main Content -->
+  <div class="container">
+
+    <!-- Header -->
+    <div id="pageHeader">
+      <h1>
+        C'est une somme!
+      </h1>
+      <p>
+        Problème écrit par Bryce C-R, Julia Lee, Chris Piech et TY Huang
+      </p>
+
+    </div>
+    <hr/>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p> Ecrivez un programme qui lit 10 nombres entiers de l’utilisateur puis affiche la somme des valeurs entrées.</p>
+        <p>
+          <center>
+            <img style="width:600px" src="{{pathToRoot}}img/projects/someSum/demo.png">  
+          </center>
+        </p>
+				<p>
+					Souvent, dans les programmes de console, il est nécessaire d’imprimer les valeurs à l’utilisateur sous forme de chaîne. L'exemple ci-dessus est:
+					</br>
+					</br>
+					"La somme est de: 55"
+					</br>
+					</br>
+					Si vous exécutez votre programme avec l'entrée ci-dessus, 55 sera la valeur stockée dans la variable qui suit la somme. Si cette variable s'appelle 'exempleSum', alors pour écrire dans la sortie, vous écrirez:
+					</br>
+					</br>
+					println("La somme est de: " + exempleSum);
+					</br>
+					</br>
+					Une forme plus générale est:
+					</br>
+					</br>
+					"Message de chaîne" + nomDeVariable + "plus de message de chaîne"
+					</br>
+					</br>
+				</p>
+      </div>
+
+<!--pre id="editor" style="height:400px">/**
+ * Program: That's Some Sum
+ * -------------
+ * This program reads in 10 integers from the user and then prints their sum.
+ */
+
+public class SomeSum extends ConsoleProgram {
+  
+  public void run() {
+    println("Enter 10 nums. I will show you the sum!");
+    int sum = 0;
+      
+    for(int i=0; i<10; i++) {
+      sum = sum + readInt("Please enter an integer: ");
+    }
+
+    println("");
+    println("The sum is: " + sum);
+  }
+}</pre-->
+    
+<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.renderer.setShowGutter(false); 
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+    
+    %include templates/parts/footerFr.html
+
+  </div>
+</body>

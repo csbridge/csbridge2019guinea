@@ -1,0 +1,102 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Grêle
+			</h1>
+			<p>
+				Basé sur un document d'Eric Roberts
+			</p>
+			<p>
+				Exemples travaillés:
+				<a href="{{pathToRoot}}fr/projects/emc2.html">E=MC2</a>,
+				<a href="{{pathToRoot}}fr/projects/fibb.html">Fibbonacci</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Notre monde contient de nombreuses énigmes mathématiques intéressantes, dont beaucoup peuvent être exprimées sous forme de programmes informatiques. Le problème de la grêle est l’un des problèmes les plus intéressants.</p>
+				<p>Le problème peut être exprimé comme suit:</p>
+
+<p>
+<div class="well">Choisissez un entier positif et appelez-le n.
+<br/>Si n est pair, divisez-le par deux.
+<br/>Si n est impair, multipliez-le par trois et ajoutez-en un.
+<br/>Continuez ce processus jusqu'à ce que n soit égal à un.</div>
+</p>
+
+	<p>L'exemple suivant, commençant par le numéro 15, illustre ce processus:</p>
+
+<p style="padding-left:1em">
+	15	is odd, so I make 3n+1:	46
+	<br>46	is even, so I take half:	23
+	<br>23	is odd, so I make 3n+1:	70
+	<br>70	is even, so I take half:	35
+	<br>35	is odd, so I make 3n+1:	106
+	<br>106	is even, so I take half:	53
+	<br>53	is odd, so I make 3n+1:	160
+	<br>160	is even, so I take half:	80
+	<br>80	is even, so I take half:	40
+	<br>40	is even, so I take half:	20
+	<br>20	is even, so I take half:	10
+	<br>10	is even, so I take half:	5
+	<br>5	is odd, so I make 3n+1:	16
+	<br>16	is even, so I take half:	8
+	<br>8	is even, so I take half:	4
+	<br>4	is even, so I take half:	2
+	<br>2	is even, so I take half:	1
+</p>
+
+	Comme vous pouvez le constater à partir de cet exemple, les chiffres montent et descendent, mais finalement, du moins pour tous ceux qui ont déjà été essayés, se termine en 1. À certains égards, ce processus évoque la formation de grêle, qui sont portés par les vents encore et encore avant qu'ils ne descendent finalement au sol. En raison de cette analogie, cette séquence de nombres est généralement appelée séquence de Hailstone, bien qu'elle porte également de nombreux autres noms.</p>
+
+	<p>Ecrivez un programme ConsoleProgram qui lit un numéro de l’utilisateur puis affiche la séquence de Hailstone pour ce numéro, suivi d’une ligne indiquant le nombre de pas effectués pour atteindre 1. Par exemple, votre programme devrait pouvoir produire un exemple d’exécution qui ressemble comme ça:
+
+				<p>
+					<center>
+						<img style="width:50%" src="{{pathToRoot}}img/projects/hailstone/17.png">
+					</center>
+				</p>
+				<p>
+					La chose fascinante à propos de ce problème est que personne n’a encore été en mesure de prouver qu’il s’arrête toujours. Le nombre d'étapes dans le processus peut certainement devenir très grand. Combien de pas, par exemple, votre programme prend-il lorsque n est 27?
+				</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Vérification paire ou impaire</h2>
+				<p>
+					Afin de résoudre le problème de la grêle, nous allons avoir besoin de déterminer si un entier est pair ou impair. En plus des opérateurs habituels que vous connaissez et aimez (comme les langages de programmation +, -, * et /), vous disposez d'un opérateur restant: %.
+					<div class="well"><code>a % b</code></div>
+					Renvoie la valeur restante lorsque vous divisez<i>a</i> par <i>b</i>. Par exemple <code>10 % 3</code> est 1 parce que lorsque vous divisez 10 par 3, vous obtenez 3 avec 1 reste.
+				</p>
+				<p>Lorsque vous divisez un nombre par 2, le reste est 0 si le nombre est pair et 1 si le nombre est impair. Ainsi:
+					<div class="well"><code>n % 2 == 0</code></div>
+					Est un test pour savoir si n est pair</p>
+			</div>
+
+		</div>
+
+
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

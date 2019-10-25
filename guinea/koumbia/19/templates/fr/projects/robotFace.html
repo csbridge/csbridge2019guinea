@@ -1,0 +1,164 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Dessiner un visage de robot
+			</h1>
+			<p>
+				Problème écrit par Eric Roberts. Mis à jour par Chris Piech.
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Ecrivez un programme qui dessine cette image. Vous devez utiliser les constantes fournies, mais n'hésitez pas à les changer (ou à recolorer une partie du visage)</p>
+
+				<p>
+					<center>
+						<img style="width:500px" src="{{pathToRoot}}img/projects/robotFace/KarelGrandpere.png">	
+					</center>
+				</p>
+
+				<p>Quelques constantes sont fournies. Utilisez-les pour ne pas avoir de nombres "magiques" dans votre programme.</p>
+
+				<p>
+					<div class="well">
+						<code style = "font-size:12px">
+							/*La largeur de la face du robot: * /
+							<br/>private static final int LARGEUR_VISAGE = 300;
+							<br/>
+							<br/>/*La hauteur de la face du robot:*/
+							<br/>private static final int HAUTEUR_VISAGE = 350;
+							<br/>
+							<br/>/* Le diamètre de chaque œil de robot:*/
+							<br/>private static final int DIAMETRE_YEUX = 70;
+							<br/>
+							<br/>/* La distance du sommet de la tête au sommet des yeux: */
+							<br/>private static final int YEUX_Y_OFFSET = 40;
+							<br/>
+							<br/>/* La largeur de la bouche: */
+							<br/>private static final int LARGEUR_BOUCHE = 150;
+							<br/>
+							<br/>/*La largeur de la bouche::*/
+							<br/>private static final int HAUTEUR_BOUCHE = 30;
+							<br/>
+							<br/>/*La distance du haut de la tête au haut de la bouche:*/
+							<br/>private static final int BOUCHE_Y_OFFSET = 200;
+							<br/>
+							<br/>/*La distance entre le haut de l'écran et la base de l'étiquette:*/
+							<br/>private static final int LABEL_Y = 50;
+						</code>
+					</div>
+				</p>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Solution</h2>
+
+
+<pre id="editor" style="height:1220px">public class Visage extends GraphicsProgram {
+	
+			private static final int LARGEUR_VISAGE = 300;
+			private static final int HAUTEUR_VISAGE = 350;
+			private static final int DIAMETRE_YEUX = 70;
+			private static final int YEUX_Y_OFFSET = 40;
+			private static final int LARGEUR_BOUCHE = 150;
+			private static final int HAUTEUR_BOUCHE = 30;
+			private static final int BOUCHE_Y_OFFSET = 200;
+			private static final int LABEL_Y = 50;
+
+			public void run() {
+				dessinerTete();
+				dessinerlOeilGauche();
+				dessinerlOeilDroit();
+				dessinerLaBouche();
+				dessinerLabel();
+			}
+
+			private void dessinerTete() {
+				double x = (getWidth() - LARGEUR_VISAGE) / 2;
+				double y = (getHeight() - HAUTEUR_VISAGE) / 2;
+				GRect head = new GRect(x, y, LARGEUR_VISAGE, HAUTEUR_VISAGE);
+				head.setFilled(true);
+				head.setFillColor(Color.ORANGE);
+				add(head);
+			}
+			
+			private void dessinerlOeilGauche(){
+				double eyeSpacing = (LARGEUR_VISAGE - 2 * DIAMETRE_YEUX ) / 3;
+				double headX = (getWidth() - LARGEUR_VISAGE) / 2;
+				double headY = (getHeight() - HAUTEUR_VISAGE) / 2;
+				double x =  headX + eyeSpacing;
+				double y = headY + YEUX_Y_OFFSET;
+				GOval eye = new GOval(x, y, DIAMETRE_YEUX, DIAMETRE_YEUX );
+				eye.setFilled(true);
+				eye.setFillColor(Color.RED);
+				add(eye);
+			}
+			
+			private void dessinerlOeilDroit() {
+				double eyeSpacing = (LARGEUR_VISAGE - 2 * DIAMETRE_YEUX) / 3;
+				double headX = (getWidth() - LARGEUR_VISAGE) / 2;
+				double headY = (getHeight() - HAUTEUR_VISAGE) / 2;
+				double x =  headX + eyeSpacing * 2 + DIAMETRE_YEUX ;
+				double y = headY + YEUX_Y_OFFSET;
+				GOval eye = new GOval(x, y, DIAMETRE_YEUX, DIAMETRE_YEUX );
+				eye.setFilled(true);
+				eye.setFillColor(Color.GREEN);
+				add(eye);
+			}
+			
+			private void dessinerLaBouche() {
+				double headX = (getWidth() - LARGEUR_VISAGE) / 2;
+				double headY = (getHeight() - HAUTEUR_VISAGE) / 2;
+				double x = headX + (LARGEUR_VISAGE - LARGEUR_BOUCHE) / 2;
+				double y = headY + BOUCHE_Y_OFFSET;
+				GRect mouth = new GRect(x, y, LARGEUR_BOUCHE, HAUTEUR_BOUCHE);
+				mouth.setFilled(true);
+				add(mouth);
+			}
+			
+			private void dessinerLabel() {
+				GLabel label = new GLabel("Grandpere de Karel");
+				label.setFont("Courier-50");
+				double x = (getWidth() - label.getWidth()) / 2;
+				add(label, x, LABEL_Y);
+			}
+		}</pre>
+    
+<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.setShowPrintMargin(false);
+   editor.renderer.setShowGutter(false); 
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+	</div>
+	</div>
+		
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

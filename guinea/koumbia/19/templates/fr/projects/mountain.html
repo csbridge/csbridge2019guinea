@@ -1,0 +1,80 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Karel de Montagne et de Manguïer
+			</h1>
+			<p>
+				Basé sur un document d'Eric Roberts
+			</p>
+
+			<p>
+				Documents à distribuer:
+				<a href ="{{pathToRoot}}fr/handouts/karel.html">KarelReference</a>
+				<br/>
+				Exemple travaillé:
+				<a href="{{pathToRoot}}fr/projects/beeperLine.html">Beeper Line</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Karel rêve d'escalader des montagnes. Apprenez-lui à atteindre le sommet d'une montagne de n'importe quelle hauteur. Par exemple, pour la montagne suivante:
+				</p>
+				<p>
+					<center>
+						<img class="psetImg" style="width:400px" src="{{pathToRoot}}img/projects/mountain/mountain0.png">
+					</center>
+				</p>
+				<p>
+					Karel devrait monter au sommet et laisser un drapeau (un bipeur) au sommet, comme indiqué ci-dessous:
+				</p>
+				<p>
+					<center>
+						<img class="psetImg" style="width:400px"  src="{{pathToRoot}}img/projects/mountain/mountain1.png">
+					</center>
+				</p>
+				<p>
+					Contrairement aux problèmes précédents, vous êtes <b>ne pas</b> garanti la hauteur de la montagne avant la main. Le programme que vous écrivez devrait permettre à Karel d'escalader des montagnes de toutes tailles. Par exemple les trois suivants:
+				</p>
+				<p>
+					<center>
+						<img class="psetImg" style="width:100%"  src="{{pathToRoot}}img/projects/mountain/mountains.png">
+					</center>
+				</p>
+				<p>
+				 	Vous pouvez assumer:
+					<ul>
+						<li>Karel commence en bas à gauche du monde, face à l'est.
+						<li>Il y a un espace (à gauche et à droite) entre la montagne et le monde.
+						<li>La montagne a au moins une hauteur carrée.
+					</ul>
+				</p>
+				<p>
+					Utilisez des while loops.
+				</p>
+			</div>
+
+		</div>
+
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

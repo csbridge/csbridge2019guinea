@@ -1,0 +1,72 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+                Damier Karel
+			</h1>
+			<p>
+                Écrit par Tyler Conklin
+								</br>
+								Sur la base des éditions précédentes de ce travail créé par Mehran Sahami, Keith Schwarz, Eric Roberts, and others.
+			</p>
+			<p>
+				Référence:
+                <a href ="{{pathToRoot}}fr/handouts/karel.html">Karel Référence</a><br/>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+						Ceci est un programme de bonus! C'est censé être stimulant.
+				</p>
+				<p>
+					Programmez Karel pour créer un motif en damier de bips sonores dans un monde rectangulaire vide. Si Karel commence dans un monde comme indiqué ci-dessous ...
+                    <p>
+					<center>
+						<img style="width:300px;border:2px solid grey" src="{{pathToRoot}}img/projects/checkerboardKarel/checkerboardKarelStart.png">
+					</center>
+                    </p>
+                    <p>...alors le monde devrait finir par ressembler à ceci.</p>
+                    <p>
+ 					<center>
+						<img style="width:300px;border:2px solid grey" src="{{pathToRoot}}img/projects/checkerboardKarel/checkerboardKarelFinish.png">
+					</center>
+                    </p>
+                    <p>
+					 Notez que l'endroit où Karel termine, ainsi que la direction vers laquelle Karel se trouve à l'arrivée, importent peu.
+        </p>
+
+				<p>
+					Assurez-vous que votre solution fonctionne avec des mondes de tailles différentes. Par exemple, votre solution devrait fonctionner pour des mondes comportant une seule colonne ou une seule ligne. Votre solution devrait également fonctionner pour des mondes qui ne sont pas parfaitement carrés.
+				</p>
+				</br>
+				<p>
+					N'oubliez pas que vous ne pouvez utiliser que la syntaxe Karel et que vous ne pouvez pas utiliser de variables Java. Lorsque vous réfléchissez à votre solution, n'oubliez pas tous les mondes de tailles différentes que vous pourriez rencontrer. Assurez-vous de tester ces différents mondes après avoir effectué votre première tentative de solution!
+				</p>
+
+
+			</div>
+
+		</div>
+
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

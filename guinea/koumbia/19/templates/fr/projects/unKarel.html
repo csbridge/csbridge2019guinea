@@ -1,0 +1,149 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Construire les Maisons
+			</h1>
+			<p>
+				Problème écrit par Eric Roberts
+			</p>
+			<p>
+				Documents à distribuer:
+				<a href ="{{pathToRoot}}fr/handouts/karel.html">KarelReference</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Karel a été embauché par les Nations Unies pour venir aider à construire des maisons. La journée doit être gagnée et Karel est clairement le meilleur robot pour ce travail. Votre objectif est de faire marcher Karel dans la rangée du bas et de construire une maison comme suit:
+				</p>
+
+				<p>
+					<center>
+						<img style="width:150px" src="{{pathToRoot}}img/projects/unKarel/house.png">
+					</center>
+				</p>
+
+				<p>
+					Karel trouve chaque fois un bipeur. Les images ci-dessous montrent ce que Karel devrait faire pour deux mondes donnés en exemple. Vous pouvez supposer qu'aucune maison ne se chevauchera et que toutes les maisons iront bien dans le monde. Vous ne pouvez pas supposer la taille du monde ou le nombre de maisons!
+				</p>
+
+				<p>
+					<center>
+						<img style="width:700px" src="{{pathToRoot}}img/projects/unKarel/un1.png">
+					</center>
+				</p>
+
+				<p>
+					<center>
+						<img style="width:600px" src="{{pathToRoot}}img/projects/unKarel/un2.png">
+					</center>
+				</p>
+
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Solution</h2>
+
+
+<pre id="editor" style="height:1100px">/**
+ * Programme: Nations Unies Karel
+ * -----------------
+ * Ce programme permet à Karel de construire des maisons, en tant que travail pour les Nations Unies.
+ */
+public class UNKarel extends SuperKarel {
+
+	public void run() {
+		while(frontIsClear()) {
+			move();
+			if(beepersPresent()) {
+				buildHouse();
+			}
+		}
+	}
+
+	/**
+	 * Méthode: Construire une maison
+	 * -------------------
+	 * Construit une seule maison centrée sur la position actuelle de Karel.
+	 * Vous pouvez supposer qu’un bip sonore est présent à l’état de démarrage.
+	 * À la fin de la méthode, Karel sera face à l’est du fond.
+	 * coin droit de la maison.
+	 */
+	private void buildHouse() {
+		pickBeeper();
+		turnAround();
+		move();
+		turnRight();
+		placeThree();
+		turnRight();
+		move();
+		turnRight();
+		placeThree();
+		turnLeft();
+		move();
+		turnLeft();
+		placeThree();
+		turnAround();
+		moveToWall();
+		turnLeft();
+	}
+
+	/**
+	 * Méthode: déplacer au mur
+	 * --------------------
+	 * Avancez jusqu'à ce que Karel frappe un mur.
+	 */
+	private void moveToWall() {
+		while(frontIsClear()) {
+			move();
+		}
+	}
+
+	/**
+	 * Méthode: Place Three
+	 * -------------------
+	 * Place trois bips sonores et bouge trois fois!
+	 */
+	private void placeThree() {
+		for(int i = 0; i &lt; 3; i++) {
+			putBeeper();
+			move();
+		}
+	}
+
+}</pre>
+
+<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.renderer.setShowGutter(false);
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

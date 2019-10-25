@@ -1,0 +1,84 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Place du mystère
+			</h1>
+			<p>
+				Problème écrit par un professeur de mystère CS106A.
+			</p>
+
+		</div>
+		<hr/>
+
+		
+
+		<div class="row">
+			<div class="col-md-12">
+				Tracez un carré (100 pixels sur 100 pixels) au centre de l'écran et modifiez sa couleur toutes les secondes.
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Solution</h2>
+
+
+<pre id="editor" style="height:450px">/**
+ * Dessine un carré mystère qui change de couleur
+ * -----------------------------------------
+ * Fait vraiment ce qu'il dit.
+ */
+public class CarreMystere extends GraphicsProgram {
+
+    private static final int TAILLE = 400;
+    private static final int RETARD = 1000;
+
+	private static RandomGenerator rg = new RandomGenerator();
+	
+	public void run() {
+		// Draw a square in the center of the screen.
+		GRect rect = new GRect(TAILLE, TAILLE);
+		double x = (getWidth() - rect.getWidth()) / 2;
+		double y = (getHeight() - rect.getHeight()) / 2;
+		rect.setFilled(true);
+		add(rect, x, y);
+		
+		// Change its color every second.
+		while(true) {
+			rect.setColor(rg.nextColor()); 
+			pause(RETARD);
+		}
+	}
+}</pre>
+    
+<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.setShowPrintMargin(false);
+   editor.renderer.setShowGutter(false); 
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+	</div>
+	</div>
+		
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

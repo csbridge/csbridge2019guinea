@@ -1,0 +1,62 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Faire des pistes
+			</h1>
+			<p>
+				Problème écrit par un conférencier mystère CS106A.
+			</p>
+
+			<p>
+				Documents à distribuer:
+				<a href ="{{pathToRoot}}fr/handouts/events.html">Events</a>
+			<br/>
+				Exemples travaillés:
+				<a href="{{pathToRoot}}fr/projects/stampTool.html">Stamp Tool</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Pendant la nuit, un animal a passé devant ta maison. Après avoir examiner les pattes, tu as trouver que c'était un loup! Il a quatre doit et un grand paume de main. </p>
+				<p>
+					Ecrivez un programme qui dessine une empreinte du loup partout où l'utilisateur clique.</p>
+
+				<p>
+					<center>
+						<img style="width:500px" src="{{pathToRoot}}img/icons/makingTracks.png">
+					</center>
+				</p>
+
+				<p>Vous êtes fourni avec une méthode <code>drawBearTrack</code> qui attire un seul ours
+					suivre à la position (x, y) donnée:</p>
+
+					<pre>private void drawBearTrack(double x, double y)</pre>
+
+
+			</div>
+		</div>
+
+
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

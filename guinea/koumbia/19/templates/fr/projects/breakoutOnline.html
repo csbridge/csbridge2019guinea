@@ -1,0 +1,168 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Breakout en ligne!
+			</h1>
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+
+				<p>
+                                        À ce stade, vous devriez être assez familier avec Breakout :). Consultez la page de discussion pour un rappel sur les exigences. Ici, nous implémentons simplement l'évasion dans notre framework javascript.
+				</p>
+<pre id="editor" style="height:480px">
+var STAGE_WIDTH = 400;
+var STAGE_HEIGHT = 600;
+
+var app = new GraphicsApp();
+
+/* état du jeu local */
+var TOP_GAP = 20; // Espace entre la paroi supérieure et la brique
+var BRICK_GAP = 5; // Espace entre les briques
+var BRICKS_ROW = 10; // Nombre de briques dans une rangée
+var NUM_ROWS = 10; // Nombre de rangées de briques
+
+var BRICK_WIDTH = Math.floor((STAGE_WIDTH - BRICK_GAP*(BRICKS_ROW+2))/BRICKS_ROW);
+var BRICK_HEIGHT = 10;
+
+var BALL_RADIUS = 10;
+
+var PADDLE_WIDTH = 80;
+var PADDLE_HEIGHT = 20;
+
+var bricksLeft = 100; // nombre de briques laissées à l'écran. si 0, le joueur gagne
+
+var colors = [Color.red, Color.yellow, Color.magenta, Color.green, Color.blue];
+
+var ball;
+var paddle;
+
+/**
+ * Nous créons ici tous les éléments de jeu: balle, pagaie et briques!
+ */
+function run() {
+    app.addCanvas(STAGE_WIDTH, STAGE_HEIGHT);
+    for (var i=0; i < NUM_ROWS; ++i) {
+        for (var j=0; j < BRICKS_ROW; ++j) {
+            var rect = new GRect(BRICK_GAP + (i*(BRICK_WIDTH+BRICK_GAP)),
+                                 TOP_GAP + BRICK_GAP + (j*(BRICK_HEIGHT+BRICK_GAP)),
+                                 BRICK_WIDTH, BRICK_HEIGHT);
+            rect.setColor(colors[Math.floor(j/2)]);
+            add(rect);
+        }
+    }
+
+    ball = new GCircle(200,400,BALL_RADIUS);
+    ball.vx = Math.random()*20-10;
+    ball.vy = 6;
+    add(ball);
+
+    paddle = new GRect(180,550,PADDLE_WIDTH,PADDLE_HEIGHT);
+    add(paddle);
+}
+
+/**
+ * Détecter quand la balle a touché l'un des murs. La balle rebondit sur les
+ * murs nord, est et ouest et indique un échec si la balle sort du bas de
+ * l'écran.
+ */
+function detectWalls() {
+    if (ball.position.y > STAGE_HEIGHT) {
+        var text = new PIXI.Text("YOU LOSE", {font:"50px Arial", fill:"red"});
+        text.position.x = STAGE_WIDTH/2 - text._width/2;
+        text.position.y = STAGE_HEIGHT/2;
+        stage.addChild(text);
+        ball.vx = 0;
+        ball.vy = 0;
+        return;
+    } else if (ball.position.x < 0 || ball.position.x > STAGE_WIDTH) {
+        ball.vx = -ball.vx;
+    } else if (ball.position.y <= 0) {
+        ball.vy = -ball.vy;
+    }
+}
+
+/**
+ * Détecter une collision entre le ballon et un autre objet! Si elle entre en
+ * collision avec un élément (brique ou palette), nous inversons sa direction y.
+ * De plus, si le collisionneur est une brique, on enlève la brique
+ */
+function detectCollision() {
+
+    detectWalls();
+    for (var i=0; i<=BALL_RADIUS; i+=BALL_RADIUS) {
+        for (var j=0; j<BALL_RADIUS; j+=BALL_RADIUS) {
+            var collider = stage.getElementAt(ball.position.x+i, ball.position.y+j);
+            if (collider !== null) {
+                ball.vy = -ball.vy;
+                if (collider !== paddle) {
+                    stage.remove(collider);
+                    bricksLeft -= 1;
+                }
+                return;
+            }
+        }
+    }
+}
+
+/**
+ * Cette fonction est appelée dans une boucle pour animer le jeu. Voici où nous
+ * mettons à jour les positions de tous les éléments du jeu et
+ * supprimons / ajoutons des éléments avec une réponse aux événements
+ * de jeu (collisions, victoire / perte, etc.)
+ */
+function drawFrame() {
+    ball.position.x += ball.vx;
+    ball.position.y += ball.vy;
+
+    detectCollision();
+
+    var mousex = stage.getMousePosition().x;
+    if (mousex > 0 && mousex < STAGE_WIDTH-PADDLE_WIDTH) {
+        paddle.position.x = mousex;
+    }
+    if (bricksLeft === 0) {
+        var text = new PIXI.Text("YOU WIN", {font:"50px Arial", fill:"red"});
+        text.position.x = STAGE_WIDTH/2 - text._width/2;
+        text.position.y = STAGE_HEIGHT/2;
+        stage.addChild(text);
+        ball.vx = 0;
+        ball.vy = 0;
+    }
+}
+</pre>
+			</div>
+		</div>
+
+		<br/>
+<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.renderer.setShowGutter(false);
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

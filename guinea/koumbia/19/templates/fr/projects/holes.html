@@ -1,0 +1,98 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Faire des trous
+			</h1>
+			<p>
+				Problème écrit par un conférencier mystère CS106A.
+			</p>
+
+			<p>
+				Documents à distribuer:
+				<a href ="{{pathToRoot}}fr/handouts/events.html">Events</a>
+			<br/>
+				Exemples travaillés:
+				<a href="{{pathToRoot}}fr/projects/stampTool.html">Stamp Tool</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Ecrivez un programme qui qui dessine des cercles noirs remplis à l’écran chaque fois que la souris est cliqué.</p>
+
+				<p>
+					<center>
+						<img style="width:500px" src="{{pathToRoot}}img/projects/trou/trou.png">
+					</center>
+				</p>
+
+				<div class="row">
+			<div class="col-md-12">
+				<h2>Solution</h2>
+
+
+<pre id="editor" style="height:400px">public class trou extends GraphicsProgram {
+	//Le rayon de chaque trou que nous faisons.
+	private static final double RAYON_TROU = 10;
+	
+	public void run() {
+		addMouseListeners();
+	}
+	
+	/**
+	 * Dessine un cercle noir centré à l'emplacement de la souris à chaque fois que la souris
+	 * est cliqué
+	 */
+	public void mousePressed(MouseEvent e) {
+		double x = e.getX() - RAYON_TROU;
+		double y = e.getY() - RAYON_TROU;
+		
+		GOval trou = new GOval(x, y, 2 * RAYON_TROU, 2 * RAYON_TROU);
+		trou.setFilled(true);
+		add(trou);
+	}
+}
+
+
+</pre>
+    
+<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.setShowPrintMargin(false);
+   editor.renderer.setShowGutter(false); 
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+
+
+
+			</div>
+		</div>
+
+
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

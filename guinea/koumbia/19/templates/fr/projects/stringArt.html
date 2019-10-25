@@ -1,0 +1,88 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Moustiquaires 
+			</h1>
+			<p>
+				Basé sur une démonstration d'Eric Roberts. Adpater par Lisa E. 
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					En Guinée, le taut de paludisme est trés elever. Alors, pour luter contre la maladie, il faut utiliser des moustiquaires. Il empêche les moustiques de nous piquer car leurs piqures sont très dangereuses. Il sont des agents de paludisme. 
+				<p>
+					Les moustiquaires se trouvent aux centre de santé. Pour les obtenirs il faux qu'on passe par le centre de santé. Mais dommage, le centre de santé n'en on pas :-(. Alors, il faut nous même fabriquer pour se proteger. 
+				<p>	
+
+					En dessinant à plusieurs reprises des lignes, nous pouvons créer une forme incurvée. Prenons l'exemple ci-dessous où nous imaginons des points uniformément espacés le long du fond et de la gauche d'une toile. Si nous connectons le point le plus haut sur le bord gauche au point le plus à gauche sur le bord droit, nous aurions une ligne semblable à l'image de l'extrême gauche. Si nous connectons ensuite les 10 points suivants, nous obtenons une image au milieu et si nous connectons tous les points, nous obtenons l'image à droite.
+				</p>
+				
+				<p>
+					<center>
+						<img style="width:700px" src="{{pathToRoot}}img/projects/stringArt/startToEnd.png">	
+					</center>
+				</p>
+				<p>Ecrivez un programme qui crée la "courbe" dans l'image droite ci-dessus en utilisant des lignes droites.</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Code de démarrage</h2>
+
+
+<pre id="editor" style="height:270px">public class StringArt extends GraphicsProgram {
+
+	/** La taille de l'écran **/
+	public static final int APPLICATION_WIDTH = 400;
+	public static final int APPLICATION_HEIGHT = 400;
+	
+	/** Le nombre de pixels entre les extrémités de la ligne **/
+	public static final int LINE_SPACING = 20;
+	
+	/** Le nombre de lignes à tracer **/
+	public static final int NUM_LINES = APPLICATION_WIDTH / LINE_SPACING;
+
+	public void run() {
+		// votre code ici ...
+	}
+}</pre>
+    
+<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.renderer.setShowGutter(false); 
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+
+			</div>
+		</div>
+
+
+		
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

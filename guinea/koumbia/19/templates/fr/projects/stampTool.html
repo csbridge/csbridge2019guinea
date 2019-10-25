@@ -1,0 +1,89 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Outil de Cachet
+			</h1>
+			<p>
+				Problème écrit par un conférencier mystère CS106A.
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+				 	Tu es une chéftain d'un organisation, mais tu n'as pas dabord un cachet pour marqué les documents que tu signe. Vous allez faire un cachet pour votre propre organisation. 
+				<p>
+				
+				<p>
+					Commencer, par écrivez un programme qui a un GRect (qui représente un cachet) suivez la souris d'un utilisateur et tracez un GRect sur l'écran centré autour de la souris lorsque l'utilisateur clique dessus. </p>
+
+				<p>
+					<center>
+						<img style="width:500px" src="{{pathToRoot}}img/projects/stampTool/demo.png">	
+					</center>
+				</p>
+
+				<p>Souvenez-vous que puisque vous avez besoin d'une variable que vous pouvez modifier dans une classe d'événement de souris (le GRect qui représente votre tampon), vous allez devoir la déclarer en tant que variable istance. Demandez à l'un des professeurs de l'expliquer si cela n'a aucun sens.</p>
+
+				</p>
+				Maintenant que vous avez fait un cachet simple en rectangle, il faut le modifier (par exemple le coleur, la taille, etc.) pour vos propore dossiers. Amusez vous bien avec vos experiences!
+				</p>
+				
+			</div>
+		</div>
+		
+<!--
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Solution</h2>
+
+
+<pre id="editor" style="height:470px">public class StampTool extends GraphicsProgram {
+
+	private static final int SIZE = 50;
+	
+	public void run() {
+	}
+	
+	public void mouseClicked(MouseEvent e) {
+	}
+	
+	public void mouseMoved(MouseEvent e) {
+	}
+}</pre>
+    
+<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.setShowPrintMargin(false);
+   editor.renderer.setShowGutter(false); 
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+	
+	</div>
+	</div>
+	-->	
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

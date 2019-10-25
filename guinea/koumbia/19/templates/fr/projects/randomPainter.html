@@ -1,0 +1,91 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Peintre au hasard
+			</h1>
+			<p>
+				Écrit par Chris Piech
+			</p>
+
+			<p>
+				Documents à distribuer:
+				<a href ="{{pathToRoot}}fr/handouts/karel.html">KarelReference</a>
+				<br/>Exemples travaillés:
+				<a href="{{pathToRoot}}fr/projects/invert.html">Invert</a>,
+				<a href="{{pathToRoot}}fr/projects/unKarel.html">UN Karel</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Karel commence à trouver son monde trop noir et blanc. Aidez-la à le remplir de couleur.
+					<p>
+					<center>
+						<img style="width:100%"  src="{{pathToRoot}}img/projects/randomPainter/long.png">
+					</center>
+					</p>
+				</p>
+				<h2>Peinture et aléatoire</h2>
+				<p>
+					Karel a quelques commandes dans sa manche. Elle peut peindre le coin sur lequel elle se tient en suivant les instructions
+<div class="well"><code>paintCorner(color);</code></div>
+La valeur entre parenthèses, appelée un argument dans la terminologie
+des langages de programmation, peut être l’un des suivants:
+                 <span style="color:red;">RED</span>&nbsp;&nbsp;
+                 <span style="color:orange;">ORANGE</span>&nbsp;&nbsp;
+                 <span style="color:green;">GREEN</span>&nbsp;&nbsp;
+                 <span style="color:cyan;">CYAN</span>&nbsp;&nbsp;
+                 <span style="color:blue;">BLUE</span>&nbsp;&nbsp;
+                 <span style="color:magenta;">MAGENTA</span>
+                 et plus...
+				</p>
+				<p>
+					Karel définit également une nouvelle condition aléatoire, ce qui est vrai la moitié du temps, mais de manière imprévisible. Comme si on jetait une pièce de monnaie, parfois cela retourne vrai et parfois, faux Par exemple le code
+					<div class="well"><code>if(random()) {<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;putBeeper();<br/>
+					}</code></div>
+					Placera un bipeur ou ne le fera pas, avec une probabilité égale.
+
+				</p>
+				<h2>Peintre</h2>
+				<p>
+					Utilisez ces nouvelles capacités pour que Karel peigne au hasard chaque coin d’un monde d’une ou deux couleurs. Vous pouvez choisir deux couleurs que vous voulez, nous avons choisi le vert et le bleu.
+				</p>
+				<p>
+
+					 Vous trouverez ci-dessous trois exécutions du même programme qui peint au hasard un monde de toutes les tailles, vert et bleu, exécuté sur un monde 10x10. Notez qu'en raison de la condition aléatoire, le motif de vert et de bleu est différent à chaque exécution!
+				</p>
+				<p>
+					<center>
+						<img style="width:100%"  src="{{pathToRoot}}img/projects/randomPainter/randoms.png">
+					</center>
+				</p>
+				<p>
+					Comme toujours, n'oubliez pas de décomposer votre solution! Votre programme devrait fonctionner sur un monde de toute taille.
+				</p>
+			</div>
+
+		</div>
+
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

@@ -1,0 +1,111 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Illusion d'optique
+			</h1>
+			<p>
+				Basé sur une idée de Steve Cooper. Écrit par Chris Piech.
+			</p>
+			<p>
+				Documents à distribuer:
+				<a href ="{{pathToRoot}}fr/handouts/graphics.html">Graphics Reference</a>
+				<br/>
+				Exemple travaillé:
+				<a href="{{pathToRoot}}fr/projects/stringArtSoln.html">String Art Solution</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Parfois, répéter des gestes peut amener nos yeux à voir des choses qui ne sont pas là. Regardez l'image ci-dessous. Pouvez-vous voir des petits carrés gris dans les intersections des lignes blanches? Écrivez un programme graphique qui crée l'illusion d'optique:
+				</p>
+
+				<p>
+					<center>
+						<img style="width:500px" src="{{pathToRoot}}img/projects/illusion/illusion1.png">
+					</center>
+				</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Constants</h2>
+				<p>
+					Vous remarquerez peut-être que le code de démarrage de ce projet comporte les lignes suivantes:
+					<div class="well"><code>private static final int SIZE = 100; <br/>private static final int GAP = 10;</code></div>
+					qui sont écrits en dehors de la méthode run (un peu comme le générateur de nombres aléatoires). Ces lignes définissent des constantes: les variables dont les valeurs ne changent jamais et puisqu'elles sont définies en dehors d'une méthode, vous pouvez lire leur valeur à partir de n'importe quel point du programme. Bien que vous<i>pourrait</i> écrivez cette illusion d'optique en utilisant les chiffres 100 et 10 directement, utiliser des constantes facilite la lecture de votre programme.
+					<!--<div class="well"><code>private drawSquare(int row, int col) {
+						<br/>&nbsp;&nbsp;&nbsp;//code for drawing a square at the position row, col
+						<br/>}</code></div>-->
+				</p>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Double pour la boucle</h2>
+				<p>
+					Ce problème nécessite l'utilisation d'une boucle for dans une boucle for. N'oubliez pas d'utiliser une variable d'itérateur différente pour la boucle interne. Par exemple, si votre boucle externe est de la forme
+					<div class="well"><code>for(int i = 0; i &lt; 100; i++)</code></div>
+					La boucle dans le corps doit parcourir une variable autre que i.
+					<!--<div class="well"><code>private drawSquare(int row, int col) {
+						<br/>&nbsp;&nbsp;&nbsp;//code for drawing a square at the position row, col
+						<br/>}</code></div>-->
+				</p>
+			</div>
+		</div>
+
+		<!--<div class="row">
+			<div class="col-md-12">
+				<h2>Decomposition</h2>
+				<p>
+					This problem has a logical group of commands that draws a square that should be decomposed into its own method. The challenge is, that the method needs extra information, the row and column where it should be drawn. This problem can be addressed by using parameter passing. In your program, implement and use a method with the following prototype:
+					<div class="well"><code>private drawSquare(int row, int col) {
+						<br/>&nbsp;&nbsp;&nbsp;//code for drawing a square at the position row, col
+						<br/>}</code></div>
+				</p>
+			</div>
+		</div>-->
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Extension</h2>
+				<p>
+					Si vous avez le temps, essayez de créer cette illusion d'optique! Notez que tous les carrés ont la même taille et que toutes les lignes sont horizontales! Pensez à la façon de décomposer votre solution.
+				</p>
+
+				<p>
+					<center>
+						<img style="width:500px" src="{{pathToRoot}}img/projects/illusion/illusion2.png">
+					</center>
+				</p>
+
+				<p>Si vous êtes bloqué, essayez de dessiner chaque ligne avec le premier carré noir commençant toujours par x = 0. Essayez ensuite de trouver comment créer le motif de décalage.</p>
+			</div>
+		</div>
+
+
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>
