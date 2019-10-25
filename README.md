@@ -4,8 +4,11 @@
 ```
 ├── docs
 │   ├── CNAME
-│   ├── policy.txt
 │   ├── index.html
+│   ├── en
+│   │   └── index.html
+│   ├── fr
+│   │   └── index.html
 │   ├── fria
 │   │   └── 19 -> ../../guinea/fria/19/docs
 │   ├── koumbia
@@ -14,17 +17,17 @@
 ├── guinea
 │   ├── fria
 │   │   └── 19
-│   │       ├── compile.py
-│   │       ├── docs
-│   │       ├── templates
-│   │       └── ...
 │   └── koumbia
 │       └── 19
-│           ├── compile.py
-│           ├── docs
-│           ├── templates
-│           └── ...
-└── README.md
+├── templates
+│   ├── en
+│   │   └── index.html
+│   ├── fr
+│   │   └── index.html
+│   └── ...
+├── README.md
+├── compile.py
+...
 ```
 
 ## Adding a new Section
@@ -45,7 +48,21 @@ ln -s ../../guinea/fria/19/docs 19
 ```
 
 ### 3. Add the new section to the index
-
 ```
-vi docs/index.html
+# edit the following files to add new section to home page
+template/en/index.html
+template/fr/index.html
+```
+
+### 4. Compile home page
+```
+python compile.py
+```
+
+
+
+### Run local http server
+```
+cd docs
+python -m http.server
 ```
