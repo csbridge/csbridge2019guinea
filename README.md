@@ -1,5 +1,5 @@
 # CSBridge Guinea
-This repository holds the CSBridge sections held in Guinea, which all share the same dns subdomain (guinea.csbridge.org). The repository currently contains the below sections:
+This repository holds the CSBridge sections held in Guinea, which all share the same DNS subdomain (guinea.csbridge.org). The repository currently contains the below sections:
 
 |Section|Sources|URL|
 |---|---|---|
