@@ -1,0 +1,595 @@
+<head>
+
+<title>Introduction à l'Informatique</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+
+<!-- Fonts -->
+<!--<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,600,700,900,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900,600italic,700italic,900italic' rel='stylesheet' type='text/css'>-->
+
+<!-- Styles -->
+
+<link href="../../plugins/bootstrap-3.1/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../style.css">
+
+<!-- Java Script -->
+<script src="../../plugins/jquery.min.js"></script>
+<script src="../../plugins/bootstrap-3.1/js/bootstrap.min.js"></script>
+
+<script src="../../karel/ace/ace.js" type="text/javascript"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
+  </script>-->
+
+	<script src="../../plugins/acmjs/pixi.js"></script>
+    <script src="../../plugins/acmjs/pixidust.js"></script>
+    <script src="../../plugins/acmjs/graphicsapp.js"></script>
+</head>
+<body onload="run();">
+
+	<!-- Navigation Bar -->
+<nav class="navbar-inverse navbar-default" role="navigation">
+  <div class="container-fluid">
+  	<div class="container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+				</button>
+				
+	      <a class="navbar-brand" href="/koumbia/19/fr/index.html">CS Bridge</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <!--<li ><a href="#">Link</a></li>-->
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Référence <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<!--<li><a href="../../fr/handouts/sections.html">Sections</a></li>-->
+	          	<li><a href="../../fr/handouts/karel.html">Karel Référence</a></li>
+							<!--<li><a href="../../fr/handouts/submission.html">How to Submit Your Work</a></li>-->
+
+	          	<li><a href="../../fr/handouts/console.html">Console Référence</a></li>
+	          	<li><a href="../../fr/handouts/random.html">Générateur aléatoire Référence</a></li>
+	          	<li><a href="../../fr/handouts/graphics.html">Graphique Référence</a></li>
+	          	<li><a href="../../fr/handouts/events.html">Événements (Events) Référence</a></li>
+	            <li><a href="../../fr/handouts/arrayLists.html">Array Lists</a></li>
+	          	<!--
+	          	<li><a href="../../handouts/events.html">Events Reference</a></li>
+                <li><a href="../../projects/jsJSSyntax.html">JavaScript Syntax Reference</a></li>
+                <li><a href="../../handouts/htmlReference.html">HTML Reference</a></li>
+                <li><a href="../../handouts/uploadWebsite.html">Uploading a Website Reference</a></li>
+
+	          	<li><a href="../../handouts/whatsNext.html">Whats Next</a></li>
+
+
+	            <li><a href="../../handouts/operations.html">Operations</a></li>
+	            <li><a href="../../handouts/graphics.html">Graphics</a></li>
+	            <li><a href="../../handouts/passingData.html">Passing Data</a></li>-->
+
+	          </ul>
+	        </li>
+
+
+          <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projets <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="../../fr/projects/WaterFromWell.html">Puiser de l'Eau</a></li>
+	          	<li><a href="../../fr/projects/mosquée.html">Construire La Grande Mosquée de Conakry</a></li>
+	          	<li><a href="../../fr/projects/mountain.html">Karel de Montagne et de Manguïer</a></li>
+	          	<li><a href="../../fr/projects/flag.html">Le Drapeau Guinean</a></li>
+	          	<li><a href="../../fr/projects/randomPainter.html">Peintre au hasard</a></li>
+
+
+	          	<li class="divider"></li>
+	          	<li><a href="../../fr/projects/sandcastles.html">Châteaux de sable</a></li>
+	          	<li><a href="../../fr/projects/favoriteNumber.html">Numéro préféré</a></li>
+	          	<li><a href="../../fr/projects/medicine.html">Médicament Counterfeit</a></li>
+	          	<li><a href="../../fr/projects/someSum.html">Une somme</a></li>
+	          	<li><a href="../../fr/projects/AllerAuMarché.html">Aller Au Marché</a></li>
+	          	<li><a href="../../fr/projects/sorcerer.html">La Sorcière</a></li>
+
+
+
+	          	<li class="divider"></li>
+	          	<li><a href="../../fr/projects/voiture.html">La Voiture en Pane</a></li>
+	          	<li><a href="../../fr/projects/awesome.html">La programmation est géniale</a></li>
+	          	<li><a href="../../fr/projects/stringArt.html">Moustiquaires</a></li>
+	          	<li><a href="../../fr/projects/randomCircles.html">Cercles aléatoires</a></li>
+	          	<li><a href="../../fr/projects/hailstone.html">Grêle</a></li>
+
+	            <li class="divider"></li>
+	            <li><a href="../../fr/projects/bouncingBall.html">Balle rebondissante</a></li>
+	          	<li><a href="../../fr/projects/madMethods.html">Méthodes folles</a></li>
+	          	<li><a href="../../fr/projects/target.html">Cible</a></li>
+	          	<li><a href="../../fr/projects/illusion.html">Illusion d'optique</a></li>
+	          	<li><a href="../../fr/projects/sunset.html">Cour de film</a></li>
+
+	          	<li class="divider"></li>
+
+	          	<li><a href="../../fr/projects/makingTracks.html">Faire des pistes</a></li>
+	            <li><a href="../../fr/projects/stampTool.html">Outil de Cachet</a></li>
+	          	<li><a href="../../fr/projects/catchMeIfYouCan.html">Attraper la Chevre dans le Jardin</a></li>
+	          	<li><a href="../../fr/projects/breakout.html">Éclater</a></li>
+
+							<!--
+	          	<li class="divider"></li>
+
+	          	<li><a href="../../fr/projects/sortedNumbers.html">Numéros triés</a></li>
+	          	<li><a href="../../fr/projects/snow.html">Neige</a></li>
+	          	<li><a href="../../fr/projects/mouseGame.html">La ligne</a></li>
+	          	<li><a href="../../fr/projects/music.html">La musique</a></li>
+							-->
+	          	<!--
+	            <li><a href="../../projects/drawPeople.html">Trois est une foule</a></li>
+
+	            <li><a href="../../projects/madLibs.html">Mad Libs</a></li>
+	            <li><a href="../../projects/secret.html">Secrète</a></li>
+
+
+
+                <li class="divider"></li>
+
+	            <li><a href="../../projects/breakout.html">Éclater</a></li>
+
+
+	            <li><a href="../../projects/music.html">Vagues de son</a></li>
+
+
+	            <li><a href="../../projects/project.html">Projet final</a></li>-->
+
+
+
+
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Des exemples <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../fr/projects/stepUp.html">Intensifier</a></li>
+	          	<li><a href="../../fr/projects/place100.html">Lavez 100 pièce des habilles (Place 100)</a></li>
+	          	<li><a href="../../fr/projects/beeperLine.html">Agriculture de maïs (Ligne bip)</a></li>
+	          	<li><a href="../../fr/projects/invert.html">Reboisement (Inverser)</a></li>
+	          	<li><a href="../../fr/projects/unKarel.html">Construire les Maisons</a></li>
+	          	<li class="divider"></li>
+	            <li><a href="../../fr/projects/emc2.html">E=MC2</a></li>
+	            <li><a href="../../fr/projects/fibb.html">Fibonacci</a></li>
+	           <li><a href="../../fr/projects/favoriteNumber.html">Numéro préféré</a></li>
+	           <li><a href="../../fr/projects/findPi.html">Trouver Pi</a></li>
+	           <li><a href="../../fr/projects/sorcerer.html">Sorcière</a></li>
+	          
+	           <li class="divider"></li>
+
+
+	            <li><a href="../../fr/projects/robotFace.html">Visage de Robot</a></li>
+
+
+	          	<li class="divider"></li>
+	            <li><a href="../../fr/projects/mysterySquare.html">Place du mystère</a></li>
+
+	            <li><a href="../../fr/projects/goCenter.html">Aller au centre</a></li>
+
+	            <li><a href="../../fr/projects/gravityBall.html">Boule de gravité</a></li>
+
+	          	<li><a href="../../fr/projects/averageMethod.html">Méthode moyenne</a></li>
+	          	<li><a href="../../fr/projects/drawPeople.html">Dessiner des gens</a></li>
+
+	          	<li><a href="../../fr/projects/halfGreen.html">Moitié vert</a></li>
+
+	          	<li class="divider"></li>
+	            <li><a href="../../fr/projects/holes.html">Trou</a></li>
+
+							<!--
+	          	<li class="divider"></li>
+							<li><a href="../../fr/projects/rocketShip.html">Fusées</a></li>
+
+	          	<li><a href="../../fr/projects/debrisSweeper.html">Balayeuse de débris</a></li>
+	          	<li><a href="../../fr/projects/suchADrag.html">Une telle traînée</a></li>
+
+
+	             <li><a href="../../projects/stampTool.html">Outil de tampon</a></li>
+	            <li><a href="../../projects/snow.html">Neige</a></li>
+
+              <li class="divider"></li>
+	            <li><a href="../../projects/breakoutOnline.html">Breakout en ligne</a></li>
+							-->
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentations <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../slides/LisaFrenchSlides/Bienvenue.pdf">Karel</a></li>
+	          	<li><a href="../../slides/LisaFrenchSlides/FluxDeControle.pdf">Flux de contrôle</a></li>
+	          	<li><a href="../../slides/LisaFrenchSlides/Variables.pdf">Variables 1</a></li>
+	          	<li><a href="../../slides/LisaFrenchSlides/Variables_two.pdf">Variables 2</a></li>
+	          	<li><a href="../../slides/LisaFrenchSlides/Graphique.pdf">Graphique</a></li>
+	          	<li><a href="../../slides/Animation.pdf">Animation</a></li>
+	          	<li><a href="../../slides/Methods.pdf">Les méthodes</a></li>
+	          	<li><a href="../../slides/Review.pdf">La revue</a></li>
+	          	<li><a href="../../slides/Events.pdf">Événements</a></li>
+	          	<li><a href="../../slides/Internet.pdf">l'Internet</a></li>
+	          	<li><a href="../../slides/Arrays.pdf">Tableaux</a></li>
+	          	<li><a href="../../slides/ArrayLists.pdf">Listes de tableaux</a></li>
+	          	<li><a href="../../slides/Strings.pdf">Les cordes</a></li>
+							<!--
+	          	<li><a href="../../slides/AI.pdf">Intelligence Artificielle</a></li>
+	          	<li><a href="../../slides/loopVariableReview.pdf">Revue Boucle/Variable</a></li>
+	          	<li><a href="../../slides/Interactors.pdf">Interacteurs</a></li>
+	          	<li><a href="../../slides/AI.pdf">IA</a></li>
+	          	<li><a href="../../slides/Classes.zip">Des classes</a></li>
+	          	<li><a href="../../slides/TheEnd.pdf">La fin</a></li>
+
+							-->
+	          </ul>
+	        </li>
+
+	        <!-- <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Défis Supplémentaires <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../fr/projects/isOdd.html">Est Impair</a></li>
+
+	          </ul>
+	        </li>-->
+
+
+	        <!--<li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">l'Internet <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="https://www.dropbox.com/s/1jtjo9hde8in0xn/1-How%20the%20internet%20works.pptx">Comment Internet fonctionne</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1t7pwltugsy4pxg/2-day-in-the-life-of-packet.pptx">Jour dans la vie d'un paquet</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1n0lzrl32urfsnr/3-How%20packets%20routed.pptx">Comment les paquets sont acheminés sur Internet</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="http://yuba.stanford.edu/~huangty/dacka/lab1.html">Lab 1</a></li>
+	          	<li><a href="http://yuba.stanford.edu/~huangty/dacka/lab2.html">Lab 2</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="../../internet/echo.zip">Code client d'écho</a></li>
+	          	<li><a href="../../internet/2person-breakout.zip">Code de groupe de 2 personnes</a></li>
+
+
+	          </ul>
+	        </li>-->
+
+	        <!--<li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Section<b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../../projects/stepUp.html">Journal Karel</a></li>
+	          	<li><a href="../../projects/place100.html">Drogues contrefaites</a></li>
+	          	<li><a href="../../projects/beeperLine.html">Cible</a></li>
+	          </ul>
+	        </li>-->
+
+	        <!-- <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Prime <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+                <li><a href="../../fr/bonus-index.html">Aperçu des bonus</a></li>
+	          </ul>
+	        </li> -->
+
+	        <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formes<b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+                <li><a href="../../fr/handouts/submission.html">Soumettez votre travail</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSffsKTNU3mu-21-ZjZFJ3d-fPdvw6uQcvhAjbpXhux43_3gpg/viewform?usp=sf_link">Se connecter au laboratoire</a></li>
+	          </ul>
+	        </li>
+
+
+
+	      </ul>
+
+
+	      <ul class="nav navbar-nav navbar-right">
+	      	<li><a onclick="changeToFrench()" style="cursor: pointer;"><img class="languageIcon" src="../../img/guinean_flag.png"></img></a></li>
+	      	<li><a onclick="changeToEnglish()" style="cursor: pointer;"><img class="languageIcon" src="../../img/english_flag.png"></img></a></li>
+
+
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	</div>
+  </div><!-- /.container-fluid -->
+</nav>
+
+<script>
+
+	// function changeToTurkish() {
+	// 	var url = window.location.href;
+	// 	url = url.replace("/fr/", "/tr/");
+	// 	window.location.href = url;
+	// }
+
+	function changeToFrench() {
+		var url = window.location.href;
+		url = url.replace("/en/", "/fr/");
+		window.location.href = url;
+	}
+
+	function changeToEnglish() {
+		var url = window.location.href;
+		url = url.replace("/fr/", "/en/");
+		window.location.href = url;
+	}
+
+</script>
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Éclater!
+			</h1>
+			<p>
+				Écrit par Eric Roberts
+			</p>
+			<p>
+				Référence:
+				<a href ="../../fr/handouts/events.html">Référence d'événements</a><br>
+				Exemple travaillé:
+				<a href="../../fr/projects/stampTool.html">Outil de tampon</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Votre travail dans cette mission consiste à écrire le jeu d’arcade classique de Breakout, qui a été inventé par Steve Wozniak avant de fonder Apple avec Steve Jobs (moment de silence). Il s’agit d’une tâche importante, mais tout à fait gérable tant que le problème ne sera pas fragmenté.
+				</p>
+			</div>
+		</div>
+		<h2>Le jeu d'évasion</h2>
+		<div class="row">
+
+			<div class="col-md-12">
+				<p>
+					Dans Breakout, la configuration initiale du monde apparaît comme indiqué à droite. Les rectangles colorés dans la partie supérieure de l'écran sont <b>des briques</b>, et le rectangle légèrement plus grand en bas est le <b>pagayer</b>. La palette est dans une position fixe dans la dimension verticale, mais se déplace d'avant en arrière sur l'écran avec la souris jusqu'à atteindre le bord de son espace.
+				</p>
+
+				<p>
+					<center><img style="padding:10px;max-width:100%" src="../../img/projects/breakout/breakoutGameH.png"></img></center>
+				</p>
+
+				<p>
+					Un jeu complet consiste en trois tours. À chaque tour, une balle est lancée du centre de la fenêtre vers le bas de l'écran selon un angle aléatoire. Cette balle rebondit sur la raquette et les murs du monde, conformément au principe physique généralement exprimé par "l'angle d'incidence est égal à l'angle de réflexion" (ce qui s'avère très facile à mettre en œuvre, comme nous le verrons plus loin dans ce document) . Ainsi, après deux rebonds - un de la palette et un de la droite
+					mur - la balle pourrait avoir la trajectoire montrée dans le deuxième diagramme. (Notez que la ligne en pointillé est là pour montrer le chemin de la balle et n'apparaîtra pas à l'écran.)
+				</p>
+				<p>
+					Comme vous pouvez le voir sur le deuxième diagramme, la balle est sur le point de se heurter à l’une des briques de la rangée inférieure. Lorsque cela se produit, la balle rebondit comme pour toute autre collision, mais la brique disparaît. Le troisième diagramme montre à quoi le jeu ressemble après la collision et après que le joueur a déplacé la raquette pour l'aligner sur la balle qui approche.
+				</p>
+				<p>
+					Le jeu sur un tour continue ainsi jusqu'à ce que l'une des deux conditions soit remplie:
+					<ol>
+						<li>La balle frappe le mur inférieur, ce qui signifie que le joueur doit l'avoir manquée avec la raquette. Dans ce cas, le tour se termine et la balle suivante est servie si le joueur a encore des tours. Sinon, le jeu se termine par une perte pour le joueur.</li>
+						<li>La dernière brique est éliminée. Dans ce cas, le joueur gagne et le jeu se termine immédiatement.</li>
+					</ol>
+				</p>
+				<p>
+					Le succès de cette mission dépendra de la division du problème en plusieurs éléments gérables et de la résolution de chaque problème avant de passer au suivant. Les sections suivantes décrivent une approche progressive du problème.
+				</p>
+			</div>
+		</div>
+
+		<h2>1. Créer des briques</h2>
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Avant de commencer à jouer, vous devez configurer les différentes pièces. Par conséquent, il est probablement logique d'implémenter la méthode run en deux appels: un pour configurer le jeu et un pour le jouer. Une partie importante de la configuration consiste à créer les rangées de briques en haut du jeu, qui ressemblent à ceci:
+				</p>
+				<p>
+					<center><img style="padding:10px;max-width:100%" src="../../img/projects/breakout/breakoutBricks.png"></img></center>
+				</p>
+				<p>
+					Le nombre, les dimensions et l'espacement des briques sont spécifiés à l'aide de constantes nommées dans le fichier de démarrage, tout comme la distance entre le haut de la fenêtre et la première ligne de briques. La seule valeur que vous devez calculer est la coordonnée x de la première colonne, qui doit être choisie de sorte que les briques soient centrées dans la fenêtre, l'espace restant restant divisé également entre les côtés gauche et droit. La couleur des briques reste constante pour deux rangées et s’écoule dans les rangées suivantes séquence: ROUGE, ORANGE, JAUNE, VERT, CYAN.
+				</p>
+			</div>
+		</div>
+
+		<h2>2. Créer la pagaie</h2>
+		<div class="row">
+			<div class="col-md-12">
+				<p>L'étape suivante consiste à créer la palette. Il n'y a qu'une seule palette, qui est un GRect rempli. Vous connaissez même sa position par rapport au bas de la fenêtre.</p>
+				<p>
+					Le défi dans la création de la palette est de la faire suivre la souris. Ici, cependant, il suffit de faire attention à la coordonnée x de la souris car la position y de la palette est fixe.
+				</p>
+				<p> Si vous appelez la méthode (peut-être à partir de run):
+					<div class="well"><code>addMouseListeners();</code></div>
+					<p>Et implémenter la méthode:
+					<div class="well"><code>public void mouseMoved(MouseEvent e)</code></div>
+					<p>Ensuite, chaque fois que la souris est déplacée, la méthode mouseMoved sera exécutée.
+					<p>Vous pouvez en apprendre plus sur MouseEvents <a href="../../handouts/events.html">ici</a>.
+			</div>
+		</div>
+
+		<h2>3. Faire bouger la balle</h2>
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					À un niveau, créer la balle est facile, étant donné que ce n'est qu'un GOval rempli. La partie intéressante consiste à le faire bouger et à rebondir de manière appropriée. Vous avez maintenant dépassé la phase de configuration et la phase de lecture du jeu. Pour commencer, créez une balle et placez-la au centre de la fenêtre. Ceci étant dit, gardez à l’esprit que les coordonnées du GOval ne spécifient pas l’emplacement du centre de la balle mais plutôt son coin supérieur gauche.
+				</p>
+				<p>
+					Le programme doit garder trace de la vitesse de la balle, qui se compose de deux composants distincts, que vous déclarerez vraisemblablement comme des variables d'instance comme celle-ci:
+				</p>
+				<p>
+					<div class="well"><code>private double vx, vy;</code></div>
+				</p>
+				<p>
+					Les composantes de la vitesse représentent le changement de position qui se produit à chaque pas de temps. Initialement, la balle doit être dirigée vers le bas et vous pouvez essayer une vitesse de départ de +3.0 pour vy (rappelez-vous que les valeurs y en Java augmentent lorsque vous vous déplacez vers le bas de l'écran). Le jeu serait ennuyeux si chaque balle suivait le même parcours, vous devriez donc choisir la composante vx au hasard. Vous devriez simplement faire ce qui suit:
+				</p>
+				<p>
+					<ol>
+						<li><p>Déclarez une variable d'instance rgen, qui servira de générateur de nombre aléatoire:
+							<div class="well"><code>private RandomGenerator rgen = RandomGenerator.getInstance();</code></div>Rappelez-vous que les variables d'instance sont déclarées en dehors de toute méthode mais à l'intérieur de la classe.
+
+						</li>
+						<li>
+							Initialisez la variable vx comme suit:
+
+							vx = rgen.nextDouble (1.0, 3.0);
+							if (rgen.nextBoolean (0.5)) vx = -vx;
+
+							Ce code définit vx comme un double aléatoire compris entre 1,0 et 3,0, puis le rend négatif la moitié du temps. Cette stratégie fonctionne beaucoup mieux pour Breakout que d'appeler
+
+							nextDouble (-3.0, +3.0)
+
+							qui pourrait générer une balle allant plus ou moins directement vers le bas. Cela rendrait la vie beaucoup trop facile pour le joueur.
+
+						</li>
+					</ol>
+				</p>
+				<p>
+					Une fois que vous avez fait cela, votre prochain défi consiste à faire rebondir le ballon dans le monde entier, en ignorant totalement la pagaie et les briques. Pour ce faire, vous devez vérifier si les coordonnées de la balle ont dépassé la limite, en tenant compte du fait que la balle a une taille non nulle. Ainsi, pour voir si la balle a rebondi sur le mur de droite, vous devez voir si les coordonnées du bord droit de la balle sont devenues plus grandes que la largeur de la fenêtre. les trois autres directions sont traitées de la même manière. Pour le moment, faites rebondir la balle sur le mur du bas pour pouvoir la regarder faire son chemin autour du monde.
+				</p>
+				<p>
+					Calculer ce qui se passe après un rebond est extrêmement simple. Si une balle rebondit sur le mur supérieur ou inférieur, tout ce que vous avez à faire est d’inverser le signe du vy. Symétriquement, les rebonds des murs latéraux inversent simplement le signe de vx.
+				</p>
+			</div>
+		</div>
+
+		<h2>4. Vérifier les collisions</h2>
+		<div class="row">
+			<div class="col-md-12">
+				<p>Maintenant vient la partie intéressante. Afin de faire de Breakout un véritable jeu, vous devez être capable de dire si la balle entre en collision avec un autre objet dans la fenêtre. Comme le font souvent les scientifiques, il est utile de commencer par formuler une hypothèse simplificatrice, puis de l'assouplir ultérieurement. Supposons que la balle soit un seul point plutôt qu'un cercle. Dans ce cas, comment pouvez-vous savoir s'il est entré en collision avec un autre objet?</p>
+
+				<p>
+					Il y a une méthode:
+
+					<div class="well"><code>public GObject getElementAt(double x, double y)</code></div>
+
+					qui prend une position dans la fenêtre et retourne l'objet graphique à cet endroit, le cas échéant. Si aucun objet graphique ne couvre cette position, getElementAt renvoie la constante spéciale null. S'il en existe plus d'un, getElementAt choisit toujours celui qui se trouve le plus en haut de la pile, celui qui semble être en face de l'écran.
+				</p>
+
+				<p>
+					La chose la plus facile à faire, qui est en fait typique des jeux informatiques réels, est de vérifier quelques points soigneusement choisis à l'extérieur du ballon et de voir si l'un de ces points a heurté quelque chose. Dès que vous trouvez quelque chose sur l'un de ces points, vous pouvez déclarer que le ballon est entré en collision avec cet objet.
+				</p>
+
+					Dans votre implémentation, vérifiez les quatre points d’angle de la case dans laquelle est inscrite la balle. Rappelez-vous qu'un GOval est défini en fonction de son rectangle de délimitation, de sorte que si le coin supérieur gauche de la balle se trouve au point (x, y), les autres coins se trouveront aux emplacements indiqués dans ce diagramme:
+
+				</p>
+
+				<p>
+					<center><img src="../../img/projects/breakout/breakoutCollision.png"></img></center>
+				</p>
+				<p>
+					Ces points ont l’avantage d’être en dehors du ballon, mais néanmoins suffisamment proches pour faire croire que des collisions se sont produites. Ainsi, pour chacun de ces quatre points, vous devez:
+				</p>
+				<p>
+					<ol>
+						<li>Appelez getElementAt à cet endroit pour voir si quelque chose s'y trouve.</li>
+						<li>Si la valeur que vous récupérez n'est pas nulle, vous n'avez pas besoin de chercher plus loin et pouvez prendre cette valeur comme objet GO avec lequel la collision s'est produite.</li>
+						<li>Si getElementAt renvoie null pour un coin particulier, continuez et essayez le prochain coin.</li>
+						<li>Si vous franchissez les quatre virages sans vous heurter à une collision, il n'y en a pas.</li>
+					</ol>
+				</p>
+				<p>
+					Il serait très utile d’écrire cette section de code séparément.
+						<div class="well"><code>public GObject getCollidingObject()</code></div>
+						Cela renvoie l'objet impliqué dans la collision, le cas échéant, et <b>null</b> autrement. Vous pouvez ensuite l'utiliser dans une déclaration du type:
+					<div class="well"><code>GObject collider = getCollidingObject();</code></div>
+				</p>
+				<p>
+					A partir de là, il ne vous reste plus qu'à décider quoi faire en cas de collision. Il n'y a que deux possibilités. Tout d’abord, l’objet que vous récupérez peut être la palette, que vous pouvez tester en vérifiant</p>
+					<div class="well"><code>if (collider == paddle)</code></div>
+				</p>
+				<p>
+					Si c'est la pagaie, vous devez faire rebondir la balle pour qu'elle commence à monter. Si ce n'est pas la raquette, la seule autre chose qui pourrait l'être est une brique, car ce sont les seuls autres objets au monde. Encore une fois, vous devez provoquer un rebond dans la direction verticale, mais vous devez également enlever la brique. Pour ce faire, il vous suffit de le supprimer de l'écran en appelant la méthode remove.
+				</p>
+
+			</div>
+		</div>
+
+		<h2 style="color:blue">touches supplémentaires</h2>
+		<div class="row">
+			<div class="col-md-12">
+				<p>Si vous en êtes là, vous avez fait toutes les tâches difficiles. Il y a cependant quelques détails supplémentaires que vous pourriez prendre en compte si vous en avez le temps.</p>
+				<ol>
+					<li>Prenez soin de l'affaire lorsque la balle frappe le mur du bas. Dans le prototype que vous avez construit, la balle rebondit sur ce mur comme tous les autres, mais le jeu est difficile à perdre. Modifiez la structure de votre boucle afin qu’elle vérifie si le mur du fond est une de ses conditions de terminaison.</li>
+					<li>Recherchez l'autre condition finale, qui frappe la dernière brique. Comment savez-vous quand vous l'avez fait? Bien qu’il existe d’autres moyens de le faire, l’un des plus faciles est de laisser votre programme garder une trace du nombre de briques restantes. Chaque fois que vous en frappez un, soustrayez-en un de ce compteur. Lorsque le compte atteint zéro, vous devez avoir terminé. Il serait bon de donner au joueur un petit retour d’information indiquant au moins si le jeu a été gagné ou perdu.</li>
+					<li>Testez votre programme pour voir qu'il fonctionne. Si vous pensez que tout fonctionne, voici quelque chose à essayer: juste avant que la balle passe le niveau de la raquette, déplacez-la rapidement pour que la raquette entre en collision avec la balle plutôt que l'inverse. Est-ce que tout fonctionne toujours ou si votre balle semble "collée" à la pagaie? Cette erreur se produit parce que la balle entre en collision avec la palette, change de direction, puis entre à nouveau avec la palette avant de s’échapper. Comment pouvez-vous résoudre ce problème?</li>
+				</ol>
+
+			</div>
+		</div>
+
+		<h2 style="color:blue">Démo</h2>
+		<div class="row">
+			<div class="col-md-12">
+				<p></p>
+				<div id="breakoutDemo" style="width: 425px; border: solid;">
+				<script src="../../js/projects/breakout/breakout.js"></script>
+				</div>
+				</div>
+		</div>
+
+
+		<h2 style="color:blue">Les extensions</h2>
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Si le jeu de base fonctionne bien, ce serait une excellente occasion d'aller au-delà des attentes. Voici quelques idées d’extensions possibles (bien entendu, nous vous encourageons à faire preuve d’imagination pour proposer d’autres idées):
+				</p>
+				<ul>
+					<li style="margin-bottom:10px">
+						<i>Ajouter des sons.</i>
+						<p>La version qui s'exécute en tant qu'applet sur la page d'affectation du CS 106A émet un bref son de rebond chaque fois que la balle entre en collision avec une brique ou une palette. Cette extension s'avère très facile. Le projet de démarrage contient un fichier de clip audio appelé bounce.au qui contient ce son. Vous pouvez charger le son en écrivant
+						<div class="well"><code>AudioClip bounceClip = MediaTools.loadAudioClip("res/bounce.au");</code></div>
+						<p>et plus tard jouer en appelant
+						<div class="well"><code>bounceClip.play();</code></div>
+						Les bibliothèques Java facilitent certaines choses.
+					</p>
+					</li>
+					<li style="margin-bottom:10px" >
+						<i>Améliorer le contrôle de l'utilisateur sur les rebonds.</i>
+						Le programme devient plutôt ennuyeux si la seule chose que le joueur doit faire est de frapper la balle. C'est beaucoup plus intéressant si le joueur peut contrôler le ballon en le frappant à différentes parties de la raquette. La façon dont fonctionnait l'ancien jeu d'arcade était que la balle rebondirait dans les directions x et y si vous la frappiez au bord de la palette d'où venait la balle. La version Web implémente cette fonctionnalité.
+					</li>
+					<li style="margin-bottom:10px">
+						<i>Utilise ton imagination</i>
+						Qu'est-ce que vous avez toujours voulu faire avec un jeu de ce genre?
+					</li>
+				</ul>
+
+			</div>
+		</div>
+
+		<br/>
+
+
+<hr>
+
+<div class="footer">
+	<p class="pull-left">
+		&#169; Stanford 2019 &#124; Créé par
+		<a href="http://stanford.edu/~cpiech">Chris</a> avec l'aide de toute l'équipe.
+		Basé sur la merveilleuse classe CS106A développée par de nombreux enseignants talentueux. Un merci spécial à <a href="http://cs.stanford.edu/people/eroberts/">Eric Roberts</a> et <a href="http://robotics.stanford.edu/~sahami/bio.html">Mehran Sahami</a>.
+	</p>
+	<!--<p class="pull-right">
+		<a href="../../fall12">Fall 2012</a>
+	</p>-->
+</div>
+<!--<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-35433298-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+</script>-->
+
+	</div>
+</body>

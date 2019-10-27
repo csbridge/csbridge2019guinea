@@ -1,0 +1,867 @@
+<head>
+<head>
+
+<title>Introduction à l'Informatique</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+
+<!-- Fonts -->
+<!--<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,600,700,900,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900,600italic,700italic,900italic' rel='stylesheet' type='text/css'>-->
+
+<!-- Styles -->
+
+<link href="../plugins/bootstrap-3.1/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../style.css">
+
+<!-- Java Script -->
+<script src="../plugins/jquery.min.js"></script>
+<script src="../plugins/bootstrap-3.1/js/bootstrap.min.js"></script>
+
+<script src="../karel/ace/ace.js" type="text/javascript"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
+  </script>-->
+
+  <script src="../karel/js/html/websiteImports.js"></script>
+	<script>importCss();</script>
+	<script>importJs();</script>
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+<nav class="navbar-inverse navbar-default" role="navigation">
+  <div class="container-fluid">
+  	<div class="container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="/fria/19/fr/index.html">CS Bridge</a>
+
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <!--<li ><a href="#">Link</a></li>-->
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Référence <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<!--<li><a href="../fr/handouts/sections.html">Sections</a></li>-->
+	          	<li><a href="../fr/handouts/karel.html">Karel Référence</a></li>
+							<!--<li><a href="../fr/handouts/submission.html">How to Submit Your Work</a></li>-->
+
+	          	<li><a href="../fr/handouts/console.html">Console Référence</a></li>
+	          	<li><a href="../fr/handouts/random.html">Générateur aléatoire Référence</a></li>
+	          	<li><a href="../fr/handouts/graphics.html">Graphique Référence</a></li>
+	          	<li><a href="../fr/handouts/events.html">Événements (Events) Référence</a></li>
+	            <li><a href="../fr/handouts/arrayLists.html">Array Lists</a></li>
+	          	<!--
+	          	<li><a href="../handouts/events.html">Events Reference</a></li>
+                <li><a href="../projects/jsJSSyntax.html">JavaScript Syntax Reference</a></li>
+                <li><a href="../handouts/htmlReference.html">HTML Reference</a></li>
+                <li><a href="../handouts/uploadWebsite.html">Uploading a Website Reference</a></li>
+
+	          	<li><a href="../handouts/whatsNext.html">Whats Next</a></li>
+
+
+	            <li><a href="../handouts/operations.html">Operations</a></li>
+	            <li><a href="../handouts/graphics.html">Graphics</a></li>
+	            <li><a href="../handouts/passingData.html">Passing Data</a></li>-->
+
+	          </ul>
+	        </li>
+
+
+          <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projets <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="../fr/projects/WaterFromWell.html">Puiser de l'Eau</a></li>
+	          	<li><a href="../fr/projects/mosquée.html">Construire La Grande Mosquée de Conakry</a></li>
+	          	<li><a href="../fr/projects/mountain.html">Karel de Montagne et de Manguïer</a></li>
+	          	<li><a href="../fr/projects/flag.html">Le Drapeau Guinean</a></li>
+	          	<li><a href="../fr/projects/randomPainter.html">Peintre au hasard</a></li>
+
+
+	          	<li class="divider"></li>
+	          	<li><a href="../fr/projects/sandcastles.html">Châteaux de sable</a></li>
+	          	<li><a href="../fr/projects/favoriteNumber.html">Numéro préféré</a></li>
+	          	<li><a href="../fr/projects/medicine.html">Médicament Counterfeit</a></li>
+	          	<li><a href="../fr/projects/someSum.html">Une somme</a></li>
+	          	<li><a href="../fr/projects/AllerAuMarché.html">Aller Au Marché</a></li>
+	          	<li><a href="../fr/projects/sorcerer.html">La Sorcière</a></li>
+
+
+
+	          	<li class="divider"></li>
+	          	<li><a href="../fr/projects/voiture.html">La Voiture en Pane</a></li>
+	          	<li><a href="../fr/projects/awesome.html">La programmation est géniale</a></li>
+	          	<li><a href="../fr/projects/stringArt.html">Moustiquaires</a></li>
+	          	<li><a href="../fr/projects/randomCircles.html">Cercles aléatoires</a></li>
+	          	<li><a href="../fr/projects/hailstone.html">Grêle</a></li>
+
+	            <li class="divider"></li>
+	            <li><a href="../fr/projects/bouncingBall.html">Balle rebondissante</a></li>
+	          	<li><a href="../fr/projects/madMethods.html">Méthodes folles</a></li>
+	          	<li><a href="../fr/projects/target.html">Cible</a></li>
+	          	<li><a href="../fr/projects/illusion.html">Illusion d'optique</a></li>
+	          	<li><a href="../fr/projects/sunset.html">Cour de film</a></li>
+
+	          	<li class="divider"></li>
+
+	          	<li><a href="../fr/projects/makingTracks.html">Faire des pistes</a></li>
+	            <li><a href="../fr/projects/stampTool.html">Outil de Cachet</a></li>
+	          	<li><a href="../fr/projects/catchMeIfYouCan.html">Attraper la Chevre dans le Jardin</a></li>
+	          	<li><a href="../fr/projects/breakout.html">Éclater</a></li>
+
+							<!--
+	          	<li class="divider"></li>
+
+	          	<li><a href="../fr/projects/sortedNumbers.html">Numéros triés</a></li>
+	          	<li><a href="../fr/projects/snow.html">Neige</a></li>
+	          	<li><a href="../fr/projects/mouseGame.html">La ligne</a></li>
+	          	<li><a href="../fr/projects/music.html">La musique</a></li>
+							-->
+	          	<!--
+	            <li><a href="../../projects/drawPeople.html">Trois est une foule</a></li>
+
+	            <li><a href="../../projects/madLibs.html">Mad Libs</a></li>
+	            <li><a href="../../projects/secret.html">Secrète</a></li>
+
+
+
+                <li class="divider"></li>
+
+	            <li><a href="../../projects/breakout.html">Éclater</a></li>
+
+
+	            <li><a href="../../projects/music.html">Vagues de son</a></li>
+
+
+	            <li><a href="../../projects/project.html">Projet final</a></li>-->
+
+
+
+
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Des exemples <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../fr/projects/stepUp.html">Intensifier</a></li>
+	          	<li><a href="../fr/projects/place100.html">Lavez 100 pièce des habilles (Place 100)</a></li>
+	          	<li><a href="../fr/projects/beeperLine.html">Agriculture de maïs (Ligne bip)</a></li>
+	          	<li><a href="../fr/projects/invert.html">Reboisement (Inverser)</a></li>
+	          	<li><a href="../fr/projects/unKarel.html">Construire les Maisons</a></li>
+	          	<li class="divider"></li>
+	            <li><a href="../fr/projects/emc2.html">E=MC2</a></li>
+	            <li><a href="../fr/projects/fibb.html">Fibonacci</a></li>
+	           <li><a href="../fr/projects/favoriteNumber.html">Numéro préféré</a></li>
+	           <li><a href="../fr/projects/findPi.html">Trouver Pi</a></li>
+	           <li><a href="../fr/projects/sorcerer.html">Sorcière</a></li>
+	          
+	           <li class="divider"></li>
+
+
+	            <li><a href="../fr/projects/robotFace.html">Visage de Robot</a></li>
+
+
+	          	<li class="divider"></li>
+	            <li><a href="../fr/projects/mysterySquare.html">Place du mystère</a></li>
+
+	            <li><a href="../fr/projects/goCenter.html">Aller au centre</a></li>
+
+	            <li><a href="../fr/projects/gravityBall.html">Boule de gravité</a></li>
+
+	          	<li><a href="../fr/projects/averageMethod.html">Méthode moyenne</a></li>
+	          	<li><a href="../fr/projects/drawPeople.html">Dessiner des gens</a></li>
+
+	          	<li><a href="../fr/projects/halfGreen.html">Moitié vert</a></li>
+
+	          	<li class="divider"></li>
+	            <li><a href="../fr/projects/holes.html">Trou</a></li>
+
+							<!--
+	          	<li class="divider"></li>
+							<li><a href="../fr/projects/rocketShip.html">Fusées</a></li>
+
+	          	<li><a href="../fr/projects/debrisSweeper.html">Balayeuse de débris</a></li>
+	          	<li><a href="../fr/projects/suchADrag.html">Une telle traînée</a></li>
+
+
+	             <li><a href="../projects/stampTool.html">Outil de tampon</a></li>
+	            <li><a href="../projects/snow.html">Neige</a></li>
+
+              <li class="divider"></li>
+	            <li><a href="../projects/breakoutOnline.html">Breakout en ligne</a></li>
+							-->
+	          </ul>
+	        </li>
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentations <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../slides/LisaFrenchSlides/Bienvenue.pdf">Karel</a></li>
+	          	<li><a href="../slides/LisaFrenchSlides/FluxDeControle.pdf">Flux de contrôle</a></li>
+	          	<li><a href="../slides/LisaFrenchSlides/Variables.pdf">Variables 1</a></li>
+	          	<li><a href="../slides/LisaFrenchSlides/Variables_two.pdf">Variables 2</a></li>
+	          	<li><a href="../slides/LisaFrenchSlides/Graphique.pdf">Graphique</a></li>
+	          	<li><a href="../slides/Animation.pdf">Animation</a></li>
+	          	<li><a href="../slides/Methods.pdf">Les méthodes</a></li>
+	          	<li><a href="../slides/Review.pdf">La revue</a></li>
+	          	<li><a href="../slides/Events.pdf">Événements</a></li>
+	          	<li><a href="../slides/Internet.pdf">l'Internet</a></li>
+	          	<li><a href="../slides/Arrays.pdf">Tableaux</a></li>
+	          	<li><a href="../slides/ArrayLists.pdf">Listes de tableaux</a></li>
+	          	<li><a href="../slides/Strings.pdf">Les cordes</a></li>
+							<!--
+	          	<li><a href="../slides/AI.pdf">Intelligence Artificielle</a></li>
+	          	<li><a href="../slides/loopVariableReview.pdf">Revue Boucle/Variable</a></li>
+	          	<li><a href="../slides/Interactors.pdf">Interacteurs</a></li>
+	          	<li><a href="../slides/AI.pdf">IA</a></li>
+	          	<li><a href="../slides/Classes.zip">Des classes</a></li>
+	          	<li><a href="../slides/TheEnd.pdf">La fin</a></li>
+
+							-->
+	          </ul>
+	        </li>
+
+	        <!-- <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Défis Supplémentaires <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../fr/projects/isOdd.html">Est Impair</a></li>
+
+	          </ul>
+	        </li>-->
+
+
+	        <!--<li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">l'Internet <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="https://www.dropbox.com/s/1jtjo9hde8in0xn/1-How%20the%20internet%20works.pptx">Comment Internet fonctionne</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1t7pwltugsy4pxg/2-day-in-the-life-of-packet.pptx">Jour dans la vie d'un paquet</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1n0lzrl32urfsnr/3-How%20packets%20routed.pptx">Comment les paquets sont acheminés sur Internet</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="http://yuba.stanford.edu/~huangty/dacka/lab1.html">Lab 1</a></li>
+	          	<li><a href="http://yuba.stanford.edu/~huangty/dacka/lab2.html">Lab 2</a></li>
+	          	<li class="divider"></li>
+	          	<li><a href="../internet/echo.zip">Code client d'écho</a></li>
+	          	<li><a href="../internet/2person-breakout.zip">Code de groupe de 2 personnes</a></li>
+
+
+	          </ul>
+	        </li>-->
+
+	        <!--<li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Section<b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="../projects/stepUp.html">Journal Karel</a></li>
+	          	<li><a href="../projects/place100.html">Drogues contrefaites</a></li>
+	          	<li><a href="../projects/beeperLine.html">Cible</a></li>
+	          </ul>
+	        </li>-->
+
+	        <!-- <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Prime <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+                <li><a href="../fr/bonus-index.html">Aperçu des bonus</a></li>
+	          </ul>
+	        </li> -->
+
+	        <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formes<b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+                <li><a href="../fr/handouts/submission.html">Soumettez votre travail</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSffsKTNU3mu-21-ZjZFJ3d-fPdvw6uQcvhAjbpXhux43_3gpg/viewform?usp=sf_link">Se connecter au laboratoire</a></li>
+	          </ul>
+	        </li>
+
+
+
+	      </ul>
+
+
+	      <ul class="nav navbar-nav navbar-right">
+	      	<li><a onclick="changeToFrench()" style="cursor: pointer;"><img class="languageIcon" src="../img/guinean_flag.png"></img></a></li>
+	      	<li><a onclick="changeToEnglish()" style="cursor: pointer;"><img class="languageIcon" src="../img/english_flag.png"></img></a></li>
+
+
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	</div>
+  </div><!-- /.container-fluid -->
+</nav>
+
+<script>
+
+	// function changeToTurkish() {
+	// 	var url = window.location.href;
+	// 	url = url.replace("/fr/", "/tr/");
+	// 	window.location.href = url;
+	// }
+
+	function changeToFrench() {
+		var url = window.location.href;
+		url = url.replace("/en/", "/fr/");
+		window.location.href = url;
+	}
+
+	function changeToEnglish() {
+		var url = window.location.href;
+		url = url.replace("/fr/", "/en/");
+		window.location.href = url;
+	}
+
+</script>
+
+    <div class="page-header" style="backgroud-color:#cdbfe3">
+    	<div class="container">
+   			<div>
+	        	<div id="logo">
+					<img id="logoImg" src="../img/guinea_logo.png"/>
+				</div>
+				<div id="headerText" style="padding-bottom:15px;">
+					<div class="h1" style="margin-top:0px;font-size:40px;">
+						Introduction à l'informatique
+					</div>
+					<div>
+						Novembre 2019
+					</div>
+					<div>
+						A Fria en Guinée
+					</div>
+				</div>
+
+	        </div>
+		</div>
+	</div>
+
+
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<div class="section" id="information">
+		<br/>
+
+		<!--
+		<div class="alert alert-success">
+			<b> We want your feedback</b>. Fill in the class survey here: <a href="https://www.surveymonkey.com/r/VCVVD8N">https://www.surveymonkey.com/r/VCVVD8N</a>.
+		</div>
+
+		<div class="alert alert-success">
+			<b> Submit your work</b>. Use the submission process: <a href="../en/handouts/submission.html">submission handout</a>.
+		</div>
+
+		<div class="alert alert-info">
+			Sign in to lab <a href="https://docs.google.com/forms/d/e/1FAIpQLSffsKTNU3mu-21-ZjZFJ3d-fPdvw6uQcvhAjbpXhux43_3gpg/viewform?usp=sf_link">here</a>.
+		</div>
+
+    <div class="alert alert-info">
+      Fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSdtHJpQ4Ksu3pWmPuCT5sC8m2WAvlOcr453P9UtsFFC-HCBdw/viewform">this survey</a> during the first lab.
+    </div>
+
+
+		<div class="alert alert-info">
+			Add to the class playlist here: <a href="https://open.spotify.com/user/1251835474/playlist/2E1ccnzfMTqDv2D1JEoFF3">Spotify Playlist</a>
+		</div>
+		-->
+
+
+
+
+
+
+		<div>
+<h2>
+L'idée du cours
+</h2>
+
+<p> Le but de ce cours de deux semaines est de vous enseigner les bases de la programmation informatique au point où vous pouvez aller apprendre par vous-même. Il est enseigné par une collaboration d'instructeurs du monde entier. Vous apprendrez à programmer en utilisant le matériel du cours Introduction à l'informatique de Stanford.</p>
+
+<hr />
+</div>
+
+
+
+
+<div>
+
+<div class = "section" id = "agenda">
+<h2>
+Programmes
+</h2>
+<table class="table table-hover">
+				<thead>
+					<tr>
+						<!--<th style="width: 80px;">Date</th>-->
+						<th></th>
+						<!--<th>Reading</th>-->
+						<th>Nom</th>
+						<th>Sujet</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th colspan = "3"><b>
+						<br/>
+						[Karel] (<a href="../starter/Karel.zip">Projets d'Eclipse Ici</a>)</b></th>
+					</tr>
+
+
+					<tr class="table-bordered table-striped">
+						<td><a href="../fr/projects/WaterFromWell.html"><img class="projectImg" src="../img/projects/newspaper/WaterWell.png">
+						</img></a></td>
+						<td><a href="../fr/projects/WaterFromWell.html">Puiser de l'Eau</a></td>
+						<td>Les méthodes</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/mosque.png"></img></td>
+						<td><a href="../fr/projects/mosquée.html">Construire La Grande Mosquée de Conakry</a></td>
+						<td>For Loops</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/mountain.png"></img></td>
+						<td><a href="../fr/projects/mountain.html">Montagne Karel</a></td>
+						<td>While Loops</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/karelGuineanFlagAfter.png"></img></td>
+						<td><a href="../fr/projects/flag.html">Le Drapeau Guinean</a></td>
+						<td>For Loops, While Loops</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/randomPainter2.png"></img></td>
+						<td><a href="../fr/projects/randomPainter.html">Peintre au hasard</a></td>
+						<td>If Déclarations</td>
+					</tr>
+
+					<tr>
+						<th colspan = "3"><b>
+						<br>
+						[Variables](<a href="../starter/Day2.zip">Projets d'Eclipse Ici</a>)</b></th>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/sandcastle.jpg"></img></td>
+						<td><a href="../fr/projects/sandcastles.html">Châteaux de sable</a></td>
+						<td>Variables</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/guess.jpg"></img></td>
+						<td><a href="../fr/projects/favoriteNumber.html">Numéro préféré</a></td>
+						<td>Variables</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/medicine.png"></img></td>
+						<td><a href="../fr/projects/medicine.html">Contrefaçon de médicaments</a></td>
+						<td>Concatenation</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/someSum.png"></img></td>
+						<td><a href="../fr/projects/someSum.html">C'est une somme</a></td>
+						<td>Variables</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/market2.jpg"></img></td>
+						<td><a href="../fr/projects/AllerAuMarché.html">Aller Au Marché</a></td>
+						<td>Variables</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/sorcerer.jpg"></img></td>
+						<td><a href="../fr/projects/sorcerer.html">La Sorcière</a></td>
+						<td>Nombres Aléatoires, Opérateurs</td>
+					</tr>
+
+					<tr>
+						<th colspan = "3"><b>
+						<br>
+						[Graphique](<a href="../starter/Day3.zip">Projets d'Eclipse Ici</a>)</b></th>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/InformatiqueEstGenialIcon.png"></img></td>
+						<td><a href="../fr/projects/awesome.html">l'Informatique est géniale</a></td>
+						<td>Graphique</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/mysterySquare.png"></img></td>
+						<td><a href="../fr/projects/mysterySquare.html">Place du mystère</a></td>
+						<td>Le hasard</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/stringArt.png"></img></td>
+						<td><a href="../fr/projects/stringArt.html">Art de la chaîne</a></td>
+						<td>For Loops</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/randomCircles.png"></img></td>
+						<td><a href="../fr/projects/randomCircles.html">Cercles aléatoires</a></td>
+						<td>Le hasard</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/bouncing.png"></img></td>
+						<td><a href="../fr/projects/bouncingBall.html">Balle rebondissante</a></td>
+						<td>Animation</td>
+					</tr>
+
+					<tr>
+						<th colspan = "3"><b>
+						<br>
+						[Java Avancé](<a href="../starter/Day4.zip">Projets d'Eclipse Ici</a>)</b></th>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/madMax.jpg"></img></td>
+						<td><a href="../fr/projects/madMethods.html">Méthodes folles</a></td>
+						<td>Params et Returns</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/target.png"></img></td>
+						<td><a href="../fr/projects/target.html">Cible</a></td>
+						<td>Paramètres</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/illusion.png"></img></td>
+						<td><a href="../fr/projects/illusion.html">Illusion d'optique</a></td>
+						<td>For Loops</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/sunset.png"></img></td>
+						<td><a href="../fr/projects/sunset.html">Court métrage</a></td>
+						<td>Params et Returns</td>
+					</tr>
+
+					<tr>
+						<th colspan = "3"><b>
+						<br>
+						[Événements](<a href="../starter/Day5.zip">Projets d'Eclipse Ici</a>)</b></th>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/makingTracks.png"></img></td>
+						<td><a href="../fr/projects/makingTracks.html">Faire des pistes</a></td>
+						<td>Événements</td>
+						<td><a href="../starter/Day5.zip">Day5.zip</a></td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/catchMeIfYouCan.png"></img></td>
+						<td><a href="../fr/projects/catchMeIfYouCan.html">Attrape-moi si tu peux</a></td>
+						<td>Circonstance Variables</td>
+						<td><a href="../starter/Day5.zip">Day5.zip</a></td>
+					</tr>
+
+					<tr>
+						<th colspan = "3"><b>
+						<br>
+						[Éclater](<a href="../starter/breakout.zip">Projet d'Eclipse Ici</a>)</b></th>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/breakout.jpg"></img></td>
+						<td><a href="../fr/projects/breakout.html">Éclater!</a></td>
+						<td>Interacteurs</td>
+					</tr>
+
+					<tr>
+						<th colspan = "3"><b>
+						<br>
+						[ArrayLists](<a href="../starter/Day7.zip">Projets d'Eclipse Ici</a>)</b></th>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/numbers.jpg"></img></td>
+						<td><a href="../fr/projects/sortedNumbers.html">Numéros triés</a></td>
+						<td>ArrayLists</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/snow.png"></img></td>
+						<td><a href="../fr/projects/snow.html">Neige</a></td>
+						<td>ArrayLists</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/mouseGame.png"></img></td>
+						<td><a href="../fr/projects/mouseGame.html">[Optionnelle] La ligne</a></td>
+						<td>ArrayLists</td>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/music3.jpg"></img></td>
+						<td><a href="../fr/projects/music.html">[Optionnelle] Vagues de son</a></td>
+						<td>ArrayLists</td>
+					</tr>
+
+					<tr>
+						<th colspan = "3"><b>
+						<br>
+						[Projet final](<a href="../starter/FinalProject.zip">Projet d'Eclipse Ici</a>)</b></th>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/project.png"></img></td>
+						<td><a href="../fr/projects/project.html">Faire votre propre</a></td>
+						<td>Toute</td>
+					</tr>
+
+					<tr>
+						<th colspan = "3"><b>
+						<br>
+						[Exemples supplémentaires](<a href="../starter/ExtraProjects.zip">Projet d'Eclipse Ici</a>)</b></th>
+					</tr>
+
+					<tr class="table-bordered table-striped">
+						<td><img class="projectImg" src="../img/icons/extraExamples.png"></img></td>
+						<td>Exemples supplémentaires</td>
+						<td>All</td>
+						<td><a href="../starter/ExtraProjects.zip">ExtraProjects.zip</a></td>
+					</tr>
+
+				</tbody>
+			</table>
+<hr />
+
+</div>
+
+<!-- <div class = "section" id = "staff">
+<h2>
+Enseignants
+</h2>
+<hr />
+</div> -->
+
+<div class = "section" id = "getStarted">
+<h2>
+Configurez votre ordinateur
+</h2>
+
+<h3> Télécharger Eclipse </h3>
+<p> Votre première étape consiste à installer Eclipse. <a href="https://web.stanford.edu/dept/cs_edu/eclipse/"> Voici </a> des instructions.
+Si vous souhaitez simplement utiliser le plug-in Stanford, vous pouvez le trouver <a href="../starter/edu.stanford.cs106_1.0.0.jar"> ici </a>. </p>
+
+<h3> Importer un projet </h3>
+<p> Une fois Eclipse installé, vous pouvez importer un projet (Menu Stanford -> Importer un projet). Pour les nouveaux programmes, téléchargez et importez une <a href="../starter/BlankJavaProject.zip"> ce </a> projet vierge. </ P> Une vidéo utile peut être trouvée <a href = "https://www.youtube.com/watch?v=D8w54kAOsqM">ici </a>. Vous pouvez trouver une autre vidéo expliquant comment utiliser votre code <a href="https://www.youtube.com/watch?v=vgGXPMhKp9o"> ici </a>.
+
+<!-- <h3> Créer un exécutable </ h3>
+<p> Si vous souhaitez transformer un projet en un exécutable autonome, lisez le <a href="../handouts/CreatingJarFiles.pdf"> ce </a> document. </ p> -->
+<hr />
+</div>
+
+
+<div class = "section" id = "playWithKarel">
+<h2>
+Programme d'études
+</h2>
+<img src = "../img/icons/curriculum.jpg" style = "width: 100%"> </img>
+<hr />
+</div>
+
+
+<div class = "section" id = "playWithKarel">
+<h2>
+Jouer avec Karel
+</h2>
+
+<p> Faites connaissance avec Karel, le robot Java utilisé par Stanford pour initier les étudiants universitaires à la programmation. </ p>
+
+<p> Utilisez les commandes de Karel pour lui demander de déplacer le bipeur vers le haut du rebord. Normalement, vous écrivez vos programmes dans une application appelée Eclipse, mais pour vous aider à démarrer, nous avons créé une mini-éclipse pour notre site Web:
+</p>
+
+
+<div style="width:100%;">
+	<div id="runButtonBar" class="buttonBar"></div> 
+       <script>importButtonBar();</script>
+</div>
+   <div id ='mainIde' class = "getStarted">
+ 
+      <div id = "mainIdeCenter" >
+      	
+         <div id = 'mainIdeEditorDiv'>
+            <script>importEditor('mainIdeEditor','mainIdeEditorDiv');</script>
+         </div>
+         <div id = 'mainIdeCanvasDiv' class = 'orange'>
+            <canvas id = 'mainIdeCanvas' class = 'red'></canvas>
+         </div>
+         
+      </div>
+
+   </div>
+
+
+   
+   
+
+<script>
+
+		
+
+  function init() {
+  	 var stepUpWorld = null;
+     var karelIde = null;
+
+     var onReadyCalled = false;
+
+     var buttonState = 'play';
+
+     document.onready = function() {
+        if (onReadyCalled) return;
+        onReadyCalled = true;
+        $("[title]").tooltip({ position: "bottom center", opacity: 0.9});
+        
+        initTabs();
+        var canvas = document.getElementById('mainIdeCanvas');
+        karelIde = KarelIde(window._editor, canvas, 'collectNewspaper');
+
+        var stepUpCanvase = document.getElementById('firstIdeCanvas');
+        stepUpWorld = KarelIde(window._editor, stepUpCanvase, '5x5');
+        
+        $('#playButton').click(function(){playClicked()});
+        $('#move').click(function(){stepUpWorld.stepMove()});
+        $('#left').click(function(){stepUpWorld.stepTurnLeft()});
+        $('#right').click(function(){stepUpWorld.stepTurnRight()});
+        $('#put').click(function(){stepUpWorld.stepPutBeeper()});
+        $('#pick').click(function(){stepUpWorld.stepPickBeeper()});
+        /*$('#worldSelector').change(
+           function() {
+              var worldName = $("#worldSelector option:selected").text();
+              karelIde.stopButton();
+              var playText = '<span class="glyphicon glyphicon-play"></span> Run Program';
+         	  $('#playButton').html(playText);
+         	  buttonState = 'play';
+	          karelIde.changeWorld(worldName);
+	        }
+        );*/
+        window.onresize();
+        
+     }
+
+     function playClicked() {
+     	if(buttonState == 'play') {
+     		karelIde.playButton();
+         	
+         	var resetText = '<span class="glyphicon glyphicon-repeat"></span> Reset Program';
+         	$('#playButton').html(resetText);
+         	buttonState = 'reset';
+         } else if (buttonState == 'reset') {
+         	karelIde.stopButton();
+         	var playText = '<span class="glyphicon glyphicon-play"></span> Run Program';
+         	$('#playButton').html(playText);
+         	buttonState = 'play';
+         }
+     	
+   }
+
+     window.onresize = function() { 
+        var parentHeight = 600;
+        var canvasWidth = 300
+        var parentWidth = $("#playWithKarel").width();
+        console.log('pw: ' + parentWidth);
+
+        var ide = document.getElementById('mainIde');
+        var editorDiv = document.getElementById('mainIdeEditorDiv');
+        var canvas = document.getElementById('mainIdeCanvasDiv');
+        var center = document.getElementById('mainIdeCenter');
+        
+        var ideHeight = parentHeight
+        ide.style.height = (ideHeight)+ 'px';
+        ide.style.width = parentWidth + 'px';
+        
+        var centerHeight = ideHeight;
+        center.style.height = centerHeight + 'px';
+        center.style.width = parentWidth + 'px';
+
+        //center.style.top = centerTop + 'px';
+
+        var availibleWidth = parentWidth ;
+        var elementSpacing = 12;
+
+        
+        var editorWidth = availibleWidth - canvasWidth - elementSpacing; 
+
+        canvas.style.width = canvasWidth + 'px';
+        canvas.style.height = canvasWidth + 'px';
+        canvas.style.left = (editorWidth + elementSpacing) + 'px';
+
+       	
+       	//editorWidth = Math.max(editorWidth, Const.MIN_EDITOR_WIDTH)
+
+        editorDiv.style.left = 0 + 'px'
+        editorDiv.style.width = editorWidth + 'px';
+
+        if (karelIde) {
+           karelIde.resizeCanvas(canvasWidth, canvasWidth);
+           stepUpWorld.resizeCanvas($("#firstIdeCanvas").width(), 200);
+        }
+        if (window._editor) {
+           window._editor.renderer.onResize();
+        }
+        ReferenceDialog.resize();
+        DeployDialog.resize();
+     }
+
+     
+  }
+  init();
+</script>		</div>
+
+
+
+
+
+
+
+<hr>
+
+<div class="footer">
+	<p class="pull-left">
+		&#169; Stanford 2019 &#124; Créé par
+		<a href="http://stanford.edu/~cpiech">Chris</a> avec l'aide de toute l'équipe.
+		Basé sur la merveilleuse classe CS106A développée par de nombreux enseignants talentueux. Un merci spécial à <a href="http://cs.stanford.edu/people/eroberts/">Eric Roberts</a> et <a href="http://robotics.stanford.edu/~sahami/bio.html">Mehran Sahami</a>.
+	</p>
+	<!--<p class="pull-right">
+		<a href="../fall12">Fall 2012</a>
+	</p>-->
+</div>
+<!--<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-35433298-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+</script>-->
+
+	</div>
+</body>
