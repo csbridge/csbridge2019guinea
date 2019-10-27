@@ -1,0 +1,96 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Cible
+			</h1>
+			<p>
+				Écrit par Eric Roberts et Mehran Sahami
+			</p>
+			<p>
+				Documents à distribuer:
+				<a href ="{{pathToRoot}}fr/handouts/graphics.html">Graphics Reference</a>
+			</p>
+			<p>
+				Exemples:
+				<a href ="{{pathToRoot}}fr/project/drawPeople.html">Draw People</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Supposons que vous ayez été embauché pour produire un programme qui dessine l'image d'une cible de tir à l'arc ressemblant à ceci:
+				</p>
+				<p>
+					<center>
+						<img style="width:500px" src="{{pathToRoot}}img/projects/target/target.png">
+					</center>
+				</p>
+				<p>
+					Ce chiffre représente simplement trois objets GOval, deux rouges et un blanc, dessinés dans le bon ordre. Le cercle extérieur doit avoir un rayon de 150 pixels, le cercle blanc, un rayon de 100 pixels et le cercle rouge intérieur, un rayon de 50 pixels. La figure doit être centrée dans la fenêtre.
+				</p>
+
+			</div>
+
+		</div>
+
+		<!--<div class="row">
+			<div class="col-md-12">
+				<h2>Solution</h2>
+
+
+<pre id="editor" style="height:300px">public class Target extends GraphicsProgram {
+
+	public void run() {
+		drawCenteredCircle(150, Color.RED);
+		drawCenteredCircle(100, Color.WHITE);
+		drawCenteredCircle(50, Color.RED);
+	}
+
+	private void drawCenteredCircle(int radius, Color color) {
+		GOval oval = new GOval(radius * 2, radius * 2);
+		double x = (getWidth() - oval.getWidth()) / 2;
+		double y = (getHeight() - oval.getHeight()) / 2;
+		oval.setFilled(true);
+		oval.setColor(color);
+		add(oval, x, y);
+	}
+
+}</pre>
+
+<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.renderer.setShowGutter(false);
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+
+			</div>
+
+		</div>-->
+
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

@@ -1,0 +1,98 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Balle rebondissante
+			</h1>
+			<p>
+				Basé sur un exemple de Mehran Sahami
+			</p>
+			<p>
+				Référence:
+				<a href ="{{pathToRoot}}fr/handouts/graphics.html">Référence graphique</a>
+				<br/>
+				Exemple travaillé:
+				<a href="{{pathToRoot}}fr/projects/mysterySquare.html">Place du mystère</a>,
+				<a href="{{pathToRoot}}fr/projects/gravityBall.html">Boule de gravité</a>,
+				<a href="{{pathToRoot}}fr/projects/goCenter.html">Aller Centre</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Écrivez un programme graphique qui crée une boule (une instance de GOval) et la fait rebondir sur l'écran. Ignorer la gravité et provoquer une collision avec le mur droit ou gauche reflète la direction x de la balle et une collision avec le mur supérieur ou inférieur change la direction y de la balle.
+				</p>
+				<p>La figure ci-dessous montre une balle se déplaçant à travers un rebond avec le mur du bas.</p>
+				<p>
+					<center>
+						<img style="width:500px" src="{{pathToRoot}}img/projects/bouncingBall/demo.png">
+					</center>
+				</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Jalon 1: Créer une balle</h2>
+				<p>
+					Cela peut être n'importe quelle taille.
+				</p>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Jalon 2: le faire bouger</h2>
+				<p>
+					Boucle pour toujours et dans la boucle mettre à jour la balle et mettre en pause. Vous pouvez faire une pause en utilisant la commande:
+					<div class="well"><code>pause(<i>milliseconds</i>);</code></div>
+					Si vous ne faites pas de pause, l'ordinateur s'animera plus vite que l'œil humain peut voir le mouvement!
+				</p>
+
+				<p>
+					Il existe également une méthode pour déplacer un GOval (ou un GRect):
+					<div class="well"><code><i>object</i>.move(<i>dx</i>, <i>dy</i>);</code></div>
+					<i>dx</i> est le nombre de pixels que l'objet va déplacer dans la direction x.
+					<br/> <i>dy</i> est le nombre de pixels que l'objet déplacera dans la direction y.
+				</p>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Jalon 3: rebond</h2>
+				<p>
+					Maintenant, avant de mettre à jour la position de la balle, vous devriez vérifier si la balle est entrée en collision avec le mur et si oui, vous devriez mettre à jour la direction dans laquelle elle se déplace.
+				</p>
+				<p>Les réflexions doivent suivre la règle: l'angle d'incidence est égal à l'angle de réflexion. Cela s'avère simple à mettre en œuvre. Vous faites simplement pivoter la direction x si vous frappez un mur gauche ou droit et inversez la direction y si vous frappez un mur inférieur ou supérieur</p>
+
+				<p>Comment déterminez-vous la position de la balle? Vous pouvez utiliser les méthodes:</p>
+				<div class="well"><code><i>object</i>.getX();<br/><i>object</i>.getY();</code></div>
+
+				<p>Assurez-vous de vérifier les démos: <a href="{{pathToRoot}}fr/projects/gravityBall.html">Boule de gravité</a> et <a href="{{pathToRoot}}fr/projects/goCenter.html">Aller Centre</a></p>.
+
+			</div>
+		</div>
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

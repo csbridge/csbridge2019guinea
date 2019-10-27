@@ -1,0 +1,154 @@
+<head>
+<head>
+
+	%include templates/parts/headFr.html
+
+  <script src="../karel/js/html/websiteImports.js"></script>
+	<script>importCss();</script>
+	<script>importJs();</script>
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+    <div class="page-header" style="backgroud-color:#cdbfe3">
+    	<div class="container">
+   			<div>
+	        	<div id="logo">
+					<img id="logoImg" src="{{pathToRoot}}img/guinea_logo.png"/>
+				</div>
+				<div id="headerText" style="padding-bottom:15px;">
+					<div class="h1" style="margin-top:0px;font-size:40px;">
+						Introduction à l'informatique
+					</div>
+					<div>
+						Été 2019
+					</div>
+					<div>
+						en Guinée
+					</div>
+				</div>
+
+	        </div>
+		</div>
+	</div>
+
+
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<div class="section" id="information">
+		<br/>
+
+		<!--
+		<div class="alert alert-success">
+			<b> We want your feedback</b>. Fill in the class survey here: <a href="https://www.surveymonkey.com/r/VCVVD8N">https://www.surveymonkey.com/r/VCVVD8N</a>.
+		</div>
+
+		<div class="alert alert-success">
+			<b> Submit your work</b>. Use the submission process: <a href="{{pathToRoot}}en/handouts/submission.html">submission handout</a>.
+		</div>
+
+		<div class="alert alert-info">
+			Sign in to lab <a href="https://docs.google.com/forms/d/e/1FAIpQLSffsKTNU3mu-21-ZjZFJ3d-fPdvw6uQcvhAjbpXhux43_3gpg/viewform?usp=sf_link">here</a>.
+		</div>
+
+    <div class="alert alert-info">
+      Fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSdtHJpQ4Ksu3pWmPuCT5sC8m2WAvlOcr453P9UtsFFC-HCBdw/viewform">this survey</a> during the first lab.
+    </div>
+
+
+		<div class="alert alert-info">
+			Add to the class playlist here: <a href="https://open.spotify.com/user/1251835474/playlist/2E1ccnzfMTqDv2D1JEoFF3">Spotify Playlist</a>
+		</div>
+		-->
+
+
+
+
+
+
+		<div>
+<h2>
+L'idée du cours
+</h2>
+
+<p> Le but de ce cours de deux semaines est de vous enseigner les bases de la programmation informatique au point où vous pouvez aller apprendre par vous-même. Il est enseigné par une collaboration d'instructeurs du monde entier. Vous apprendrez à programmer en utilisant le matériel du cours Introduction à l'informatique de Stanford.</p>
+
+<hr />
+</div>
+
+
+
+
+<div>
+
+<div class = "section" id = "agenda">
+<h2>
+Programmes
+</h2>
+%include templates/parts/programTableFr.html
+<hr />
+
+</div>
+
+<!-- <div class = "section" id = "staff">
+<h2>
+Enseignants
+</h2>
+<hr />
+</div> -->
+
+<div class = "section" id = "getStarted">
+<h2>
+Configurez votre ordinateur
+</h2>
+
+<h3> Télécharger Eclipse </h3>
+<p> Votre première étape consiste à installer Eclipse. <a href="https://web.stanford.edu/dept/cs_edu/eclipse/"> Voici </a> des instructions.
+Si vous souhaitez simplement utiliser le plug-in Stanford, vous pouvez le trouver <a href="{{pathToRoot}}starter/edu.stanford.cs106_1.0.0.jar"> ici </a>. </p>
+
+<h3> Importer un projet </h3>
+<p> Une fois Eclipse installé, vous pouvez importer un projet (Menu Stanford -> Importer un projet). Pour les nouveaux programmes, téléchargez et importez une <a href="{{pathToRoot}}starter/BlankJavaProject.zip"> ce </a> projet vierge. </ P> Une vidéo utile peut être trouvée <a href = "https://www.youtube.com/watch?v=D8w54kAOsqM">ici </a>. Vous pouvez trouver une autre vidéo expliquant comment utiliser votre code <a href="https://www.youtube.com/watch?v=vgGXPMhKp9o"> ici </a>.
+
+<!-- <h3> Créer un exécutable </ h3>
+<p> Si vous souhaitez transformer un projet en un exécutable autonome, lisez le <a href="{{pathToRoot}}handouts/CreatingJarFiles.pdf"> ce </a> document. </ p> -->
+<hr />
+</div>
+
+
+<div class = "section" id = "playWithKarel">
+<h2>
+Programme d'études
+</h2>
+<img src = "{{pathToRoot}}img/icons/curriculum.jpg" style = "width: 100%"> </img>
+<hr />
+</div>
+
+
+<div class = "section" id = "playWithKarel">
+<h2>
+Jouer avec Karel
+</h2>
+
+<p> Faites connaissance avec Karel, le robot Java utilisé par Stanford pour initier les étudiants universitaires à la programmation. </ p>
+
+<p> Utilisez les commandes de Karel pour lui demander de déplacer le bipeur vers le haut du rebord. Normalement, vous écrivez vos programmes dans une application appelée Eclipse, mais pour vous aider à démarrer, nous avons créé une mini-éclipse pour notre site Web:
+</p>
+
+			%include templates/parts/playWithKarel.html
+		</div>
+
+
+
+
+
+
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

@@ -1,0 +1,88 @@
+<head>
+
+	%include templates/parts/head.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				The Guinean Flag
+			</h1>
+			<p>
+				Written by Lisa E. 
+			</p>
+
+			<p>
+				Handouts: 
+				<a href ="{{pathToRoot}}en/handouts/karel.html">KarelReference</a>
+				<br/>Worked Examples: 
+				<a href="{{pathToRoot}}en/projects/invert.html">Invert</a>,
+				<a href="{{pathToRoot}}en/projects/unKarel.html">UN Karel</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Somebody stole the flag yesterday and Karel needs to make one quickly! Before students arrive to school! 
+					<p>
+					<left>
+						<img style="width:30%"  src="{{pathToRoot}}img/projects/Flag/flagPole.png">	
+					</left>
+					<right>
+						<img style="width:65%"  src="{{pathToRoot}}img/projects/Flag/flagPoleRaised.png">	
+					</right>
+				</p>
+				</p>
+				<h2>Paint</h2>
+				<p>
+					Karel has a few commands up her sleeve. She can paint the corner on which she is standing using the instruction
+<div class="well"><code>paintCorner(color);</code></div>
+The value enclosed in the parentheses, which is called an argument in the terminology
+of programming languages, may be any of the following:
+                 <span style="color:red;">RED</span>&nbsp;&nbsp;  
+                 <span style="color:orange;">ORANGE</span>&nbsp;&nbsp;
+                 <span style="color:green;">GREEN</span>&nbsp;&nbsp;
+                 <span style="color:cyan;">CYAN</span>&nbsp;&nbsp;
+                 <span style="color:blue;">BLUE</span>&nbsp;&nbsp;
+                 <span style="color:magenta;">MAGENTA</span>
+                 and more...             
+				</p>
+				
+				<h2>Flag</h2>
+				<p>
+					Use Karel's ability to paint to make the Guinean Flag. You are guaranteed fabric that is 12 units wide, but don't know how tall it will be (Hint: Use for loops and while loops!)
+				</p>
+				
+				<p>
+					<left>
+						<img style="width:40%"  src="{{pathToRoot}}img/projects/Flag/karelGuineanFlagBefore.png">
+					</left>
+					<right>
+						<img style="width:40%"  src="{{pathToRoot}}img/projects/Flag/karelGuineanFlagAfter.png">
+					</right>
+					</p>
+				</p>
+				<p>
+					As always, remember to decompose your solution! Your program should work on a world of any height.
+				</p>
+			</div>
+
+		</div>
+
+		
+		%include templates/parts/footer.html
+
+	</div>
+</body>

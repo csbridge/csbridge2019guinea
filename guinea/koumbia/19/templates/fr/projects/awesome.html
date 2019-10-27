@@ -1,0 +1,95 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				La programmation est géniale
+			</h1>
+			<p>
+				Écrit par Chris Piech and Eric Roberts
+			</p>
+			<p>
+				Référence:
+				<a href="{{pathToRoot}}fr/handouts/graphics.html">Référence graphique</a>
+			<br/>
+				Exemples travaillés:
+				<a href="{{pathToRoot}}fr/projects/robotFace.html">Robot Face</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Le but de ce programme est de vous amener à créer votre premier programme graphique. Vous devez dessiner trois rectangles (un rouge, un bleu et un jaune) et écrire au centre de l'écran "Programmer, c'est génial". Vous pouvez créer des rectangles de toutes tailles et les placer dans n’importe quelle position, à condition qu’ils soient visibles. Voici à quoi ressemblait notre programme.
+				</p>
+				<p>
+					<center>
+						<img style="width:100%" src="{{pathToRoot}}img/projects/awesome/InformatiqueGenial.png">
+					</center>
+				</p>
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Jalon 1: dessiner des rectangles</h2>
+				<p>
+					L'art géométrique très simple se vend parfois pour des sommes énormes. Par exemple, ce tableau Composition II de Piet Mondrian s’est vendu 40 millions de dollars:
+				</p>
+				<p>
+					<center>
+						<img style="width:300px" src="{{pathToRoot}}img/projects/awesome/mondrian.jpg">
+					</center>
+				</p>
+				<p>
+					Votre première tâche consiste à ajouter trois rectangles, un rouge, un bleu et un jaune. Vous <b>ne pas</b> doivent créer l'image ci-dessus. Vous pouvez placer vos rectangles n'importe où sur l'écran que vous voulez. Si vous vendez votre image pour des millions de dollars ... souvenez-vous de vos professeurs :). Si vous souhaitez ajouter plus de rectangles, c'est cool. Assurez-vous simplement de terminer le jalon n ° 2 en premier.
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Jalon 2: texte centré</h2>
+				<p>
+					Créez et ajoutez un GLabel au centre de l'écran. Vous pouvez obtenir la largeur et la hauteur de l'écran avec les commandes:
+					<div class="well"><code>getWidth();<br/>getHeight();</code></div>
+				</p>
+				<p>
+					De même, si vous avez une étiquette appelée GLabel, vous pouvez obtenir la largeur et la hauteur de l’étiquette avec les commandes:
+					<div class="well"><code>label.getWidth();<br/>label.getHeight();</code></div>
+				</p>
+				<p>
+					Si vous voulez que votre texte soit plus élégant, vous pouvez changer sa police:
+					<div class="well"><code>label.setFont("Courier-50");</code></div>
+
+				</p>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				C'est tout! Si vous terminez tôt, n'hésitez pas à ajouter à votre photo. Si vous aimez les ovales ... vous pouvez aussi ajouter des ovales.
+			</div>
+		</div>
+
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

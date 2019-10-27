@@ -1,0 +1,87 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+                Serpent Frontière
+			</h1>
+			<p>
+                Écrit par Lisa Yan
+			</p>
+			<p>
+				Référence:
+                <a href ="{{pathToRoot}}fr/handouts/graphics.html">Référence graphique</a><br/>
+				<a href ="{{pathToRoot}}fr/handouts/arrayLists.html">ArrayLists</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+                    Ceci est un programme de bonus! C'est un peu difficile, mais terminer ce programme vous aidera certainement à écrire votre projet final.
+                </p>
+                <p>
+									Ecrivez un programme graphique qui déplace un serpent dans le sens antihoraire autour du bord de la toile.
+                </p>
+					<center>
+						<img style="width:300px;border:2px solid grey" src="{{pathToRoot}}img/projects/borderSnake/borderSnake.gif">
+					</center>
+                </p>
+            <h2>BoîteFrontière</h2>
+            <p>
+            Cet exercice suppose que vous avez terminé BorderBox. La logique est similaire (il n’ya qu’une astuce supplémentaire), il est donc très utile de connaître la configuration générale du problème.
+            Si vous n'avez pas encore terminé BorderBox, allez l'implémenter et revenez.
+            </p>
+
+            <h2>Trucs et astuces</h2>
+            <ul>
+                <li>Utilisation ArrayLists!</li>
+                <li>Lorsque vous déplacez le serpent, vous n'avez pas besoin de déplacer chaque bloc du serpent. En fait, il vous suffit de déplacer un bloc! Pensez au bloc que vous souhaitez déplacer pour donner l’illusion de l’ensemble du mouvement du serpent.</li>
+                </ul>
+            <h3>Invariants</h3>
+            <p>Comme indiqué ci-dessus, dans ce programme, il vous suffit de déplacer un seul bloc pour donner l’illusion que tout votre serpent a été déplacé. Chaque fois que le serpent se déplace, différents blocs dans ArrayList représentent désormais la nouvelle tête et la nouvelle queue du serpent. Comment pouvez-vous accéder de manière fiable à la tête de votre serpent dans votre programme?</p>
+            <p>Une option que vous avez est de définir une logique <i>invariant</i> que la tête de votre serpent sera toujours la 0ème position de votre ArrayList. Un <i>invariant</i> est un terme informatique qui désigne quelque chose qui peut toujours être supposé être vrai. Bien qu'il n'y ait pas d'analogie exacte avec le codage, cette compréhension logique aidera le codeur à exécuter son programme. Le code ci-dessous aide à traduire l'invariant logique dans le code que vous devez faire:</p>
+			<div class="well"><code>
+                snake.remove(block); // le GRect que vous avez déplacé<br>
+                snake.add(0, block); // devient la nouvelle tête
+			</code></div>
+            <p>Notez que définir cet invariant vous aidera également à déterminer quelle position de la liste de tableaux sera toujours la queue du serpent.</p>
+            <h3>Tourner les coins</h3>
+            <p>Supposons que nous ayons le serpent dans la configuration suivante, où snakeDirection = NORTH:
+            </p>
+					<center>
+						<img style="width:300px" src="{{pathToRoot}}img/projects/borderSnake/snakeTurn.png">
+					</center>
+            <p>Pour déplacer le serpent, est-ce que nous nous inquiétons du fait qu'une partie du serpent est encore en train de tourner? (Astuce: non, nous ne le faisons pas) Etant donné cette information, comment déplacer un seul bloc à la bonne position sur le canevas?
+            </p>
+            <br>
+            <p>
+            Félicitations, vous avez maintenant un serpent en mouvement! :)</p>
+
+
+
+
+
+			</div>
+
+		</div>
+
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

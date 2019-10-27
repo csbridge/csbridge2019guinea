@@ -1,0 +1,61 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Des formes de duplication
+			</h1>
+			<p>
+                Écrit par Tyler Conklin
+								</br>
+			</p>
+			<p>
+				Référence:
+                <a href ="{{pathToRoot}}fr/handouts/random.html">Référence de générateur aléatoire</a><br/>
+                <a href ="{{pathToRoot}}fr/handouts/graphics.html">Référence graphique</a><br/>
+                <a href ="{{pathToRoot}}fr/handouts/events.html">Référence d'événements</a><br/>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Ceci est un programme de bonus! C'est censé être stimulant.
+				</p>
+				<p>
+					Ecrivez un programme graphique pour dupliquer un ovale dix fois si l'utilisateur clique dessus. Votre programme doit commencer par remplir le canevas avec dix ovales générés aléatoirement, un peu comme l'exemple des dix cercles aléatoires. Notez que cela signifie que les valeurs X, Y, largeur, hauteur et couleur du GOval doivent toutes être aléatoires. Après cette étape initiale, la toile peut ressembler à ceci:
+					<center>
+						<img style="width:300px;border:2px solid grey" src="{{pathToRoot}}img/projects/duplicatingShapes/duplicatingShapesStart.png">
+					</center>
+					Si l'utilisateur clique ensuite sur un ovale. Cet ovale devrait être dupliqué dix fois. Les caractéristiques de l'ovale doivent être identiques à celles de l'ovale d'origine, mais la position X, Y doit changer. Ainsi, les nouveaux ovales doivent avoir la même couleur, la même hauteur et la même largeur que l'ovale sur lequel l'utilisateur a cliqué, mais une nouvelle position X, Y aléatoire. Après un clic sur l'ovale rouge, la toile peut maintenant ressembler à ceci:
+ 					<center>
+						<img style="width:300px;border:2px solid grey" src="{{pathToRoot}}img/projects/duplicatingShapes/duplicatingShapesEnd.png">
+					</center>
+					Notez que nous ne nous soucions pas de savoir si la totalité de l'ovale est à l'écran, mais au moins une partie de l'ovale doit l'être à l'écran (le X, le Y de l'ovale doit être compris entre la largeur et la hauteur de la toile).
+        </p>
+				<p>
+					Astuce: La méthode ci-dessous sera utile.
+					<center>
+						<img style="width:600px;border:2px solid grey" src="{{pathToRoot}}img/projects/duplicatingShapes/getElementAt.png">
+					</center>
+				</p>
+			</div>
+		</div>
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

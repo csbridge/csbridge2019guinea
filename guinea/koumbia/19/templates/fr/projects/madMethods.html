@@ -1,0 +1,88 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Méthodes folles
+			</h1>
+			<p>
+				Écrit par Chris et Bryce
+			</p>
+			<p>
+				Exemple:
+				<a href ="{{pathToRoot}}fr/projects/averageMethod.html">Average Method</a>,
+				<a href ="{{pathToRoot}}fr/projects/drawPeople.html">Draw People</a>,
+				<a href ="{{pathToRoot}}fr/projects/halfGreen.html">Half Green</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>1. Mad Max</h2>
+				<p>
+					Complétez le <code>MadMax</code> programme en remplissant le <code>max</code> méthode qui renvoie le plus grand de ses deux paramètres:
+				</p>
+				<div class="well"><code>private int max(int i, int j)</code></div>
+				<p>
+					La méthode run a déjà été écrite:
+					<pre>public void run() {
+    println("The max of 4 and 5 is: " + max(4, 5));
+    println("The max of -4 and 4 is: " + max(-4, 4));
+    println("The max of 1 and 2 is: " + max(1, 2));
+    println("The max of 0 and 0 is: " + max(0, 0));
+}</pre>
+				</p>
+				<p>
+					Votre sortie devrait ressembler à ceci:
+					<center>
+						<img style="width:500px" src="{{pathToRoot}}img/projects/madMax/madMax.png">
+					</center>
+				</p>
+
+				<h2>2. dessiner un arbre</h2>
+				<p>
+					Remplissez le <code>drawTree</code> méthode qui dessine un arbre avec le <b>base</b> de son tronc centré sur la position (x, y) prévue:
+				</p>
+				<div class="well"><code>private void drawTree(int x, int y)</code></div>
+				<p>
+					La méthode run a déjà été écrite:
+					<pre>public void run() {
+    drawTree(50, 150);
+    drawTree(100, 300);
+    drawTree(500, 200);
+    drawTree(300, 250);
+    drawTree(700, 310);
+}</pre>
+				</p>
+				<p>
+					Chaque arbre doit avoir un camion d'une largeur de 20 pixels et d'une hauteur de 80 pixels. Les feuilles doivent avoir un rayon de 30 pixels. Votre sortie devrait ressembler à ceci:
+					<center>
+						<img style="width:500px" src="{{pathToRoot}}img/projects/madMax/drawTree.png">
+					</center>
+				</p>
+
+				<p>
+					Si vous avez fini tôt, voyez à quel point vous pouvez créer un arbre magnifique. Montrez-nous une capture d'écran!
+				</p>
+			</div>
+
+		</div>
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

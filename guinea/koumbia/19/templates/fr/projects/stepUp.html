@@ -1,0 +1,119 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Intensifier
+			</h1>
+			<p>
+				Basé sur un document d'Eric Roberts
+			</p>
+
+			<p>
+				<!--Topics:
+				KarelCommands,
+				Methods
+			<br/>-->
+			Documents à distribuer:
+				<a href ="{{pathToRoot}}fr/handouts/karel.html">Karel Reference</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Karel commence dans le monde à gauche. Comment voudriez-vous programmer Karel pour prendre le bip et le transporter au sommet du rebord? Karel devrait laisser retentir le bipeur au coin de la 2e rue et de la 4e avenue, puis continuer encore un coin à l’est pour aboutir à la 5e avenue. À la fin de votre programme, l'univers de Karel devrait ressembler à l'image de droite.
+				</p
+				<p>
+					<center>
+						<img style="width:700px" class="psetImg" src="{{pathToRoot}}img/projects/stepUp/stepUp.png">
+					</center>
+				</p>
+
+				<br/>
+				<p>
+					Si Karel ne connaît que les commandes:
+					<div class="well">
+						<code>
+							move()
+							<br/>pickBeeper()
+							<br/>putBeeper()
+							<br/>turnLeft()
+						</code>
+					</div>
+					Comment pouvez-vous faire tourner Karel à droite?
+				</p>
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Solution</h2>
+
+				<p>
+					Une solution est fournie pour cet exemple afin que vous puissiez voir à quoi ressemble un programme complet!
+				</p>
+
+
+<pre id="editor" style="height:460px">/**
+ * Programme: Intensifier
+ * ----------------
+ * Votre premier exemple de programme Karel. Demandez à Karel de prendre le bip devant vous
+ * d'elle et placez-le sur le rebord.
+ * Ceci est un commentaire. Votre ordinateur l'ignorera.
+ */
+public class StepUp extends Karel {
+
+	// Lorsque vous démarrez votre programme, ce code sera exécuté.
+	public void run() {
+		move();
+		pickBeeper();
+		turnLeft();
+		move();
+		turnezADroite();
+		move();
+		putBeeper();
+		move();
+	}
+
+	// Définit une nouvelle commande appelée turnezADroite
+	private void turnezADroite() {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+}</pre>
+
+<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.renderer.setShowGutter(false);
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+			</div>
+		</div>
+
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

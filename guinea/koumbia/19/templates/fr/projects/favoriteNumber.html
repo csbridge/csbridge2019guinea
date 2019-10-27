@@ -1,0 +1,56 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Numéro préféré
+			</h1>
+			<p>
+				Problème écrit par Chris Bryce et Julia
+			</p>
+
+			<p>
+				Exemples travaillés:
+				<a href="{{pathToRoot}}fr/projects/emc2.html">E=MC2</a>,
+				<a href="{{pathToRoot}}fr/projects/fibb.html">Fibbonacci</a>,
+				<a href="{{pathToRoot}}fr/projects/carbonDating.html">Carbon Dating</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+
+				<p>
+					Commencez par penser à votre entier préféré compris entre 0 et 100. Écrivez un programme qui stocke votre nombre préféré en tant que variable et demande à plusieurs reprises à l'utilisateur d'essayer de le deviner. Indiquez à l'utilisateur si sa dernière hypothèse est trop basse ou trop élevée.
+				</p>
+				<p>
+					Par exemple, mon numéro préféré est 88. Voici une démonstration d'un utilisateur essayant de deviner ce nombre:
+				</p>
+				<p>
+					<center>
+						<img style="width:600px" src="{{pathToRoot}}img/projects/favoriteNumber/demo.png">
+					</center>
+				</p>
+
+
+			</div>
+		</div>
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

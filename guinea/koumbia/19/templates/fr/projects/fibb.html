@@ -1,0 +1,111 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Fibbonacci (avec solution)
+			</h1>
+			<p>
+				Problème écrit par Eric Robets
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Au XIIIe siècle, le mathématicien italien Leonardo Fibonacci, pour expliquer la croissance géométrique d'une population de lapins, conçut une séquence mathématique qui porte désormais son nom. Les deux premiers termes de cette séquence, Fib (0) et Fib (1), valent 0 et 1, et chaque terme suivant est la somme des deux précédents. Ainsi, les premiers termes de la séquence de Fibonacci ressemblent à ceci:
+				</p>
+				<p style="padding-left:2em">
+									Fib(0)	=	0
+					<br/>Fib(1)	=	1
+					<br/>Fib(2)	=	1	(0 + 1)
+					<br/>Fib(3)	=	2	(1 + 1)
+					<br/>Fib(4)	=	3	(1 + 2)
+					<br/>Fib(5)	=	5	(2 + 3)
+
+				</p>
+				<p>
+					Ecrivez un programme qui affiche les termes dans la séquence de Fibonacci, en commençant par Fib (0) et en continuant tant que les termes sont inférieurs à 10 000. Ainsi, votre programme devrait produire l’exemple suivant:
+				</p>
+				<p>
+					<center>
+						<img style="width:400px" src="{{pathToRoot}}img/projects/fib/demo.png">	
+					</center>
+				</p>
+				<p>
+					Ce programme doit être poursuivi tant que la valeur du terme est inférieure à la valeur maximale. Pour ce faire, vous devez utiliser une boucle while, probablement avec une ligne d’en-tête qui ressemble à ceci:
+
+<div class="well"><code>while (term < MAX_TERM_VALUE)</code></div>
+
+Notez que la valeur maximale du terme est spécifiée à l'aide d'une constante nommée.
+
+				</p>
+				
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Solution</h2>
+
+
+<pre id="editor" style="height:480px">/*
+ * File: Fibonacci.java
+ * --------------------
+ * Ce programme répertorie les termes de la séquence de Fibonacci jusqu’à
+ * une constante MAX_TERM_VALUE, qui est le plus grand terme de Fibonacci
+ * le programme s'affichera.
+ */
+
+import acm.program.*;
+
+public class Fibonacci extends ConsoleProgram {
+
+
+   /* Définit le terme le plus long à afficher */
+	private static final int MAX_TERM_VALUE = 10000;
+
+	public void run() {
+		println("Ce programme répertorie la séquence de Fibonacci.");
+		int t1 = 0;
+		int t2 = 1;
+		while (t1 <= MAX_TERM_VALUE) {
+			println(t1);
+			int t3 = t1 + t2;
+			t1 = t2;
+			t2 = t3;
+		}
+	}
+
+}
+</pre>
+    
+<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.renderer.setShowGutter(false); 
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+		
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

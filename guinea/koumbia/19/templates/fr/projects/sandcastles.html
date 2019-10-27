@@ -1,0 +1,113 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Châteaux de sable
+			</h1>
+
+			<p>
+				Documents à distribuer:
+				<a href ="{{pathToRoot}}fr/handouts/console.html">Console</a>,
+				<a href ="{{pathToRoot}}fr/handouts/random.html">Random Generator</a>
+		`<br/>
+				Exemples travaillés:
+				<a href="{{pathToRoot}}fr/projects/emc2.html">E=MC2</a>,
+				<a href="{{pathToRoot}}fr/projects/fibb.html">Fibbonacci</a>,
+				<a href="{{pathToRoot}}fr/projects/carbonDating.html">Carbon Dating</a>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+
+				<p>Ecrivez les trois programmes suivants pour vous familiariser avec les variables Java.</p>
+
+				<h2>1. Bonjour le monde</h2>
+				<p>
+					Ecrivez un programme console qui affiche hello world (ou n’importe quel message de votre choix):
+				</p>
+				<p>
+					<center>
+						<img style="width:400px" src="{{pathToRoot}}img/projects/sandcastles/hello.png">
+					</center>
+				</p>
+
+				<hr/>
+
+				<h2>2. Poids de la lune</h2>
+				<p>L'utilisateur (un terrien) entre son poids sur la terre. Votre programme imprimera le poids de l'utilisateur sur la lune, ce qui correspond à 16,5% de son poids sur la Terre.</p>
+
+				<p>
+					<center>
+						<img style="width:400px" src="{{pathToRoot}}img/projects/sandcastles/moon.png">
+					</center>
+				</p>
+
+
+				<h2>3. Nombres Aléatoires</h2>
+				<p>
+					Ecrivez un programme qui imprime 1 000 nombres aléatoires compris entre 0 et 100.
+				</p>
+				<p>
+					<center>
+						<img style="width:400px" src="{{pathToRoot}}img/projects/sandcastles/randoms.png">
+					</center>
+				</p>
+
+				<p>Le fichier RandomNumbers.java a un code qui génère un seul nombre aléatoire.
+					<pre id="editor" style="height:200px">public class RandomNumbers extends ConsoleProgram {
+
+   // Un générateur de nombres aléatoires
+   private RandomGenerator rgen = new RandomGenerator();
+
+   public void run() {
+      // changer ce code pour imprimer 1000 nombres aléatoires
+      // dans la plage de 0 à 100.
+      int example = rgen.nextInt(0, 10);
+      println(example);
+   }
+}</pre>
+				</p>
+
+				<p>Afin de générer des nombres aléatoires, créez une variable d'instance RandomGenerator (une variable déclarée en dehors de toutes les méthodes) comme ceci:
+					<div class="well"><code>private RandomGenerator rgen = new RandomGenerator();</code></div>
+				</p>
+				<p>Vous pouvez ensuite utiliser la variable pour générer des nombres aléatoires.
+					<div class="well"><code>
+						rgen.nextInt(<i>min</i>, <i>max</i>)  //génère un int aléatoire dans la plage (min, max) inclus
+					</code></div>
+				</p>
+			</div>
+		</div>
+
+		<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.renderer.setShowGutter(false);
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+
+
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

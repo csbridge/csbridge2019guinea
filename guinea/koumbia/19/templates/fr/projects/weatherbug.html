@@ -1,0 +1,107 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Bug météo
+			</h1>
+			<p>
+				Créé par Nick Troccoli et Bryce Cronkite-Ratcliff
+			</p>
+
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				
+				<p>Si vous avez déjà utilisé weather.com ou un autre site météo pour consulter la météo, vous savez à quel point il est utile (et cool!) De pouvoir consulter la météo en ligne pour votre position actuelle et pour tout lieu à travers le monde. Et, en fin de compte, c'est également un excellent moyen de connaître et de pratiquer les rappels JavaScript! Dans cette affectation, vous allez compléter un site Web qui, à l'aide de JavaScript, récupère et affiche la météo pour tout lieu où l'utilisateur entre ou l'emplacement actuel de l'utilisateur.</p>
+				
+				<p>
+					<center>
+						<img style="width:450px" src="{{pathToRoot}}img/projects/weatherbug/demo.png">
+
+					</center>
+				</p>
+				<p>Nous savons que vous êtes tous des ninjas GRect et GLabel. Nous avons donc créé tout le code graphique pour vous! Nous voulons que vous écriviez tous les rappels pour que le site Web fonctionne correctement. Nous vous suggérons de décomposer cela en étapes et de faire en sorte que chaque étape fonctionne avant de poursuivre.</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Jalon 1: les boutons</h2>
+				<p>
+					La première tâche à accomplir consiste à faire en sorte que les rappels de boutons de votre site Web fonctionnent correctement. Votre page devrait avoir deux boutons - "Afficher la météo" et "Afficher la météo locale".</p>
+
+				<p>
+					<center>
+						<img style="width:450px" src="{{pathToRoot}}img/projects/weatherbug/buttons.png">
+
+					</center>
+				</p>
+				
+				<p>Pour ajouter des boutons à l'écran, utilisez le <b>addButton()</b> méthode de<b>GraphicsApp</b>. <b>addButton()</b> prend 2 paramètres - le texte que le bouton doit afficher et la fonction de rappel à exécuter lorsque l'utilisateur clique sur le bouton.</p>
+
+				<p>N'oubliez pas que lorsque vous souhaitez transmettre une fonction en tant que rappel, vous tapez le nom de la fonction <i>sans parenthèses</i>.</p>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Jalon 2: le bouton "Afficher la météo"</h2>
+				<p>Maintenant que vos boutons sont configurés, il est temps de vous attaquer au premier des deux boutons: rechercher la météo pour un lieu dans lequel l'utilisateur entre. Vous pouvez obtenir le texte que l'utilisateur a saisi dans le champ de texte à partir de la propriété value de votre champ de texte. variable. Sinon, il ne vous faudra que 2 fonctions GraphicsApp pour ce jalon: <b>fetchWeatherForQuery()</b> et <b>displayErrorMessage()</b>.  Votre site Web devrait extraire les prévisions à 7 jours pour le lieu de saisie de l'utilisateur. Si l'extraction a abouti, vous devez afficher les données météorologiques que vous avez renvoyées. Notez que la fonction de rappel de réussite doit prendre un paramètre - les données météorologiques.</p>
+
+				<p>N'oubliez pas que lors de l'extraction de données sur le Web, la demande peut échouer pour diverses raisons. C'est pourquoi vous devez transmettre un rappel d'erreur lors de la récupération des données météorologiques. Si la récupération échoue, vous devez afficher un message d'erreur à l'utilisateur à l'aide de <b>displayStatusMessage()</b>.</p>
+			</div>
+		</div>
+
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Jalon 3: bouton "Afficher la météo locale"</h2>
+				<p>Abordons maintenant le deuxième bouton - chercher la météo pour la position actuelle de l'utilisateur. Au lieu de récupérer le texte saisi par l'utilisateur, vous devez rechercher les coordonnées de l'emplacement actuel de l'utilisateur (latitude et longitude). Obtenir l'emplacement actuel nécessite un rappel, car la recherche de l'utilisateur prend beaucoup de temps! Cette fonction de rappel devrait prendre 2 paramètres - la latitude et la longitude.</p>
+
+				<p>Une fois que vous avez localisé l’emplacement de l’utilisateur, votre site Web doit à nouveau récupérer les prévisions à 7 jours de l’endroit où l’utilisateur a saisi, mais cette fois à l’aide de <b>fetchWeatherForCoodinates()</b>.  Si la récupération est réussie, vous devez afficher les données météorologiques que vous récupérez. Notez que la fonction de rappel de réussite doit prendre un paramètre - les données météorologiques.</p>
+
+				<p>De nouveau, rappelez-vous que, lors de l'extraction de données sur le Web, la demande peut toujours échouer pour diverses raisons. C'est pourquoi vous devez passer un deuxième rappel lorsque vous récupérez des données météorologiques. Si la récupération échoue, vous devez afficher un message d'erreur à l'utilisateur à l'aide de <b>displayStatusMessage()</b>.
+			</div>
+		</div>
+
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Les extensions</h2>
+				<p>Maintenant que vous avez terminé la partie des rappels, essayez d'étendre les graphiques Weather Bug! Par exemple, essayez d’ajouter des noms de jours à l’écran lorsque la météo est affichée. Les données météorologiques que vous récupérez ont une propriété dayName correspondant au jour de la météo. Essayez d’afficher une autre étiquette pour chaque jour qui affiche le nom du jour.</p>
+
+				<p>
+					<center>
+						<img style="width:450px" src="{{pathToRoot}}img/projects/weatherbug/extended.png">
+
+					</center>
+				</p>
+				
+			</div>
+		</div>
+		
+
+		
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>

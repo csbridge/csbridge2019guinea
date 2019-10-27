@@ -1,0 +1,113 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Trouver Pi
+			</h1>
+			<p>
+				Problème écrit par Eric Roberts.
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Pi (&pi;) est une chose mathématique de la vraie beauté. Il apparaît dans de nombreuses équations, notamment dans l'équation de l'aire d'un cercle, p.d.f. d'une distribution normale et enfin, et oh si merveilleusement, dans <a href="http://en.wikipedia.org/wiki/Euler's_identity">Identité d'Euler</a>.
+				</p>
+
+				<p>Mais comment savons-nous que la valeur de &pi; est 3.14159265359...? Il y a plusieurs façons de calculer pi. Dans ce problème, nous montrons comment le faire en utilisant des fléchettes.</p>
+
+				<p>
+					<center>
+						<img style="width:500px" src="{{pathToRoot}}img/projects/findPi/lifeOfPi.jpg">	
+						<p style="text-align:center"><i>Le nom de ce garçon est aussi Pi. Ce problème ne lui est pas lié (autre que le nom).</i></p>
+					</center>
+				</p>
+
+				<p>Imaginez que vous lanciez des fléchettes sur le cercle jaune à gauche. Si vous lancez au hasard une série de fléchettes sur le jeu de fléchettes, certaines vont atterrir à l'intérieur du cercle jaune et d'autres dans la zone grise à l'extérieur. Si vous comptez à la fois le nombre de fléchettes qui se trouvent à l'intérieur du cercle et le nombre qui se trouve n'importe où dans le carré, le rapport de ces chiffres devrait être proportionnel à l'aire relative des deux figures.
+ 
+</p>
+
+				<p>
+					<center>
+						<img style="width:700px" src="{{pathToRoot}}img/projects/findPi/darts.png">	
+						
+					</center>
+				</p>
+				
+
+				<p>Parce que la zone du cercle est &pi; et celle du carré est 4, la fraction qui tombe à l'intérieur du cercle doit s'approcher &pi; / 4.
+</p>
+				
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Solution</h2>
+
+
+<pre id="editor" style="height:580px">/**
+ * Trouver Pi
+ * -------------
+ * Trouvez la valeur de pi en lançant des fléchettes aléatoires sur un cercle unitaire inscrit dans
+ * un carré. La fraction qui atterrit dans le cercle doit être égale à pi / 4.
+ */
+public class FindPi extends ConsoleProgram {
+	
+	private RandomGenerator rd = new RandomGenerator();
+	
+	public void run() {
+		int numInCircle = 0;
+		int numDarts = 50000000;
+		for(int i = 0; i &lt; numDarts; i++) {
+			// obtenir un x, y au hasard dans un 2x2
+			double x = rd.nextDouble(-1, 1);
+			double y = rd.nextDouble(-1, 1);
+			// tester si la fléchette a atterri dans le cercle
+			double dist = Math.sqrt(x * x + y * y);
+			if(dist &lt;= 1) {
+				numInCircle++;
+			}
+		}
+		// si nous ne lançons pas en double, ce sera toujours 0.
+		double fraction = (double)numInCircle / numDarts;
+		double pi = fraction * 4;
+		print(pi);
+	}
+}
+</pre>
+    
+<script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+   editor.setTheme('ace/theme/eclipse');
+   editor.getSession().setMode("ace/mode/java");
+   editor.setReadOnly(true);
+   editor.setShowPrintMargin(false);
+   editor.renderer.setShowGutter(false); 
+    /*editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/java");*/
+</script>
+	</div>
+	</div>
+		
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>
