@@ -1,8 +1,12 @@
 # CSBridge Guinea
 This repository holds the CSBridge sections held in Guinea, which all share the same dns subdomain (guinea.csbridge.org). The repository currently contains the below sections:
 
-- Koumbia 2019: https://guinea.csbridge.org/koumbia/19
-- Fria 2019: https://guinea.csbridge.org/fria/19 (work in progress)
+|Section|Sources|URL|
+|---|---|---|
+|Koumbia 2019|[guinea/koumbia/19](guinea/koumbia/19)|https://guinea.csbridge.org/koumbia/19|
+|Fria 2019|[guinea/fria/19](guinea/fria/19)|https://guinea.csbridge.org/fria/19|
+
+
 
 
 ## Structure
@@ -54,22 +58,15 @@ cd docs/fria/
 ln -s ../../guinea/fria/19/docs 19
 ```
 
-### 3. Add the new section to the index
-```
-# edit the following files to add new section to home page
-template/en/index.html
-template/fr/index.html
-```
-
-### 4. Update the navigation home of the new section as appropria
+### 4. Update the links to new section
 Use `/fria/19/en/index.html` or `/fria/19/fr/index.html` to refer to the home page of the new section as appropriate. You may need to update the following files:
-```
-# edit the following files to add new section to home page
-template/en/index.html # Update the CSBridge Guinea sections table (CSBridge Fria 2019)
-template/fr/index.html # Update the CSBridge Guinea sections table (CSBridge Fria 2019)
-guinea/fria/19/templates/parts/navBar.html # Update the brand navigation link (CSBridge)
-guinea/fria/19/templates/parts/navBarFr.html # Update the brand navigation link (CSBridge)
-```
+
+|File|Change|
+|---|---|
+|template/en/index.html|Update table of CSBridge Guinea sections|
+|template/fr/index.html|Update table of CSBridge Guinea sections|
+|guinea/fria/19/templates/parts/navBar.html|Update home navigation link (labeled CSBridge)|
+|guinea/fria/19/templates/parts/navBarFr.html|Update home navigation link (labeled CSBridge)|
 
 
 ## Compiling HTML templates
@@ -85,8 +82,9 @@ python compile.py
 python compile.py
 ```
 
-### Run local http server
+## Running local http server
 ```
 # PWD: <root>/docs
 python -m http.server
 ```
+Then open http://localhost:8000 in your web browser.
