@@ -1,0 +1,194 @@
+<html>
+<head>
+
+    <title>Introduction à l'Informatique</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+
+    <!-- Fonts -->
+    <!-- <link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,600,700,900,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900,600italic,700italic,900italic' rel='stylesheet' type='text/css'>-->
+
+    <!-- Styles -->
+
+    <link href="../plugins/bootstrap-3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <!-- Java Script -->
+    <script src="../plugins/jquery.min.js"></script>
+    <script src="../plugins/bootstrap-3.1/js/bootstrap.min.js"></script>
+
+    <script src="../karel/ace/ace.js" type="text/javascript"></script>
+    <!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
+    </script>-->
+
+    <script src="../karel/js/html/websiteImports.js"></script>
+    <script>importCss();</script>
+    <script>importJs();</script>
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar-inverse navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">CSBridge / Guinea</a>
+
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+
+                        <!--
+                        <li class="">
+                            <a href="#">Sections</a>
+                        </li>
+                        -->
+
+                    </ul>
+
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a onclick="changeToFrench()" style="cursor: pointer;"><img class="languageIcon" src="../img/guinean_flag.png"></img></a></li>
+                        <li><a onclick="changeToEnglish()" style="cursor: pointer;"><img class="languageIcon" src="../img/english_flag.png"></img></a></li>
+
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <script>
+
+        function changeToFrench() {
+            var url = window.location.href;
+            url = url.replace("/en/", "/fr/");
+            window.location.href = url;
+        }
+
+        function changeToEnglish() {
+            var url = window.location.href;
+            url = url.replace("/fr/", "/en/");
+            window.location.href = url;
+        }
+
+    </script>
+
+    
+        
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-4">
+                <h1></h1>
+                <div>
+                    <img id="logoImg" class="img-responsive" src="../img/guinea_logo.png" style="width: 100%"/>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h1>
+                    CSBridge / Guinea
+                </h1>
+                <h4>
+                    Inspiring Next Generation of Guinean Computer Scientists 
+                </h4>
+            </div>
+
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section">
+                    <h2>CSBridge Sections organized in Guinea</h2>   
+                    <p>
+                        This portal gives you access to CSBridge sections organized in Guinea.
+                        Each section has at most 10 students.
+                        Each section has an experienced section leader who lectures and supports the students individually throughout the two-week period.
+                        Section Leaders are passionate about computer science and serve as great role models to high school students.
+
+                    </p>
+                </div>
+            </div>
+
+            
+
+            <div class="col-md-12">
+                <div class="section">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th><span class="glyphicon glyphicon-calendar"></span>Date</th>
+                                <th><span class="glyphicon glyphicon-map-marker"></span>Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="../koumbia/19/en/index.html">CSBridge Koumbia 2019</a></td><td>2019-06-21 - 2019-07-05</td><td>Koumbia</td>
+                            </tr>
+                            <tr>
+                                <!-- <td><a href="../fria/19/en/index.html">CSBridge Fria 2019</a></td><td>2019-11-16 - 2019-11-29</td><td>Groupe Scolaire Afrique Unie, Fria</td> -->
+                                <td>CSBridge Fria 2019</td><td>(Coming soon)</td><td>(Comming soon)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="row">
+            <div class="col-md-6 order-md-1">
+                <div class="section">
+                        <h2>
+                            About CSBridge
+                        </h2>
+                        <p>
+                            The CSBridge program inspires the next generation of computer scientists by 
+                            helping young people discover the joy of programming.
+                            
+                            It is based on computer science teaching methodologies that have been used 
+                            at Stanford University for over 20 years.
+                            
+                            It is is organized in different cities and universities around the world 
+                            and has already been used to teach the basics of programming to 
+                            thousands of high school students.
+
+                            For more information on the CSBridge program, visit its <a href="https://www.csbridge.org/" target="_blank"> <span class="glyphicon glyphicon-new-window"></span> official website</a>.
+                        </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 order-md-2">
+                <h1></h1>
+                <img class="img-responsive" src="../img/csbridge_illustration.jpg" style="border-radius: 50%"/>    
+            </div>
+        </div>
+
+        
+
+        
+
+        
+    </div>  
+
+
+</body>
+</html>
