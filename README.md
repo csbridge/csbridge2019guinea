@@ -145,11 +145,13 @@ Then open http://localhost:8000 in your web browser.
 
 # ⚠️ Common issues
 ## I get the 'HTTP Port already in use' error
-- While attempting to run http servers, if you get the following error:
+While attempting to run a local http server, if you get the following error:
 ```
 OSError: [Errno 98] Address already in use
 ```
-You might have tried to start more than 1 http server bound to the same port. You should probably kill the other one first. You may also run multiple http servers bound to different ports. Learn more about python's http.server [here](https://docs.python.org/3.6/library/http.server.html).
+You might have tried to start more than 1 http server bound to the same port.
+- You should probably kill the other one first. 
+- You may also run multiple http servers bound to different ports. Learn more about python's http.server [here](https://docs.python.org/3.6/library/http.server.html).
 
 ## I pushed, but the website is not updated
 - Note that Github Pages deployments are not instantaneous. They may take a few minutes.
