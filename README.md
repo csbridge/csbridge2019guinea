@@ -38,13 +38,13 @@ This repository is structured as illustrated in the below tree. The HTTP root pa
 ├── guinea
 │   ├── fria
 │   │   └── 19
-│   │       ├── compile.py
+│   │       ├── compile.py (compiles the Fria 2019 section)
 │   │       ├── docs
 │   │       ├── templates
 │   │       └── ...
 │   └── koumbia
 │       └── 19
-│           ├── compile.py
+│           ├── compile.py (compiles the Koumbia 2019 section)
 │           ├── docs
 │           ├── templates
 │           └── ...
@@ -55,8 +55,8 @@ This repository is structured as illustrated in the below tree. The HTTP root pa
 │   │   └── index.html
 │   └── ...
 ├── README.md
-├── compile.py
-├── copy_section_docs.sh
+├── compile.py (compiles the CSBridge/Guinea portal)
+├── copy_section_docs.sh (copies compiled section docs to HTTP Root)
 └── ...
 
 
@@ -109,7 +109,8 @@ Always perform this stage before pushing. Otherwise the compiled section files w
 source copy_section_docs.sh
 ```
 
-## ⚙️ Running a local http server for a single section
+## <a name="a-run-section-http-server"></a>⚙️ Running a local http server for a single section
+This is recommended when you are working on a single section.
 In order to run a local http server for a single section:
 ```
 # PWD: <root>/guinea/fria/19/docs/ # adjust as appropriate
@@ -117,24 +118,22 @@ python -m http.server
 ```
 Then open http://localhost:8000 in your web browser.
 
-This approach is recommended when you are working on a single section. 
 
-- 🔁 Your devel🗺️pment loop:
+- 🔁 Your development loop:
     - Edit section template files
-    - run `python compile.py` (under the section directory)
-    - refresh your browser window
+    - Run `python compile.py` (under the section directory)
+    - Refresh your browser window
 
-## ⚙️ Running a local http server for the entire portal
-In order to run a local http server for the entire portal (similar to https://guinea.csbridge.org)
+## <a name="a-run-portal-http-server"></a>⚙️ Running a local http server for the entire portal
+This is recommended when you are working on the CSBridge/Guinea portal, or before you push new commits to github (so that you can see what https://guinea.csbridge.org will look like before you push).
+
+
 ```
 # PWD: <root>/docs
 python -m http.server
 ```
 Then open http://localhost:8000 in your web browser.
 
-This approach is recommended when:
-- You are working on the portal (e.g. when adding a new section)
-- Before you push (in order to see what guinea.csbridge.org will look like before you push)
 
 - 🔁 Your development loop:
     - Edit portal template files and/or section html files
@@ -145,12 +144,19 @@ This approach is recommended when:
 
 
 # ⚠️ Common issues
-## HTTP Port already in use
+## I get the 'HTTP Port already in use' error
 - While attempting to run http servers, if you get the following error:
 ```
 OSError: [Errno 98] Address already in use
 ```
 You might have tried to start more than 1 http server bound to the same port. You should probably kill the other one first. You may also run multiple http servers bound to different ports. Learn more about python's http.server [here](https://docs.python.org/3.6/library/http.server.html).
 
-## Another issue
-Document solution here.
+## I pushed, but the website is not updated
+- Note that Github Pages deployments are not instantaneous. They may take a few minutes.
+- [Run a local HTTP-server for the portal](#a-run-portal-http-server), to verify that things are as you expect.
+- Check your email. Did support@github.com send you a 'Page build failure' email?
+- Check the [current status of github services](https://www.githubstatus.com/), and ensure that GitHub Pages is operational
+
+
+
+
