@@ -52,7 +52,7 @@ cp -r guinea/koumbia/19/* guinea/fria/19/
 ```
 
 ### 2. Edit `copy_section_docs.sh` 
-Add the following copy command for the Fria 2019 section.
+This script is used to copy the compiled section docs to the main docs folder. Add the following copy command for the Fria 2019 section.
 ```
 cp -r  guinea/fria/19/docs/* docs/fria/19/
 ```
@@ -69,20 +69,20 @@ Use `/fria/19/en/index.html` (English) or `/fria/19/fr/index.html` (French) to r
 
 
 ## Compiling HTML templates
-### 1. Compile the Guinea portal
+### <a name="a-compile-portal"></a>1. Compile the Guinea portal
 ```
 # PWD: <root>
 python compile.py
 ```
 
-### 2. Compile individual sections
+### <a name="a-compile-individual-section"></a>2. Compile individual sections
 Note, this doesn't copy the section's compiled files to the main `docs` directory.
 ```
 # PWD: <root>/guinea/fria/19 # adjust as appropriate
 python compile.py
 ```
 
-### 3. Copy the section's compiled files to the main docs directory
+### 3. <a name="a-copy-section-files"></a>Copy the section's compiled files to the main docs directory
 Always perform this stage before pushing. Otherwise the compiled section files will not be served at https://guinea.csbridge.org
 ```
 source copy_section_docs.sh
@@ -114,7 +114,7 @@ This approach is recommended when:
 - Before you push (in order to see what guinea.csbridge.org will look like before you push)
 
 Your development cycle will look like the following:
-- [Compile the portal](#Compile-the-Guinea-portal)
-- [Compile individual sections](#Compile-individual-sections)
-- [Copy compiled section files to the main docs directory](#Copy-the-section's-compiled-files-to-the-main-docs-directory)
+- [Compile the portal](#a-compile-portal)
+- [Compile individual sections](#a-compile-individual-section)
+- [Copy compiled section files to the main docs directory](#a-copy-section-files)
 - Refresh your web browser
