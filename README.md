@@ -10,7 +10,7 @@ This repository holds the CSBridge sections held in Guinea, which all share the 
 
 
 ## Structure
-This repository is structured as illustrated in the below tree. The HTTP root path maps to `/docs/`. The individual CSBridge section docs are symlinked under this folder. For instance `/docs/koumbia/19` symlinks to `/guinea/koumbia/19/docs`. Therefore the Koumbia 2019 section is available at https://guinea.csbridge.org/koumbia/19. 
+This repository is structured as illustrated in the below tree. The HTTP root path maps to the `/docs/` directory. The `copy_section_docs.sh` script is used to copy the individual CSBridge section compiled docs to this directory. For instance, the script copies `/guinea/koumbia/19/docs` to `/docs/koumbia/19`. Therefore the Koumbia 2019 section is available at https://guinea.csbridge.org/koumbia/19.
 
 ```
 ├── docs
@@ -21,9 +21,9 @@ This repository is structured as illustrated in the below tree. The HTTP root pa
 │   ├── fr
 │   │   └── index.html
 │   ├── fria
-│   │   └── 19 -> ../../guinea/fria/19/docs
+│   │   └── 19 (copy of ../../guinea/fria/19/docs)
 │   ├── koumbia
-│   │   └── 19 -> ../../guinea/koumbia/19/docs
+│   │   └── 19 (copy of ../../guinea/koumbia/19/docs)
 │   └── ...
 ├── guinea
 │   ├── fria
@@ -51,15 +51,14 @@ mkdir -p guinea/fria/19
 cp -r guinea/koumbia/19/* guinea/fria/19/
 ```
 
-### 2. Symlink the docs folder of the new section into the main docs folder
+### 2. Edit `copy_section_docs.sh` 
+Add the following copy command for the Fria 2019 section.
 ```
-mkdir docs/fria
-cd docs/fria/
-ln -s ../../guinea/fria/19/docs 19
+cp -r  guinea/fria/19/docs/* docs/fria/19/
 ```
 
-### 4. Update the links to new section
-Use `/fria/19/en/index.html` or `/fria/19/fr/index.html` to refer to the home page of the new section as appropriate. You may need to update the following files:
+### 4. Update the hyperlinks to new section
+Use `/fria/19/en/index.html` (English) or `/fria/19/fr/index.html` (French) to refer to the home page of the new section as appropriate. You may need to update the following files:
 
 |File|Change|
 |---|---|
@@ -70,21 +69,52 @@ Use `/fria/19/en/index.html` or `/fria/19/fr/index.html` to refer to the home pa
 
 
 ## Compiling HTML templates
-### 1. Compile the Guinea portal as follow
+### 1. Compile the Guinea portal
 ```
 # PWD: <root>
 python compile.py
 ```
 
-### 2. Compile individual sections as follow
+### 2. Compile individual sections
+Note, this doesn't copy the section's compiled files to the main `docs` directory.
 ```
-# PWD: <root>/guinea/fria/19
+# PWD: <root>/guinea/fria/19 # adjust as appropriate
 python compile.py
 ```
 
-## Running local http server
+### 3. Copy the section's compiled files to the main docs directory
+Always perform this stage before pushing. Otherwise the compiled section files will not be served at https://guinea.csbridge.org
+```
+source copy_section_docs.sh
+```
+
+## Running a local http server for a single section
+In order to run a local http server for a single section:
+```
+# PWD: <root>/guinea/fria/19/docs/ # adjust as appropriate
+python -m http.server
+```
+Then open http://localhost:8000 in your web browser.
+
+This approach is recommended when you are working on a single section. Your development cycle will be the following:
+- Edit section template files
+- run `python compile.py` (under the section directory)
+- refresh your browser window
+
+## Running a local http server for the entire portal
+In order to run a local http server for the entire portal (similar to https://guinea.csbridge.org)
 ```
 # PWD: <root>/docs
 python -m http.server
 ```
 Then open http://localhost:8000 in your web browser.
+
+This approach is recommended when:
+- You are working on the portal (e.g. when adding a new section)
+- Before you push (in order to see what guinea.csbridge.org will look like before you push)
+
+Your development cycle will look like the following:
+- [Compile the portal](#Compile-the-Guinea-portal)
+- [Compile individual sections](#Compile-individual-sections)
+- [Copy compiled section files to the main docs directory](#Copy-the-section's-compiled-files-to-the-main-docs-directory)
+- Refresh your web browser
