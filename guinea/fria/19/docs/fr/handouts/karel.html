@@ -355,7 +355,7 @@
 
 
 	<div class="container"><!-- Header -->
-	<div id="pageHeader"><h1> Referencia de karel </h1>
+	<div id="pageHeader"><h1>Reference de karel</h1>
 	</div>
 	<hr/>
 	<div class="row">
@@ -363,68 +363,69 @@
 
 
 <p>
-	Este apéndice define la estructura del lenguaje de programación Karel en una sola página.
+	Cette appendice définit la structure du language de programmation Karel en une seule page.
 </p>
 
 <div class="refCard bordered">
 	<div class="refCol">
 		<div class="refCel bordered">
-			<b>Comandos de Karel incorporados:</b>
+			<b> Instructions de base de Karel:</b>
 			
 			<p class="refCode">
-				<code>moverse();</code><br/>
-				<code>girarIzquierda();</code></br/>
-				<code>ponerCono();</code></br/>
-				<code>recogerCono();</code></br/>
+				<code>move(); <i class="comment"> // avancer</i> </code> <br/>
+				<code>turnLeft(); <i class="comment"> // tourner a gauche</i></code></br/>
+				<code>putBeeper(); <i class="comment"> // deposer beeper </i> </code></br/>
+				<code>pickBeeper(); <i class="comment"> // prendre beeper</i> </code></br/>
 			</p>
 		</div>
 
 		<div class="refCel bordered">
-			<b>Estructura de un programa de Karel:</b>
+			<b>Structure d'un programme de Karel:</b>
 			
 			<p class="refCode">
 				<code class="comment">/*</code></br/>
-<code class="comment">&nbsp;* Los comentarios pueden incluirse en</code><br/>
-<code class="comment">&nbsp;* cualquier parte del programa entre</code><br/>
-<code class="comment">&nbsp;* una barra-asterisco y una asterisco-barra</code><br/>
+<code class="comment">&nbsp;* Les commentaires peuvent etre inclus dans</code><br/>
+<code class="comment">&nbsp;* n'importe quelle partie du programme. Elles </code><br/>
+<code class="comment">&nbsp;* commencent par un slash-asterisque et </code><br/>
+<code class="comment">&nbsp;* finissent par un asterisque-slash.</code><br/>
 <code class="comment">&nbsp;*/</code><br/>
 
-				<code><span class="keyword">public class</span> <i class="demoText">nombre</i> <span class="keyword">extends</span> EsKarel {</code><br/>
+				<code><span class="keyword">public class</span> <i class="demoText">NomDeLaClasse</i> <span class="keyword">extends</span> FrKarel {</code><br/>
 
 				<br/>
 				<code>&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> run() {</code><br/>
-				<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><i class="demoText">declaraciones a repetir</i><br/>
+				<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><i class="comment">// inserer des instructions ici</i><br/>
 				<code>&nbsp;&nbsp;&nbsp;}</code><br/>
 				<br/>
-				<code>&nbsp;&nbsp;&nbsp;</code><i class="demoText">definiciones de métodos privados</i><br/>
+				<code>&nbsp;&nbsp;&nbsp;</code><i class="comment">// definir des methodes ici.</i><br/>
 				<code>}</code><br/></p>
 		</div>
 
 		<div class="refCel bordered">
-			<b>Nombres de los condiciones:</b>
+			<b>Nom des conditions:</b>
 			
 			<div class="refCard" style="margin-top:7px">
 				<div class="refCol">
-					<code>frenteDespejado()</code><br/>
-					<code>izquierdaDespejada()</code><br/>
-					<code>derechaDespejada()</code><br/>
-					<code>conosPresentes()</code><br/>
-					<code>rumboNorte()</code><br/>
-					<code>rumboSur()</code><br/>
-					<code>rumboEste()</code><br/>
-					<code>rumboOeste()</code><br/>
-					<code>bolsaConConos()</code><br/>
+					<code>avantDegage()</code><br/>
+					<code>jettonsPresents()</code><br/>
+					<code>jettonsDansSac()</code><br/>
+					<code>gaucheDegage()</code><br/>
+					<code>droiteDegage()</code><br/>
+					<code>facantNord()</code><br/>
+					<code>facantSude()</code><br/>
+					<code>facantEst()</code><br/>
+					<code>facantOuest()</code><br/>
 				</div>
 				<div class="refCol">
-					<code>frenteBloqueado()</code>
-					<code>izquierdaBloqueada()</code><br/>
-					<code>derechaBloqueada()</code><br/>
-					<code>conosAusentes()</code><br/>
-					<code>sinRumboNorte()</code><br/>
-					<code>sinRumboSur()</code><br/>
-					<code>sinRumboEste()</code><br/>
-					<code>sinRumboOeste()</code><br/>
-					<code>bolsaSinConos()</code><br/>
+					<code>avantBloque()</code>
+					<code>jettonsNonPresents()</code><br/>
+					<code>pasDeJettonDansSac()</code><br/>
+					<code>gaugeBloquee()</code><br/>
+					<code>droiteBloquee()</code><br/>
+					<code>neFacantPasNord()</code><br/>
+					<code>neFacantPasSud()</code><br/>
+					<code>neFacantPasEst()</code><br/>
+					<code>neFacantPasOuest()</code><br/>
 				</div>
 			</div>
 
@@ -437,34 +438,34 @@
 
 	<div class="refCol">
 		<div class="refCel bordered">
-			<b>Condicionales:</b>
-			<p class="refCode"><code><span class="keyword">if</span>(</code><i class="demoText">condición</i><code>){</code><br/><i class="demoText" style="margin-left:2em">el código de bloqueo</i><br/><code>}</code></p>
+			<b>Conditions:</b>
+			<p class="refCode"><code><span class="keyword">if</span>(</code><i class="demoText">condition</i><code>){</code><br/><i class="demoText" style="margin-left:2em">code qui s'execute si "oui"</i><br/><code>}</code></p>
 
-			<p class="refCode" style="margin-top:15px"><code><span class="keyword">if</span>(</code><i class="demoText">condición</i><code>){</code><br/><i class="demoText" style="margin-left:2em">bloque de código por "sí"</i><br/><code>} <span class="keyword">else</span> {</code><br/><i class="demoText" style="margin-left:2em">bloque de código por "no"</i><br/><code>}</code></p>
+			<p class="refCode" style="margin-top:15px"><code><span class="keyword">if</span>(</code><i class="demoText">condition</i><code>){</code><br/><i class="demoText" style="margin-left:2em">code qui s'execute si "oui"</i><br/><code>} <span class="keyword">else</span> {</code><br/><i class="demoText" style="margin-left:2em">code qui s'execute si "non"</i><br/><code>}</code></p>
 		</div>
 		<div class="refCel bordered">
-			<b>Ciclos:</b>
-			<p class="refCode"><code><span class="keyword">for</span>(int i = 0; i &lt;</code>&nbsp;<i class="demoText" >contar</i><code>; i++){</code><br/><i class="demoText" style="margin-left:2em">declaraciones a repetir</i><br/><code>}</code></p>
+			<b>Boucles:</b>
+			<p class="refCode"><code><span class="keyword">for</span>(int i = 0; i &lt;</code>&nbsp;<i class="demoText" >nombre</i><code>; i++){</code><br/><i class="demoText" style="margin-left:2em">declarations a repeter.</i><br/><code>}</code></p>
 
-			<p class="refCode" style="margin-top:15px"><code><span class="keyword">while</span>(</code><i class="demoText">condición</i><code>){</code><br/><i class="demoText" style="margin-left:2em">declaraciones a repetir</i><br/><code>}</code></p>
+			<p class="refCode" style="margin-top:15px"><code><span class="keyword">while</span>(</code><i class="demoText">condition</i><code>){</code><br/><i class="demoText" style="margin-left:2em">declarations a repeter.</i><br/><code>}</code></p>
 		</div>
 
 		<div class="refCel bordered">
-			<b>Declaración de un método:</b>
-			<p class="refCode"><code><span class="keyword">private void</span></code><i class="demoText" style="margin-left:10px">nombre</i><code>() {</code><br/><i class="demoText" style="margin-left:2em">comandos en el cuerpo del método.</i><br/><code>}</code><br/></p>
+			<b>Declaration d'une methode:</b>
+			<p class="refCode"><code><span class="keyword">private void</span></code><i class="demoText" style="margin-left:10px">nombre</i><code>() {</code><br/><i class="demoText" style="margin-left:2em">commandes dans le corps de la methode.</i><br/><code>}</code><br/></p>
 		</div>
 		
 
 		<div class="refCel bordered">
-			<b>Comandos de Karel adicionales:</b>
+			<b>Commandes additionnelles de Karel:</b>
 			<!-- for balance -->
 			<div style="height:5px"></div>
 			
 			<p class="refCode">
 				<!-- <code>girarDerecha();</code></br/> -->
-				<code>mediaVuelta();</code></br/>
-				<code>aleatorio(</code><i class="demoText">p</i><code>);</code></br/>
-				<code>pintarEsquina(</code><i class="demoText">color</i><code>);</code></br/>
+				<code>faireDemiTours();</code></br/>
+				<code>aleatoire(</code><i class="demoText">p</i><code>);</code></br/>
+				<code>colorerCoin(</code><i class="demoText">couleur</i><code>);</code></br/>
 			</p>
 			<!-- for balance -->
 			<div style="height:11px"></div>
