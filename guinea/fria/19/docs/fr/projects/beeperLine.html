@@ -325,7 +325,7 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Agriculture de maïs (Ligne bip)
+				Ligne de beepers (avec solution)
 			</h1>
 			<p>
 				Écrit par Chris Piech
@@ -337,20 +337,52 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Votre objectif est de remplir le premier rang du monde de Karel avec des bips sonores. Vous pouvez supposer que Karel commence dans le coin inférieur gauche, face à l'est. Par exemple, si vous avez exécuté votre programme sur le monde à gauche, le monde devrait être produit à droite.
-					<p>
-					<center>
-						<img style="width:600px"  src="../../img/projects/beeperLine/beeperLine1.png">
-					</center>
-					</p>
-					Votre programme devrait également fonctionner pour des mondes de tailles différentes. Par exemple, si nous exécutons le même programme EXACT sur ce monde légèrement plus vaste, Karel devrait toujours pouvoir placer une gamme complète de bips sonores sans se bloquer. Cela signifie que nous ne pouvons pas utiliser une boucle for. Nous ne savons pas d'avance quelle sera la taille du monde!
-					<p>
-					<center>
-						<img style="width:700px"  src="../../img/projects/beeperLine/beeperLine2.png">
-					</center>
-					</p>
+					Votre objectif est de remplir la première ligne du monde de Karel avec des beepers.
+					Vous pouvez supposer qu'initialement, Karel commence au coin inferieur gauche de son monde et fait face a l'Est.
+
+					Un exemple du déroulement de votre programme est illustré ci-dessous:
+				</p>
+				
+				<p>
+					<div class="row">
+						<div class="col-md-2">
+						</div>
+
+						<div class="col-md-4">
+							<h2 class='text-center'>Avant</h2>
+							<img style="width:100%"  src="../../img/projects/beeperLine/beeperLine1_before.png" />
+						</div>
+						
+						<div class="col-md-4">
+							<h2 class='text-center'>Après</h2>
+							<img style="width:100%"  src="../../img/projects/beeperLine/beeperLine1_after.png" />
+						</div>
+
+						<div class="col-md-2">
+						</div>
+					</div>
+				</p>
+				
+
+				<p>
+					Votre programme devrait aussi marcher pour des mondes de différente tailles. Par exemple, si nous executon
+					le même programme sur un monde un peu plus grand, comme celui ci-dessous, Karel devrait toujours pouvoir 
+					placer une ligne de beepers sans erreur. Cela signifie que nous ne pouvons pas utiliser une bouple 
+					"pour" ("for" loop), car nous ne conaissons pas la taille du monde de Karel a l'avance.
 				</p>
 
+				<p>
+					<div class="row">
+						<div class="col-md-6">
+							<h2 class='text-center'>Avant</h2>
+							<img style="width:100%"  src="../../img/projects/beeperLine/beeperLine2_before.png" />
+						</div>
+						<div class="col-md-6">
+							<h2 class='text-center'>Après</h2>
+							<img style="width:100%"  src="../../img/projects/beeperLine/beeperLine2_after.png" />
+						</div>
+					</div>
+				</p>
 
 			</div>
 
@@ -361,26 +393,33 @@
 				<h2>Solution</h2>
 
 
-<pre id="editor" style="height:320px">/**
- * Program: Lignebip
- * -------------------
- * Remplissez le premier rang avec des avertisseurs sonores. Suppose que Karel
- * commence dans le coin inférieur gauche de l'écran, face à l'est.
- */
-public class BeeperLine extends SuperKarel {
+<pre id="editor" style="height:330px">/*
+* Programme: LigneDeBeepers
+* ----------
+* Placer des beepers sur toute la premiere ligne du monde de Karel.
+* Suppose que Karel commence dans le coin inférieur gauche et fait face a l'Est.
+*/
 
+import stanford.karel.SuperKarel;
+
+public class LigneDeBeepers extends SuperKarel {
+	
 	public void run() {
 		while(frontIsClear()) {
 			putBeeper();
 			move();
 		}
-		// Cette ligne est nécessaire pour placer le bip final. Le nombre de fois
-		// que Karel se déplace est égal à un de moins que le nombre de fois où
-		// Karel a placé un avertisseur (si le monde mesure cinq carrés de large,
-		// nous plaçons 5 avertisseurs mais ne bougeons que 4 fois.
+		
+		// La ligne de code suivante est nécessaire pour placer le beeper final.
+		// A chaque iteration, Karel place un beeper dans la cellule courante 
+		// et se déplace pour la cellule suivante.
+		// Cette ligne de code place un beeper dans la derniere
+		// cellule dans laquelle Karel s'est positioné.
 		putBeeper();
 	}
-}</pre>
+
+}
+</pre>
 
 <script src="../../plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
