@@ -325,15 +325,17 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Lavez 100 Pièce des Habilles (Place 100)
+				Placer 100 (avec solution)
 			</h1>
 			<p>
-				Problème écrit par Chris. Adapter par Lisa E. 
+				Problem écrit par Chris
 			</p>
+
 			<p>
-				Documents à distribuer:
-				<a href ="../../fr/handouts/karel.html">KarelReference</a>
+				Référence: <a href ="../../fr/handouts/karel_reference.key.pdf">Karel Reference</a>
+				<br />Code: <code>Placer100.java</code> (Jour1)
 			</p>
+	
 
 		</div>
 		<hr/>
@@ -341,18 +343,16 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Votre objectif est de commisioner Karel à laver 100 pièce des habilles (signifier par les bips). S'il vous plaît!!! Ne tapez pas putBeeper() 100 fois de suite! (indice: utilisez une for loop.)
+					Votre objectif est de faire que Karel dépose 100 beepers sur la cellule en face de sa position de depart.
+					Ne tapez pas <code>putBeeper();</code> 100 fois! (Astuce: utiliser une boucle "pour")
 				</p>
 
 				<p>
-					<left>
-						<img style="width:200px" src="../../img/projects/place100/WashingClothes.png">
-					</left>
-					<right>
-						<img style="width:500px" src="../../img/projects/place100/place100.png">
-					</right>
+					<center>
+						<img style="width:700px" src="../../img/projects/place100/place100.png">	
+					</center>
 				</p>
-
+				
 			</div>
 
 		</div>
@@ -362,30 +362,32 @@
 
 
 <pre id="editor" style="height:280px">/**
- * Programme: Lavez 100 Pièce des Habilles (Place100)
+ * Programme: Placer100
  * -------------
- * Ce programme permet à Karel de lavez une pile de 100 pièce des habilles.
+ * Ce programme fait que Karel depose une pile de 100 beepers.
  */
 
 public class Place100 extends SuperKarel {
-
+	
 	public void run() {
 		move();
-		// Cette for loop répétera le code 100 fois.
+
+		// Cette boucle "pour" ("for" loop) répétera le code dans son corps 100 fois.
 		for(int i = 0; i &lt; 100; i++) {
 			putBeeper();
 		}
+		
 		move();
 	}
 }</pre>
-
+    
 <script src="../../plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
    editor.setTheme('ace/theme/eclipse');
    editor.getSession().setMode("ace/mode/java");
    editor.setReadOnly(true);
-   editor.renderer.setShowGutter(false);
+   editor.renderer.setShowGutter(false); 
     /*editor.setTheme("ace/theme/eclipse");
     editor.getSession().setMode("ace/mode/java");*/
 </script>

@@ -332,7 +332,7 @@
 			</p>
 			<p>
 				Référence:
-				<a href ="../../fr/handouts/karel.html">Karel Référence</a>
+				<a href ="../../fr/handouts/karel_reference.key.pdf">Karel Référence</a>
 				<br/>
 				Exemple travaillé:
 				<a href="../../fr/projects/place100.html">Lavez 100 pièce des habilles (Place 100) </a>
@@ -343,42 +343,56 @@
 
 		<div class="row">
 			<div class="col-md-12">
+				
+				<div class="row">
+					<div class="col-md-6">
+						Karel a été embauché pour construire les piliers de la Grande Mosquée de Conakry. 
+						En particulier, il existe un ensemble d'arcs qui ne sont plus supportés par des piliers 
+						(représentées par des bipeurs, bien sûr).
+					</div>
+
+					<div class="col-md-6">
+						<img style="width: 100%" src="../../img/projects/efes/mosque.png">
+					</div>
+				</div>
+
+				<div class="row">
+					
+					<div class="col-md-6">
+						<h2 class='text-center'>Avant</h2>
+						<img style="width: 100%" src="../../img/projects/efes/efesBroken.png" />
+					</div>
+
+					<div class="col-md-6">
+						<h2 class='text-center'>Après</h2>
+						<img style="width: 100%" src="../../img/projects/efes/efesRepaired.png" />
+					</div>
+					
+				</div>
+
 				<p>
-					Karel a été embauché pour construire les piliers de la Grande Mosquée de Conakry avecs les bips. Comme suit:
-				</p>
-				<p>
-					<center>
-						<img style="width:600px" src="../../img/projects/efes/efesBroken.png">
-					</center>
-				</p>
-				<p>
-					<left>
-						<img style="width:425px" src="../../img/projects/efes/efesRepaired.png">
-					</left>
-					<right>
-						<img style="width:400px" src="../../img/projects/efes/mosque.png">
-					</right>
-				</p>
-				<p>
-					Karel peut compter sur les faits suivants concernant le monde, énumérés ci-dessous:
+					Karel peut compter sur les faits suivants concernant le monde:
 				<ul>
-					<li>Karel commence à le 1er pilier et à la 1ère distance, face à l'est.
-					<li>Les piliers sont séparées de quatre distances exactement, sur les 1er, 5ème, 9ème et 13ème distances.
-					<li>Karel peut supposer que les piliers ont toujours une hauteur de cinq bips.
+					<li>Karel commence à la position (ligne: 1, colone: 1) faisant face a l'Est.</li>
+					<li>Les piliers sont distant de 4 cellules, et sont aux colones 1, 5, 9 et 13</li>
+					<li>Karel peut supposer que les piliers sont toujours haute de 5 cellules</li>
 				</ul>
 				</p>
 				<p>
-					Bien que le programme ne compte que quelques lignes, il est utile de s’entraîner un peu à la décomposition. Par exemple, il serait logique d’avoir un <code>construireLePilier</code> méthode.
+					Bien que le programme ne soit compris que de quelques lignes, il vaut mieux s'exercer en décomposition. 
+					Par exemple, il serait logique d’avoir une methode nomée <code>construireLePilier</code>.
 				</p>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<h2>For Loops</h2>
-				<p>Une chose pour laquelle les ordinateurs sont vraiment bons est la répétition de commandes.</p>
-
+				<h2>Boucles "Pour" (For Loops)</h2>
+				<p>Une chose que les ordinateurs font très bien est de la répétition de commandes.</p>
+				
 				<p>
-					En général, si vous savez d'avance qu'il y a un bloc de code que vous souhaitez répéter plusieurs fois, vous pouvez utiliser une loop "for", qui ressemble à ceci:
+					En général, si vous savez d'avance qu'il y a un bloc de code que vous souhaitez 
+					répéter un certain nombre de fois, vous pouvez utiliser une boucle "pour" ("for" loop en anglais), 
+					qui ressemble à ceci:
 
 					<div class="well">
 						<code>
@@ -387,27 +401,54 @@
 							<br/>}
 						</code>
 					</div>
-					Au lieu de <i>N</i> vous devriez écrire le nombre de fois où vous voulez que votre code soit répété.
+					Au lieu de <i>N</i> vous devriez écrire le nombre de repetitions.
 				</p>
 
 				<p>
 					Par exemple, si vous souhaitez avancer dix fois, au lieu d’écrire le move(); commande dix fois tu pourrais écrire
-					<div class="well">
-						<code>
-							for(int i = 0; i &lt; 10; i++) {
-								<br/>&nbsp;&nbsp;&nbsp;move();
-							<br/>}
-						</code>
+					<div class="row">
+						<div class="col-md-6">
+							<h3>Avancer 10 fois sans boucle</h3>
+							<div class="well">
+								<code>
+									move(); <br />
+									move(); <br />
+									move(); <br />
+									move(); <br />
+									move(); <br />
+									move(); <br />
+									move(); <br />
+									move(); <br />
+									move(); <br />
+									move(); <br />
+								</code>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<h3>Avancer 10 fois avec la boucle "pour"</h3>
+							<div class="well">
+								<code>
+									for(int i = 0; i &lt; 10; i++) {
+										<br/>&nbsp;&nbsp;&nbsp;move();
+									<br/>}
+								</code>
+							</div>
+						</div>
 					</div>
+
+					
 					Voir le <a href="../../fr/projects/place100.html">Lavez 100 pièce des habilles (Place 100) </a> programme pour un autre exemple.
 				</p>
-				<p>Votre programme sera beaucoup plus facile à écrire et à lire si vous utilisez des for loops. Il existe de nombreuses possibilités d'utilisation de boucles pour ce problème!
-			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-md-12">
-				<p>Bonne chance et posez des questions!</p>
+				<p>
+					Utiliser des boucles peut rendre vos programmes beaucoup plus facile a écrire et lire. 
+					Il existe beaucoup de nombreuses possibilités d'utilisation de boucles dans ce probleme!
+				</p>
+
+				<p>
+					Bonne chance et posez des questions!
+				</p>
+
 			</div>
 		</div>
 

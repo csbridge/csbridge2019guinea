@@ -1,6 +1,6 @@
 import stanford.karel.*;
 
-public class ConstruirePont extends SuperKarel {
+public class ConstruireMosquee extends SuperKarel {
 	
 	public void run() {
 		// ton code ici...
