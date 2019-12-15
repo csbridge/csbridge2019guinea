@@ -22,12 +22,9 @@
 			</p>
 
 			<p>
-				<!--Topics:
-				KarelCommands,
-				Methods
-			<br/>-->
-			Documents à distribuer:
-				<a href ="{{pathToRoot}}fr/handouts/karel_reference.key.pdf">Karel Reference</a>
+				Référence: <a href ="{{pathToRoot}}fr/handouts/karel_reference.key.pdf">Karel Reference</a>
+				<br />MonterEscalier
+				<br />Code: <code>MonterEscalier.java</code> (Jour1)
 			</p>
 
 		</div>
@@ -36,12 +33,28 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Karel commence dans le monde à gauche. Comment voudriez-vous programmer Karel pour prendre le bip et le transporter au sommet du rebord? Karel devrait laisser retentir le bipeur au coin de la 2e rue et de la 4e avenue, puis continuer encore un coin à l’est pour aboutir à la 5e avenue. À la fin de votre programme, l'univers de Karel devrait ressembler à l'image de droite.
+					Karel commence dans le monde à gauche. Comment programmerez-vous Karel pour 
+					prendre le beeper et le transporter sur la marche de l'escalier?
+					
+					Karel devrait:
+					<ul>
+						<li>Prendre le beeper a la position (ligne: 1, colone: 2)</li>
+						<li>le deposer a la position (ligne: 2, colone: 3), et</li>
+						<li>s'arreter a la position (ligne: 2, colone: 4).</li>
+					</ul>
+					A la fin de votre programme, le monde de Karel devrait ressembler à l'image de droite.
 				</p
 				<p>
-					<center>
-						<img style="width:700px" class="psetImg" src="{{pathToRoot}}img/projects/stepUp/stepUp.png">
-					</center>
+					<div class="row">
+						<div class="col-md-6">
+							<h2 class="text-center text-large">Avant</h2>
+							<img style="width:100%" class="psetImg" src="{{pathToRoot}}img/projects/stepUp/step_up_before.png" />
+						</div>
+						<div class="col-md-6">
+							<h2 class="text-center text-large">Après</h2>
+							<img style="width:100%" class="psetImg" src="{{pathToRoot}}img/projects/stepUp/step_up_after.png" />
+						</div>
+					</div>
 				</p>
 
 				<br/>
@@ -49,10 +62,10 @@
 					Si Karel ne connaît que les commandes:
 					<div class="well">
 						<code>
-							move()
-							<br/>pickBeeper()
-							<br/>putBeeper()
-							<br/>turnLeft()
+							move();
+							<br/>pickBeeper();
+							<br/>putBeeper();
+							<br/>turnLeft();
 						</code>
 					</div>
 					Comment pouvez-vous faire tourner Karel à droite?
@@ -70,34 +83,45 @@
 				</p>
 
 
-<pre id="editor" style="height:460px">/**
- * Programme: Intensifier
- * ----------------
- * Votre premier exemple de programme Karel. Demandez à Karel de prendre le bip devant vous
- * d'elle et placez-le sur le rebord.
- * Ceci est un commentaire. Votre ordinateur l'ignorera.
- */
-public class StepUp extends Karel {
-
-	// Lorsque vous démarrez votre programme, ce code sera exécuté.
+<pre id="editor" style="height:460px">
+import stanford.karel.*;
+/* Programme: Monter un escalier
+* ----------
+* Votre premier exemple de programme Karel. Ce programme 
+* demande a Karel de prendre le beeper devant lui, et de
+* le placer sur la marche de l'escallier.
+* Ceci est un commentaire. Il sera ignoré pendant l'execution
+* du programme
+*/
+public class MonterEscalier extends Karel {
+	
+	/*
+	* Lorsque vous démarrez votre programme, cette 
+	* méthode sera executée.
+	*/
 	public void run() {
 		move();
 		pickBeeper();
 		turnLeft();
 		move();
-		turnezADroite();
+		turnRight();
 		move();
 		putBeeper();
 		move();
 	}
+	
+	/*
+	* Definition d'une nouvelle commande (méthode)
+	* qui permet à Karel de tourner a droite
+	*/
+	private void turnRight() {
+		turnLeft();
+		turnLeft();
+		turnLeft();
+	}
 
-	// Définit une nouvelle commande appelée turnezADroite
-	private void turnezADroite() {
-        turnLeft();
-        turnLeft();
-        turnLeft();
-    }
-}</pre>
+}
+</pre>
 
 <script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
