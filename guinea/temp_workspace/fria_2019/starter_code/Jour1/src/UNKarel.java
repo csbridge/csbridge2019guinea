@@ -6,7 +6,7 @@ public class UNKarel extends SuperKarel {
 		while(frontIsClear()) {
 			move();
 			if(beepersPresent()) {
-				buildHouse();
+				construireMaison();
 			}
 		}
 	}
@@ -17,7 +17,7 @@ public class UNKarel extends SuperKarel {
 	 * A la fin de la methode, Karel aura pris le beeper, construit une maison centree a sa place. 
 	 * Kare sera aussi positionne au coin droit de la maison et faisant face a l'Est 
 	 */
-	private void buildHouse() {
+	private void construireMaison() {
 		pickBeeper();
 		turnAround();
 		move();
@@ -32,14 +32,14 @@ public class UNKarel extends SuperKarel {
 		turnLeft();
 		placerTroisBeepers();
 		turnAround();
-		moveToWall();
+		allerAuMur();
 		turnLeft();
 	}
 	
 	/*
 	 * Cette méthode fait avancer karel jusqu'au mur
 	 */
-	private void moveToWall() {
+	private void allerAuMur() {
 		while(frontIsClear()) {
 			move();
 		}
