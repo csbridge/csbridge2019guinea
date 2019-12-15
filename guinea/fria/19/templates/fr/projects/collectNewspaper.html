@@ -1,0 +1,71 @@
+<head>
+
+	%include templates/parts/head.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Ramasser le journal
+			</h1>
+			<p>
+				Basé sur une référence par Eric Roberts
+			</p>
+			<p>
+				<!--Topics:
+				KarelCommands,
+				Methods
+				<br/>-->
+				Référence: 
+				<a href ="{{pathToRoot}}fr/handouts/karel_reference.key.pdf">KarelReference</a>
+				<br/>
+				Exemple:
+				<a href="{{pathToRoot}}fr/projects/stepUp.html">Monter un escalier</a>
+        		<br/>
+        		Jour1: <code>RamasserJournal.java</code>
+
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Votre première tâche consiste à résoudre un problème simple dans le monde de Karel. Supposons que Karel s'est installé dans sa maison, qui est la zone carrée au centre du diagramme suivant:
+				</p>
+				<center>
+					<img class="psetImg" src="{{pathToRoot}}img/projects/newspaper/newspaper.png">	
+				</center>
+				<p>
+					Karel démarre dans le coin de sa maison comme le montre le schéma. Le problème que Karel doit résoudre est de récupérer le journal, représenté (comme tous les objets dans le monde de Karel) par un bipeur, de l'extérieur, puis de revenir à sa position initiale.
+				</p>
+				<p>
+					Vous pouvez supposer que le monde est exactement comme le diagramme. La maison est exactement de cette taille, la porte est toujours dans la position indiquée et le bipeur est juste devant la porte. Ainsi, tout ce que vous avez à faire est d'écrire la séquence de commandes nécessaire pour que Karel:
+					<ol>
+						<li>Va a la position du journal,</li>
+						<li>prends le journal, et</li>
+						<li>retourne à sa position de depart.</li>
+					</ol>
+				</p>
+				<p>
+					Bien que le programme ne soit compris que de quelques lignes, il vaut mieux se familiariser un peu avec la décomposition. Dans votre solution, incluez une méthode privée pour chacune des étapes indiquées dans le plan.
+				</p>
+			</div>
+
+		</div>
+
+		
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>
