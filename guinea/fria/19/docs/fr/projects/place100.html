@@ -344,14 +344,23 @@
 			<div class="col-md-12">
 				<p>
 					Votre objectif est de faire que Karel dépose 100 beepers sur la cellule en face de sa position de depart.
-					Ne tapez pas <code>putBeeper();</code> 100 fois! (Astuce: utiliser une boucle "pour")
+					Ne tapez surtout pas <code>putBeeper();</code> 100 fois! (Astuce: utiliser une boucle "pour")
 				</p>
 
 				<p>
-					<center>
-						<img style="width:700px" src="../../img/projects/place100/place100.png">	
-					</center>
+					<div class="row">
+						<div class="col-md-6">
+							<h2 class="text-center text-large">Avant</h2>
+							<img style="width:100%" class="psetImg" src="../../img/projects/place100/place100_before.png" />
+						</div>
+						<div class="col-md-6">
+							<h2 class="text-center text-large">Après</h2>
+							<img style="width:100%" class="psetImg" src="../../img/projects/place100/place100_after.png" />
+						</div>
+					</div>
 				</p>
+
+				
 				
 			</div>
 
@@ -376,7 +385,7 @@ public class Place100 extends SuperKarel {
 		for(int i = 0; i &lt; 100; i++) {
 			putBeeper();
 		}
-		
+
 		move();
 	}
 }</pre>
