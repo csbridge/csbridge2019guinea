@@ -1,20 +1,22 @@
 import stanford.karel.*;
 
 /*
- * Les commentaires peuvent etre inclus dans
- * n'importe quelle partie du programme. Elles
- * commencent par un slash-asterisque et
- * finissent par un asterisque-slash.
- */
+Les commentaires peuvent etre inclus dans
+n'importe quelle partie du programme. Elles
+commencent par un slash-asterisque et
+finissent par un asterisque-slash.
+*/
+
+// Les ligne sur une seule ligne commencent par slash slash
 
 /*definition d'une nouvelle classe*/
 public class NomDeLaClasse extends Karel {
 
    public void run() {
-      // inserer des instructions ici.
+      // Instructions dans le corps de la methode
    }
 
-   // definir des methodes ici.
+   // Definitions de methodes additionnelles
 }
 
 
