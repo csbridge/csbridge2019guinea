@@ -81,10 +81,11 @@
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projets <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
 	            <li><a href="../../fr/projects/collectNewspaper.html">Ramasser le journal</a></li>
-	          	<li><a href="../../fr/projects/mosquée.html">Construire La Grande Mosquée de Conakry</a></li>
-	          	<li><a href="../../fr/projects/mountain.html">Karel de Montagne et de Manguïer</a></li>
-	          	<li><a href="../../fr/projects/flag.html">Le Drapeau Guinean</a></li>
-	          	<li><a href="../../fr/projects/randomPainter.html">Peintre au hasard</a></li>
+	          	<li><a href="../../fr/projects/mosquee.html">Construire La Grande Mosquée de Conakry</a></li>
+	          	<li><a href="../../fr/projects/mountain.html">Karel des Montagnes</a></li>
+							<li><a href="../../fr/projects/randomPainter.html">Peintre aléatoire</a></li>
+							<li><a href="../../fr/projects/flag.html">Le Drapeau Guinéen</a></li>
+	          	
 
 
 	          	<li class="divider"></li>
@@ -325,32 +326,43 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Reboisement (Inverser)
+				Inverser (avec solution)
 			</h1>
 			<p>
 				Problème écrit par Eric Roberts
 			</p>
 
 			<p>
-			Documents à distribuer:
-				<a href ="../../fr/handouts/karel.html">KarelReference</a>
+				Référence: <a href ="../../fr/handouts/karel_reference.key.pdf">Karel Reference</a>
+				<br />Code: <code>Inverser.java</code> (Jour1)
 			</p>
-
+				
 		</div>
 		<hr/>
 
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Pour un monde de n'importe quelle taille, avec n'importe quelle configuration de bips (aucun carré n'aura plus d'un), inversez tous les bips de sorte que, là où il y avait un bip auparavant, il n'y en avait pas ... et où il n'y en avait pas auparavant, il y a un bipeur. Prenons l'exemple suivant.
+					Pour un monde de n'importe quelle taille, avec n'importe quelle configuration de beepers 
+					(aucune cellule n'aura plus d'un), inversez toute les cellules de sorte qu'il n'y ait plus
+					de beeper là ou il y en avait avant, et qu'il y ait un beeper là ou il n'y en avait pas.
+					Prenons l'exemple suivant.
 				</p>
 
 				<p>
-					<center>
-						<img style="width:600px" src="../../img/projects/invert/invert.png">
-					</center>
+					<div class="row">
+						<div class="col-md-6">
+							<h2 class="text-center text-large">Avant</h2>
+							<img style="width: 100%;" class="psetImg img-fluid" src="../../img/projects/invert/invert_before.png" />
+						</div>
+						<div class="col-md-6">
+							<h2 class="text-center text-large">Après</h2>
+							<img style="width: 100%;" class="psetImg img-fluid" src="../../img/projects/invert/invert_after.png" />
+						</div>
+					</div>
 				</p>
 
+				
 			</div>
 
 		</div>
@@ -359,70 +371,75 @@
 				<h2>Solution</h2>
 
 
-<pre id="editor" style="height:1010px">/**
- *  Programme: Inverser
- * ---------------
- * Inverser tous les beepers de sorte que là où il y avait un bip auparavant
- * il n'y a pas de beeper ... et là où il n'y en avait pas auparavant, il y a un
- * beeper.
- * /
-public class InvertBeepers extends SuperKarel {
+<pre id="editor" style="height:1010px">
+import stanford.karel.SuperKarel;
+
+/*
+ * Ce programme inverse toutes les cellules du monde de Karel.
+ * Les cellules qui avaient un beeper n'en auront plus.
+ * Les cellules qui n'avaient pas de beepers en auront.
+ */
+public class Inverser extends SuperKarel {
 
 	public void run() {
-		invertRow();
-		returnToWest();
-		while(leftIsClear()) {
+		inverserLigne();
+		retourVersOuest();
+		while (leftIsClear()) {
 			turnLeft();
 			move();
 			turnRight();
-			invertRow();
-			returnToWest();
+			inverserLigne();
+			retourVersOuest();
 		}
 	}
 
-	/**
-	 * Méthode: Inverser la ligne
-	 * ------------------
-	 * Inverser une seule ligne. Au début, Karel devrait faire face à l'est de
-	 * le côté ouest de la rangée. Après Karel devrait être face à l'est de la
-	 * Le côté est de la même rangée et tous les avertisseurs de la rangée seront inversés.
+	/*
+	 * Cette méthode inverse la ligne courante.
+	 * 
+	 * Elle suppose que Karel est au debut (a gauche, l'Ouest) 
+	 * de la ligne et fait face a l'Est.
+	 * 
+	 * Après l'exécution de cette methode, Karel sera a la fin 
+	 * (a droite, l'est) de la ligne qu'il vient d'inverser.
 	 */
-	private void invertRow() {
-		while(frontIsClear()) {
-			invertBeeper();
+	private void inverserLigne() {
+		while (frontIsClear()) {
+			inveserCellule();
 			move();
 		}
-		invertBeeper();
+		inveserCellule();
 	}
 
-	/**
-	 * Méthode: inverser le bip
-	 * --------------------
-	 * Inverse la configuration du bipeur sur un carré. S'il y avait auparavant
-	 * un bip, il est ramassé. S'il n'y avait pas de bip auparavant, un bipeur
-	 * est placé.
+	/*
+	 * Cette méthode inverse une cellule. 
+	 * - Si la cellule contient un beeper, Karel le prends.
+	 * - Si la cellule ne contient pas de beeper, Karel en place un. 
 	 */
-	private void invertBeeper() {
-		if(beepersPresent()) {
+	private void inveserCellule() {
+		if (beepersPresent()) {
 			pickBeeper();
 		} else {
 			putBeeper();
 		}
 	}
 
-	/**
-	 * Méthode: Retour vers l'ouest
-	 * ----------------------
-	 * Retourne-toi et retourne au mur d'où tu viens!
+	/*
+	 * Cette méthode fait retourner Karel au debut (gauche, Ouest)
+	 * de la ligne courante.
+	 * 
+	 * Elle suppose que karel est sur la ligne courante et fait face a l'Est.
+	 * Elle fait faire Karel un demi tours, avancer jusqu'a rencontrer un mur, 
+	 * et faire un autre demi tours pour faire face a l'Est.
 	 */
-	private void returnToWest() {
+	private void retourVersOuest() {
 		turnAround();
-		while(frontIsClear()) {
+		while (frontIsClear()) {
 			move();
 		}
 		turnAround();
 	}
-}</pre>
+}
+</pre>
 
 <script src="../../plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>

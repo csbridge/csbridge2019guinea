@@ -326,62 +326,132 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Méthode moyenne
+				Construire La Grande Mosquée de Conakry
 			</h1>
 			<p>
-				Écrit par Chris Piech and Mehran Sahami
+				Basé sur un référence de Eric Roberts
 			</p>
-
+			
+			<p>
+				Référence: <a href ="../../fr/handouts/karel_reference.key.pdf">Référence Karel</a>
+				<br/>Exemple: <a href="../../fr/projects/place100.html">Placer 100</a>
+				<br />Code: <code>ConstruireMosquee.java</code> (Jour1)
+			</p>
 
 		</div>
 		<hr/>
 
 		<div class="row">
 			<div class="col-md-12">
+				
+				<div class="row">
+					<div class="col-md-6">
+						Karel a été embauché pour construire les piliers de la Grande Mosquée de Conakry. 
+						En particulier, il existe un ensemble d'arcs qui ne sont plus supportés par des piliers 
+						(représentées par des beepers, bien sûr).
+					</div>
+
+					<div class="col-md-6">
+						<img style="width: 100%" src="../../img/projects/efes/mosque.png">
+					</div>
+				</div>
+
+				<div class="row">
+					
+					<div class="col-md-6">
+						<h2 class='text-center'>Avant</h2>
+						<img style="width: 100%" src="../../img/projects/efes/efesBroken.png" />
+					</div>
+
+					<div class="col-md-6">
+						<h2 class='text-center'>Après</h2>
+						<img style="width: 100%" src="../../img/projects/efes/efesRepaired.png" />
+					</div>
+					
+				</div>
+
 				<p>
-					Cette démo montre une méthode simple qui prend deux entrées et renvoie la moyenne:
-					<div class="well"><code>private double average(double a, double b)</code></div>
+					Karel peut compter sur les faits suivants concernant le monde:
+				<ul>
+					<li>Karel commence à la position (ligne: 1, colone: 1) faisant face a l'Est.</li>
+					<li>Les piliers sont distant de 4 cellules, et sont aux colones 1, 5, 9 et 13</li>
+					<li>Karel peut supposer que les piliers sont toujours haute de 5 cellules</li>
+				</ul>
 				</p>
-
-
-
+				<p>
+					Bien que le programme ne soit compris que de quelques lignes, il vaut mieux s'exercer en décomposition. 
+					Par exemple, il serait logique d’avoir une methode nomée <code>construireLePilier</code>.
+				</p>
 			</div>
-
 		</div>
-
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Solution</h2>
+				<h2>Boucles "Pour" (For Loops)</h2>
+				<p>Une chose que les ordinateurs font très bien est de la répétition de commandes.</p>
+				
+				<p>
+					En général, si vous savez d'avance qu'il y a un bloc de code que vous souhaitez 
+					répéter un certain nombre de fois, vous pouvez utiliser une boucle "pour" ("for" loop en anglais), 
+					qui ressemble à ceci:
 
+					<div class="well">
+						<code>
+							for(int i = 0; i &lt; <i>N</i>; i++) {
+								<br/>&nbsp;&nbsp;&nbsp;<i>votre code</i>
+							<br/>}
+						</code>
+					</div>
+					Au lieu de <i>N</i> vous devriez écrire le nombre de repetitions.
+				</p>
 
-<pre id="editor" style="height:200px">public class AverageMethod extends ConsoleProgram {
+				<p>
+					Par exemple, si vous souhaitez avancer dix fois, au lieu d’écrire la commande <code>move();</code> dix fois vouz 
+					pourriez utiliser une boucle "pour" qui repête 10 fois.
+					<div class="row">
+						<div class="col-md-6">
+							<h3>Avancer 10 fois sans boucle</h3>
+							<div class="well">
+								<code>
+									move(); <br />
+									move(); <br />
+									move(); <br />
+									move(); <br />
+									move(); <br />
+									move(); <br />
+									move(); <br />
+									move(); <br />
+									move(); <br />
+									move(); <br />
+								</code>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<h3>Avancer 10 fois avec la boucle "pour"</h3>
+							<div class="well">
+								<code>
+									for(int i = 0; i &lt; 10; i++) {
+										<br/>&nbsp;&nbsp;&nbsp;move();
+									<br/>}
+								</code>
+							</div>
+						</div>
+					</div>
 
-	public void run() {
-		println(average(4, 5));
-		println(average(10, 2));
-		println(average(-4.1, 9.8));
-	}
+					
+					Voir le programme <a href="../../fr/projects/place100.html">Placer 100</a> pour un autre exemple.
+				</p>
 
-	private double average(double a, double b) {
-		return (a + b) / 2;
-	}
-}</pre>
+				<p>
+					l'utilisation des boucles peut rendre vos programmes beaucoup plus facile a écrire et lire. 
+					Il existe de nombreuses possibilités d'utilisation de boucles dans ce probleme!
+				</p>
 
-<script src="../../plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
-<script>
-    var editor = ace.edit("editor");
-   editor.setTheme('ace/theme/eclipse');
-   editor.getSession().setMode("ace/mode/java");
-   editor.setReadOnly(true);
-   editor.renderer.setShowGutter(false);
-    /*editor.setTheme("ace/theme/eclipse");
-    editor.getSession().setMode("ace/mode/java");*/
-</script>
+				<p>
+					Bonne chance et posez des questions!
+				</p>
 
 			</div>
-
 		</div>
-
 
 <hr>
 

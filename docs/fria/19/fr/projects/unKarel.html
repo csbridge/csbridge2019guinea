@@ -81,10 +81,11 @@
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projets <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
 	            <li><a href="../../fr/projects/collectNewspaper.html">Ramasser le journal</a></li>
-	          	<li><a href="../../fr/projects/mosquée.html">Construire La Grande Mosquée de Conakry</a></li>
-	          	<li><a href="../../fr/projects/mountain.html">Karel de Montagne et de Manguïer</a></li>
-	          	<li><a href="../../fr/projects/flag.html">Le Drapeau Guinean</a></li>
-	          	<li><a href="../../fr/projects/randomPainter.html">Peintre au hasard</a></li>
+	          	<li><a href="../../fr/projects/mosquee.html">Construire La Grande Mosquée de Conakry</a></li>
+	          	<li><a href="../../fr/projects/mountain.html">Karel des Montagnes</a></li>
+							<li><a href="../../fr/projects/randomPainter.html">Peintre aléatoire</a></li>
+							<li><a href="../../fr/projects/flag.html">Le Drapeau Guinéen</a></li>
+	          	
 
 
 	          	<li class="divider"></li>
@@ -325,7 +326,7 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Construire les Maisons
+				Construire les Maisons (avec solution)
 			</h1>
 			<p>
 				Problème écrit par Eric Roberts
@@ -341,7 +342,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Karel a été embauché par les Nations Unies pour venir aider à construire des maisons. La journée doit être gagnée et Karel est clairement le meilleur robot pour ce travail. Votre objectif est de faire marcher Karel dans la rangée du bas et de construire une maison comme suit:
+					Karel a été embauché par les Nations Unies pour venir aider à construire des maisons. La journée doit être gagnée et Karel est clairement le meilleur robot pour ce travail. Votre objectif est de faire marcher Karel dans la rangée du bas et de construire une maison comme suit à chaque endroit où Karel trouve un beeper:
 				</p>
 
 				<p>
@@ -351,20 +352,36 @@
 				</p>
 
 				<p>
-					Karel trouve chaque fois un bipeur. Les images ci-dessous montrent ce que Karel devrait faire pour deux mondes donnés en exemple. Vous pouvez supposer qu'aucune maison ne se chevauchera et que toutes les maisons iront bien dans le monde. Vous ne pouvez pas supposer la taille du monde ou le nombre de maisons!
+					Les images ci-dessous montrent ce que Karel devrait faire pour deux mondes donnés en exemple. Vous pouvez supposer qu'aucune maison ne se chevauchera et que toutes les maisons iront bien dans le monde. Vous ne devriez pas faire de suppositions la taille du monde ou sur le nombre de maisons!
 				</p>
 
 				<p>
-					<center>
-						<img style="width:700px" src="../../img/projects/unKarel/un1.png">
-					</center>
+					<div class="row">
+						<div class="col-md-6">
+							<h2 class="text-center text-large">Avant</h2>
+							<img style="width:100%" class="psetImg" src="../../img/projects/unKarel/un1_before.png" />
+						</div>
+						<div class="col-md-6">
+							<h2 class="text-center text-large">Après</h2>
+							<img style="width:100%" class="psetImg" src="../../img/projects/unKarel/un1_after.png" />
+						</div>
+					</div>
 				</p>
 
+
 				<p>
-					<center>
-						<img style="width:600px" src="../../img/projects/unKarel/un2.png">
-					</center>
+					<div class="row">
+						<div class="col-md-6">
+							<h2 class="text-center text-large">Avant</h2>
+							<img style="width:100%" class="psetImg" src="../../img/projects/unKarel/un2_before.png" />
+						</div>
+						<div class="col-md-6">
+							<h2 class="text-center text-large">Après</h2>
+							<img style="width:100%" class="psetImg" src="../../img/projects/unKarel/un2_after.png" />
+						</div>
+					</div>
 				</p>
+	
 
 			</div>
 
@@ -374,13 +391,9 @@
 				<h2>Solution</h2>
 
 
-<pre id="editor" style="height:1100px">/**
- * Programme: Nations Unies Karel
- * -----------------
- * Ce programme permet à Karel de construire des maisons, en tant que travail pour les Nations Unies.
- */
+<pre id="editor" style="height:1100px">import stanford.karel.*;
 public class UNKarel extends SuperKarel {
-
+	
 	public void run() {
 		while(frontIsClear()) {
 			move();
@@ -390,57 +403,54 @@ public class UNKarel extends SuperKarel {
 		}
 	}
 
-	/**
-	 * Méthode: Construire une maison
-	 * -------------------
-	 * Construit une seule maison centrée sur la position actuelle de Karel.
-	 * Vous pouvez supposer qu’un bip sonore est présent à l’état de démarrage.
-	 * À la fin de la méthode, Karel sera face à l’est du fond.
-	 * coin droit de la maison.
-	 */
+	/*
+	* Cette méthode fait Karel construire une maison centree a la position courante de Karel.
+	* Elle suppose qu'un beeper est present a la position de Karel.
+	* A la fin de la methode, Karel aura pris le beeper, construit une maison centree a sa place. 
+	* Kare sera aussi positionne au coin droit de la maison et faisant face a l'Est 
+	*/
 	private void buildHouse() {
 		pickBeeper();
 		turnAround();
 		move();
 		turnRight();
-		placeThree();
+		placerTroisBeepers();
 		turnRight();
 		move();
 		turnRight();
-		placeThree();
+		placerTroisBeepers();
 		turnLeft();
 		move();
 		turnLeft();
-		placeThree();
+		placerTroisBeepers();
 		turnAround();
 		moveToWall();
 		turnLeft();
 	}
-
-	/**
-	 * Méthode: déplacer au mur
-	 * --------------------
-	 * Avancez jusqu'à ce que Karel frappe un mur.
-	 */
+	
+	/*
+	* Cette méthode fait avancer karel jusqu'au mur
+	*/
 	private void moveToWall() {
 		while(frontIsClear()) {
 			move();
 		}
 	}
 
-	/**
-	 * Méthode: Place Three
-	 * -------------------
-	 * Place trois bips sonores et bouge trois fois!
-	 */
-	private void placeThree() {
-		for(int i = 0; i &lt; 3; i++) {
+	/*
+	* Cette méthode place 1 beeper sur 3 cellules consécutives 
+	* commencant a la position courante de Karel, et alant dans 
+	* la direction que face Karel présentement.
+	*/
+	private void placerTroisBeepers() {
+		for(int i = 0; i < 3; i++) {
 			putBeeper();
 			move();
 		}
 	}
-
-}</pre>
+	
+}
+</pre>
 
 <script src="../../plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
