@@ -325,15 +325,21 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-                Serpent frontière
+				Puiser de l'eau 
 			</h1>
 			<p>
-                Écrit par Lisa Yan
+				Basé sur une référence de Eric Roberts
 			</p>
 			<p>
+				<!--Topics:
+				KarelCommands,
+				Methods
+				<br/>-->
 				Référence:
-                <a href ="../../fr/handouts/graphics.html">Référence graphique</a><br/>
-				<a href ="../../fr/handouts/arrayLists.html">ArrayLists</a>
+				<a href ="../../fr/handouts/karel.html">Karel Référence</a>
+				<br/>
+				Exemple travaillé:
+				<a href="../../fr/projects/stepUp.html">StepUp</a>
 			</p>
 
 		</div>
@@ -342,62 +348,28 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-                    Ceci est un programme de bonus! C'est un peu difficile, mais terminer ce programme vous aidera certainement à écrire votre projet final.
-                </p>
-                <p>
-                    Ecrivez un programme graphique qui déplace un serpent dans le sens antihoraire autour du bord de la toile.
-                </p>
-					<center>
-						<img style="width:300px;border:2px solid grey" src="../../img/projects/borderSnake/borderSnake.gif">
-					</center>
-                </p>
-            <h2>BoîteFrontière</h2>
-            <p>
-            Cet exercice suppose que vous avez terminé BorderBox. La logique est similaire (il n’ya qu’une astuce supplémentaire), il est donc très utile de connaître la configuration générale du problème.
-            Si vous n'avez pas encore terminé BorderBox, allez l'implémenter et revenez.
-            </p>
-
-            <h2>Configuration du serpent</h2>
-            <p>Ouvrez BorderSnake.java. Vous constaterez que le main() méthode est exactement la même que BorderBox. Cependant, certaines variables de classe sont différentes. Au lieu d'un seul GRect, nous avons maintenant une liste de tableaux de GRects. Nous avons toujours une direction pour le serpent, cependant.</p>
-			<div class="well"><code>
-                private ArrayList&lt;GRect&gt; snake;<br>
-                private int snakeDirection = EAST; // direction de départ
-			</code></div>
-
-            <p>
-            Mettre en place makeSnake(). Pour vous faciliter la vie plus tard, ajoutez d’abord la tête du serpent (pour que snake.get(0) renvoie le GRect pour la tête). Rappelez-vous que le serpent commence à faire face à EST, la tête est donc la plus à droite. Notre serpent est SNAKE_LENGTH = 5 blocs de long.
-            </p>
-					<center>
-						<img style="width:300px" src="../../img/projects/borderSnake/borderSnake.png">
-					</center>
-
-            <h2>Se déplacer vers l'est</h2>
-            <p>Définir frontIsClear() pour toujours retourner vrai pour le moment, afin que nous puissions tester notre serpent se déplaçant dans une direction (est). Mettre en place moveSnake() déplacer le serpent d'une case à droite; N'oubliez pas que le serpent doit être déplacé SQUARE_LENGTH + SQUARE_GAP afin de laisser un espace entre les différentes parties du serpent!</p>
-            <p>Il y a un truc ici; vous n'avez pas besoin de déplacer chaque bloc du serpent. En fait, il vous suffit de déplacer un bloc! Pensez au bloc que vous souhaitez déplacer pour donner l’illusion de l’ensemble du mouvement du serpent.</p>
-            <p>Le bloc que vous avez choisi sera maintenant la tête du serpent. Vous devez donc non seulement mettre à jour son emplacement sur la grille, mais également mettre à jour sa position dans ArrayList. Retirez le bloc et ajoutez-le à la tête (dans la partie précédente, nous avons désigné la tête comme étant la 0ème position de la liste de tableaux).</p>
-			<div class="well"><code>
-                snake.remove(block); // le GRect que vous avez déplacé<br>
-                snake.add(0, block); // devient la nouvelle tête
-			</code></div>
-            <p>
-            Ensuite, implémenter frontIsClear() pour vérifier quand vous avez atteint le mur le plus à droite. Encore une fois, il y a un truc ici: pouvez-vous vérifier si tout le serpent peut se déplacer en ne vérifiant qu'un seul bloc? (Indice: c'est la tête)
-            </p>
-            <p>
-							Vous devriez maintenant être en mesure de voir votre serpent se déplacer pas à pas vers le mur est!
-            </p>
-
-            <h2>Se déplacer le long de la frontière</h2>
-            <p>Vous êtes très proche de la ligne d'arrivée !! Mettre en place turnLeft(). Cela devrait être très simple. souvenez-vous de ce que nous avons fait dans BorderBox.
-            </p>
-            <p>Maintenant, nous devons prolonger moveSnake() et frontIsClear() pour gérer plusieurs directions. Il y a un dernier tour. Supposons que nous ayons le serpent dans la configuration suivante, où snakeDirection = NORTH:
-            </p>
-					<center>
-						<img style="width:300px" src="../../img/projects/borderSnake/snakeTurn.png">
-					</center>
-            <p>Pour déplacer le serpent (lisez: donnez l'illusion que tout le serpent a bougé), est-ce que nous nous inquiétons du fait qu'une partie du serpent est toujours en train de tourner? (Indice: non, pas du tout) À partir de cette information, comment déplacer le bloc que vous avez sélectionné précédemment dans la partie précédente pour se déplacer vers le nord, dans la direction à laquelle le serpent est confronté?
-            </p>
-            <br>
-            <p>Félicitations, vous avez maintenant un serpent en mouvement! :)</p>
+					Votre première tâche consiste à résoudre un problème d’histoire simple dans le monde de Karel. Supposons que Karel se soit installée dans sa maison, qui correspond au carré situé au centre du diagramme suivant:
+				</p>
+				<left>
+					<img class="psetImg" src="../../img/projects/newspaper/newspaper.png">
+				</left>
+				<right>
+					<img class="psetImg" src="../../img/projects/newspaper/WaterWell.png">
+				</right>
+				<p>
+					Karel commence dans le coin de sa maison comme indiqué sur le diagramme. Le problème que Karel doit résoudre est de puiser de l'eau, représenté (comme tous les objets du monde de Karel) par un bip, de l'extérieur de la porte, puis de revenir à sa position initiale.
+				</p>
+				<p>
+					Vous pouvez supposer que chaque partie du monde a exactement la même apparence que dans le diagramme. La maison a exactement cette taille, la porte est toujours dans la position indiquée et le bip est juste devant la porte. Ainsi, tout ce que vous avez à faire est d’écrire la séquence de commandes nécessaire pour que Karel
+					<ol>
+						<li>Passer au puits,</li>
+						<li>Puissez l'eau et</li>
+						<li>Retour à son point de départ.</li>
+					</ol>
+				</p>
+				<p>
+					Bien que le programme ne soit composé que de quelques lignes, il vaut toujours la peine d’avoir au moins un peu de pratique en décomposition. Dans votre solution, incluez une méthode privée pour chacune des étapes présentées.
+				</p>
 			</div>
 
 		</div>
