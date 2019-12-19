@@ -13,25 +13,31 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Console Program Reference
+				Reference des programmes Console
 			</h1>
 			<p>
-				Written by Danielle Kain, Kevin Miller
+				Ecrit par Danielle Kain, Kevin Miller
 			</p>
 		</div>
 		<hr/>
-
-		Console Programs allow for interaction between your program and the user. In order to write a program, make sure your program extends ConsoleProgram: 
-		<div class="well"><code><pre>
-public class Example extends ConsoleProgram {
-		</pre></code></div>
+		Les programmes Console permettent les interactions and votre programme et l'utilisatuer. Pour écrire des programme console,
+		assurez-vous que votre classe hérite de la classe ConsoleProgram: 
+		<div class="well">
+			<code>
+<pre>
+public class NomDeMaClasse extends ConsoleProgram {
+    // ...
+}
+</pre>
+			</code>
+		</div>
 		<br>
-		One cool thing that Console Programs let you do is get input from the user. Below are some examples:
+		Les programme consoles peuvent peuvent recevoir  des informations de  l'utilisateur. Voici quelques exemples:
 		<div class="well"><code><pre>
-readLine(String promptMessage); //Reads a String from the user and return it
-readInt(String promptMessage); //Reads an int from the user and return it
-readDouble(String promptMessage); //Reads a double from the user and return it
-println(String printMessage); //Prints a message to the Console
+readLine(String messageDinvite); // Lis et retourne une chaine de caracteres saisit par l'utilisateur
+readInt(String messageDinvite); // Lis et retourne un nombre entier saisit par l'utilisageur
+readDouble(String messageDinvite); // Lis et retourne un nombre reel saisit par l'utilisateur
+println(String messageAImprimer); // Imprime un message sur la console
 		</pre></code></div>		
 		%include templates/parts/footer.html
 
