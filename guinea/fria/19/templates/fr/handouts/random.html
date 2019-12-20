@@ -1,11 +1,19 @@
 <head>
-	%include templates/parts/head.html
+	%include templates/parts/headFr.html
 
 </head>
 <body>
+	<style>
+		.comment {
+			color:#729683;
+			font-family: monaco;
+			font-weight:400;
+			font-size:13px;
+		}
+	</style>
 
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -13,53 +21,67 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Random Generator Reference
+				Référence du Générateur Aleatoire
 			</h1>
 			<p>
-				Written by Danielle Kain and Lisa Yan
+				Ecrit par Danielle Kain et Lisa Yan. Traduit par Moussa Doumbouya.
 			</p>
 		</div>
 		<hr/>
 
-		Random Generators allow you to add randomness to your program. Regardless of what type of random object you want, you will first have to make a Random Generator: 
+		Les générateur aléatoires vous permettent d'ajouter de l'incertitude dans vos programmes.
+		Quelque soit le type d'objet que vous voulez générer de manière aléatoire, vous devez d'abord creer
+		un objet de type <code>RandomGenerator</code>: 
 		<div class="well"><code>
 RandomGenerator rgen = new RandomGenerator();
 		</code></div>
 		<br>
-		You can make many types of random objects using RandomGenerators. Here are some examples:
+		Vous pouvez créer plusieurs types d'objets de manière aléatoire. Voici quelques exemples:
 		<div class="well"><code>
-                int randomInt = rgen.nextInt(); //Returns a random int<br>
-                double randomDouble = rgen.nextDouble(); //Returns a random double<br>
-                Color randomCol = rgen.nextColor(); //Returns a random color<br>
-boolean randomBoolean = rgen.nextBoolean(); //Returns a random boolean
+                int randomInt = rgen.nextInt(); <i class="comment">// Retourne un entier à l'aléatoire</i><br>
+                double randomDouble = rgen.nextDouble(); <i class="comment">// Retourne un nombre réel à l'aléatoire</i><br>
+                Color randomCol = rgen.nextColor(); <i class="comment">// Retourne une couleure à l'aléatoire</i><br>
+boolean randomBoolean = rgen.nextBoolean(); <i class="comment">// Retourne un booléen à l'aléatoire</i>
 		</code></div>		
 
 
 
-        <h2>Integers</h2>
-        <p>The default method call (with no arguments) returns an <i>unbounded</i> integer, which could be very large or very small. To restrict the range of the integers you get, you can specify bounds. So to get an integer between 0 and 10, inclusive, you could do the following:</p>
+		<h2>Nombres Entiers (Integers)</h2>
+		<p>
+			L'orsque vous ne spécifiez aucun paramètre à la méthode <code>nextInt()</code>,
+			elle retourne un nombre entier sans bornes. Ce nombre peut être soit un très petit nombre
+			ou un très grand nombre. 
+			Pour restreindre l'interval des nombres entiers retournés par la méthode <code>nextInt()</code>,
+			vous pouvez specifier des bornes. Donc pour générer un nombre aléatoirement entre 0 et 10 (inclus),
+			vous pouvez faire:
+		</p>
+		
 		<div class="well"><code>
-                int lb = 0;<br>
-                int ub = 10;<br>
-                int x = rgen.nextInt(lb, ub); // integer in the range [0,10]<br>
+                int borneInf = 0;<br>
+                int borneSup = 10;<br>
+                int x = rgen.nextInt(borneInf, borneSup); <i class="comment">// un  entier dans l'interval [0,10]</i><br>
 		</code></div>		
-        <h2>Doubles</h2>
-        <p>The default method call returns a double between 0.0 and 1.0. To increase the range of doubles, you can specify bounds:</p>
+		<h2>Nombres Réels (Doubles)</h2>
+		<p>Appeler la méthode <code>nextDouble()</code> sans paramètres retourne un nombre entre <code>0.0</code> et <code>1.0</code>
+		pour élargir l'interval des nombre réels retournés par cette méthode, vous pouvez specifier un interval:
 		<div class="well"><code>
-        double y = rgen.nextDouble(-3, 5.5); // note -3 is casted from integer to double -3.0
+		double y = rgen.nextDouble(-3, 5.5); <i class="comment">// notez que -3 est "casté" à double (-3.0)</i>
 		</code></div>		
 
-        <h2>Booleans</h2>
-        <p>Unlike integers and doubles, there is a single argument <code>p</code> that defines the behavior of <code>rgen.nextBoolean(p)</code>:
+		<h2>Booléens</h2>
+		<p>
+			Contrairement aux méthodes <code>nextInt()</code> et <code>nextDouble()</code>, il y a un seul argument, 
+			<code>p</code>, qui définit le comportement de la méthode <code>nextBoolean()</code>
+		</p>
         <ul>
-            <li>Return <code>true</code> with probability <code>p</code>.</li>
-            <li>Return <code>false</code> with probability <code>1-p</code>.</li>
-            <li><code>p</code> must be a double between 0 and 1.0.</li>
-            <li>The default value of <code>p</code> is 0.5.</li>
+            <li>Elle retourne <code>true</code> (vrai) avec la probabilité <code>p</code>.</li>
+            <li>Elle retourne <code>false</code> (faux) avec la probabilité <code>1-p</code>.</li>
+			<li><code>p</code> doit être une de type <code>double</code> et être entre <code>0.0</code> et <code>1.0</code></li>
+            <li>La valeur par defaut de <code>p</code> est <code>0.5</code>.</li>
         </ul>
 		<div class="well"><code>
-                bool equalProb = rgen.nextBoolean();<br>
-                bool unequalProb = rgen.nextBoolean(0.75); // returns true 3/4ths of the time<br>
+                bool probEgal = rgen.nextBoolean(); <i class="comment">// retourne vrai 50% du temps</i><br>
+                bool probInegal = rgen.nextBoolean(0.75); <i class="comment">// retourne vrai 75% du temps</i><br>
 		</code></div>		
 
 		%include templates/parts/footer.html

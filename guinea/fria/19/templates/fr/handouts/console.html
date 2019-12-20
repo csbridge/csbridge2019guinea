@@ -1,11 +1,18 @@
 <head>
-	%include templates/parts/head.html
+	%include templates/parts/headFR.html
 
 </head>
 <body>
-
+	<style>
+		.comment {
+			color:#729683;
+			font-family: monaco;
+			font-weight:400;
+			font-size:13px;
+		}
+	</style>
 	<!-- Navigation Bar -->
-	%include templates/parts/navBar.html
+	%include templates/parts/navBarFr.html
 
 	<!-- Main Content -->
 	<div class="container">
@@ -13,32 +20,48 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Reference des programmes Console
+				Référence des programmes console
 			</h1>
 			<p>
-				Ecrit par Danielle Kain, Kevin Miller
+				Ecrit par Danielle Kain, Kevin Miller. Traduit par Moussa Doumbouya.
 			</p>
 		</div>
 		<hr/>
-		Les programmes Console permettent les interactions and votre programme et l'utilisatuer. Pour écrire des programme console,
+		Les programmes consoles permettent des interactions avec l'utilisatuer. Pour écrire des programmes console,
 		assurez-vous que votre classe hérite de la classe ConsoleProgram: 
 		<div class="well">
 			<code>
 <pre>
 public class NomDeMaClasse extends ConsoleProgram {
-    // ...
+    <i class="comment">// ...</i>
 }
 </pre>
 			</code>
 		</div>
+
+
+		<br />
+		Les programmes consoles peuvent afficher des informations pour l'utilisateur.
+		<div class="well">
+		<code>
+<pre>
+println(String messageAImprimer); <i class="comment">// Imprime un message sur la console</i>
+</pre>
+		</code>
+		</div>
+		
 		<br>
-		Les programme consoles peuvent peuvent recevoir  des informations de  l'utilisateur. Voici quelques exemples:
+		Les programmes consoles peuvent recevoir  des informations de  l'utilisateur. Les appels de methodes suivantes
+		lisent et retournent des informations de type différent saisits par l'utilisateur
 		<div class="well"><code><pre>
-readLine(String messageDinvite); // Lis et retourne une chaine de caracteres saisit par l'utilisateur
-readInt(String messageDinvite); // Lis et retourne un nombre entier saisit par l'utilisageur
-readDouble(String messageDinvite); // Lis et retourne un nombre reel saisit par l'utilisateur
-println(String messageAImprimer); // Imprime un message sur la console
-		</pre></code></div>		
+readLine(String messageInvite); <i class="comment">// une chaine de caractères</i>
+readInt(String messageInvite); <i class="comment">// un nombre entier</i>
+readDouble(String messageInvite); <i class="comment">// un nombre réel</i>
+		</pre></code></div>
+
+		Le paramètre <code>messageInvite</code> ci-dessus est le message que votre programme affiche quand il 
+		invite l'utilisateur a saisir et entrer une information.
+
 		%include templates/parts/footer.html
 
 	</div>
