@@ -96,8 +96,6 @@
 	          	<li><a href="../../fr/projects/favoriteNumber.html">Numéro préféré</a></li>
 	          	<li><a href="../../fr/projects/medicine.html">Médicament Counterfeit</a></li>
 	          	<li><a href="../../fr/projects/someSum.html">Une somme</a></li>
-	          	<li><a href="../../fr/projects/AllerAuMarché.html">Aller Au Marché</a></li>
-	          	<li><a href="../../fr/projects/sorcerer.html">La Sorcière</a></li>
 
 				<!--
 
@@ -366,127 +364,83 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Médicament contrefait
+				Médicament contrefaits
 			</h1>
 			<p>
 				Problème écrit par Chris Piech
 			</p>
+
 			<p>
-				Exemples travaillés:
+				Références:
+				<a href ="../../fr/handouts/console.html">Console</a>,
+				<a href ="../../fr/handouts/random.html">Générateur Aleatoire</a>
+				<br />
+
+				Exemples:
 				<a href="../../fr/projects/emc2.html">E=MC2</a>,
 				<a href="../../fr/projects/fibb.html">Fibbonacci</a>,
 				<a href="../../fr/projects/carbonDating.html">Carbon Dating</a>
+				<br />
+				
+				Code: <code>MedicamentsContrefaits.java</code>
 			</p>
+
 
 		</div>
 		<hr/>
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2 style="margin-top:0px;">The Story</h2>
+				<h2 style="margin-top:0px;">L’histoire</h2>
+
 				<p>
-					Ce problème commence par une histoire triste. Quand je grandissais au Kenya, on estimait que plus de 38% des médicaments vendus en pharmacie étaient des faux [1]. C'était un gros problème! Selon l'organisme que vous demandez, le nombre de décès dus à la contrefaçon de médicaments allait de 100 000 par an (OMS) à 700 000 (IPN) [2]. <blockquote>La contrefaçon de médicaments équivaut à "quatre avions gros porteurs qui s'écrase tous les jours" [2].</blockquote> <!--Wow. Why would anyone do such a terrible thing? Because counterfeit medicine is a $200 billion-per-year business.--></p>
-
-					<p>
-					En 2009, Bright Simmons, un Ghanéen, a proposé une solution technologique simple, baptisée mPedigree. Il s'est associé avec des entreprises qui fabriquent des médicaments. Sur chaque emballage de médicament légitime, ils ont apposé un code de grattage unique. Maintenant, lorsque vous achetez des médicaments dans une pharmacie au Kenya, vous vérifiez le code et le code à gratter mPedigree. Si le code est dans leur système et qu'il n'a jamais été utilisé auparavant, mPedigree envoie un message textuel indiquant: "valide".
-
-					Le paludisme seul a entraîné une diminution de 58% du nombre de décès d’enfants [3]. Parfois, des solutions de programmation simples peuvent avoir un impact positif important sur le monde.
-
+					Ce problème commence par une histoire triste. Quand je grandissait au Kenya on estimait que plus de 38% des médicaments vendus dans les pharmacies étaient faux [1]. C’était un gros problème. Selon l’organisation interrogée, les décès dus aux médicaments contrefaits allaient de 100.000 par an (OMS) à 700.000 (IPN) [2].
+					
+					<blockquote>
+					Le nombre de décès dus aux médicaments contrefaits était équivaut à “quatre crache de gros porteurs par jours” [2]
+					</blockquote>
 				</p>
+				
+				<p>
+				En 2009, un boursier Ghanéen appelé Bright Simmons est a proposé une  solution technologique simple qu’il a appelé mPedigree. 
+				Il a fait un partenariat avec les entreprises qui fabriquent les médicaments. Sur chacun des emballages de médicament 
+				légitimes ils ont apposés un code à gratter unique. 
+
+				Depuis, quand vous achetez dans une pharmacie au Kenya, vous vérifiez le code à gratter en envoyant  un message texte 
+				à mPedigree. 
+				Si le code est dans le système, et qu’il n’a jamais été utilisé avant, mPedigree envoie les message textuel  qui dit : “valide.” 
+				Il y’a eu une diminution de 58% de mortalité infantile dû uniquement au paludisme [3]. 
+				
+				Souvent de simple solutions de programmation peuvent avoir un impacte positif important  sur le monde.
+				</p>
+
+				
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Votre travail</h2>
-				<p>Ecrivez un programme qui génère des nombres à 10 chiffres pour 1 000 paquets de médicaments. Chaque numéro que vous générez devrait être (1) unique et (2) imprévisible.
+				<h2>Votre tâche</h2>
+				<p>
+					Ecrivez un programme qui génère des nombres à 10 chiffres pour 1000 emballages de médicament. 
+					Chaque nombre que vous allez générer doit être (1) unique et (2) imprédictible.
 				</p>
 
 				<p>
-					Voici une capture d'écran d'un exemple d'exécution:
+					Voici une capture d’écran d’un exemple d’exécution:
 					<center>
 						<img style="width:500px" src="../../img/projects/medicine/medicineRun.png">
 						<p style="text-align:center"><!--<i>Unique, unpredictable numbers for medicines.</i>--></p>
 					</center>
 				</p>
 
-				<p>Ces chiffres seront mis sur les paquets de médicaments. Les contre-joueurs n'ont aucune chance!</p>
+				<p>Ces nombres seront mis sur les paquets de médicaments. Les contre-joueurs n'ont aucune chance!</p>
 
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<h2>Nombres aléatoires</h2>
-				<p>Pour générer des nombres aléatoires, créez une variable d'instance RandomGenerator (une variable déclarée en dehors de toutes les méthodes), comme suit:
-					<div class="well"><code>private RandomGenerator rgen = new RandomGenerator();</code></div>
-				</p>
-				<p>Vous pouvez ensuite utiliser la variable pour générer des nombres aléatoires.
-					<div class="well"><code>
-						rgen.nextInt(<i>min</i>, <i>max</i>)  //génère un int aléatoire dans la plage (min, max) inclus
-					</code></div>
-				</p>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-12">
 				<p>C'est tout! Posez des questions si vous ne comprenez pas quelque chose (ou si vous voulez en savoir plus sur les médicaments contrefaits)</p>
+
 			</div>
 		</div>
-		<!--<div class="row">
-			<div class="col-md-12">
-				<h2>Solution</h2>
+		
 
-
-<pre id="editor" style="height:580px">/**
- * Carbon Dating
- * -------------
- * This program shows how to translate between percent of natural carbon-14 found
- * in a sample. First, it prints out a carbon-14 (c14) lookup table, then it has users
- * enter a percent of c14 and returns the expected age.
- */
-public class CarbonDating extends ConsoleProgram {
-
-	private static final int HALF_LIFE = 5700;
-
-	public void run() {
-		// 1. Show the c-14 lookup table
-		double percent = 100.0;
-		int elapsed = 0;
-		println("Carbon dating lookup table");
-		println("fraction C-14 remaining:  years passed");
-		println("--------------------------");
-		for(int i = 0; i &lt; 10; i++) {
-			println(percent + "%:  " + elapsed + " years");
-			elapsed += HALF_LIFE;
-			percent /= 2;
-		}
-		println("");
-
-		// 2. Look up the age of a sample
-		while(true) {
-			double percentLeft = readDouble("What percent of natural carbon-14 does your sample have? ");
-			double years = HALF_LIFE * Math.log(percentLeft / 100.0) / Math.log(0.5);
-			println(percentLeft + "% carbon-14 left...");
-			println("The sample is " + years + " years old");
-			println("");
-		}
-	}
-}
-</pre>
-
-<script src="../../plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
-<script>
-    var editor = ace.edit("editor");
-   editor.setTheme('ace/theme/eclipse');
-   editor.getSession().setMode("ace/mode/java");
-   editor.setReadOnly(true);
-   editor.setShowPrintMargin(false);
-   editor.renderer.setShowGutter(false);
-    /*editor.setTheme("ace/theme/eclipse");
-    editor.getSession().setMode("ace/mode/java");*/
-</script>
-	</div>
-	</div>-->
 
 <hr>
 

@@ -21,27 +21,42 @@
 				Écrit par by Chris Piech. Adapter par Lisa E. 
 			</p>
 
+			<p>
+				Références:
+				<a href ="{{pathToRoot}}fr/handouts/console.html">Console</a>,
+				<a href ="{{pathToRoot}}fr/handouts/random.html">Générateur Aleatoire</a>
+				<br />
+				
+				Code: <code>Sorciere.java</code>
+			</p>
+
 		</div>
 		<hr/>
 
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					L'idée derrière le sorcière est très simple. Vous posez à elle une question oui ou non, et cela vous dit la réponse.
+					L’idée derrière la sorcière est très simple. Vous posez à la sorcière une question dont la réponse est oui ou non, et elle vous donne la réponse.
 				</p>
 
-				<p>Sauf que la réponse choisie est sélectionnée de manière aléatoire parmi un ensemble de réponses préfabriquées.</p>
+				<p>
+					Sauf que la réponse qu’elle choisie est aléatoirement sélectionnée à partir d’un ensemble de réponses préfabriquées.
+				</p>
+
 				<p>
 					<center>
 						<img style="width:300px" src="{{pathToRoot}}img/projects/sorcerer/sorcerer.jpg">
 					</center>
 				</p>
 
-				<p>Ecrivez un programme qui invite en permanence l'utilisateur à poser une question par oui ou par non, puis choisit au hasard parmi 5 réponses prédéfinies:</p>
+				<p>
+					Ecrivez un programme qui demande continuellement à l’utilisateur de poser des questions dont la 
+					réponse est oui ou non, et sélectionne par hasard parmis les 5 réponses préenregistrées:
+				</p>
 				<ul>
 					<li>Sans aucun doute.</li>
 					<li>Oui.</li>
-					<li>Demander à nouveau plus tard.</li>
+					<li>Redemandez plus tard.</li>
 					<li>Non.</li>
 					<li>Karel le pense.</li>
 				</ul>
@@ -74,35 +89,45 @@
 
 <pre id="editor" style="height:580px">
 
+import acm.program.ConsoleProgram;
+import acm.util.RandomGenerator;
+
 public class Sorciere extends ConsoleProgram {
 
 	private static RandomGenerator rg = new RandomGenerator();
 
 	public void run() {
 		while(true) {
-			readLine("Poser une question oui ou non: ");
+			readLine("Posez une question dont la réponse est oui ou non: ");
 
 			int choix = rg.nextInt(5);
-			// println(choix);
+
 			if(choix == 0) {
 				println("Sans aucun doute");
 			}
+			
 			if(choix == 1) {
 				println("Oui");
 			}
+			
 			if(choix == 2) {
-				println("Demandez plus tard.");
+				println("Redemandez plus tard");
 			}
+			
 			if(choix == 3) {
-				println("No");
+				println("Non");
 			}
+			
 			if(choix == 4) {
 				println("Karel le pense.");
 			}
+			
 			println("");
 		}
 	}
 }
+		
+		
 
 </pre>
 

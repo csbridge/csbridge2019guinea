@@ -96,8 +96,6 @@
 	          	<li><a href="../../fr/projects/favoriteNumber.html">Numéro préféré</a></li>
 	          	<li><a href="../../fr/projects/medicine.html">Médicament Counterfeit</a></li>
 	          	<li><a href="../../fr/projects/someSum.html">Une somme</a></li>
-	          	<li><a href="../../fr/projects/AllerAuMarché.html">Aller Au Marché</a></li>
-	          	<li><a href="../../fr/projects/sorcerer.html">La Sorcière</a></li>
 
 				<!--
 
@@ -370,11 +368,11 @@
 			</h1>
 
 			<p>
-				Documents à distribuer:
+				Karel Références:
 				<a href ="../../fr/handouts/console.html">Console</a>,
-				<a href ="../../fr/handouts/random.html">Random Generator</a>
-		`<br/>
-				Exemples travaillés:
+				<a href ="../../fr/handouts/random.html">Générateur Aleatoire</a>
+				<br/>
+				Exemples:
 				<a href="../../fr/projects/emc2.html">E=MC2</a>,
 				<a href="../../fr/projects/fibb.html">Fibbonacci</a>,
 				<a href="../../fr/projects/carbonDating.html">Carbon Dating</a>
@@ -386,11 +384,14 @@
 		<div class="row">
 			<div class="col-md-12">
 
-				<p>Ecrivez les trois programmes suivants pour vous familiariser avec les variables Java.</p>
+				<p>Ecrivez les trois programmes suivants afin de vous familiariser avec les variables Java.</p>
 
-				<h2>1. Bonjour le monde</h2>
+				<h2>1. Hello World</h2>
 				<p>
-					Ecrivez un programme console qui affiche hello world (ou n’importe quel message de votre choix):
+					Code: <code>HelloWorld.java</code>
+				</p>
+				<p>
+					Ecrivez un programme console qui affiche "Hello World" (ou tout autre message que vous souhaitez):
 				</p>
 				<p>
 					<center>
@@ -400,8 +401,14 @@
 
 				<hr/>
 
-				<h2>2. Poids de la lune</h2>
-				<p>L'utilisateur (un terrien) entre son poids sur la terre. Votre programme imprimera le poids de l'utilisateur sur la lune, ce qui correspond à 16,5% de son poids sur la Terre.</p>
+				<h2>2. Poids lunaire</h2>
+				<p>
+					Code: <code>PoidsLunaire.java</code>
+				</p>
+				<p>
+					Un utilisateur (un terrien) saisi son poids sur terre. Votre programme doit afficher le poids de 
+					l’utilisateur sur la lune, qui correspond à 16,5% de son poids sur la terre.
+				</p>
 
 				<p>
 					<center>
@@ -412,7 +419,10 @@
 
 				<h2>3. Nombres Aléatoires</h2>
 				<p>
-					Ecrivez un programme qui imprime 1 000 nombres aléatoires compris entre 0 et 100.
+					Code: <code>NombresAleatoires.java</code>
+				</p>
+				<p>
+					Ecrivez un programme qui affiche 1000 nombres aléatoires entre 0 et 100
 				</p>
 				<p>
 					<center>
@@ -420,27 +430,31 @@
 					</center>
 				</p>
 
-				<p>Le fichier RandomNumbers.java a un code qui génère un seul nombre aléatoire.
-					<pre id="editor" style="height:200px">public class RandomNumbers extends ConsoleProgram {
+				<p>Le fichier NombresAleatoires.java a un code qui génère un seul nombre aléatoire.
+					<pre id="editor" style="height:200px">public class NombresAleatoires extends ConsoleProgram {
+							   
+	// Un generateur de nombres aleatoires
+	private RandomGenerator rg = new RandomGenerator();
 
-   // Un générateur de nombres aléatoires
-   private RandomGenerator rgen = new RandomGenerator();
-
-   public void run() {
-      // changer ce code pour imprimer 1000 nombres aléatoires
-      // dans la plage de 0 à 100.
-      int example = rgen.nextInt(0, 10);
-      println(example);
-   }
-}</pre>
+	public void run() {
+		// change ce code pour afficher 1000 nombres aleatoires
+		// entre 0 et 100
+		int nombreAleatoire = rg.nextInt(0, 10);
+		println(nombreAleatoire);	
+	}
+}
+</pre>
 				</p>
 
-				<p>Afin de générer des nombres aléatoires, créez une variable d'instance RandomGenerator (une variable déclarée en dehors de toutes les méthodes) comme ceci:
+				<p>
+					Pour pouvoir générer des nombres aléatoires, créez une variable qui est une instance de RandomGenerator 
+					(la variable est déclarée en dehors des autres méthodes) comme suit :
 					<div class="well"><code>private RandomGenerator rgen = new RandomGenerator();</code></div>
 				</p>
-				<p>Vous pouvez ensuite utiliser la variable pour générer des nombres aléatoires.
+				<p>
+					Vous pouvez ensuite utiliser cette variable pour générer des nombres aléatoires.
 					<div class="well"><code>
-						rgen.nextInt(<i>min</i>, <i>max</i>)  //génère un int aléatoire dans la plage (min, max) inclus
+						rgen.nextInt(<i>min</i>, <i>max</i>)  // génère un int aléatoire dans l'intervale (min, max) inclus
 					</code></div>
 				</p>
 			</div>
