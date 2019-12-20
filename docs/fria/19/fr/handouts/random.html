@@ -1,5 +1,5 @@
 <head>
-<title>Intro to Computer Science</title>
+<title>Introduction à l'Informatique</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,6 +25,14 @@
 
 </head>
 <body>
+	<style>
+		.comment {
+			color:#729683;
+			font-family: monaco;
+			font-weight:400;
+			font-size:13px;
+		}
+	</style>
 
 	<!-- Navigation Bar -->
 <nav class="navbar-inverse navbar-default" role="navigation">
@@ -38,7 +46,8 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="/fria/19/en/index.html">CS Bridge</a>
+	      <a class="navbar-brand" href="/fria/19/fr/index.html">CS Bridge</a>
+
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -46,19 +55,20 @@
 	      <ul class="nav navbar-nav">
 	        <!--<li ><a href="#">Link</a></li>-->
 	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Handouts <b class="caret"></b></a>
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Référence <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
-	          	<!--<li><a href="../../en/handouts/sections.html">Sections</a></li>-->
-	          	<li><a href="../../en/handouts/karel.html">Karel Reference</a></li>
-							<!--<li><a href="../../en/handouts/submission.html">How to Submit Your Work</a></li>-->
-	          	
-	          	<li><a href="../../en/handouts/console.html">Console Reference</a></li>
-	          	<li><a href="../../en/handouts/random.html">Random Generator Reference</a></li>
-	          	<li><a href="../../en/handouts/graphics.html">Graphics Reference</a></li>
-	          	<li><a href="../../en/handouts/events.html">Events Reference</a></li>
+	          	<!--<li><a href="../../fr/handouts/sections.html">Sections</a></li>-->
+				<li><a href="../../fr/handouts/karel_reference.key.pdf">Référence Karel </a></li>
+				<!--<li><a href="../../fr/handouts/submission.html">How to Submit Your Work</a></li>-->		
+				<li><a href="../../fr/handouts/console.html">Référence Console</a></li>
+				<li><a href="../../fr/handouts/random.html">Référence Générateur Aléatoire</a></li>
+				  
+				  <!--
+	          	<li><a href="../../fr/handouts/graphics.html">Graphique Référence</a></li>
+	          	<li><a href="../../fr/handouts/events.html">Événements (Events) Référence</a></li>
+							<li><a href="../../fr/handouts/arrayLists.html">Array Lists</a></li>
+							-->
 
-	          	
-	            <li><a href="../../en/handouts/arrayLists.html">Array Lists</a></li>
 	          	<!--
 	          	<li><a href="../../handouts/events.html">Events Reference</a></li>
                 <li><a href="../../projects/jsJSSyntax.html">JavaScript Syntax Reference</a></li>
@@ -66,211 +76,249 @@
                 <li><a href="../../handouts/uploadWebsite.html">Uploading a Website Reference</a></li>
 
 	          	<li><a href="../../handouts/whatsNext.html">Whats Next</a></li>
-	          	
-	          	
+
+
 	            <li><a href="../../handouts/operations.html">Operations</a></li>
 	            <li><a href="../../handouts/graphics.html">Graphics</a></li>
 	            <li><a href="../../handouts/passingData.html">Passing Data</a></li>-->
-	            
+
 	          </ul>
 	        </li>
 
 
-	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+          <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projets <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
-	            <li><a href="../../en/projects/WaterFromWell.html">Draw Water from the Well</a></li>
-	          	<li><a href="../../en/projects/efes.html">Build the Grand Mosque in Conakry</a></li>
-	          	<li><a href="../../en/projects/mountain.html">Mountain and Mango Tree Karel</a></li>
-	          	<li><a href="../../en/projects/flag.html">The Guinean Flag</a></li>
-	          	<li><a href="../../en/projects/randomPainter.html">Random Painter</a></li>
-
-	          	
-	          	<li class="divider"></li>
-	          	<li><a href="../../en/projects/sandcastles.html">Sandcastles</a></li>
-	          	<li><a href="../../en/projects/favoriteNumber.html">Favorite Number</a></li>
-	          	<li><a href="../../en/projects/medicine.html">Counterfeit Medicine</a></li>
-	          	<li><a href="../../en/projects/someSum.html">Some Sum</a></li>
-	          	<li><a href="../../en/projects/AllerAuMarché.html">Going to the Market</a></li>
-	          	<li><a href="../../en/projects/sorcerer.html">The Sorcerer</a></li>
+	            <li><a href="../../fr/projects/collectNewspaper.html">Ramasser le journal</a></li>
+	          	<li><a href="../../fr/projects/mosquee.html">Construire La Grande Mosquée de Conakry</a></li>
+	          	<li><a href="../../fr/projects/mountain.html">Karel des Montagnes</a></li>
+				<li><a href="../../fr/projects/randomPainter.html">Peintre aléatoire</a></li>
+				<li><a href="../../fr/projects/flag.html">Le Drapeau Guinéen</a></li>
 	          	
 
+							
 	          	<li class="divider"></li>
+	          	<li><a href="../../fr/projects/sandcastles.html">Châteaux de sable</a></li>
+	          	<li><a href="../../fr/projects/favoriteNumber.html">Numéro préféré</a></li>
+	          	<li><a href="../../fr/projects/medicine.html">Médicament Counterfeit</a></li>
+	          	<li><a href="../../fr/projects/someSum.html">Une somme</a></li>
 
-	          	<li><a href="../../en/projects/awesome.html">Programming is Awesome</a></li>
-	          	<li><a href="../../en/projects/stringArt.html">Mosquito Net</a></li>
-	          	<li><a href="../../en/projects/randomCircles.html">Random Circles</a></li>
-	          	<li><a href="../../en/projects/hailstone.html">Hailstone</a></li>
+				<!--
+
+	          	<li class="divider"></li>
+	          	<li><a href="../../fr/projects/voiture.html">La Voiture en Pane</a></li>
+	          	<li><a href="../../fr/projects/awesome.html">La programmation est géniale</a></li>
+	          	<li><a href="../../fr/projects/stringArt.html">Moustiquaires</a></li>
+	          	<li><a href="../../fr/projects/randomCircles.html">Cercles aléatoires</a></li>
+	          	<li><a href="../../fr/projects/hailstone.html">Grêle</a></li>
 
 	            <li class="divider"></li>
-	            <li><a href="../../en/projects/bouncingBall.html">Bouncing Ball</a></li>
-	          	<li><a href="../../en/projects/madMethods.html">Mad Methods</a></li>
-	          	<li><a href="../../en/projects/target.html">Target</a></li>
-	          	<li><a href="../../en/projects/illusion.html">Optical Illusion</a></li>
-	          	<li><a href="../../en/projects/sunset.html">Short Film</a></li>
+	            <li><a href="../../fr/projects/bouncingBall.html">Balle rebondissante</a></li>
+	          	<li><a href="../../fr/projects/madMethods.html">Méthodes folles</a></li>
+	          	<li><a href="../../fr/projects/target.html">Cible</a></li>
+	          	<li><a href="../../fr/projects/illusion.html">Illusion d'optique</a></li>
+	          	<li><a href="../../fr/projects/sunset.html">Cour de film</a></li>
 
 	          	<li class="divider"></li>
 
-	          	<li><a href="../../en/projects/makingTracks.html">Making Tracks</a></li>
-	             <li><a href="../../en/projects/stampTool.html">Stamp Tool</a></li>
-	          	<li><a href="../../en/projects/catchMeIfYouCan.html">Catch the Goat in the Garden</a></li>
-	          	<li><a href="../../en/projects/breakout.html">Breakout</a></li>
+	          	<li><a href="../../fr/projects/makingTracks.html">Faire des pistes</a></li>
+	            <li><a href="../../fr/projects/stampTool.html">Outil de Cachet</a></li>
+	          	<li><a href="../../fr/projects/catchMeIfYouCan.html">Attraper la Chevre dans le Jardin</a></li>
+	          	<li><a href="../../fr/projects/breakout.html">Éclater</a></li>
+
+							-->
+
+
+
+
+
+
+
+
 
 							<!--
 	          	<li class="divider"></li>
 
-	          	<li><a href="../../en/projects/sortedNumbers.html">Sorted Numbers</a></li>
-	          	<li><a href="../../en/projects/snow.html">Snow</a></li>
-	          	<li><a href="../../en/projects/mouseGame.html">The Line</a></li>
-	          	<li><a href="../../en/projects/music.html">Music</a></li>
+	          	<li><a href="../../fr/projects/sortedNumbers.html">Numéros triés</a></li>
+	          	<li><a href="../../fr/projects/snow.html">Neige</a></li>
+	          	<li><a href="../../fr/projects/mouseGame.html">La ligne</a></li>
+	          	<li><a href="../../fr/projects/music.html">La musique</a></li>
 							-->
 	          	<!--
-	            <li><a href="../../projects/drawPeople.html">Three's a Crowd</a></li>
-	            
-	            <li><a href="../../projects/madLibs.html">Mad Libs</a></li>
-	            <li><a href="../../projects/secret.html">Secret</a></li>
+	            <li><a href="../../projects/drawPeople.html">Trois est une foule</a></li>
 
-	     
+	            <li><a href="../../projects/madLibs.html">Mad Libs</a></li>
+	            <li><a href="../../projects/secret.html">Secrète</a></li>
+
+
 
                 <li class="divider"></li>
-	            
-	            <li><a href="../../projects/breakout.html">Breakout</a></li>
-	            
-	            
-	            <li><a href="../../projects/music.html">Waves of Sound</a></li>
-	        	
-	        	
-	            <li><a href="../../projects/project.html">Final Project</a></li>-->
 
-	            
-              
-	            
+	            <li><a href="../../projects/breakout.html">Éclater</a></li>
+
+
+	            <li><a href="../../projects/music.html">Vagues de son</a></li>
+
+
+	            <li><a href="../../projects/project.html">Projet final</a></li>-->
+
+
+
+
 	          </ul>
 	        </li>
 
 	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exemples<b class="caret"></b></a>
 	          <ul class="dropdown-menu">
-	          	<li><a href="../../en/projects/stepUp.html">Step Up</a></li>
-	          	<li><a href="../../en/projects/place100.html">Wash 100 Pieces of Clothing (Place 100)</a></li>
-	          	<li><a href="../../en/projects/beeperLine.html">Plant Corn (Beeper Line)</a></li>
-	          	<li><a href="../../en/projects/invert.html"> Reforestation (Invert)</a></li>
-	          	<li><a href="../../en/projects/unKarel.html">Building Houses (UN Karel)</a></li>
-	          	<li class="divider"></li>
-	            <li><a href="../../en/projects/emc2.html">E=MC2</a></li>
-	            <li><a href="../../en/projects/fibb.html">Fibonacci</a></li>
-	           <li><a href="../../en/projects/favoriteNumber.html">Favorite Number</a></li>
-	           <li><a href="../../en/projects/findPi.html">Find Pi</a></li>
-	           <li><a href="../../en/projects/8Ball.html">8-Ball</a></li>
+	          	<li><a href="../../fr/projects/stepUp.html">Monter un escalier</a></li>
+	          	<li><a href="../../fr/projects/place100.html">Placer 100 beepers</a></li>
+	          	<li><a href="../../fr/projects/beeperLine.html">Ligne de beepers</a></li>
+	          	<li><a href="../../fr/projects/invert.html">Inverser les cellules</a></li>
+	          	<li><a href="../../fr/projects/unKarel.html">Construire les Maisons</a></li>
+							
+							
+
+				<li class="divider"></li>
+
+				<li><a href="../../fr/projects/emc2.html">E=MC2</a></li>
+				<li><a href="../../fr/projects/fibb.html">Fibonacci</a></li>
+				<li><a href="../../fr/projects/favoriteNumber.html">Numéro préféré</a></li>
+				<li><a href="../../fr/projects/findPi.html">Trouver Pi</a></li>
+				<li><a href="../../fr/projects/sorcerer.html">Sorcière</a></li>
+			  
+			   <!--
 	           <li class="divider"></li>
-	           
-	            
-	            <li><a href="../../en/projects/robotFace.html">Robot Face</a></li>
 
-	            
+
+	            <li><a href="../../fr/projects/robotFace.html">Visage de Robot</a></li>
+
+
 	          	<li class="divider"></li>
-	            <li><a href="../../en/projects/mysterySquare.html">Mystery Square</a></li>
+	            <li><a href="../../fr/projects/mysterySquare.html">Place du mystère</a></li>
 
-	            <li><a href="../../en/projects/goCenter.html">Go To Center</a></li>
+	            <li><a href="../../fr/projects/goCenter.html">Aller au centre</a></li>
 
-	            <li><a href="../../en/projects/gravityBall.html">Gravity Ball</a></li>
+	            <li><a href="../../fr/projects/gravityBall.html">Boule de gravité</a></li>
 
-	          	<li><a href="../../en/projects/averageMethod.html">Average Method</a></li>	
-	          	<li><a href="../../en/projects/drawPeople.html">Draw People</a></li>	
+	          	<li><a href="../../fr/projects/averageMethod.html">Méthode moyenne</a></li>
+	          	<li><a href="../../fr/projects/drawPeople.html">Dessiner des gens</a></li>
 
-	          	<li><a href="../../en/projects/halfGreen.html">Half Green</a></li>
+	          	<li><a href="../../fr/projects/halfGreen.html">Moitié vert</a></li>
+
+	          	<li class="divider"></li>
+	            <li><a href="../../fr/projects/holes.html">Trou</a></li>
+								-->
+
+
+
+
+
+
+
+
+
+
 
 							<!--
 	          	<li class="divider"></li>
-							<li><a href="../../en/projects/rocketShip.html">Rockets</a></li>
+							<li><a href="../../fr/projects/rocketShip.html">Fusées</a></li>
 
-	          	<li><a href="../../en/projects/debrisSweeper.html">Debris Sweeper</a></li>	
-	          	<li><a href="../../en/projects/suchADrag.html">Such a Drag</a></li>
-	              
-	             
-	             <li><a href="../../projects/stampTool.html">Stamp Tool</a></li>
-	            <li><a href="../../projects/snow.html">Snow</a></li>
+	          	<li><a href="../../fr/projects/debrisSweeper.html">Balayeuse de débris</a></li>
+	          	<li><a href="../../fr/projects/suchADrag.html">Une telle traînée</a></li>
+
+
+	             <li><a href="../../projects/stampTool.html">Outil de tampon</a></li>
+	            <li><a href="../../projects/snow.html">Neige</a></li>
 
               <li class="divider"></li>
-	            <li><a href="../../projects/breakoutOnline.html">Breakout Online</a></li>
+	            <li><a href="../../projects/breakoutOnline.html">Breakout en ligne</a></li>
 							-->
 	          </ul>
 	        </li>
 
 	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Slides <b class="caret"></b></a>
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentations <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
-	          	<li><a href="../../slides/Welcome.pdf">Karel</a></li>
-	          	<li><a href="../../slides/ControlFlow.pdf">ControlFlow</a></li>
-	          	<li><a href="../../slides/Variables.pdf">Variables</a></li>
-	          	<li><a href="../../slides/Graphics.pdf">Graphics</a></li>
+
+								
+	          	<li><a href="../../slides/fria_2019/welcome.pdf">Karel</a></li>
+				<li><a href="../../slides/fria_2019/control_flows.pdf">Flux de contrôle</a></li>
+
+	          	<li><a href="../../slides/LisaFrenchSlides/Variables.pdf">Variables 1</a></li>
+				<li><a href="../../slides/LisaFrenchSlides/Variables_two.pdf">Variables 2</a></li>
+				
+				<!--
+	          	<li><a href="../../slides/LisaFrenchSlides/Graphique.pdf">Graphique</a></li>
 	          	<li><a href="../../slides/Animation.pdf">Animation</a></li>
-	          	<li><a href="../../slides/Methods.pdf">Methods</a></li>
-	          	<li><a href="../../slides/Review.pdf">Review</a></li>
-	          	<li><a href="../../slides/Events.pdf">Events</a></li>
-	          	<li><a href="../../slides/Internet.pdf">Internet</a></li>
-	          	<li><a href="../../slides/Arrays.pdf">Arrays</a></li>
-	          	<li><a href="../../slides/ArrayLists.pdf">Array Lists</a></li>
-	          	<li><a href="../../slides/Strings.pdf">Strings</a></li>
+	          	<li><a href="../../slides/Methods.pdf">Les méthodes</a></li>
+	          	<li><a href="../../slides/Review.pdf">La revue</a></li>
+	          	<li><a href="../../slides/Events.pdf">Événements</a></li>
+	          	<li><a href="../../slides/Internet.pdf">l'Internet</a></li>
+	          	<li><a href="../../slides/Arrays.pdf">Tableaux</a></li>
+	          	<li><a href="../../slides/ArrayLists.pdf">Listes de tableaux</a></li>
+	          	<li><a href="../../slides/Strings.pdf">Les cordes</a></li>
+							-->
+							
 							<!--
-	          	<li><a href="../../slides/AI.pdf">Artificial Intelligence</a></li>
-	          	<li><a href="../../slides/loopVariableReview.pdf">Loop/Variable Review</a></li>
-	          	<li><a href="../../slides/Interactors.pdf">Interactors</a></li>
-	          	<li><a href="../../slides/AI.pdf">AI</a></li>
-	          	<li><a href="../../slides/Classes.zip">Classes</a></li>
-	          	<li><a href="../../slides/TheEnd.pdf">The End</a></li>
-	          	
+	          	<li><a href="../../slides/AI.pdf">Intelligence Artificielle</a></li>
+	          	<li><a href="../../slides/loopVariableReview.pdf">Revue Boucle/Variable</a></li>
+	          	<li><a href="../../slides/Interactors.pdf">Interacteurs</a></li>
+	          	<li><a href="../../slides/AI.pdf">IA</a></li>
+	          	<li><a href="../../slides/Classes.zip">Des classes</a></li>
+	          	<li><a href="../../slides/TheEnd.pdf">La fin</a></li>
+
 							-->
 	          </ul>
 	        </li>
 
 	        <!-- <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Extra Challenges <b class="caret"></b></a>
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Défis Supplémentaires <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
-	          	<li><a href="../../en/projects/isOdd.html">Is Odd</a></li>	
-	          	
+	          	<li><a href="../../fr/projects/isOdd.html">Est Impair</a></li>
+
 	          </ul>
 	        </li>-->
 
 
 	        <!--<li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Internet <b class="caret"></b></a>
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">l'Internet <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
-	          	<li><a href="https://www.dropbox.com/s/1jtjo9hde8in0xn/1-How%20the%20internet%20works.pptx">How the Internet Works</a></li>
-	          	<li><a href="https://www.dropbox.com/s/1t7pwltugsy4pxg/2-day-in-the-life-of-packet.pptx">Day in the Life of a Packet</a></li>
-	          	<li><a href="https://www.dropbox.com/s/1n0lzrl32urfsnr/3-How%20packets%20routed.pptx">How packets are routed in the Internet</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1jtjo9hde8in0xn/1-How%20the%20internet%20works.pptx">Comment Internet fonctionne</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1t7pwltugsy4pxg/2-day-in-the-life-of-packet.pptx">Jour dans la vie d'un paquet</a></li>
+	          	<li><a href="https://www.dropbox.com/s/1n0lzrl32urfsnr/3-How%20packets%20routed.pptx">Comment les paquets sont acheminés sur Internet</a></li>
 	          	<li class="divider"></li>
 	          	<li><a href="http://yuba.stanford.edu/~huangty/dacka/lab1.html">Lab 1</a></li>
 	          	<li><a href="http://yuba.stanford.edu/~huangty/dacka/lab2.html">Lab 2</a></li>
 	          	<li class="divider"></li>
-	          	<li><a href="../../internet/echo.zip">Echo Client Code</a></li>
-	          	<li><a href="../../internet/2person-breakout.zip">2Person Breakout Code</a></li>
+	          	<li><a href="../../internet/echo.zip">Code client d'écho</a></li>
+	          	<li><a href="../../internet/2person-breakout.zip">Code de groupe de 2 personnes</a></li>
 
-	          	
+
 	          </ul>
 	        </li>-->
 
 	        <!--<li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Section<b class="caret"></b></a>
 	          <ul class="dropdown-menu">
-	          	<li><a href="../../projects/stepUp.html">Newspaper Karel</a></li>
-	          	<li><a href="../../projects/place100.html">Counterfit Drugs</a></li>
-	          	<li><a href="../../projects/beeperLine.html">Target</a></li>
+	          	<li><a href="../../projects/stepUp.html">Journal Karel</a></li>
+	          	<li><a href="../../projects/place100.html">Drogues contrefaites</a></li>
+	          	<li><a href="../../projects/beeperLine.html">Cible</a></li>
 	          </ul>
 	        </li>-->
 
-	        <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonus <b class="caret"></b></a>
+	        <!-- <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Prime <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
-                <li><a href="../../en/bonus-index.html">Bonus overview</a></li>
+                <li><a href="../../fr/bonus-index.html">Aperçu des bonus</a></li>
 	          </ul>
-	        </li>
+	        </li> -->
 
 	        <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forms <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formes<b class="caret"></b></a>
 	          <ul class="dropdown-menu">
-                <li><a href="../../en/handouts/submission.html">Submit Your Work</a></li>
-                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSffsKTNU3mu-21-ZjZFJ3d-fPdvw6uQcvhAjbpXhux43_3gpg/viewform?usp=sf_link">Sign in To Lab</a></li>
+                <li><a href="../../fr/handouts/submission.html">Soumettez votre travail</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSffsKTNU3mu-21-ZjZFJ3d-fPdvw6uQcvhAjbpXhux43_3gpg/viewform?usp=sf_link">Se connecter au laboratoire</a></li>
 	          </ul>
 	        </li>
 
@@ -278,12 +326,16 @@
 
 	      </ul>
 
-	      
+
 	      <ul class="nav navbar-nav navbar-right">
+					<!--
 	      	<li><a onclick="changeToFrench()" style="cursor: pointer;"><img class="languageIcon" src="../../img/guinean_flag.png"></img></a></li>
 	      	<li><a onclick="changeToEnglish()" style="cursor: pointer;"><img class="languageIcon" src="../../img/english_flag.png"></img></a></li>
-	      	
-	        
+					-->
+
+					<li><a onclick="" style="cursor: pointer;"><img class="languageIcon" src="../../img/guinean_flag.png"></img></a></li>
+					
+
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	</div>
@@ -294,7 +346,7 @@
 
 	// function changeToTurkish() {
 	// 	var url = window.location.href;
-	// 	url = url.replace("/en/", "/tr/");
+	// 	url = url.replace("/fr/", "/tr/");
 	// 	window.location.href = url;
 	// }
 
@@ -312,61 +364,73 @@
 
 </script>
 
-
-
 	<!-- Main Content -->
 	<div class="container">
 
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Random Generator Reference
+				Référence du Générateur Aleatoire
 			</h1>
 			<p>
-				Written by Danielle Kain and Lisa Yan
+				Ecrit par Danielle Kain et Lisa Yan. Traduit par Moussa Doumbouya.
 			</p>
 		</div>
 		<hr/>
 
-		Random Generators allow you to add randomness to your program. Regardless of what type of random object you want, you will first have to make a Random Generator: 
+		Les générateur aléatoires vous permettent d'ajouter de l'incertitude dans vos programmes.
+		Quelque soit le type d'objet que vous voulez générer de manière aléatoire, vous devez d'abord creer
+		un objet de type <code>RandomGenerator</code>: 
 		<div class="well"><code>
 RandomGenerator rgen = new RandomGenerator();
 		</code></div>
 		<br>
-		You can make many types of random objects using RandomGenerators. Here are some examples:
+		Vous pouvez créer plusieurs types d'objets de manière aléatoire. Voici quelques exemples:
 		<div class="well"><code>
-                int randomInt = rgen.nextInt(); //Returns a random int<br>
-                double randomDouble = rgen.nextDouble(); //Returns a random double<br>
-                Color randomCol = rgen.nextColor(); //Returns a random color<br>
-boolean randomBoolean = rgen.nextBoolean(); //Returns a random boolean
+                int randomInt = rgen.nextInt(); <i class="comment">// Retourne un entier à l'aléatoire</i><br>
+                double randomDouble = rgen.nextDouble(); <i class="comment">// Retourne un nombre réel à l'aléatoire</i><br>
+                Color randomCol = rgen.nextColor(); <i class="comment">// Retourne une couleure à l'aléatoire</i><br>
+boolean randomBoolean = rgen.nextBoolean(); <i class="comment">// Retourne un booléen à l'aléatoire</i>
 		</code></div>		
 
 
 
-        <h2>Integers</h2>
-        <p>The default method call (with no arguments) returns an <i>unbounded</i> integer, which could be very large or very small. To restrict the range of the integers you get, you can specify bounds. So to get an integer between 0 and 10, inclusive, you could do the following:</p>
+		<h2>Nombres Entiers (Integers)</h2>
+		<p>
+			L'orsque vous ne spécifiez aucun paramètre à la méthode <code>nextInt()</code>,
+			elle retourne un nombre entier sans bornes. Ce nombre peut être soit un très petit nombre
+			ou un très grand nombre. 
+			Pour restreindre l'interval des nombres entiers retournés par la méthode <code>nextInt()</code>,
+			vous pouvez specifier des bornes. Donc pour générer un nombre aléatoirement entre 0 et 10 (inclus),
+			vous pouvez faire:
+		</p>
+		
 		<div class="well"><code>
-                int lb = 0;<br>
-                int ub = 10;<br>
-                int x = rgen.nextInt(lb, ub); // integer in the range [0,10]<br>
+                int borneInf = 0;<br>
+                int borneSup = 10;<br>
+                int x = rgen.nextInt(borneInf, borneSup); <i class="comment">// un  entier dans l'interval [0,10]</i><br>
 		</code></div>		
-        <h2>Doubles</h2>
-        <p>The default method call returns a double between 0.0 and 1.0. To increase the range of doubles, you can specify bounds:</p>
+		<h2>Nombres Réels (Doubles)</h2>
+		<p>Appeler la méthode <code>nextDouble()</code> sans paramètres retourne un nombre entre <code>0.0</code> et <code>1.0</code>
+		pour élargir l'interval des nombre réels retournés par cette méthode, vous pouvez specifier un interval:
 		<div class="well"><code>
-        double y = rgen.nextDouble(-3, 5.5); // note -3 is casted from integer to double -3.0
+		double y = rgen.nextDouble(-3, 5.5); <i class="comment">// notez que -3 est "casté" à double (-3.0)</i>
 		</code></div>		
 
-        <h2>Booleans</h2>
-        <p>Unlike integers and doubles, there is a single argument <code>p</code> that defines the behavior of <code>rgen.nextBoolean(p)</code>:
+		<h2>Booléens</h2>
+		<p>
+			Contrairement aux méthodes <code>nextInt()</code> et <code>nextDouble()</code>, il y a un seul argument, 
+			<code>p</code>, qui définit le comportement de la méthode <code>nextBoolean()</code>
+		</p>
         <ul>
-            <li>Return <code>true</code> with probability <code>p</code>.</li>
-            <li>Return <code>false</code> with probability <code>1-p</code>.</li>
-            <li><code>p</code> must be a double between 0 and 1.0.</li>
-            <li>The default value of <code>p</code> is 0.5.</li>
+            <li>Elle retourne <code>true</code> (vrai) avec la probabilité <code>p</code>.</li>
+            <li>Elle retourne <code>false</code> (faux) avec la probabilité <code>1-p</code>.</li>
+			<li><code>p</code> doit être une de type <code>double</code> et être entre <code>0.0</code> et <code>1.0</code></li>
+            <li>La valeur par defaut de <code>p</code> est <code>0.5</code>.</li>
         </ul>
 		<div class="well"><code>
-                bool equalProb = rgen.nextBoolean();<br>
-                bool unequalProb = rgen.nextBoolean(0.75); // returns true 3/4ths of the time<br>
+                bool probEgal = rgen.nextBoolean(); <i class="comment">// retourne vrai 50% du temps</i><br>
+                bool probInegal = rgen.nextBoolean(0.75); <i class="comment">// retourne vrai 75% du temps</i><br>
 		</code></div>		
 
 <hr>

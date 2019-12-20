@@ -52,12 +52,12 @@
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Référence <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
 	          	<!--<li><a href="../../fr/handouts/sections.html">Sections</a></li>-->
-	          	<li><a href="../../fr/handouts/karel_reference.key.pdf">Karel Référence</a></li>
-							<!--<li><a href="../../fr/handouts/submission.html">How to Submit Your Work</a></li>-->
-
-							<!--
-	          	<li><a href="../../fr/handouts/console.html">Console Référence</a></li>
-	          	<li><a href="../../fr/handouts/random.html">Générateur aléatoire Référence</a></li>
+				<li><a href="../../fr/handouts/karel_reference.key.pdf">Référence Karel </a></li>
+				<!--<li><a href="../../fr/handouts/submission.html">How to Submit Your Work</a></li>-->		
+				<li><a href="../../fr/handouts/console.html">Référence Console</a></li>
+				<li><a href="../../fr/handouts/random.html">Référence Générateur Aléatoire</a></li>
+				  
+				  <!--
 	          	<li><a href="../../fr/handouts/graphics.html">Graphique Référence</a></li>
 	          	<li><a href="../../fr/handouts/events.html">Événements (Events) Référence</a></li>
 							<li><a href="../../fr/handouts/arrayLists.html">Array Lists</a></li>
@@ -90,16 +90,14 @@
 				<li><a href="../../fr/projects/flag.html">Le Drapeau Guinéen</a></li>
 	          	
 
-							<!--
+							
 	          	<li class="divider"></li>
 	          	<li><a href="../../fr/projects/sandcastles.html">Châteaux de sable</a></li>
 	          	<li><a href="../../fr/projects/favoriteNumber.html">Numéro préféré</a></li>
 	          	<li><a href="../../fr/projects/medicine.html">Médicament Counterfeit</a></li>
 	          	<li><a href="../../fr/projects/someSum.html">Une somme</a></li>
-	          	<li><a href="../../fr/projects/AllerAuMarché.html">Aller Au Marché</a></li>
-	          	<li><a href="../../fr/projects/sorcerer.html">La Sorcière</a></li>
 
-
+				<!--
 
 	          	<li class="divider"></li>
 	          	<li><a href="../../fr/projects/voiture.html">La Voiture en Pane</a></li>
@@ -174,16 +172,16 @@
 	          	<li><a href="../../fr/projects/unKarel.html">Construire les Maisons</a></li>
 							
 							
-							<!--
 
-								<li class="divider"></li>
+				<li class="divider"></li>
 
-	            <li><a href="../../fr/projects/emc2.html">E=MC2</a></li>
-	            <li><a href="../../fr/projects/fibb.html">Fibonacci</a></li>
-	           <li><a href="../../fr/projects/favoriteNumber.html">Numéro préféré</a></li>
-	           <li><a href="../../fr/projects/findPi.html">Trouver Pi</a></li>
-	           <li><a href="../../fr/projects/sorcerer.html">Sorcière</a></li>
-	          
+				<li><a href="../../fr/projects/emc2.html">E=MC2</a></li>
+				<li><a href="../../fr/projects/fibb.html">Fibonacci</a></li>
+				<li><a href="../../fr/projects/favoriteNumber.html">Numéro préféré</a></li>
+				<li><a href="../../fr/projects/findPi.html">Trouver Pi</a></li>
+				<li><a href="../../fr/projects/sorcerer.html">Sorcière</a></li>
+			  
+			   <!--
 	           <li class="divider"></li>
 
 
@@ -240,9 +238,11 @@
 								
 	          	<li><a href="../../slides/fria_2019/welcome.pdf">Karel</a></li>
 				<li><a href="../../slides/fria_2019/control_flows.pdf">Flux de contrôle</a></li>
-							<!--
+
 	          	<li><a href="../../slides/LisaFrenchSlides/Variables.pdf">Variables 1</a></li>
-	          	<li><a href="../../slides/LisaFrenchSlides/Variables_two.pdf">Variables 2</a></li>
+				<li><a href="../../slides/LisaFrenchSlides/Variables_two.pdf">Variables 2</a></li>
+				
+				<!--
 	          	<li><a href="../../slides/LisaFrenchSlides/Graphique.pdf">Graphique</a></li>
 	          	<li><a href="../../slides/Animation.pdf">Animation</a></li>
 	          	<li><a href="../../slides/Methods.pdf">Les méthodes</a></li>
@@ -370,59 +370,50 @@
         Problème écrit par Bryce C-R, Julia Lee, Chris Piech et TY Huang
       </p>
 
+      <p>
+          Référence:
+          <a href ="../../fr/handouts/console.html">Console</a>
+          <br />
+          
+          Code: <code>Somme.java</code>
+        </p>
+
     </div>
     <hr/>
 
     <div class="row">
       <div class="col-md-12">
-        <p> Ecrivez un programme qui lit 10 nombres entiers de l’utilisateur puis affiche la somme des valeurs entrées.</p>
+        <p>Ecrire un programme prend en entrée 10 entiers saisis par l’utilisateur et donne en sortie la somme des valeurs en entrée.</p>
+        
         <p>
           <center>
-            <img style="width:600px" src="../../img/projects/someSum/demo.png">  
+            <img style="width:600px" src="../../img/projects/someSum/some_sum_demo_fr.png">  
           </center>
         </p>
-				<p>
-					Souvent, dans les programmes de console, il est nécessaire d’imprimer les valeurs à l’utilisateur sous forme de chaîne. L'exemple ci-dessus est:
-					</br>
-					</br>
-					"La somme est de: 55"
-					</br>
-					</br>
-					Si vous exécutez votre programme avec l'entrée ci-dessus, 55 sera la valeur stockée dans la variable qui suit la somme. Si cette variable s'appelle 'exempleSum', alors pour écrire dans la sortie, vous écrirez:
-					</br>
-					</br>
-					println("La somme est de: " + exempleSum);
-					</br>
-					</br>
-					Une forme plus générale est:
-					</br>
-					</br>
-					"Message de chaîne" + nomDeVariable + "plus de message de chaîne"
-					</br>
-					</br>
-				</p>
+
+        <p>
+            Souvent dans les programmes console, il sera nécéssare d’afficher le résultat à l’utilisateur sous forme d’un texte. L’exemple ci dessus est : 
+            <br />
+            <br />
+            “La somme est: 55”
+            <br />
+            <br /> 
+            Si vous exécutez le programme avec les valeurs ci-dessus en entrée, 55 sera la valeur stockée dans la variable qui représente. Si cette variable s’appelle <code>exempleDeSomme</code>, alors pour écrire dans la console vous écrirez : 
+            <br />
+            <br />
+            println("La somme est: " + exempleDeSomme);
+            <br />
+            <br />
+            Une forme plus générale est:
+            <br />
+            <br />
+            "Message textuel" + nomVariable + "plus de message textuel"
+            <br />
+            <br />
+        </p>
+        
       </div>
 
-<!--pre id="editor" style="height:400px">/**
- * Program: That's Some Sum
- * -------------
- * This program reads in 10 integers from the user and then prints their sum.
- */
-
-public class SomeSum extends ConsoleProgram {
-  
-  public void run() {
-    println("Enter 10 nums. I will show you the sum!");
-    int sum = 0;
-      
-    for(int i=0; i<10; i++) {
-      sum = sum + readInt("Please enter an integer: ");
-    }
-
-    println("");
-    println("The sum is: " + sum);
-  }
-}</pre-->
     
 <script src="../../plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
