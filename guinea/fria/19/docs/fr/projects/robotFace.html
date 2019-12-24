@@ -97,16 +97,17 @@
 	          	<li><a href="../../fr/projects/medicine.html">Médicament contrefaits</a></li>
 	          	<li><a href="../../fr/projects/someSum.html">Une somme</a></li>
 
-				<!--
+			
 
 	          	<li class="divider"></li>
-	          	<li><a href="../../fr/projects/voiture.html">La Voiture en Pane</a></li>
 	          	<li><a href="../../fr/projects/awesome.html">La programmation est géniale</a></li>
+	          	<li><a href="../../fr/projects/voiture.html">La Voiture en Pane</a></li>
 	          	<li><a href="../../fr/projects/stringArt.html">Moustiquaires</a></li>
 	          	<li><a href="../../fr/projects/randomCircles.html">Cercles aléatoires</a></li>
 	          	<li><a href="../../fr/projects/hailstone.html">Grêle</a></li>
 
-	            <li class="divider"></li>
+	            	<!--
+				<li class="divider"></li>
 	            <li><a href="../../fr/projects/bouncingBall.html">Balle rebondissante</a></li>
 	          	<li><a href="../../fr/projects/madMethods.html">Méthodes folles</a></li>
 	          	<li><a href="../../fr/projects/target.html">Cible</a></li>
@@ -181,12 +182,17 @@
 				<li><a href="../../fr/projects/findPi.html">Trouver Pi</a></li>
 				<li><a href="../../fr/projects/sorcerer.html">Sorcière</a></li>
 			  
-			   <!--
+
 	           <li class="divider"></li>
 
 
-	            <li><a href="../../fr/projects/robotFace.html">Visage de Robot</a></li>
-
+			   <li><a href="../../fr/projects/robotFace.html">Grand père de Karel</a></li>
+			   <li><a href="../../fr/projects/drawPeople.html">Dessiner des gens</a></li>
+			   <li><a href="../../fr/projects/halfGreen.html">Moitié vert</a></li>
+			   <li><a href="../../fr/projects/goCenter.html">Aller au centre</a></li>
+			   <li><a href="../../fr/projects/gravityBall.html">Boule de gravité</a></li>
+			   
+				<!--
 
 	          	<li class="divider"></li>
 	            <li><a href="../../fr/projects/mysterySquare.html">Place du mystère</a></li>
@@ -380,7 +386,7 @@
 
 				<p>
 					<center>
-						<img style="width:500px" src="../../img/projects/robotFace/KarelGrandpere.png">	
+						<img style="width:500px" src="../../img/projects/robotFace/GrandPereDeKarel.png">	
 					</center>
 				</p>
 
@@ -388,30 +394,32 @@
 
 				<p>
 					<div class="well">
-						<code style = "font-size:12px">
-							/*La largeur de la face du robot: * /
-							<br/>private static final int LARGEUR_VISAGE = 300;
-							<br/>
-							<br/>/*La hauteur de la face du robot:*/
-							<br/>private static final int HAUTEUR_VISAGE = 350;
-							<br/>
-							<br/>/* Le diamètre de chaque œil de robot:*/
-							<br/>private static final int DIAMETRE_YEUX = 70;
-							<br/>
-							<br/>/* La distance du sommet de la tête au sommet des yeux: */
-							<br/>private static final int YEUX_Y_OFFSET = 40;
-							<br/>
-							<br/>/* La largeur de la bouche: */
-							<br/>private static final int LARGEUR_BOUCHE = 150;
-							<br/>
-							<br/>/*La largeur de la bouche::*/
-							<br/>private static final int HAUTEUR_BOUCHE = 30;
-							<br/>
-							<br/>/*La distance du haut de la tête au haut de la bouche:*/
-							<br/>private static final int BOUCHE_Y_OFFSET = 200;
-							<br/>
-							<br/>/*La distance entre le haut de l'écran et la base de l'étiquette:*/
-							<br/>private static final int LABEL_Y = 50;
+						<code style = "font-size:12px"><pre>
+/*Largeur de la face*/
+private static final int LARGEUR_FACE = 300;
+
+/*Hauteur de la face*/
+private static final int HAUTEUR_FACE = 350;
+
+/*Diametre d'un oeil*/
+private static final int DIAMETERE_OEIL = 70;
+
+/* Distance verticale entre le haut de la tete 
+ * et les yeux*/
+private static final int OFFSET_Y_OEIL = 40;
+
+/*largeur de la bouche*/
+private static final int LARGEUR_BOUCHE = 150;
+
+/*Hauteur de la bouche*/
+private static final int HAUTEUR_BOUCHE = 30;
+
+/*Distance verticale entre le haut de la tete
+ * et la bouche*/
+private static final int OFFSET_Y_BOUCHE = 200;
+
+/*Position verticale de l'etiquette*/
+private static final int Y_ETIQUETTE = 50;</pre>
 						</code>
 					</div>
 				</p>
@@ -423,75 +431,100 @@
 				<h2>Solution</h2>
 
 
-<pre id="editor" style="height:1220px">public class Visage extends GraphicsProgram {
+<pre id="editor" style="height:1220px">import acm.program.GraphicsProgram;
+import acm.graphics.GRect;
+import acm.graphics.GOval;
+import acm.graphics.GLabel;
+import java.awt.Color;
+
+public class GrandPereDeKarel extends GraphicsProgram {
+
+	/*Largeur de la face*/
+	private static final int LARGEUR_FACE = 300;
 	
-			private static final int LARGEUR_VISAGE = 300;
-			private static final int HAUTEUR_VISAGE = 350;
-			private static final int DIAMETRE_YEUX = 70;
-			private static final int YEUX_Y_OFFSET = 40;
-			private static final int LARGEUR_BOUCHE = 150;
-			private static final int HAUTEUR_BOUCHE = 30;
-			private static final int BOUCHE_Y_OFFSET = 200;
-			private static final int LABEL_Y = 50;
+	/*Hauteur de la face*/
+	private static final int HAUTEUR_FACE = 350;
+	
+	/*Diametre d'un oeil*/
+	private static final int DIAMETERE_OEIL = 70;
+	
+	/* Distance verticale entre le haut de la tete 
+	 * et les yeux*/
+	private static final int OFFSET_Y_OEIL = 40;
+	
+	/*largeur de la bouche*/
+	private static final int LARGEUR_BOUCHE = 150;
+	
+	/*Hauteur de la bouche*/
+	private static final int HAUTEUR_BOUCHE = 30;
+	
+	/*Distance verticale entre le haut de la tete
+	 * et la bouche*/
+	private static final int OFFSET_Y_BOUCHE = 200;
+	
+	/*Position verticale de l'etiquette*/
+	private static final int Y_ETIQUETTE = 50;
 
-			public void run() {
-				dessinerTete();
-				dessinerlOeilGauche();
-				dessinerlOeilDroit();
-				dessinerLaBouche();
-				dessinerLabel();
-			}
+	public void run() {
+		dessinerTete();
+		dessinerOeilGauche();
+		dessinerOeilDroit();
+		dessinerBouche();
+		dessinerEtiquette();
+	}
 
-			private void dessinerTete() {
-				double x = (getWidth() - LARGEUR_VISAGE) / 2;
-				double y = (getHeight() - HAUTEUR_VISAGE) / 2;
-				GRect head = new GRect(x, y, LARGEUR_VISAGE, HAUTEUR_VISAGE);
-				head.setFilled(true);
-				head.setFillColor(Color.ORANGE);
-				add(head);
-			}
-			
-			private void dessinerlOeilGauche(){
-				double eyeSpacing = (LARGEUR_VISAGE - 2 * DIAMETRE_YEUX ) / 3;
-				double headX = (getWidth() - LARGEUR_VISAGE) / 2;
-				double headY = (getHeight() - HAUTEUR_VISAGE) / 2;
-				double x =  headX + eyeSpacing;
-				double y = headY + YEUX_Y_OFFSET;
-				GOval eye = new GOval(x, y, DIAMETRE_YEUX, DIAMETRE_YEUX );
-				eye.setFilled(true);
-				eye.setFillColor(Color.RED);
-				add(eye);
-			}
-			
-			private void dessinerlOeilDroit() {
-				double eyeSpacing = (LARGEUR_VISAGE - 2 * DIAMETRE_YEUX) / 3;
-				double headX = (getWidth() - LARGEUR_VISAGE) / 2;
-				double headY = (getHeight() - HAUTEUR_VISAGE) / 2;
-				double x =  headX + eyeSpacing * 2 + DIAMETRE_YEUX ;
-				double y = headY + YEUX_Y_OFFSET;
-				GOval eye = new GOval(x, y, DIAMETRE_YEUX, DIAMETRE_YEUX );
-				eye.setFilled(true);
-				eye.setFillColor(Color.GREEN);
-				add(eye);
-			}
-			
-			private void dessinerLaBouche() {
-				double headX = (getWidth() - LARGEUR_VISAGE) / 2;
-				double headY = (getHeight() - HAUTEUR_VISAGE) / 2;
-				double x = headX + (LARGEUR_VISAGE - LARGEUR_BOUCHE) / 2;
-				double y = headY + BOUCHE_Y_OFFSET;
-				GRect mouth = new GRect(x, y, LARGEUR_BOUCHE, HAUTEUR_BOUCHE);
-				mouth.setFilled(true);
-				add(mouth);
-			}
-			
-			private void dessinerLabel() {
-				GLabel label = new GLabel("Grandpere de Karel");
-				label.setFont("Courier-50");
-				double x = (getWidth() - label.getWidth()) / 2;
-				add(label, x, LABEL_Y);
-			}
-		}</pre>
+	private void dessinerTete() {
+		double x = (getWidth() - LARGEUR_FACE) / 2;
+		double y = (getHeight() - HAUTEUR_FACE) / 2;
+		GRect face = new GRect(x, y, LARGEUR_FACE, HAUTEUR_FACE);
+		face.setFilled(true);
+		face.setFillColor(Color.ORANGE);
+		add(face);
+	}
+	
+	private void dessinerOeilGauche() {
+		double espaceEntreYeux = (LARGEUR_FACE - 2 * DIAMETERE_OEIL) / 3;
+		double faceX = (getWidth() - LARGEUR_FACE) / 2;
+		double faceY = (getHeight() - HAUTEUR_FACE) / 2;
+		double x = faceX + espaceEntreYeux;
+		double y = faceY + OFFSET_Y_OEIL;
+		GOval oeilGauche = new GOval(x, y, DIAMETERE_OEIL, DIAMETERE_OEIL);
+		oeilGauche.setFilled(true);
+		oeilGauche.setFillColor(Color.RED);
+		add(oeilGauche);
+	}
+	
+	private void dessinerOeilDroit() {
+		double espaceEntreYeux = (LARGEUR_FACE - 2 * DIAMETERE_OEIL) / 3;
+		double faceX = (getWidth() - LARGEUR_FACE) / 2;
+		double faceY = (getHeight() - HAUTEUR_FACE) / 2;
+		double x = faceX + espaceEntreYeux + DIAMETERE_OEIL + espaceEntreYeux;
+		double y = faceY + OFFSET_Y_OEIL;
+		GOval rightEye = new GOval(x, y, DIAMETERE_OEIL, DIAMETERE_OEIL);
+		rightEye.setFilled(true);
+		rightEye.setFillColor(Color.BLUE);
+		add(rightEye);
+	}
+	
+	private void dessinerBouche() {
+		double faceX = (getWidth() - LARGEUR_FACE) / 2;
+		double faceY = (getHeight() - HAUTEUR_FACE) / 2;
+		double x = faceX + (LARGEUR_FACE - LARGEUR_BOUCHE) / 2;
+		double y = faceY + OFFSET_Y_BOUCHE;
+		GRect mouth = new GRect(x, y, LARGEUR_BOUCHE, HAUTEUR_BOUCHE);
+		mouth.setFilled(true);
+		mouth.setFillColor(Color.BLACK);
+		add(mouth);
+	}
+	
+	private void dessinerEtiquette() {
+		GLabel etiquette = new GLabel("Grand-père de Karel");
+		etiquette.setFont("Courrier-50");
+		double x = (getWidth() - etiquette.getWidth()) / 2;
+		etiquette.setLocation(x, Y_ETIQUETTE);
+		add(etiquette);
+	}
+}</pre>
     
 <script src="../../plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
