@@ -52,34 +52,7 @@
  					<br/>- Corps bleu à (10, 30), taille 100x50 
 					<br/>- Fond jaune
 					
-				<h2>Solution</h2>
 
-
-<pre id="editor" style="height:1220px">public class Voiture extends GraphicsProgram {
-
-	// Lorsque 2 formes occupent les mêmes pixels, la dernière dessinée "gagne"
-
-	public void run() {
-		setBackground(Color.YELLOW);
-		GRect corps = new GRect(10, 30, 100, 50); //carcus
-		corps.setFilled(true);
-		corps.setFillColor(Color.BLUE);
-		add(corps);
-		GOval pneu1 = new GOval(20, 70, 20, 20); //pneu1
-		pneu1.setFilled(true);
-		pneu1.setFillColor(Color.RED);
-		add(pneu1);
-		GOval pneu2 = new GOval(80, 70, 20, 20); //pneu2
-		pneu2.setFilled(true);
-		pneu2.setFillColor(Color.RED);
-		add(pneu2);
-		GRect parebrise = new GRect(80, 40, 30, 20); //pare-brise
-		parebrise.setFilled(true);
-		parebrise.setFillColor(Color.CYAN);
-		add(parebrise);
-	}
-}
-</pre>
     
 <script src="{{pathToRoot}}plugins/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>

@@ -411,18 +411,7 @@ public class CarreMystere extends GraphicsProgram {
 	private static RandomGenerator rg = new RandomGenerator();
 	
 	public void run() {
-		// Draw a square in the center of the screen.
-		GRect rect = new GRect(TAILLE, TAILLE);
-		double x = (getWidth() - rect.getWidth()) / 2;
-		double y = (getHeight() - rect.getHeight()) / 2;
-		rect.setFilled(true);
-		add(rect, x, y);
-		
-		// Change its color every second.
-		while(true) {
-			rect.setColor(rg.nextColor()); 
-			pause(RETARD);
-		}
+		// ton code ici
 	}
 }</pre>
     
