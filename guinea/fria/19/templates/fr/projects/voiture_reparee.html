@@ -1,0 +1,61 @@
+<head>
+
+	%include templates/parts/headFr.html
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBarFr.html
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<!-- Header -->
+		<div id="pageHeader">
+			<h1>
+				Voiture reparée
+			</h1>
+			<p>
+				Extension du problème <a href="{{pathToRoot}}fr/projects/voiture.html">Voiture en panne</a>, écrit par Moussa Doumbouya.
+			</p>
+			<p>
+				Référence:
+				<a href="{{pathToRoot}}fr/handouts/graphics.html">Référence graphique</a>
+				<br/>
+				Exemples:
+				<a href="{{pathToRoot}}fr/projects/goCenter.html">Aller au centre</a>
+				<br/>
+				Code: <code>VoitureEnPanne.java</code>
+			</p>
+
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					Modifier le programme <a href="{{pathToRoot}}fr/projects/voiture.html">Voiture en panne</a> pour animer
+					la voiture que vous avez construite afin qu'elle se déplace de la gauche de la fenêtre à la droite de la fenêtre,
+					comme illustré dans les images ci-dessous.
+				</p>
+					
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6">
+				<h3 class="text-center">Avant</h3>
+				<img class="img-responsive" style="height:300px;" src="{{pathToRoot}}img/projects/voiture/voiture.png" />	
+			</div>
+			<div class="col-xs-6">
+				<h3 class="text-center">Après</h3>
+				<img class="img-responsive" style="height:300px;" src="{{pathToRoot}}img/projects/voiture/voiture.gif" />
+			</div>
+		</div>
+		
+		%include templates/parts/footerFr.html
+
+	</div>
+</body>
